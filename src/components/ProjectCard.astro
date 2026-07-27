@@ -1,0 +1,35 @@
+---
+import type { Lang } from '../i18n';
+import { UI } from '../i18n';
+
+const { entry, lang } = Astro.props;
+const currentLang = lang as Lang;
+const data = entry.data;
+const t = data.translations[currentLang] ?? data.translations.de;
+const base = import.meta.env.BASE_URL;
+const asset = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
+const href = `${base}${currentLang}/arbeiten/${data.slug}/`;
+---
+<a href={href} class="group reveal glass-card overflow-hidden rounded-[2rem] transition duration-300 hover:-translate-y-1 hover:shadow-soft">
+  <div class="aspect-[16/10] overflow-hidden bg-white">
+    <img src={asset(data.cover)} alt={t.title} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+  </div>
+  <div class="p-6 sm:p-7">
+    <div class="mb-4 flex flex-wrap items-center gap-2">
+      <span class="rounded-full bg-caramel/10 px-3 py-1 text-xs font-bold text-caramelDark">{t.category}</span>
+      <span class="text-xs font-semibold text-muted">{t.period}</span>
+    </div>
+    <h3 class="text-2xl font-extrabold tracking-tight text-ink">{t.title}</h3>
+    <p class="mt-2 text-sm font-semibold text-caramelDark">{t.role}</p>
+    <p class="mt-4 text-base leading-7 text-muted">{t.short}</p>
+    <ul class="mt-5 space-y-2">
+      {t.tasks.slice(0, 3).map((task: string) => (
+        <li class="flex gap-3 text-sm leading-6 text-muted"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-caramel"></span>{task}</li>
+      ))}
+    </ul>
+    <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink">
+      {UI[currentLang].works.cta}
+      <span class="transition group-hover:translate-x-1">→</span>
+    </div>
+  </div>
+</a>

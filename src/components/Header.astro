@@ -1,0 +1,42 @@
+---
+import { UI, languages, languageLabels, type Lang } from '../i18n';
+
+const lang = (Astro.props.lang ?? 'de') as Lang;
+const slug = Astro.props.slug ?? '';
+const ui = UI[lang];
+const base = import.meta.env.BASE_URL;
+const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
+const switchHref = (target: Lang) => slug ? to(`${target}/arbeiten/${slug}/`) : to(`${target}/`);
+const navItems = [
+  ['start', ui.nav.start],
+  ['arbeiten', ui.nav.arbeiten],
+  ['erfahrung', ui.nav.erfahrung],
+  ['ausbildung', ui.nav.ausbildung],
+  ['research', ui.nav.research],
+  ['medien', ui.nav.medien],
+  ['kontakt', ui.nav.kontakt],
+];
+---
+<header class="sticky top-0 z-50 border-b border-black/5 bg-paper/78 backdrop-blur-xl">
+  <div class="container-page section-padding flex h-16 items-center justify-between gap-5">
+    <a href={to(`${lang}/#start`)} class="text-sm font-extrabold tracking-tight text-ink">Luca Invernizzi</a>
+    <nav class="hidden items-center gap-5 lg:flex">
+      {navItems.map(([id, label]) => (
+        <a href={to(`${lang}/#${id}`)} class="text-sm font-medium text-muted transition hover:text-ink">{label}</a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-1 rounded-full border border-black/10 bg-white/65 p-1">
+      {languages.map((code) => (
+        <a
+          href={switchHref(code)}
+          class:list={[
+            'rounded-full px-3 py-1.5 text-xs font-bold transition',
+            code === lang ? 'bg-ink text-white' : 'text-muted hover:text-ink',
+          ]}
+        >
+          {languageLabels[code]}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
