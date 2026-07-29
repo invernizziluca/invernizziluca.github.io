@@ -1,5 +1,4 @@
 ---
-slug: "eigenes-musikprojekt"
 order: 2
 featured: true
 cover: "images/works/music-project/studio-session-renis.webp"

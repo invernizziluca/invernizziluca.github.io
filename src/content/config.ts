@@ -29,7 +29,6 @@ const linkItem = z.object({
 const arbeiten = defineCollection({
   type: 'content',
   schema: z.object({
-    slug: z.string(),
     order: z.number(),
     featured: z.boolean().default(true),
     cover: z.string(),

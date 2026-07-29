@@ -1,5 +1,4 @@
 ---
-slug: "verbano-unihockey"
 order: 1
 featured: true
 cover: "images/works/verbano/reach-performance.webp"

@@ -1,5 +1,4 @@
 ---
-slug: "gebrueder-fritz"
 order: 3
 featured: true
 cover: "images/works/gebrueder-fritz/jubilaeum-toast.webp"

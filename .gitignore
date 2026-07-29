@@ -3,3 +3,6 @@ dist/
 .astro/
 .env
 .DS_Store
+
+# Ignore generated Astro env types
+src/env.d.ts

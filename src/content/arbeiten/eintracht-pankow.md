@@ -1,5 +1,4 @@
 ---
-slug: "eintracht-pankow"
 order: 4
 featured: true
 cover: "images/works/eintracht-pankow/eintracht-banner.webp"
