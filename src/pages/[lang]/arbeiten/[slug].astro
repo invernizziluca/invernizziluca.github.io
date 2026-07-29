@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const works = await getCollection('arbeiten');
   return works.flatMap((entry) =>
     languages.map((lang) => ({
-      params: { lang, slug: entry.slug },
+      params: { lang, slug: entry.data.slug },
       props: { entry, lang },
     }))
   );
@@ -22,7 +22,7 @@ const base = import.meta.env.BASE_URL;
 const asset = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 const allWorks = (await getCollection('arbeiten')).sort((a, b) => a.data.order - b.data.order);
-const currentIndex = allWorks.findIndex((work) => work.slug === entry.slug);
+const currentIndex = allWorks.findIndex((work) => work.data.slug === data.slug);
 const nextWork = allWorks[(currentIndex + 1) % allWorks.length];
 const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
 ---
@@ -103,6 +103,20 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
       </div>
     </section>
 
+    {data.links.length > 0 && (
+      <section class="section-padding py-8 sm:py-12">
+        <div class="container-page reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
+          <p class="kicker">Links & Videos</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight">Externe Nachweise</h2>
+          <div class="mt-6 flex flex-wrap gap-3">
+            {data.links.map((link: { label: string; url: string }) => (
+              <a class="btn-secondary" href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         <div class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
@@ -121,7 +135,7 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page flex flex-col gap-4 rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:flex-row sm:items-center sm:justify-between sm:p-10">
         <a class="btn-secondary" href={to(`${lang}/#arbeiten`)}>← {ui.detail.back}</a>
-        <a class="btn-primary" href={to(`${lang}/arbeiten/${nextWork.slug}/`)}>{ui.detail.next}: {nextT.title} →</a>
+        <a class="btn-primary" href={to(`${lang}/arbeiten/${nextWork.data.slug}/`)}>{ui.detail.next}: {nextT.title} →</a>
       </div>
     </section>
   </main>

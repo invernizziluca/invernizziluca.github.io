@@ -21,15 +21,22 @@ const localizedCard = z.object({
   short: z.string(),
 });
 
+const linkItem = z.object({
+  label: z.string(),
+  url: z.string(),
+});
+
 const arbeiten = defineCollection({
   type: 'content',
   schema: z.object({
+    slug: z.string(),
     order: z.number(),
     featured: z.boolean().default(true),
     cover: z.string(),
     gallery: z.array(z.string()).default([]),
     tools: z.array(z.string()).default([]),
     externalLink: z.string().optional(),
+    links: z.array(linkItem).default([]),
     translations: z.object({
       de: localizedWork,
       it: localizedWork,

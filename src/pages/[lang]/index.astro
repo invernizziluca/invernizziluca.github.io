@@ -34,7 +34,7 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
           </div>
         </div>
         <div class="reveal glass-card overflow-hidden rounded-[2.5rem] p-4">
-          <img src={asset('images/portrait-placeholder.svg')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover portrait-large" />
+          <img src={asset('images/profile/luca-portrait.webp')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover object-top" />
         </div>
       </div>
       <div class="container-page mt-12 grid gap-4 sm:grid-cols-3">
@@ -207,8 +207,8 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
         <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-white/70">{ui.contact.text}</p>
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5" href="mailto:hello@example.com">{ui.contact.email}</a>
-          <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href="https://www.linkedin.com/" target="_blank">{ui.contact.linkedin}</a>
+          <a class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
+          <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
           <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>
         </div>
       </div>
