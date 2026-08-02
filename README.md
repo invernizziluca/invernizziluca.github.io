@@ -1,53 +1,37 @@
-# Luca Invernizzi Portfolio — Astro + TailwindCSS
+# Luca Invernizzi Portfolio - Astro + TailwindCSS
 
-Questo progetto è pronto per GitHub Pages: One Page principale, pagine dinamiche per le Arbeiten, contenuti in Markdown/frontmatter, lingue DE / IT / EN e design minimal Apple-like.
+Portfolio statico per GitHub Pages con One Page principale, pagine lavoro, pagine formazione, database LinkedIn, social proof, referenze, certificati e research.
 
-## Avvio locale / Codespaces
+## Importante per questo progetto
+
+- Non inserire mai `slug` nel frontmatter delle content collections Astro (`src/content/arbeiten/*.md`, ecc.). Astro genera lo slug automaticamente dal nome del file.
+- `@astrojs/sitemap` è stato rimosso perché in questo progetto aveva creato errori durante `astro:build:done`.
+- Lingue: `DE`, `EN`, `IT` in questo ordine.
+- Le immagini pubbliche vanno in `public/images/...` e nel codice si richiamano con `/images/...`.
+- I PDF pubblici vanno in `public/pdf/...` e si richiamano con `/pdf/...`.
+
+## Comandi
 
 ```bash
 npm install
 npm run dev
-```
-
-Apri la preview sulla porta 4321.
-
-## Build
-
-```bash
 npm run build
 ```
 
-## Pubblicazione GitHub Pages
-
-Il workflow è già incluso in `.github/workflows/deploy.yml`.
-
-1. Carica i file nella repository `invernizziluca.github.io`.
-2. Vai in `Settings → Pages`.
-3. Seleziona `GitHub Actions` come sorgente.
-4. Ogni commit su `main` pubblica automaticamente il sito.
-
 ## Aggiungere un lavoro
 
-Crea un nuovo file in:
+Crea un file in `src/content/arbeiten/nuovo-lavoro.md`. Il nome del file diventa l'URL.
 
-```text
-src/content/arbeiten/nuovo-lavoro.md
-```
+Esempio: `nuovo-lavoro.md` -> `/de/arbeiten/nuovo-lavoro/`.
 
-Usa come modello uno dei file esistenti. Le immagini vanno in:
+## Aggiungere un post LinkedIn
 
-```text
-public/images/works/nome-lavoro/
-```
+Apri `src/data/site.ts` e aggiungi un oggetto in `linkedinPosts` con `src`, `height` e `title` nelle tre lingue. La home mostra automaticamente i primi 3; la pagina `/de/linkedin/` mostra tutti.
 
-Nel Markdown il percorso immagine deve iniziare da `/images/...` oppure `images/...`.
+## Aggiungere un certificato o un PDF
 
-## Foto e PDF
+Copia il PDF in `public/pdf/certificates/` oppure `public/pdf/research/` e aggiungi la relativa voce in `src/data/site.ts` o in `src/content/studienarbeiten/`.
 
-- Immagini: `public/images/`
-- CV e paper: `public/pdf/`
-- Favicon: `public/favicon.png`
+## Deploy su GitHub Pages
 
-## Versione aggiornata
-
-Questa versione include le immagini reali fornite: portrait, project images per Verbano Unihockey, Eigenes Musikprojekt, Gebrüder Fritz Locations, Eintracht Pankow Musik, favicon e logo.
+La GitHub Action in `.github/workflows/deploy.yml` imposta automaticamente `BASE_PATH` in base al nome repository. Per `invernizziluca.github.io` pubblica sulla root `https://invernizziluca.github.io/`.
