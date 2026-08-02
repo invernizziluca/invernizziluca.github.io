@@ -5,14 +5,8 @@ import { UI, languages, type Lang } from '../../../i18n';
 
 export async function getStaticPaths() {
   const works = await getCollection('arbeiten');
-  return works.flatMap((entry) =>
-    languages.map((lang) => ({
-      params: { lang, slug: entry.slug },
-      props: { entry, lang },
-    }))
-  );
+  return works.flatMap((entry) => languages.map((lang) => ({ params: { lang, slug: entry.slug }, props: { entry, lang } })));
 }
-
 const entry = Astro.props.entry;
 const lang = Astro.props.lang as Lang;
 const ui = UI[lang];
@@ -26,7 +20,7 @@ const currentIndex = allWorks.findIndex((work) => work.slug === entry.slug);
 const nextWork = allWorks[(currentIndex + 1) % allWorks.length];
 const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
 ---
-<BaseLayout lang={lang} title={`${t.title} — Luca Invernizzi`} description={t.short} slug={entry.slug}>
+<BaseLayout lang={lang} title={`${t.title} - Luca Invernizzi`} description={t.short} slug={entry.slug}>
   <main>
     <section class="section-padding py-10 sm:py-16">
       <div class="container-page">
@@ -51,92 +45,28 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
 
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-3">
-        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5">
-          <h2 class="text-2xl font-black tracking-tight">{ui.detail.situation}</h2>
-          <p class="mt-5 text-base leading-7 text-muted">{t.situation}</p>
-        </article>
-        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 lg:col-span-2">
-          <h2 class="text-2xl font-black tracking-tight">{ui.detail.tasks}</h2>
-          <ul class="mt-5 grid gap-3 sm:grid-cols-2">
-            {t.tasks.map((task: string) => (
-              <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-caramel"></span>{task}</li>
-            ))}
-          </ul>
-        </article>
+        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5"><h2 class="text-2xl font-black tracking-tight">{ui.detail.situation}</h2><p class="mt-5 text-base leading-7 text-muted">{t.situation}</p></article>
+        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 lg:col-span-2"><h2 class="text-2xl font-black tracking-tight">{ui.detail.tasks}</h2><ul class="mt-5 grid gap-3 sm:grid-cols-2">{t.tasks.map((task: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-caramel"></span>{task}</li>)}</ul></article>
       </div>
     </section>
 
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <article class="reveal rounded-[2rem] bg-ink p-8 text-white sm:p-10">
-          <h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2>
-          <div class="mt-7 grid gap-4 sm:grid-cols-2">
-            {t.results.map((result: string) => (
-              <div class="rounded-[1.4rem] bg-white/8 p-5 ring-1 ring-white/10">
-                <p class="text-base leading-7 text-white/78">{result}</p>
-              </div>
-            ))}
-          </div>
-        </article>
-        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
-          <h2 class="text-3xl font-black tracking-tight">{ui.detail.tools}</h2>
-          <div class="mt-6 flex flex-wrap gap-2">
-            {data.tools.map((tool: string) => <span class="rounded-full bg-paper px-4 py-2 text-sm font-semibold text-muted">{tool}</span>)}
-          </div>
-        </article>
+        <article class="reveal rounded-[2rem] bg-ink p-8 text-white sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2><div class="mt-7 grid gap-4 sm:grid-cols-2">{t.results.map((result: string) => <div class="rounded-[1.4rem] bg-white/8 p-5 ring-1 ring-white/10"><p class="text-base leading-7 text-white/78">{result}</p></div>)}</div></article>
+        <article class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.tools}</h2><div class="mt-6 flex flex-wrap gap-2">{data.tools.map((tool: string) => <span class="rounded-full bg-paper px-4 py-2 text-sm font-semibold text-muted">{tool}</span>)}</div></article>
       </div>
     </section>
 
     <section class="section-padding py-12 sm:py-20">
-      <div class="container-page">
-        <div class="reveal max-w-3xl">
-          <p class="kicker">{ui.detail.gallery}</p>
-          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.title}</h2>
-        </div>
-        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {data.gallery.map((image: string, index: number) => (
-            <div class="reveal overflow-hidden rounded-[1.8rem] bg-white p-2 shadow-sm ring-1 ring-black/5">
-              <img src={asset(image)} alt={`${t.title} ${index + 1}`} class="aspect-[4/3] w-full rounded-[1.4rem] object-cover" />
-            </div>
-          ))}
-        </div>
-      </div>
+      <div class="container-page"><div class="reveal max-w-3xl"><p class="kicker">{ui.detail.gallery}</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.title}</h2></div><div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{data.gallery.map((image: string, index: number) => <div class="reveal overflow-hidden rounded-[1.8rem] bg-white p-2 shadow-sm ring-1 ring-black/5"><img src={asset(image)} alt={`${t.title} ${index + 1}`} class="aspect-[4/3] w-full rounded-[1.4rem] object-cover" loading="lazy" /></div>)}</div></div>
     </section>
 
-    {data.links.length > 0 && (
-      <section class="section-padding py-8 sm:py-12">
-        <div class="container-page reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
-          <p class="kicker">Links & Videos</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight">Externe Nachweise</h2>
-          <div class="mt-6 flex flex-wrap gap-3">
-            {data.links.map((link: { label: string; url: string }) => (
-              <a class="btn-secondary" href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
+    {(data.links.length > 0 || data.companyUrl) && <section class="section-padding py-8 sm:py-12"><div class="container-page reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><p class="kicker">{ui.detail.links}</p><div class="mt-6 flex flex-wrap gap-3">{data.companyUrl && <a class="btn-secondary" href={data.companyUrl} target="_blank" rel="noreferrer">Website ↗</a>}{data.links.map((link: { label: string; url: string }) => <a class="btn-secondary" href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</div></div></section>}
 
-    <section class="section-padding py-12 sm:py-20">
-      <div class="container-page grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <div class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
-          <h2 class="text-3xl font-black tracking-tight">{ui.detail.learnings}</h2>
-        </div>
-        <div class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
-          <ul class="grid gap-4">
-            {t.learnings.map((learning: string) => (
-              <li class="flex gap-3 text-lg leading-8 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{learning}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
+    {data.evidence.length > 0 && <section class="section-padding py-8 sm:py-12"><div class="container-page reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><p class="kicker">{ui.detail.evidence}</p>{data.evidence.map((ev: {label:string; pdf?:string; url?:string; note?:string}) => <div class="mt-6 rounded-3xl border border-black/10 bg-white/70 p-5"><h3 class="font-extrabold">{ev.label}</h3>{ev.note && <p class="mt-2 text-sm leading-6 text-muted">{ev.note}</p>}{ev.pdf && <iframe class="pdf-viewer mt-4" src={asset(ev.pdf)} title={ev.label} loading="lazy"></iframe>}</div>)}</div></section>}
 
-    <section class="section-padding py-12 sm:py-20">
-      <div class="container-page flex flex-col gap-4 rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:flex-row sm:items-center sm:justify-between sm:p-10">
-        <a class="btn-secondary" href={to(`${lang}/#arbeiten`)}>← {ui.detail.back}</a>
-        <a class="btn-primary" href={to(`${lang}/arbeiten/${nextWork.slug}/`)}>{ui.detail.next}: {nextT.title} →</a>
-      </div>
-    </section>
+    <section class="section-padding py-12 sm:py-20"><div class="container-page grid gap-6 lg:grid-cols-[0.85fr_1.15fr]"><div class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.learnings}</h2></div><div class="reveal rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><ul class="grid gap-4">{t.learnings.map((learning: string) => <li class="flex gap-3 text-lg leading-8 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{learning}</li>)}</ul></div></div></section>
+
+    <section class="section-padding py-12 sm:py-20"><div class="container-page flex flex-col gap-4 rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:flex-row sm:items-center sm:justify-between sm:p-10"><a class="btn-secondary" href={to(`${lang}/#arbeiten`)}>← {ui.detail.back}</a><a class="btn-primary" href={to(`${lang}/arbeiten/${nextWork.slug}/`)}>{ui.detail.next}: {nextT.title} →</a></div></section>
   </main>
 </BaseLayout>

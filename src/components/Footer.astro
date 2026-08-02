@@ -7,9 +7,10 @@ const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 ---
 <footer class="section-padding border-t border-black/5 py-10">
   <div class="container-page flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-    <p>© {new Date().getFullYear()} Luca Invernizzi. Built with Astro.</p>
-    <div class="flex gap-4">
+    <p>{ui.footer.rights}</p>
+    <div class="flex flex-wrap gap-4">
       <a class="hover:text-ink" href={to(`${lang}/#arbeiten`)}>{ui.nav.arbeiten}</a>
+      <a class="hover:text-ink" href={to(`${lang}/linkedin/`)}>{ui.nav.linkedin}</a>
       <a class="hover:text-ink" href={to(`${lang}/#kontakt`)}>{ui.nav.kontakt}</a>
     </div>
   </div>

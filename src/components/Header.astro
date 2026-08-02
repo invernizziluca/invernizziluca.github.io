@@ -1,42 +1,47 @@
 ---
-import { UI, languages, languageLabels, type Lang } from '../i18n';
-
+import { languages, languageLabels, UI, type Lang } from '../i18n';
 const lang = (Astro.props.lang ?? 'de') as Lang;
 const slug = Astro.props.slug ?? '';
+const educationId = Astro.props.educationId ?? '';
+const page = Astro.props.page ?? '';
 const ui = UI[lang];
 const base = import.meta.env.BASE_URL;
 const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
-const switchHref = (target: Lang) => slug ? to(`${target}/arbeiten/${slug}/`) : to(`${target}/`);
+const switchHref = (target: Lang) => {
+  if (slug) return to(`${target}/arbeiten/${slug}/`);
+  if (educationId) return to(`${target}/ausbildung/${educationId}/`);
+  if (page === 'linkedin') return to(`${target}/linkedin/`);
+  return to(`${target}/`);
+};
 const navItems = [
-  ['start', ui.nav.start],
-  ['arbeiten', ui.nav.arbeiten],
-  ['erfahrung', ui.nav.erfahrung],
-  ['ausbildung', ui.nav.ausbildung],
-  ['research', ui.nav.research],
-  ['medien', ui.nav.medien],
-  ['kontakt', ui.nav.kontakt],
+  ['start', ui.nav.start], ['arbeiten', ui.nav.arbeiten], ['erfahrung', ui.nav.erfahrung], ['ausbildung', ui.nav.ausbildung], ['research', ui.nav.research], ['linkedin', ui.nav.linkedin], ['nachweise', ui.nav.nachweise], ['kontakt', ui.nav.kontakt],
 ];
 ---
-<header class="sticky top-0 z-50 border-b border-black/5 bg-paper/78 backdrop-blur-xl">
-  <div class="container-page section-padding flex h-16 items-center justify-between gap-5">
-    <a href={to(`${lang}/#start`)} class="text-sm font-extrabold tracking-tight text-ink">Luca Invernizzi</a>
-    <nav class="hidden items-center gap-5 lg:flex">
+<header class="sticky top-0 z-50 border-b border-black/5 bg-paper/82 backdrop-blur-xl">
+  <div class="container-page section-padding flex h-16 items-center justify-between gap-4">
+    <a href={to(`${lang}/#start`)} class="flex items-center gap-2 text-sm font-extrabold tracking-tight text-ink">
+      <img src={to('images/logos/li-logo-small.png')} alt="" class="h-6 w-6 rounded" />
+      <span>Luca Invernizzi</span>
+    </a>
+    <nav class="hidden items-center gap-4 xl:flex">
       {navItems.map(([id, label]) => (
-        <a href={to(`${lang}/#${id}`)} class="text-sm font-medium text-muted transition hover:text-ink">{label}</a>
+        <a href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)} class="text-sm font-medium text-muted transition hover:text-ink">{label}</a>
       ))}
     </nav>
-    <div class="flex items-center gap-1 rounded-full border border-black/10 bg-white/65 p-1">
-      {languages.map((code) => (
-        <a
-          href={switchHref(code)}
-          class:list={[
-            'rounded-full px-3 py-1.5 text-xs font-bold transition',
-            code === lang ? 'bg-ink text-white' : 'text-muted hover:text-ink',
-          ]}
-        >
-          {languageLabels[code]}
-        </a>
-      ))}
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 shadow-sm">
+        {languages.map((code) => (
+          <a href={switchHref(code)} class:list={['rounded-full px-3 py-1.5 text-xs font-bold transition', code === lang ? 'bg-ink text-white' : 'text-muted hover:text-ink']}>{languageLabels[code]}</a>
+        ))}
+      </div>
+      <details class="relative xl:hidden">
+        <summary class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-black/10 bg-white/80 text-lg font-black list-none">☰</summary>
+        <div class="absolute right-0 mt-3 w-64 rounded-3xl border border-black/10 bg-white p-3 shadow-soft">
+          {navItems.map(([id, label]) => (
+            <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-muted hover:bg-paper hover:text-ink" href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)}>{label}</a>
+          ))}
+        </div>
+      </details>
     </div>
   </div>
 </header>

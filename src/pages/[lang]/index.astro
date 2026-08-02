@@ -2,44 +2,44 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import LinkedInEmbed from '../../components/LinkedInEmbed.astro';
 import { UI, languages, type Lang } from '../../i18n';
+import { education, linkedinPosts, socialProof, references, certificates } from '../../data/site';
 
-export function getStaticPaths() {
-  return languages.map((lang) => ({ params: { lang }, props: { lang } }));
-}
-
+export function getStaticPaths() { return languages.map((lang) => ({ params: { lang }, props: { lang } })); }
 const lang = Astro.props.lang as Lang;
 const ui = UI[lang];
 const base = import.meta.env.BASE_URL;
 const asset = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
+const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 const works = (await getCollection('arbeiten')).sort((a, b) => a.data.order - b.data.order);
 const research = (await getCollection('studienarbeiten')).sort((a, b) => a.data.order - b.data.order);
 const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.data.order);
+const timeline = works.filter((work) => work.slug !== 'verbano-unihockey');
+const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slice(0, 3);
 ---
 <BaseLayout lang={lang} title={ui.seoTitle} description={ui.seoDescription}>
   <main>
-    <section id="start" class="section-padding pt-16 sm:pt-24 lg:pt-28">
+    <section id="start" class="section-y section-padding pt-14 sm:pt-20 lg:pt-24">
       <div class="container-page grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         <div class="reveal">
           <p class="kicker">{ui.hero.kicker}</p>
-          <h1 class="mt-5 max-w-4xl text-balance text-6xl font-black tracking-[-0.06em] text-ink sm:text-7xl lg:text-8xl">
-            {ui.hero.title}
-          </h1>
+          <h1 class="mt-5 max-w-4xl text-balance text-6xl font-black tracking-[-0.065em] text-ink sm:text-7xl lg:text-8xl">{ui.hero.title}</h1>
           <p class="mt-5 text-balance text-2xl font-semibold tracking-tight text-ink/85 sm:text-3xl">{ui.hero.subtitle}</p>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-muted">{ui.hero.text}</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a class="btn-primary" href={`#arbeiten`}>{ui.hero.primary}</a>
+            <a class="btn-primary" href="#arbeiten">{ui.hero.primary}</a>
             <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.hero.secondary}</a>
-            <a class="btn-secondary" href={`#kontakt`}>{ui.hero.tertiary}</a>
+            <a class="btn-secondary" href="#kontakt">{ui.hero.tertiary}</a>
           </div>
         </div>
-        <div class="reveal glass-card overflow-hidden rounded-[2.5rem] p-4">
+        <div class="reveal glass-card overflow-hidden rounded-[2.6rem] p-4">
           <img src={asset('images/profile/luca-portrait.webp')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover object-top" />
         </div>
       </div>
       <div class="container-page mt-12 grid gap-4 sm:grid-cols-3">
         {ui.stats.map((stat) => (
-          <div class="reveal rounded-[1.6rem] border border-black/5 bg-white/70 p-6">
+          <div class="reveal rounded-[1.6rem] border border-black/5 bg-white/70 p-6 backdrop-blur">
             <div class="text-3xl font-black tracking-tight text-ink">{stat.value}</div>
             <div class="mt-1 text-sm font-semibold text-muted">{stat.label}</div>
           </div>
@@ -47,7 +47,7 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
       </div>
     </section>
 
-    <section class="section-padding py-16 sm:py-24">
+    <section class="section-y section-padding">
       <div class="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div class="reveal">
           <p class="kicker">01</p>
@@ -56,7 +56,7 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
           {ui.positioning.cards.map((card) => (
-            <div class="reveal rounded-[1.8rem] bg-white/80 p-6 shadow-sm ring-1 ring-black/5">
+            <div class="reveal rounded-[1.8rem] bg-white/80 p-6 shadow-sm ring-1 ring-black/5 backdrop-blur">
               <h3 class="text-lg font-extrabold tracking-tight">{card.title}</h3>
               <p class="mt-3 text-sm leading-6 text-muted">{card.text}</p>
             </div>
@@ -65,7 +65,7 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
       </div>
     </section>
 
-    <section id="arbeiten" class="section-padding py-16 sm:py-24">
+    <section id="arbeiten" class="section-y section-padding">
       <div class="container-page">
         <div class="reveal max-w-3xl">
           <p class="kicker">02</p>
@@ -78,7 +78,7 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
       </div>
     </section>
 
-    <section id="erfahrung" class="section-padding py-16 sm:py-24">
+    <section id="erfahrung" class="section-y section-padding">
       <div class="container-page grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div class="reveal">
           <p class="kicker">03</p>
@@ -86,59 +86,69 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
           <p class="mt-5 text-lg leading-8 text-muted">{ui.timeline.intro}</p>
         </div>
         <div class="space-y-4">
-          {ui.timeline.items.map((item) => (
-            <div class="reveal rounded-[1.7rem] bg-white/75 p-6 ring-1 ring-black/5">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramel">{item.period}</div>
-              <div class="mt-3 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h3 class="text-xl font-extrabold">{item.title}</h3>
-                  <p class="mt-1 text-sm font-semibold text-muted">{item.role}</p>
+          {timeline.map((entry) => {
+            const t = entry.data.translations[lang] ?? entry.data.translations.de;
+            return (
+              <a href={to(`${lang}/arbeiten/${entry.slug}/`)} class="reveal block rounded-[1.7rem] bg-white/76 p-6 ring-1 ring-black/5 transition hover:-translate-y-1 hover:bg-white hover:shadow-soft">
+                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{t.period}</div>
+                <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 class="text-xl font-extrabold">{t.title}</h3>
+                    <p class="mt-1 text-sm font-semibold text-muted">{t.role}</p>
+                    <p class="mt-3 max-w-2xl text-sm leading-6 text-muted">{t.short}</p>
+                  </div>
+                  <div class="shrink-0 text-sm font-bold text-ink">{ui.timeline.open} →</div>
                 </div>
-                <p class="text-sm text-muted">{item.place}</p>
-              </div>
-            </div>
-          ))}
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>
 
-    <section id="ausbildung" class="section-padding py-16 sm:py-24">
+    <section id="ausbildung" class="section-y section-padding">
       <div class="container-page">
         <div class="reveal max-w-3xl">
           <p class="kicker">04</p>
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.education.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.education.intro}</p>
         </div>
-        <div class="mt-10 grid gap-4 lg:grid-cols-3">
-          {ui.education.items.map((item) => (
-            <div class="reveal rounded-[1.8rem] bg-white/80 p-7 ring-1 ring-black/5">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramel">{item.period}</div>
-              <h3 class="mt-4 text-xl font-extrabold tracking-tight">{item.title}</h3>
-              <p class="mt-2 text-sm font-semibold text-muted">{item.role}</p>
-              <p class="mt-5 text-sm text-muted">{item.place}</p>
-            </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {education.map((item) => (
+            <a href={to(`${lang}/ausbildung/${item.id}/`)} class="reveal group overflow-hidden rounded-[1.8rem] bg-white/80 p-4 ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-soft">
+              <img src={asset(item.cover)} alt={item.title[lang]} class="aspect-[16/10] w-full rounded-[1.35rem] object-cover" loading="lazy" />
+              <div class="p-3 pt-5">
+                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{item.period}</div>
+                <h3 class="mt-3 text-xl font-extrabold tracking-tight">{item.title[lang]}</h3>
+                <p class="mt-2 text-sm font-semibold text-muted">{item.role[lang]}</p>
+                <p class="mt-4 text-sm font-bold text-ink">{ui.education.open} →</p>
+              </div>
+            </a>
           ))}
         </div>
       </div>
     </section>
 
-    <section id="research" class="section-padding py-16 sm:py-24">
+    <section id="research" class="section-y section-padding">
       <div class="container-page">
         <div class="reveal max-w-3xl">
           <p class="kicker">05</p>
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.research.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.research.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
           {research.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
-              <article class="reveal rounded-[1.8rem] bg-white/80 p-7 ring-1 ring-black/5">
-                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramel">{entry.data.year} · {entry.data.category}</div>
-                <h3 class="mt-4 text-xl font-extrabold tracking-tight">{t.title}</h3>
-                {t.subtitle && <p class="mt-2 text-sm font-semibold text-muted">{t.subtitle}</p>}
-                <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
-                {entry.data.pdf && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={asset(entry.data.pdf)} target="_blank">{ui.research.pdf} →</a>}
+              <article class="reveal rounded-[1.8rem] bg-white/80 p-5 ring-1 ring-black/5">
+                {entry.data.cover && <img src={asset(entry.data.cover)} alt="" class="aspect-[16/9] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />}
+                <div class="p-2 pt-5">
+                  <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.year} · {entry.data.category}</div>
+                  <h3 class="mt-4 text-xl font-extrabold tracking-tight">{t.title}</h3>
+                  {t.subtitle && <p class="mt-2 text-sm font-semibold text-muted">{t.subtitle}</p>}
+                  <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
+                  {entry.data.pdf && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={asset(entry.data.pdf)} target="_blank">{ui.research.pdf} →</a>}
+                </div>
               </article>
             );
           })}
@@ -146,21 +156,37 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
       </div>
     </section>
 
-    <section id="medien" class="section-padding py-16 sm:py-24">
+    <section id="linkedin" class="section-y section-padding">
+      <div class="container-page">
+        <div class="reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div class="max-w-3xl">
+            <p class="kicker">06</p>
+            <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.linkedin.title}</h2>
+            <p class="mt-5 text-lg leading-8 text-muted">{ui.linkedin.intro}</p>
+          </div>
+          <a class="btn-secondary" href={to(`${lang}/linkedin/`)}>{ui.linkedin.all} →</a>
+        </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {highlightedLinkedin.map((post) => <LinkedInEmbed post={post} lang={lang} />)}
+        </div>
+      </div>
+    </section>
+
+    <section id="nachweise" class="section-y section-padding">
       <div class="container-page">
         <div class="reveal max-w-3xl">
-          <p class="kicker">06</p>
+          <p class="kicker">07</p>
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.media.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.media.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
           {media.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
               <article class="reveal rounded-[1.8rem] bg-white/80 p-7 ring-1 ring-black/5">
-                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramel">{entry.data.date} · {entry.data.typeLabel}</div>
-                <h3 class="mt-4 text-xl font-extrabold tracking-tight">{t.title}</h3>
-                <p class="mt-2 text-sm font-semibold text-muted">{entry.data.source}</p>
+                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.date} · {entry.data.typeLabel}</div>
+                <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{t.title}</h3>
+                <p class="mt-2 text-sm font-semibold text-muted">{entry.data.source} · {t.subtitle}</p>
                 <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
                 {entry.data.link && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={entry.data.link} target="_blank">{ui.media.open} →</a>}
               </article>
@@ -170,40 +196,84 @@ const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.da
       </div>
     </section>
 
-    <section class="section-padding py-16 sm:py-24">
+    <section class="section-y section-padding">
       <div class="container-page">
         <div class="reveal max-w-3xl">
-          <p class="kicker">07</p>
-          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.skills.title}</h2>
+          <p class="kicker">08</p>
+          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.references.title}</h2>
+          <p class="mt-5 text-lg leading-8 text-muted">{ui.references.intro}</p>
         </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+          {references.map((ref) => (
+            <article class="reveal rounded-[2rem] bg-white/82 p-7 ring-1 ring-black/5 lg:col-span-2 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:p-9">
+              <div class="flex items-center gap-4 lg:block">
+                <img src={asset(ref.image)} alt={ref.name} class="h-20 w-20 rounded-3xl object-cover lg:h-40 lg:w-40" loading="lazy" />
+                <div>
+                  <h3 class="text-xl font-extrabold">{ref.name}</h3>
+                  <p class="mt-1 text-sm font-semibold text-muted">{ref.role}</p>
+                  <p class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{ref.source}</p>
+                </div>
+              </div>
+              <blockquote class="mt-6 text-lg leading-8 text-muted lg:mt-0">“{ref.quote[lang]}”</blockquote>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-y section-padding">
+      <div class="container-page">
+        <div class="reveal max-w-3xl">
+          <p class="kicker">09</p>
+          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.certificates.title}</h2>
+          <p class="mt-5 text-lg leading-8 text-muted">{ui.certificates.intro}</p>
+        </div>
+        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+          {certificates.map((cert) => (
+            <article class="reveal rounded-[1.8rem] bg-white/80 p-5 ring-1 ring-black/5">
+              <img src={asset(cert.cover)} alt={cert.title[lang]} class="aspect-[16/11] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />
+              <div class="p-2 pt-5">
+                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{cert.date} · {cert.issuer}</div>
+                <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{cert.title[lang]}</h3>
+                <p class="mt-4 text-sm leading-6 text-muted">{cert.summary[lang]}</p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                  <a class="btn-secondary" href={asset(cert.pdf)} target="_blank">{ui.certificates.pdf} →</a>
+                </div>
+                <details class="mt-5 rounded-[1.4rem] border border-black/10 bg-white/70 p-3">
+                  <summary class="cursor-pointer rounded-full px-3 py-2 text-sm font-bold text-ink">{ui.certificates.show}</summary>
+                  <iframe class="pdf-viewer mt-3" src={asset(cert.pdf)} title={cert.title[lang]} loading="lazy"></iframe>
+                </details>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section-y section-padding">
+      <div class="container-page">
+        <div class="reveal max-w-3xl"><p class="kicker">10</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.skills.title}</h2></div>
         <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {ui.skills.groups.map((group) => (
             <div class="reveal rounded-[1.8rem] bg-white/80 p-6 ring-1 ring-black/5">
               <h3 class="font-extrabold">{group.title}</h3>
-              <div class="mt-4 flex flex-wrap gap-2">
-                {group.items.map((item) => <span class="rounded-full bg-paper px-3 py-1 text-xs font-semibold text-muted">{item}</span>)}
-              </div>
+              <div class="mt-4 flex flex-wrap gap-2">{group.items.map((item) => <span class="rounded-full bg-paper px-3 py-1 text-xs font-semibold text-muted">{item}</span>)}</div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="section-padding py-16 sm:py-24">
+    <section class="section-y section-padding">
       <div class="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div class="reveal glass-card rounded-[2rem] p-8 sm:p-10">
-          <p class="kicker">08</p>
-          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.about.title}</h2>
-        </div>
-        <div class="reveal flex items-center rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10">
-          <p class="text-lg leading-8 text-muted">{ui.about.text}</p>
-        </div>
+        <div class="reveal glass-card rounded-[2rem] p-8 sm:p-10"><p class="kicker">11</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.about.title}</h2></div>
+        <div class="reveal flex items-center rounded-[2rem] bg-white/80 p-8 ring-1 ring-black/5 sm:p-10"><p class="text-lg leading-8 text-muted">{ui.about.text}</p></div>
       </div>
     </section>
 
-    <section id="kontakt" class="section-padding py-16 sm:py-28">
+    <section id="kontakt" class="section-y section-padding">
       <div class="container-page reveal rounded-[2.5rem] bg-ink p-8 text-white sm:p-12 lg:p-16">
-        <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramel">09</p>
+        <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramel">12</p>
         <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-white/70">{ui.contact.text}</p>
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
