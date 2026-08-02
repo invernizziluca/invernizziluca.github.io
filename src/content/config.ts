@@ -21,10 +21,8 @@ const localizedCard = z.object({
   short: z.string(),
 });
 
-const linkItem = z.object({
-  label: z.string(),
-  url: z.string(),
-});
+const linkItem = z.object({ label: z.string(), url: z.string() });
+const evidenceItem = z.object({ label: z.string(), pdf: z.string().optional(), url: z.string().optional(), note: z.string().optional() });
 
 const arbeiten = defineCollection({
   type: 'content',
@@ -32,14 +30,16 @@ const arbeiten = defineCollection({
     order: z.number(),
     featured: z.boolean().default(true),
     cover: z.string(),
+    logo: z.string().optional(),
+    companyUrl: z.string().optional(),
     gallery: z.array(z.string()).default([]),
     tools: z.array(z.string()).default([]),
-    externalLink: z.string().optional(),
     links: z.array(linkItem).default([]),
+    evidence: z.array(evidenceItem).default([]),
     translations: z.object({
       de: localizedWork,
-      it: localizedWork,
       en: localizedWork,
+      it: localizedWork,
     }),
   }),
 });
@@ -51,10 +51,11 @@ const studienarbeiten = defineCollection({
     year: z.string(),
     category: z.string(),
     pdf: z.string().optional(),
+    cover: z.string().optional(),
     translations: z.object({
       de: localizedCard,
-      it: localizedCard,
       en: localizedCard,
+      it: localizedCard,
     }),
   }),
 });
@@ -70,8 +71,8 @@ const medien = defineCollection({
     image: z.string().optional(),
     translations: z.object({
       de: localizedCard,
-      it: localizedCard,
       en: localizedCard,
+      it: localizedCard,
     }),
   }),
 });
