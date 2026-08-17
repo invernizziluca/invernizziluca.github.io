@@ -3,14 +3,91 @@ import type { Lang } from '../i18n';
 export type LocalizedString = Record<Lang, string>;
 
 export const linkedinPosts = [
-  { id: 'innovation-project', order: 1, height: 1164, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7466397292628180994?collapsed=1', title: { de: 'Innovationsmanagement & Cross-Industry-Innovation', en: 'Innovation management & cross-industry innovation', it: 'Innovation management & cross-industry innovation' } },
-  { id: 'value-proposition', order: 2, height: 627, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7465146204742434816?collapsed=1', title: { de: 'Studienprojekt: Value Proposition', en: 'Study project: value proposition', it: 'Progetto di studio: value proposition' } },
-  { id: 'learning-update', order: 3, height: 627, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7458209397459128320?collapsed=1', title: { de: 'Lernen, Projektarbeit und Praxis', en: 'Learning, project work and practice', it: 'Apprendimento, progetto e pratica' } },
-  { id: 'songwriting-camp', order: 4, height: 627, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7442270344608006144?collapsed=1', title: { de: 'Wie sieht ein Songwriting Camp aus?', en: 'What does a songwriting camp look like?', it: 'Com’è fatto un songwriting camp?' } },
-  { id: 'ffhs-pitch', order: 5, height: 669, src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7422930736766386176?collapsed=1', title: { de: 'Von der Idee zur Realität', en: 'From idea to reality', it: 'Dall’idea alla realtà' } },
-  { id: 'rbf25-long', order: 6, height: 1806, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7376898005272186880?collapsed=1', title: { de: 'Reeperbahn Festival 2025 - Eindrücke', en: 'Reeperbahn Festival 2025 - impressions', it: 'Reeperbahn Festival 2025 - impressioni' } },
-  { id: 'rbf25', order: 7, height: 627, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7376877059240861696?collapsed=1', title: { de: 'RBF25', en: 'RBF25', it: 'RBF25' } },
-  { id: 'music-marketing-question', order: 8, height: 627, src: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7373358994708676610?collapsed=1', title: { de: 'Musik, Marken und Wirkung', en: 'Music, brands and impact', it: 'Musica, brand e impatto' } },
+  {
+    id: 'songwriting-camp',
+    order: 1,
+    url: 'https://www.linkedin.com/posts/lucainve_wei%C3%9Ft-du-wie-ein-songwriting-camp-aussieht-activity-7442450315599175680-L-eK/',
+    image: '/images/works/eintracht-pankow/songwriting-table.webp',
+    tag: { de: 'Eintracht Pankow', en: 'Eintracht Pankow', it: 'Eintracht Pankow' },
+    title: {
+      de: 'Songwriting Camp bei Guesstimate',
+      en: 'Songwriting camp at Guesstimate',
+      it: 'Songwriting camp da Guesstimate'
+    },
+    excerpt: {
+      de: 'Organisation, Künstler:innenbegleitung und ein direkter Blick in den kreativen Prozess: vom 20. bis 22. März bei Guesstimate / Loftyard Studios.',
+      en: 'Organisation, artist support and a direct view into the creative process: 20-22 March at Guesstimate / Loftyard Studios.',
+      it: 'Organizzazione, accompagnamento artisti e sguardo diretto al processo creativo: 20-22 marzo da Guesstimate / Loftyard Studios.'
+    }
+  },
+  {
+    id: 'music-business-panel',
+    order: 2,
+    url: 'https://www.linkedin.com/in/luca-invernizzi/',
+    image: '/images/works/eintracht-pankow/music-business-panel.webp',
+    tag: { de: 'Panel', en: 'Panel', it: 'Panel' },
+    title: {
+      de: 'Music Business Management Panel',
+      en: 'Music Business Management panel',
+      it: 'Panel di Music Business Management'
+    },
+    excerpt: {
+      de: 'Als Gast mit Jens Herrndorff und Matilda Pfeil vor Studierenden über Karrierewege, Networking und erste Praxiserfahrungen in der Musikindustrie gesprochen.',
+      en: 'Speaking as a guest with Jens Herrndorff and Matilda Pfeil to students about careers, networking and early practical experiences in music.',
+      it: 'Come ospite con Jens Herrndorff e Matilda Pfeil, ho parlato a studenti di carriera, networking e prime esperienze nella musica.'
+    }
+  },
+  {
+    id: 'reeperbahn-festival',
+    order: 3,
+    url: 'https://www.linkedin.com/posts/lucainve_rbf25-activity-7376877060411133952-KwfR/',
+    image: '/images/works/eintracht-pankow/networking-believe.webp',
+    tag: { de: 'Festival', en: 'Festival', it: 'Festival' },
+    title: {
+      de: 'Reeperbahn Festival & Networking',
+      en: 'Reeperbahn Festival & networking',
+      it: 'Reeperbahn Festival & networking'
+    },
+    excerpt: {
+      de: 'Einblicke in Artist Marketing, Community Building, Algorithmus-Verständnis, Test & Learn und Gespräche mit Menschen aus der Musikbranche.',
+      en: 'Insights into artist marketing, community building, algorithm thinking, test & learn and conversations with music-industry professionals.',
+      it: 'Insight su artist marketing, community building, algoritmo, test & learn e conversazioni con professionisti della musica.'
+    }
+  },
+  {
+    id: 'believe-amplify',
+    order: 4,
+    url: 'https://www.linkedin.com/in/luca-invernizzi/',
+    image: '/images/works/eintracht-pankow/believe-amplify.webp',
+    tag: { de: 'Music Tech', en: 'Music tech', it: 'Music tech' },
+    title: {
+      de: 'Believe Amplify: Zukunft der Musikindustrie',
+      en: 'Believe Amplify: future of the music industry',
+      it: 'Believe Amplify: futuro della music industry'
+    },
+    excerpt: {
+      de: 'Perspektiven von TikTok, Spotify und YouTube Music zu Menschen, Plattformen, Sharing, Kanälen und zukünftigen Möglichkeiten für Artists.',
+      en: 'Perspectives from TikTok, Spotify and YouTube Music on people, platforms, sharing, channels and future opportunities for artists.',
+      it: 'Prospettive da TikTok, Spotify e YouTube Music su persone, piattaforme, sharing, canali e opportunità future per artisti.'
+    }
+  },
+  {
+    id: 'innovation-project',
+    order: 5,
+    url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7466397292628180994/',
+    image: '/images/social-proof/ffhs-pitch.webp',
+    tag: { de: 'Innovation', en: 'Innovation', it: 'Innovazione' },
+    title: {
+      de: 'Innovationsmanagement & Cross-Industry-Innovation',
+      en: 'Innovation management & cross-industry innovation',
+      it: 'Innovation management & cross-industry innovation'
+    },
+    excerpt: {
+      de: 'Ein Beitrag über mein Innovationsprojekt an der FFHS und darüber, wie aus einer Studienidee ein greifbarer Prototyp wurde.',
+      en: 'A post about my FFHS innovation project and how a study idea became a tangible prototype.',
+      it: 'Un post sul mio progetto di innovazione alla FFHS e su come un’idea di studio sia diventata un prototipo concreto.'
+    }
+  },
 ];
 
 export const education = [

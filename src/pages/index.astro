@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import LinkedInEmbed from '../components/LinkedInEmbed.astro';
-import { UI, languages, type Lang } from '../i18n';
+import { UI, type Lang } from '../i18n';
 import { education, linkedinPosts, socialProof, references, certificates } from '../data/site';
 
 const lang = 'de' as Lang;
@@ -14,7 +14,7 @@ const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 const works = (await getCollection('arbeiten')).sort((a, b) => a.data.order - b.data.order);
 const research = (await getCollection('studienarbeiten')).sort((a, b) => a.data.order - b.data.order);
 const media = (await getCollection('medien')).sort((a, b) => a.data.order - b.data.order);
-const timeline = works.filter((work) => work.slug !== 'verbano-unihockey');
+const timeline = works;
 const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slice(0, 3);
 ---
 <BaseLayout lang={lang} title={ui.seoTitle} description={ui.seoDescription}>
@@ -166,7 +166,7 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
             <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.linkedin.title}</h2>
             <p class="mt-5 text-lg leading-8 text-muted">{ui.linkedin.intro}</p>
           </div>
-          <a class="btn-secondary" href={to(`${lang}/linkedin/`)}>{ui.linkedin.all} →</a>
+          <a class="btn-secondary" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">LinkedIn Profil öffnen →</a>
         </div>
         <div class="mt-10 grid gap-5 lg:grid-cols-3">
           {highlightedLinkedin.map((post) => <LinkedInEmbed post={post} lang={lang} />)}
@@ -185,12 +185,15 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           {media.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
-              <article data-tilt-card class="reveal premium-card rounded-[1.8rem] p-7">
-                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.date} · {entry.data.typeLabel}</div>
-                <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{t.title}</h3>
-                <p class="mt-2 text-sm font-semibold text-muted">{entry.data.source} · {t.subtitle}</p>
-                <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
-                {entry.data.link && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={entry.data.link} target="_blank">{ui.media.open} →</a>}
+              <article data-tilt-card class="reveal premium-card overflow-hidden rounded-[1.8rem]">
+                {entry.data.image && <img src={asset(entry.data.image)} alt={t.title} class="aspect-[16/9] w-full object-cover" loading="lazy" />}
+                <div class="p-7">
+                  <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.date} · {entry.data.typeLabel}</div>
+                  <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{t.title}</h3>
+                  <p class="mt-2 text-sm font-semibold text-muted">{entry.data.source} · {t.subtitle}</p>
+                  <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
+                  {entry.data.link && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={entry.data.link} target="_blank">{ui.media.open} →</a>}
+                </div>
               </article>
             );
           })}
@@ -274,14 +277,14 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
     </section>
 
     <section id="kontakt" class="section-y section-padding">
-      <div data-tilt-card class="container-page reveal rounded-[2.5rem] bg-ink p-8 text-white shadow-apple sm:p-12 lg:p-16">
-        <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramel">12</p>
+      <div data-tilt-card class="container-page reveal premium-card rounded-[2.5rem] p-8 text-ink shadow-apple sm:p-12 lg:p-16">
+        <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramelDark">12</p>
         <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
-        <p class="mt-5 max-w-2xl text-lg leading-8 text-white/70">{ui.contact.text}</p>
+        <p class="mt-5 max-w-2xl text-lg leading-8 text-muted">{ui.contact.text}</p>
         <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
-          <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
-          <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>
+          <a class="btn-primary" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
+          <a class="btn-secondary" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
+          <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>
         </div>
       </div>
     </section>

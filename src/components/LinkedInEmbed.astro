@@ -1,15 +1,42 @@
 ---
 import type { Lang } from '../i18n';
-const { post, lang } = Astro.props;
-const currentLang = lang as Lang;
-const title = post.title[currentLang] ?? post.title.de;
+
+type LinkedInPost = {
+  id: string;
+  title: Record<string, string>;
+  excerpt: Record<string, string>;
+  tag?: Record<string, string>;
+  image?: string;
+  url: string;
+};
+
+const { post, lang = 'de' } = Astro.props as { post: LinkedInPost; lang?: Lang };
+const base = import.meta.env.BASE_URL;
+const asset = (path?: string) => (path ? `${base}${path.replace(/^\/+/, '')}` : '');
 ---
-<article data-tilt-card class="linkedin-embed-card reveal">
-  <div class="mb-3 flex items-center justify-between gap-3">
-    <h3 class="text-sm font-extrabold text-ink">{title}</h3>
-    <span class="rounded-full bg-[#0A66C2]/10 px-3 py-1 text-xs font-bold text-[#0A66C2]">LinkedIn</span>
+<a
+  data-tilt-card
+  href={post.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="linkedin-preview-card group reveal flex h-full flex-col overflow-hidden rounded-[2rem]"
+>
+  {post.image && (
+    <div class="linkedin-preview-media aspect-[16/10] overflow-hidden">
+      <img src={asset(post.image)} alt={post.title[lang] ?? post.title.de} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
+    </div>
+  )}
+  <div class="flex flex-1 flex-col gap-4 p-6">
+    <div class="flex items-center justify-between gap-3">
+      <span class="rounded-full bg-[#e8f1ff] px-3 py-1 text-xs font-bold text-[#0a66c2]">LinkedIn</span>
+      {post.tag && <span class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{post.tag[lang] ?? post.tag.de}</span>}
+    </div>
+    <div>
+      <h3 class="text-2xl font-black tracking-[-0.03em] text-ink">{post.title[lang] ?? post.title.de}</h3>
+      <p class="mt-3 text-sm leading-7 text-muted">{post.excerpt[lang] ?? post.excerpt.de}</p>
+    </div>
+    <div class="mt-auto inline-flex items-center gap-2 text-sm font-extrabold text-ink">
+      Beitrag auf LinkedIn öffnen <span class="transition group-hover:translate-x-0.5">→</span>
+    </div>
   </div>
-  <div class="linkedin-frame-wrap">
-    <iframe src={post.src} height={post.height} width="504" frameborder="0" allowfullscreen title="LinkedIn embedded post" loading="lazy"></iframe>
-  </div>
-</article>
+</a>

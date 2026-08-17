@@ -2,177 +2,210 @@
 order: 2
 featured: true
 cover: /images/works/eintracht-pankow/pixxi-artwork.webp
-logo: /images/works/eintracht-pankow/eintracht-banner.webp
+logo: /images/logos/eintracht-pankow.webp
 companyUrl: https://www.eintracht-pankow.de/
 gallery:
-- /images/works/eintracht-pankow/pixxi-artwork.webp
-- /images/works/eintracht-pankow/official-artists.webp
-- /images/works/eintracht-pankow/playlist-official-page.webp
-- /images/works/eintracht-pankow/spotify-playlist-screenshot.webp
-- /images/works/eintracht-pankow/songwriting-camp-table.webp
-- /images/works/eintracht-pankow/songwriting-camp-studio.webp
-- /images/works/eintracht-pankow/songwriting-camp-meeting.webp
+  - /images/works/eintracht-pankow/pixxi-artwork.webp
+  - /images/works/eintracht-pankow/songwriting-table.webp
+  - /images/works/eintracht-pankow/songwriting-studio-blackwhite.webp
+  - /images/works/eintracht-pankow/songwriting-lounge-talk.webp
+  - /images/works/eintracht-pankow/guesstimate-loftyard.webp
+  - /images/works/eintracht-pankow/songwriting-desk.webp
+  - /images/works/eintracht-pankow/songwriting-group.webp
+  - /images/works/eintracht-pankow/music-business-panel.webp
+  - /images/works/eintracht-pankow/believe-amplify.webp
+  - /images/works/eintracht-pankow/networking-believe.webp
 tools:
-- Spotify
-- SoundCloud
-- YouTube
-- Playlist Pflege
-- Label Operations
-- Artist Communication
-- Content Coordination
-- Release Support
-- Recherche
+  - Spotify
+  - SoundCloud
+  - YouTube
+  - Musixmatch
+  - Playlist Pflege
+  - Label Operations
+  - Artist Communication
+  - Signings Recherche
+  - Social Media Trends
+  - Mailout Konzeption
+  - Networking
+  - Event Support
 links:
-- label: Offizielle Website
-  url: https://www.eintracht-pankow.de/
-- label: Alles gut! Playlist
-  url: https://www.eintracht-pankow.de/playlist
-- label: Spotify Playlist
-  url: https://open.spotify.com/playlist/5CevRvf8lxaVhbfqST1afR
-evidence: []
-spotifyEmbed:
-  title: Alles gut! | Deutscher Indie Pop 2026
-  src: https://open.spotify.com/embed/playlist/5CevRvf8lxaVhbfqST1afR?utm_source=generator&theme=0
-  note: Offizielle Eintracht-Pankow-Playlist mit deutschem Indie Pop, Deutschpop, NNDW, Synthpop, Newcomern und Songs aus
-    dem Label-Umfeld.
+  - label: Spotify Playlist
+    url: https://open.spotify.com/playlist/7eDElBqxXmRuKN80m8WdMP?si=6eca5ddfca5e4079
+evidence:
+  - label: Praktikumszeugnis - Eintracht Pankow Musik
+    pdf: /pdf/praktikumszeugnis-eintracht-pankow.pdf
+    note: "Bestätigung meiner Aufgaben in Labelprozessen, Playlistpflege, YouTube-Channel, Musixmatch, Artist-Kommunikation, internen Besprechungen sowie Networking und Branchenevents."
+spotifyEmbeds:
+  - title: "Alles gut! | Deutscher Indie Pop 2026"
+    src: "https://open.spotify.com/embed/playlist/7eDElBqxXmRuKN80m8WdMP?utm_source=generator"
+    note: "Offizielle Eintracht-Pankow-Playlist im Indie-Pop-Kontext."
+    type: playlist
+  - title: "Dolphin Love"
+    src: "https://open.spotify.com/embed/artist/4uT5ywK30prkNZbf4BlQVh?utm_source=generator"
+    note: "Artist im Umfeld der von mir betreuten Label- und Playlistarbeit."
+    type: artist
+  - title: "pixxi"
+    src: "https://open.spotify.com/embed/artist/3Y9fcdMTvsOkdgLXxxwjsE?utm_source=generator"
+    note: "Einblicke in Release-, Content- und Artist-Kommunikation."
+    type: artist
+  - title: "Streichelt"
+    src: "https://open.spotify.com/embed/artist/7pMN4vp0od5iZvA59GNQ1R?utm_source=generator"
+    note: "Artist im Eintracht-Pankow-Roster- und Playlist-Kontext."
+    type: artist
+  - title: "Mamoré"
+    src: "https://open.spotify.com/embed/artist/2a6Sq96x1AYBfPTFr9js17?utm_source=generator"
+    note: "Artist im Umfeld von Labelarbeit, kuratierten Playlists und Release-Kontexten."
+    type: artist
 roster:
-- name: Streichelt
-  note: Eintracht-Pankow-Artist; NNDW-/Indie-Pop-Kontext
-- name: pixxi
-  note: Eintracht-Pankow-Artist; im Playlist- und Songwriting-Camp-Kontext sichtbar
-- name: Mamoré
-  note: Eintracht-Pankow-Roster / Indie-Pop-Umfeld
-- name: PARA
-  note: Eintracht-Pankow-Roster / Playlist-Kontext
-- name: Mollo
-  note: Eintracht-Pankow-Artist; Songwriting-Camp-Kontext
-- name: Julia Grotenburg
-  note: Eintracht-Pankow-Roster / Playlist-Kontext
+  - name: Dolphin Love
+    note: "Spotify-Artist im kuratierten Musik- und Playlistumfeld."
+    url: https://open.spotify.com/intl-de/artist/4uT5ywK30prkNZbf4BlQVh
+  - name: pixxi
+    note: "Artist im Eintracht-Pankow-Umfeld; Bezug zu Release-, Content- und Plattformarbeit."
+    url: https://open.spotify.com/intl-de/artist/3Y9fcdMTvsOkdgLXxxwjsE
+  - name: Streichelt
+    note: "Artist im Roster-/Playlist-Kontext von Eintracht Pankow Musik."
+    url: https://open.spotify.com/intl-de/artist/7pMN4vp0od5iZvA59GNQ1R
+  - name: Mamoré
+    note: "Artist im Label- und Playlistumfeld."
+    url: https://open.spotify.com/intl-de/artist/2a6Sq96x1AYBfPTFr9js17
+  - name: PARA
+    note: "Artist im Eintracht-Pankow-Roster-Kontext."
+  - name: Mollo
+    note: "Artist im Eintracht-Pankow-Roster-Kontext."
+  - name: Julia Grotenburg
+    note: "Artist im Eintracht-Pankow-Roster-Kontext."
 translations:
   de:
     title: Eintracht Pankow Musik
-    role: Artist & Label Management / Produktmanagement Praktikum
+    role: Produktmanagement, Artist & Label Management
+    cardRole: Artist & Label Management / Produktmanagement Praktikum
     company: Eintracht Pankow Musik GmbH
     location: Berlin, Deutschland
     period: 08/2025 - 01/2026
     category: Music Label / Artist Management
-    short: Einblick in Labelprozesse, Plattformpflege, Playlist-Kuration und Artist-Kommunikation in einem unabhängigen Berliner
-      Musikumfeld.
-    intro: Bei Eintracht Pankow Musik unterstützte ich Labelprozesse und arbeitete eng im Umfeld von Geschäftsführung, Artists
-      und digitalen Plattformen. Der Fokus lag auf Spotify-Playlist, SoundCloud, YouTube, Artist-Kommunikation und organisatorischen
-      Aufgaben rund um Releases, Content und das Berliner Indie-Pop-Umfeld.
-    situation: Nach dem Umzug nach Berlin wollte ich praktische Erfahrung direkt in der Musikbranche sammeln. Eintracht Pankow
-      ist Label, Musikverlag und Wegbegleiter für Artists im Pop- und Alternative-Bereich und verbindet Artist Development,
-      Releases, Plattformarbeit und Community-Aufbau.
+    cardCategory: Label / Playlist / Artist Communication
+    short: "Labelprozesse, Playlist-Kuration, YouTube-Channel, Artist-Kommunikation, Musixmatch und Einblicke in Branchenevents."
+    cardShort: "Einblick in Labelprozesse, Playlistpflege, Artist-Kommunikation und Music-Business-Networking in einem unabhängigen Berliner Musikunternehmen."
+    intro: "Bei Eintracht Pankow Musik bekam ich meinen bisher wichtigsten Einblick in ein unabhängiges Berliner Musikunternehmen: vom operativen Labelalltag über Playlistpflege und Artist-Kommunikation bis zu Branchenevents, Networking und einem Songwriting Camp."
+    situation: "Eintracht Pankow beschreibt sich als Record Label, Musikverlag und Wegbegleiter aus Berlin. Der Fokus liegt auf Artist Development, Pop- und Alternative-Releases, digitaler Vermarktung und nachhaltiger Karriereentwicklung. Für mich war dieses Praktikum der Moment, in dem aus meiner Motivation für Musik konkrete Labelpraxis wurde."
     tasks:
-    - Mitwirkung an Label-Prozessen und organisatorischen Abläufen
-    - Betreuung und Pflege der Spotify-Playlist „Alles gut! | Deutscher Indie Pop“ sowie SoundCloud- und YouTube-Kanälen
-    - Unterstützung bei Artist-Kommunikation, Meetings und Abstimmungen rund um Content und Releases
-    - Recherche und Beobachtung von deutscher Indie-Pop-, Deutschpop-, NNDW- und Newcomer-Szene
-    - Einblicke in Domestic-Repertoire von Eintracht Pankow und International-Repertoire von Interior Design
-    - Teilnahme an kreativen Austauschformaten wie Songwriting-Camp / Studio- und Artist-Kontexten
+      - "Kontaktaufnahme und Erstkommunikation mit potenziellen neuen Künstler:innen im Signing-Kontext"
+      - "Regelmäßiges Aktualisieren und Pflegen von Label-Playlists, inklusive kuratorischem Blick auf passende Songs und Artists"
+      - "Konzeption, Einrichtung und Pflege des Label-YouTube-Channels sowie Betreuung digitaler Plattformen"
+      - "Einpflegen und Verwalten von Songtexten über Musixmatch"
+      - "Entwicklung eines regelmäßigen Mailouts zu aktuellen Social-Media- und Marketing-Trends für Artists"
+      - "Teilnahme an internen Besprechungen und Aufbau eines praxisnahen Verständnisses für Produktanlage, Anlieferung und digitale Distribution"
+      - "Unterstützung im Umfeld von Branchentreffen, Reeperbahn Festival, Believe-Event, Music-Business-Panel und Songwriting Camp"
     results:
-    - Praktischer Einblick in unabhängige Labelarbeit, Musikverlag und Artist Development in Berlin
-    - Besseres Verständnis für Playlist-Kuration, Plattformpflege, Release-Kontexte und digitale Musikdistribution
-    - Sichtbarer Bezug zu einem aktiven Roster mit Artists wie Streichelt, pixxi, Mamoré, PARA, Mollo und Julia Grotenburg
-    - Verbindung von Musikleidenschaft, Organisation, Kommunikation und digitalem Plattformdenken
+      - "Praktischer Einblick in Künstlerentwicklung, digitale Vermarktung, Release- und Content-Strategien"
+      - "Besseres Verständnis für Playlist-Kuration, Plattformpflege, Produktanlage, Anlieferung und Musikdistribution"
+      - "Sichtbarer Bezug zu Artists und Playlist-Kontexten wie Dolphin Love, pixxi, Streichelt, Mamoré und weiteren Acts"
+      - "Professionelle Erfahrung in Networking, Beziehungsaufbau und Kommunikation mit internen sowie externen Partner:innen"
+      - "Mitarbeit an einem Songwriting Camp bei Guesstimate / Loftyard Studios: Organisation, Künstler:innenbegleitung und Einblick in kreative Prozesse"
+      - "Erste Rolle als Gast in einem Music-Business-Management-Panel für Studierende, gemeinsam mit erfahrenen Personen aus der Branche"
     learnings:
-    - Labelarbeit braucht Kreativität, aber auch Timing, klare Kommunikation und saubere operative Abläufe.
-    - Playlists sind nicht nur Musiklisten, sondern ein kuratiertes Kommunikations- und Discovery-Tool.
-    - Artist Development bedeutet, Inhalte, Menschen, Plattformen und Release-Momente zusammenzudenken.
-    contextTitle: Offizieller Label-Kontext
+      - "Labelarbeit verbindet Kreativität, Timing, Struktur und sehr präzise Kommunikation."
+      - "Playlistpflege ist nicht nur Musikgeschmack, sondern auch Positionierung, Zielgruppenverständnis und kontinuierliche Beobachtung der Szene."
+      - "Networking entsteht nicht durch laute Gesten, sondern durch echtes Interesse, Vorbereitung und verlässliches Auftreten."
+      - "Ein Songwriting Camp hat mir gezeigt, wie viel Teamarbeit, Herz und Vertrauen hinter Musik steckt, bevor ein Song überhaupt veröffentlicht wird."
+    contextTitle: "Label, Verlag & Artist Development"
     context:
-    - Eintracht Pankow beschreibt sich als Record Label, Musikverlag und Wegbegleiter aus Berlin.
-    - Der Fokus liegt auf Artist-Förderung, Musikveröffentlichungen und nachhaltigen Karrieren im Pop- und Alternative-Bereich.
-    - Die offizielle Playlist „Alles gut! | Deutscher Indie Pop“ bündelt Songs aus dem deutschen Indie-Pop-Kosmos, inklusive
-      Eintracht-Pankow-Artists und weiteren Newcomern aus DACH.
-    focusTitle: Label-Umfeld & Artists
+      - "Eintracht Pankow positioniert sich als unabhängiges Musikunternehmen aus Berlin mit Fokus auf Artists, Releases und nachhaltige Karrieren."
+      - "Der offizielle Außenauftritt verbindet Record Label, Musikverlag, Artist Development, Berlin und Indie Pop."
+      - "Die Playlist 'Alles gut! | Deutscher Indie Pop' zeigt den kuratierten Blick auf deutschsprachigen Indie-Pop und das musikalische Umfeld des Labels."
+    focusTitle: "Highlights aus dem Praktikum"
     focus:
-    - 'Roster-/Label-Umfeld: Streichelt, pixxi, Mamoré, PARA, Mollo und Julia Grotenburg.'
-    - 'Playlist-Kontext: Deutscher Indie Pop, Deutschpop, NNDW, Synthpop, Newcomer und Berlin-Bezug.'
-    - 'Songwriting-Camp-Kontext: kreative Zusammenarbeit mit Artists, Songwriter:innen und Produzent:innen in Berlin.'
+      - "Songwriting Camp vom 20. bis 22. März bei Guesstimate / Loftyard Studios: Organisation, Begleitung der Artists und direkter Einblick in den kreativen Entstehungsprozess von Musik."
+      - "Reeperbahn Festival: Austausch mit Persönlichkeiten aus der Musikindustrie und Inputs zu Artist Marketing, Community Building, Algorithmus, Test & Learn und organischem Wachstum."
+      - "Believe Amplify Event: Perspektiven zu TikTok, Spotify, YouTube Music, Music Partnerships und zukünftigen Entwicklungen in der Musikindustrie."
+      - "Music Business Management Panel mit Kristiania University: Teilen meiner eigenen Erfahrungen als Student und Praktikant im Music Business."
   en:
-    title: Eintracht Pankow Music
-    role: Artist & label management / product management internship
-    company: Eintracht Pankow Music GmbH
+    title: Eintracht Pankow Musik
+    role: Product management, artist & label management
+    cardRole: Artist & label management / product management internship
+    company: Eintracht Pankow Musik GmbH
     location: Berlin, Germany
     period: 08/2025 - 01/2026
     category: Music label / artist management
-    short: Hands-on insight into label processes, platform management, playlist curation and artist communication in Berlin’s
-      independent music scene.
-    intro: At Eintracht Pankow Music I supported label processes in the context of management, artists and digital platforms.
-      The focus was Spotify playlist care, SoundCloud, YouTube, artist communication and organisational tasks around releases,
-      content and Berlin’s indie-pop environment.
-    situation: After moving to Berlin, I wanted practical experience directly in the music industry. Eintracht Pankow acts
-      as a label, publisher and companion for artists in pop and alternative music, connecting artist development, releases,
-      platform work and community building.
+    cardCategory: Label / playlist / artist communication
+    short: "Label processes, playlist curation, YouTube channel, artist communication, Musixmatch and insights into industry events."
+    cardShort: "Hands-on label work, playlist maintenance, artist communication and music-business networking in an independent Berlin music company."
+    intro: "At Eintracht Pankow Musik I gained my strongest practical insight into an independent Berlin music company: label operations, playlist work, artist communication, industry events, networking and a songwriting camp."
+    situation: "Eintracht Pankow positions itself as a Berlin-based record label, music publisher and artist-development partner. For me, this internship turned my motivation for music into concrete label practice."
     tasks:
-    - Support with label processes and organisational workflows
-    - Maintenance of the Spotify playlist “Alles gut! | Deutscher Indie Pop” as well as SoundCloud and YouTube channels
-    - Support with artist communication, meetings and coordination around content and releases
-    - Research and observation of German indie pop, Deutschpop, NNDW and newcomer scenes
-    - Insights into domestic repertoire at Eintracht Pankow and international repertoire at Interior Design
-    - Participation in creative exchange formats such as songwriting camp / studio and artist contexts
+      - "Initial communication with potential new artists in a signing context"
+      - "Regular maintenance and updating of label playlists"
+      - "Conception, setup and maintenance of the label YouTube channel"
+      - "Managing lyrics via Musixmatch"
+      - "Development of a regular mailout on current social-media and marketing trends for artists"
+      - "Participation in internal meetings and practical insights into product setup, delivery and digital distribution"
+      - "Support around industry events, Reeperbahn Festival, Believe event, music-business panel and songwriting camp"
     results:
-    - Practical understanding of independent label work, music publishing and artist development in Berlin
-    - Deeper understanding of playlist curation, platform care, release contexts and digital music distribution
-    - Visible connection to an active roster including Streichelt, pixxi, Mamoré, PARA, Mollo and Julia Grotenburg
-    - Combination of passion for music with organisation, communication and digital platform thinking
+      - "Practical insight into artist development, digital marketing, release and content strategies"
+      - "Better understanding of playlist curation, platform maintenance, product delivery and music distribution"
+      - "Visible connection to artists and playlist contexts such as Dolphin Love, pixxi, Streichelt and Mamoré"
+      - "Experience in networking, relationship building and professional communication"
+      - "Participation in a songwriting camp at Guesstimate / Loftyard Studios"
+      - "First guest role in a music-business-management panel for students"
     learnings:
-    - Label work needs creativity, but also timing, clear communication and clean operational workflows.
-    - Playlists are not just music lists, but curated communication and discovery tools.
-    - Artist development means thinking content, people, platforms and release moments together.
-    contextTitle: Official label context
+      - "Label work connects creativity, timing, structure and precise communication."
+      - "Playlist curation is about positioning, audience understanding and continuous scene observation."
+      - "Networking grows from genuine interest, preparation and reliable behavior."
+      - "The songwriting camp showed me how much teamwork and trust stand behind music before release."
+    contextTitle: "Label, publishing & artist development"
     context:
-    - Eintracht Pankow describes itself as a record label, music publisher and companion from Berlin.
-    - Its focus is on supporting artists, releasing music and building sustainable careers in the pop and alternative field.
-    - The official playlist “Alles gut! | Deutscher Indie Pop” curates songs from the German indie-pop cosmos, including Eintracht
-      Pankow artists and DACH newcomers.
-    focusTitle: Label environment & artists
+      - "Eintracht Pankow positions itself as an independent Berlin music company focused on artists, releases and sustainable careers."
+      - "Its public presence connects record label, music publishing, artist development, Berlin and indie pop."
+      - "The playlist 'Alles gut! | Deutscher Indie Pop' reflects the label's curated view of German indie pop."
+    focusTitle: "Internship highlights"
     focus:
-    - 'Roster / label environment: Streichelt, pixxi, Mamoré, PARA, Mollo and Julia Grotenburg.'
-    - 'Playlist context: German indie pop, Deutschpop, NNDW, synthpop, newcomers and Berlin.'
-    - 'Songwriting-camp context: creative collaboration with artists, songwriters and producers in Berlin.'
+      - "Songwriting camp at Guesstimate / Loftyard Studios: organisation, artist support and insight into creative music processes."
+      - "Reeperbahn Festival: exchange with music-industry professionals and insights on artist marketing and community building."
+      - "Believe Amplify event: perspectives on TikTok, Spotify, YouTube Music and the future of music marketing."
+      - "Music Business Management panel with Kristiania University: sharing my own early path in the music industry."
   it:
     title: Eintracht Pankow Musik
-    role: Artist & label management / stage product management
+    role: Product management, artist & label management
+    cardRole: Stage product management / artist & label management
     company: Eintracht Pankow Musik GmbH
     location: Berlino, Germania
     period: 08/2025 - 01/2026
-    category: Etichetta musicale / artist management
-    short: Esperienza pratica in processi label, gestione piattaforme, playlist curation e comunicazione con artisti nella
-      scena musicale berlinese.
-    intro: Presso Eintracht Pankow Musik ho supportato processi label nel contesto di management, artisti e piattaforme digitali.
-      Il focus era la cura della playlist Spotify, SoundCloud, YouTube, la comunicazione con artisti e l’organizzazione attorno
-      a release, contenuti e scena indie-pop berlinese.
-    situation: Dopo il trasferimento a Berlino volevo esperienza diretta nella musica. Eintracht Pankow lavora come label,
-      editore musicale e partner di sviluppo per artisti nel pop e alternative, collegando artist development, release, piattaforme
-      e community.
+    category: Music label / artist management
+    cardCategory: Label / playlist / artist communication
+    short: "Processi label, playlist, YouTube channel, comunicazione artisti, Musixmatch ed eventi di settore."
+    cardShort: "Esperienza pratica in label work, playlist, comunicazione con artisti e networking nel music business berlinese."
+    intro: "Da Eintracht Pankow Musik ho avuto il mio insight più concreto in una realtà musicale indipendente a Berlino: label operations, playlist, artist communication, eventi di settore, networking e songwriting camp."
+    situation: "Eintracht Pankow si presenta come record label, music publisher e partner per artist development a Berlino. Per me questo stage ha trasformato la motivazione per la musica in pratica concreta di label."
     tasks:
-    - Supporto a processi label e workflow organizzativi
-    - Cura della playlist Spotify “Alles gut! | Deutscher Indie Pop” e dei canali SoundCloud e YouTube
-    - Supporto nella comunicazione con artisti, meeting e coordinamento su contenuti e release
-    - Ricerca e osservazione della scena German indie pop, Deutschpop, NNDW e newcomer
-    - Insight nel domestic repertoire di Eintracht Pankow e nell’international repertoire di Interior Design
-    - Partecipazione a contesti creativi come songwriting camp, studio e incontri con artisti
+      - "Primo contatto e comunicazione con potenziali nuovi artisti nel contesto signing"
+      - "Aggiornamento e cura delle label playlist"
+      - "Concezione, setup e cura del canale YouTube della label"
+      - "Gestione testi tramite Musixmatch"
+      - "Sviluppo di un mailout sui trend social media e marketing per artists"
+      - "Partecipazione a meeting interni e insight su product setup, delivery e distribuzione digitale"
+      - "Supporto nel contesto di eventi di settore, Reeperbahn Festival, Believe Event, panel e songwriting camp"
     results:
-    - Comprensione pratica del lavoro di label indipendente, music publishing e artist development a Berlino
-    - Approfondimento di playlist curation, cura piattaforme, release e distribuzione digitale
-    - 'Collegamento visibile con un roster attivo: Streichelt, pixxi, Mamoré, PARA, Mollo e Julia Grotenburg'
-    - Unione di passione musicale, organizzazione, comunicazione e piattaforme digitali
+      - "Insight pratico in artist development, digital marketing, release e content strategy"
+      - "Maggiore comprensione di playlist curation, piattaforme digitali, delivery e distribuzione musicale"
+      - "Collegamento visibile ad artisti e playlist come Dolphin Love, pixxi, Streichelt e Mamoré"
+      - "Esperienza in networking, relationship building e comunicazione professionale"
+      - "Partecipazione a un songwriting camp da Guesstimate / Loftyard Studios"
+      - "Prima esperienza come guest in un panel di music business management per studenti"
     learnings:
-    - Il lavoro label richiede creatività, ma anche timing, comunicazione chiara e processi operativi puliti.
-    - 'Le playlist non sono solo liste musicali: sono strumenti curati di comunicazione e discovery.'
-    - Artist development significa pensare insieme contenuti, persone, piattaforme e momenti di release.
-    contextTitle: Contesto ufficiale della label
+      - "Il lavoro in label unisce creatività, timing, struttura e comunicazione precisa."
+      - "Curare una playlist significa anche posizionamento, target e osservazione continua della scena."
+      - "Il networking nasce da interesse autentico, preparazione e affidabilità."
+      - "Il songwriting camp mi ha mostrato quanto team, fiducia e cuore ci siano dietro una canzone."
+    contextTitle: "Label, publishing & artist development"
     context:
-    - Eintracht Pankow si descrive come record label, editore musicale e partner per artisti da Berlino.
-    - Il focus è supportare artisti, pubblicare musica e costruire carriere sostenibili nel pop e alternative.
-    - La playlist ufficiale “Alles gut! | Deutscher Indie Pop” raccoglie canzoni dal mondo indie-pop tedesco, inclusi artisti
-      Eintracht Pankow e newcomer DACH.
-    focusTitle: Ambiente label & artisti
+      - "Eintracht Pankow si posiziona come realtà musicale indipendente berlinese focalizzata su artisti, release e carriere sostenibili."
+      - "L'identità ufficiale unisce record label, music publishing, artist development, Berlino e indie pop."
+      - "La playlist 'Alles gut! | Deutscher Indie Pop' mostra il lato curatoriale del label nel contesto indie-pop tedesco."
+    focusTitle: "Highlights dello stage"
     focus:
-    - 'Roster / ambiente label: Streichelt, pixxi, Mamoré, PARA, Mollo e Julia Grotenburg.'
-    - 'Contesto playlist: German indie pop, Deutschpop, NNDW, synthpop, newcomer e Berlino.'
-    - 'Contesto songwriting camp: collaborazione creativa con artisti, songwriter e producer a Berlino.'
+      - "Songwriting camp da Guesstimate / Loftyard Studios: organizzazione, accompagnamento artisti e insight sul processo creativo."
+      - "Reeperbahn Festival: scambio con professionisti della musica e input su artist marketing e community building."
+      - "Believe Amplify Event: prospettive su TikTok, Spotify, YouTube Music e futuro del music marketing."
+      - "Music Business Management Panel con Kristiania University: condivisione del mio percorso iniziale nella music industry."
 ---

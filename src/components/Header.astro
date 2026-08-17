@@ -10,7 +10,6 @@ const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
 const switchHref = (target: Lang) => {
   if (slug) return to(`${target}/arbeiten/${slug}/`);
   if (educationId) return to(`${target}/ausbildung/${educationId}/`);
-  if (page === 'linkedin') return to(`${target}/linkedin/`);
   return to(`${target}/`);
 };
 const navItems = [
@@ -25,7 +24,7 @@ const navItems = [
     </a>
     <nav class="hidden items-center gap-1 rounded-full border border-white/60 bg-white/40 p-1 xl:flex">
       {navItems.map(([id, label]) => (
-        <a href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)} class="nav-link text-sm font-semibold text-muted transition hover:text-ink hover:bg-white/50">{label}</a>
+        <a href={to(`${lang}/#${id}`)} class="nav-link text-sm font-semibold text-muted transition hover:text-ink hover:bg-white/50">{label}</a>
       ))}
     </nav>
     <div class="flex items-center gap-2">
@@ -38,7 +37,7 @@ const navItems = [
         <summary class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-black/10 bg-white/100 text-lg font-black list-none">☰</summary>
         <div class="absolute right-0 mt-3 w-64 rounded-3xl border border-black/10 bg-white p-3 shadow-soft">
           {navItems.map(([id, label]) => (
-            <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-muted hover:bg-paper hover:text-ink" href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)}>{label}</a>
+            <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-muted hover:bg-paper hover:text-ink" href={to(`${lang}/#${id}`)}>{label}</a>
           ))}
         </div>
       </details>

@@ -19,6 +19,7 @@ const allWorks = (await getCollection('arbeiten')).sort((a, b) => a.data.order -
 const currentIndex = allWorks.findIndex((work) => work.slug === entry.slug);
 const nextWork = allWorks[(currentIndex + 1) % allWorks.length];
 const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
+const spotifyEmbeds = [...(data.spotifyEmbed ? [data.spotifyEmbed] : []), ...(data.spotifyEmbeds ?? [])];
 ---
 <BaseLayout lang={lang} title={`${t.title} - Luca Invernizzi`} description={t.short} slug={entry.slug}>
   <main>
@@ -52,7 +53,7 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
 
 
 
-    {(t.context?.length || t.focus?.length || data.roster?.length || data.spotifyEmbed) && <section class="section-padding py-12 sm:py-20">
+    {(t.context?.length || t.focus?.length || data.roster?.length || spotifyEmbeds.length) && <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-[1fr_1fr]">
         {t.context?.length && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10">
           <p class="kicker">Kontext</p>
@@ -80,22 +81,30 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
             ))}
           </div>
         </article>}
-        {data.spotifyEmbed && <article class="reveal rounded-[2rem] bg-[#121212] p-5 text-white shadow-apple lg:col-span-2 sm:p-8">
+        {spotifyEmbeds.length > 0 && <article class="reveal premium-card rounded-[2rem] p-5 shadow-soft lg:col-span-2 sm:p-8">
           <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p class="kicker text-caramel">Spotify</p>
-              <h2 class="mt-2 text-3xl font-black tracking-tight">{data.spotifyEmbed.title}</h2>
-              {data.spotifyEmbed.note && <p class="mt-3 max-w-3xl text-sm leading-6 text-white/70">{data.spotifyEmbed.note}</p>}
+              <p class="kicker">Spotify</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight">Direkt reinhören</h2>
+              <p class="mt-3 max-w-3xl text-sm leading-6 text-muted">Playlist und ausgewählte Artists direkt im Portfolio anhören.</p>
             </div>
           </div>
-          <iframe class="spotify-embed" src={data.spotifyEmbed.src} width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <div class="grid gap-5 lg:grid-cols-2">
+            {spotifyEmbeds.map((embed: { title: string; src: string; note?: string }) => (
+              <div class="rounded-[1.6rem] bg-white/75 p-4 ring-1 ring-black/5">
+                <h3 class="text-lg font-extrabold text-ink">{embed.title}</h3>
+                {embed.note && <p class="mt-2 text-sm leading-6 text-muted">{embed.note}</p>}
+                <iframe class="spotify-embed mt-4" src={embed.src} width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+            ))}
+          </div>
         </article>}
       </div>
     </section>}
 
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <article class="reveal rounded-[2rem] bg-ink p-8 text-white sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2><div class="mt-7 grid gap-4 sm:grid-cols-2">{t.results.map((result: string) => <div class="rounded-[1.4rem] bg-white/10 p-5 ring-1 ring-white/10"><p class="text-base leading-7 text-white/80">{result}</p></div>)}</div></article>
+        <article class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2><div class="mt-7 grid gap-4 sm:grid-cols-2">{t.results.map((result: string) => <div class="rounded-[1.4rem] bg-white/75 p-5 ring-1 ring-black/5"><p class="text-base leading-7 text-muted">{result}</p></div>)}</div></article>
         <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.tools}</h2><div class="mt-6 flex flex-wrap gap-2">{data.tools.map((tool: string) => <span class="rounded-full bg-paper px-4 py-2 text-sm font-semibold text-muted">{tool}</span>)}</div></article>
       </div>
     </section>

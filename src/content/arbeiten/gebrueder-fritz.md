@@ -1,162 +1,155 @@
 ---
 order: 3
 featured: true
-cover: /images/covers/gebrueder-fritz-cover.svg
-logo: /images/logos/gebrueder-fritz-logo.svg
+cover: /images/works/gebrueder-fritz/gebrueder-fritz-cover.svg
+logo: /images/logos/gebrueder-fritz-mark.svg
 companyUrl: https://www.gebruederfritz.com/
 gallery:
-- /images/covers/gebrueder-fritz-cover.svg
-- /images/covers/gebrueder-fritz-event.svg
-- /images/covers/gebrueder-fritz-admin.svg
-- /images/works/gebrueder-fritz/jubilaeum-team.webp
-- /images/works/gebrueder-fritz/jubilaeum-toast.webp
-- /images/works/gebrueder-fritz/gebrueder-management.webp
+  - /images/works/gebrueder-fritz/gebrueder-fritz-cover.svg
+  - /images/works/gebrueder-fritz/event-group.webp
+  - /images/works/gebrueder-fritz/event-toast.webp
+  - /images/works/gebrueder-fritz/event-bag.webp
 tools:
-- Pipedrive
-- Mailchimp
-- SevDesk
-- WordPress/Webflow
-- Canva
-- CapCut
-- CRM
-- Newsletter
-- Sales Support
-- Event Organisation
-links:
-- label: Offizielle Website
-  url: https://www.gebruederfritz.com/
-evidence: []
+  - Pipedrive
+  - SevDesk
+  - Mailchimp
+  - Trello
+  - Excel
+  - OneDrive
+  - Google Docs
+  - CapCut
+  - CRM
+  - Newsletter
+  - Event Operations
+  - Content Creation
+links: []
+evidence:
+  - label: Praktikumszeugnis - Gebrüder Fritz GmbH
+    pdf: /pdf/praktikumszeugnis-gebrueder-fritz.pdf
+    note: "Bestätigung meiner Tätigkeiten in Sales & CRM, Marketing & Kommunikation, Newsletter, Event-Management, Content Creation, Projektmanagement, Administration und strukturierter Tool-Nutzung."
 roster: []
 translations:
   de:
     title: Gebrüder Fritz Locations
     role: Marketing, Sales & Administration
+    cardRole: Marketing, Sales & Administration
     company: Gebrüder Fritz GmbH
     location: Berlin, Deutschland
     period: 07/2025 - 10/2025
     category: Marketing / Sales / Event Operations
-    short: Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location-
-      und Eventumgebung.
-    intro: Bei Gebrüder Fritz arbeitete ich an der Schnittstelle von Marketing, Sales, Administration und Eventorganisation.
-      Ich unterstützte Social Media, Website, Newsletter, CRM, Angebote, Präsentationen, Follow-ups und operative Abläufe
-      rund um hochwertige Berliner Eventlocations.
-    situation: Gebrüder Fritz betreibt stilvolle Eventlocations in zentralen Berliner Lagen und verbindet Altbau-Atmosphäre
-      mit professioneller Eventorganisation, Inhouse-Catering, Interior-Setups und persönlicher Beratung. Dadurch war meine
-      Arbeit nicht nur digital, sondern sehr nah am konkreten Eventbetrieb.
+    cardCategory: Marketing / Sales / Event Operations
+    short: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
+    cardShort: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
+    intro: "Bei Gebrüder Fritz machte ich meinen ersten beruflichen Schritt in Berlin. Die Arbeit verband Marketing, Sales, CRM, Newsletter, Content Creation, Eventorganisation und Administration in einer hochwertigen Eventlocation-Umgebung."
+    situation: "Gebrüder Fritz bietet stilvolle Altbau-Eventlocations in zentralen Berliner Lagen und verbindet Räume, Eventorganisation, Inhouse-Catering, Interior und Service. Für mich war das Praktikum ein praktischer Einstieg in professionelle Kommunikation, Kundenkontakt und strukturierte Arbeitsprozesse."
     tasks:
-    - Betreuung und Weiterentwicklung von Social-Media-Kanälen, Website und Newsletter-Kampagnen
-    - Erstellung von Marketing-Content, Videos und visuellen Assets nach CI
-    - Unterstützung bei CRM, Sales-Vorbereitung und Kundenkommunikation
-    - Erstellung von Angeboten, Präsentationen, Rechnungen und Follow-ups
-    - Assistenz der Geschäftsführung und interne Organisation
-    - Einblick in Eventorganisation, Raumvorbereitung, Abläufe und Gästekommunikation
+      - "Pflege und Verwaltung von Kundendaten in Pipedrive"
+      - "Anlegen und Nachverfolgen von Deals vom Erstkontakt bis zur Angebotsphase"
+      - "Mitarbeit bei Angeboten und Rechnungen in SevDesk"
+      - "Newsletter-Rückläufer bearbeiten, Kontakte pflegen und Kampagnen mit Mailchimp/Pipedrive vorbereiten"
+      - "LinkedIn-Recherchen und Unterstützung bei Marketingmaßnahmen"
+      - "Unterstützung bei Planung, Aufbau, Organisation und Abbau von Events"
+      - "Foto- und Videomaterial für Marketing und Social Media unter Beachtung der Corporate Identity erstellen und bearbeiten"
+      - "Aufgaben mit Eisenhower-Matrix, Trello, Excel, OneDrive und Google Docs strukturieren"
     results:
-    - Praktische Erfahrung in einem Unternehmen, in dem Marketing, Sales und Eventbetrieb eng zusammenarbeiten
-    - Besseres Verständnis für hochwertige B2B- und Private-Event-Kommunikation
-    - Routine im Umgang mit CRM, Newsletter, Angeboten und operativer Priorisierung
-    - Verbindung von kreativem Content, Organisation und direktem Kundenbezug
+      - "Schneller Einstieg in CRM, Sales-Prozesse, Newsletter und strukturierte Kundenkommunikation"
+      - "Verständnis dafür, wie Marketing, Sales, Events und Administration im Alltag ineinandergreifen"
+      - "Praxis in der Erstellung von Content und Marketingmaterial in einem CI-geführten Umfeld"
+      - "Stärkung von Organisation, Eigeninitiative, professionellem Auftreten und zuverlässiger Teamarbeit"
     learnings:
-    - Gutes Eventmarketing beginnt nicht erst beim Post, sondern bei Raumgefühl, Ablauf, Service und klarer Kommunikation.
-    - CRM, Follow-ups und saubere Dokumentation sind entscheidend, damit kreative Arbeit wirtschaftlich nutzbar wird.
-    - In Eventumgebungen zählt Aufmerksamkeit für Details, schnelle Abstimmung und ruhige Umsetzung unter Zeitdruck.
-    contextTitle: Offizieller Unternehmenskontext
+      - "Professionelle Kommunikation beginnt oft bei sauberer Datenpflege, klaren Follow-ups und strukturierter Vorbereitung."
+      - "Events wirken nach außen leicht, brauchen intern aber präzise Planung, Timing und viele kleine Details."
+      - "Dieses Praktikum gab mir die Grundlage, um in Berlin beruflich anzukommen und Verantwortung zu übernehmen."
+    contextTitle: "Boutique Locations & Event Operations"
     context:
-    - Gebrüder Fritz positioniert sich als Anbieter aussergewöhnlicher Eventlocations in Berlin für Konferenzen, Meetings,
-      Tagungen, Empfänge, Dinner, Firmenfeiern, private Anlässe und Shootings.
-    - Die Locations liegen unter anderem in Mitte, am Checkpoint Charlie, am Hackeschen Markt und in Charlottenburg und verbinden
-      flexible Räume mit Interior, Catering und Eventberatung.
-    - Das Projektteam begleitet Veranstaltungen laut Website von der Anfrage bis zum Event vor Ort und kombiniert Beratung,
-      Raumgestaltung, Inhouse-Küche und operative Umsetzung.
-    focusTitle: Praxisfelder
+      - "Gebrüder Fritz verbindet drei außergewöhnliche Eventlocations in Berlin mit professioneller Eventorganisation."
+      - "Die Locations werden für Konferenzen, Meetings, Workshops, Empfänge, Produktpräsentationen, Dinner, Film- und Fotoproduktionen genutzt."
+      - "Das Unternehmen arbeitet mit Interior, Inhouse-Küche, Eventberatung und einem detailorientierten Serviceanspruch."
+    focusTitle: "Was ich dort gelernt habe"
     focus:
-    - 'Marketing & Website: digitale Kommunikation, Content, Newsletter und CI-nahe Darstellung.'
-    - 'Sales & CRM: Anfrageprozesse, Follow-ups, Angebote und Präsentationen.'
-    - 'Event Operations: Vorbereitung, Setup, Kommunikation und Unterstützung im Live-Betrieb.'
+      - "CRM & Sales: von Kundendaten über Deals bis zu Angeboten und Follow-ups."
+      - "Marketing & Kommunikation: Newsletter, Kontakte, LinkedIn-Recherche, Kampagnen und Content."
+      - "Event Operations: Planung, Aufbau, Durchführung und Nachbereitung von Veranstaltungen."
   en:
     title: Gebrüder Fritz Locations
     role: Marketing, sales & administration
+    cardRole: Marketing, sales & administration
     company: Gebrüder Fritz GmbH
     location: Berlin, Germany
     period: 07/2025 - 10/2025
     category: Marketing / sales / event operations
-    short: Marketing, CRM, newsletters, sales preparation, content and operational support in a Berlin location and events
-      environment.
-    intro: At Gebrüder Fritz I worked at the intersection of marketing, sales, administration and event operations. I supported
-      social media, website, newsletter, CRM, offers, presentations, follow-ups and operational workflows around high-quality
-      Berlin event locations.
-    situation: Gebrüder Fritz operates stylish event locations in central Berlin and combines historic interior atmosphere
-      with professional event organisation, in-house catering, interior setups and personal consulting. My work therefore
-      connected digital tasks with real event operations.
+    cardCategory: Marketing / sales / event operations
+    short: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
+    cardShort: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
+    intro: "At Gebrüder Fritz I took my first professional step in Berlin, combining marketing, sales, CRM, newsletter, content creation, event organisation and administration."
+    situation: "Gebrüder Fritz offers stylish historical event locations in central Berlin and combines spaces, event organisation, in-house catering, interior and service."
     tasks:
-    - Support and further development of social media channels, website and newsletter campaigns
-    - Creation of marketing content, videos and visual assets according to CI
-    - Support with CRM, sales preparation and customer communication
-    - Creation of offers, presentations, invoices and follow-ups
-    - Assistance to management and internal organisation
-    - Insight into event organisation, room preparation, workflows and guest communication
+      - "Maintaining customer data in Pipedrive"
+      - "Creating and tracking deals from first contact to offer stage"
+      - "Support with offers and invoices in SevDesk"
+      - "Newsletter returns, contact maintenance and Mailchimp/Pipedrive campaigns"
+      - "LinkedIn research and marketing support"
+      - "Support with event planning, setup, organisation and breakdown"
+      - "Photo and video content for marketing and social media"
+      - "Task organisation using Eisenhower matrix, Trello, Excel, OneDrive and Google Docs"
     results:
-    - Practical experience in a company where marketing, sales and event operations work closely together
-    - Better understanding of premium B2B and private-event communication
-    - Routine with CRM, newsletters, offers and operational prioritisation
-    - Connection of creative content, organisation and customer-facing work
+      - "Fast practical introduction to CRM, sales processes, newsletters and customer communication"
+      - "Understanding of how marketing, sales, events and administration interact"
+      - "Practice in content creation and marketing material within a CI-driven environment"
+      - "Strengthening of organisation, initiative, professional appearance and teamwork"
     learnings:
-    - 'Good event marketing starts before a post: it starts with space, flow, service and clear communication.'
-    - CRM, follow-ups and clean documentation make creative work commercially useful.
-    - Event environments require attention to detail, fast coordination and calm execution under time pressure.
-    contextTitle: Official company context
+      - "Professional communication often starts with clean data, clear follow-ups and structured preparation."
+      - "Events require precise planning, timing and attention to many details."
+      - "This internship gave me the basis to arrive professionally in Berlin."
+    contextTitle: "Boutique locations & event operations"
     context:
-    - Gebrüder Fritz positions itself as a provider of distinctive Berlin event locations for conferences, meetings, receptions,
-      dinners, corporate events, private occasions and shootings.
-    - The locations include central areas such as Mitte, Checkpoint Charlie, Hackescher Markt and Charlottenburg and combine
-      flexible rooms with interior, catering and event consulting.
-    - According to the website, the project team supports events from enquiry to on-site execution, combining consulting,
-      setup, in-house kitchen and operational work.
-    focusTitle: Practice fields
+      - "Gebrüder Fritz combines three special event locations in Berlin with professional event organisation."
+      - "The locations are used for conferences, meetings, workshops, receptions, presentations, dinners and productions."
+      - "The company works with interior, in-house kitchen, event consulting and a strong service focus."
+    focusTitle: "What I learned there"
     focus:
-    - 'Marketing & website: digital communication, content, newsletter and CI-consistent presentation.'
-    - 'Sales & CRM: enquiry processes, follow-ups, offers and presentations.'
-    - 'Event operations: preparation, setup, communication and live support.'
+      - "CRM & sales: customer data, deals, offers and follow-ups."
+      - "Marketing & communication: newsletters, contacts, LinkedIn research, campaigns and content."
+      - "Event operations: planning, setup, execution and follow-up."
   it:
     title: Gebrüder Fritz Locations
     role: Marketing, sales & administration
+    cardRole: Marketing, sales & administration
     company: Gebrüder Fritz GmbH
     location: Berlino, Germania
     period: 07/2025 - 10/2025
     category: Marketing / sales / event operations
-    short: Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un ambiente location/eventi a Berlino.
-    intro: Da Gebrüder Fritz ho lavorato tra marketing, sales, amministrazione ed event operations. Ho supportato social media,
-      sito, newsletter, CRM, offerte, presentazioni, follow-up e processi operativi legati a location/eventi di alto livello
-      a Berlino.
-    situation: Gebrüder Fritz gestisce location eleganti in zone centrali di Berlino e combina atmosfera Altbau con organizzazione
-      eventi, catering interno, interior setup e consulenza personale. Il lavoro era quindi sia digitale sia molto vicino
-      agli eventi reali.
+    cardCategory: Marketing / sales / event operations
+    short: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
+    cardShort: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
+    intro: "Da Gebrüder Fritz ho fatto il mio primo passo professionale a Berlino, unendo marketing, sales, CRM, newsletter, content creation, event organisation e amministrazione."
+    situation: "Gebrüder Fritz offre event location eleganti in palazzi storici centrali a Berlino e combina spazi, event organisation, in-house catering, interior e service."
     tasks:
-    - Supporto e sviluppo di social media, sito e campagne newsletter
-    - Creazione di marketing content, video e visual asset secondo CI
-    - Supporto a CRM, preparazione sales e comunicazione clienti
-    - Creazione di offerte, presentazioni, fatture e follow-up
-    - Assistenza alla direzione e organizzazione interna
-    - Insight in organizzazione eventi, preparazione spazi, flussi e comunicazione ospiti
+      - "Cura dei dati clienti in Pipedrive"
+      - "Creazione e follow-up dei deal dal primo contatto all'offerta"
+      - "Supporto a offerte e fatture in SevDesk"
+      - "Newsletter, cura contatti e campagne Mailchimp/Pipedrive"
+      - "Ricerca LinkedIn e supporto marketing"
+      - "Supporto nella pianificazione, setup, organizzazione e smontaggio eventi"
+      - "Foto e video content per marketing e social media"
+      - "Organizzazione attività con Eisenhower Matrix, Trello, Excel, OneDrive e Google Docs"
     results:
-    - Esperienza pratica in un’azienda dove marketing, sales ed eventi lavorano insieme
-    - Maggiore comprensione della comunicazione per eventi B2B e privati premium
-    - Routine con CRM, newsletter, offerte e priorità operative
-    - Connessione tra contenuto creativo, organizzazione e contatto con clienti
+      - "Introduzione pratica a CRM, sales, newsletter e customer communication"
+      - "Comprensione di come marketing, sales, eventi e administration lavorano insieme"
+      - "Pratica nella creazione di contenuti e materiali marketing in un ambiente CI"
+      - "Rafforzamento di organizzazione, iniziativa, comportamento professionale e teamwork"
     learnings:
-    - 'Il buon event marketing inizia prima del post: nasce da spazio, flusso, servizio e comunicazione chiara.'
-    - CRM, follow-up e documentazione pulita rendono utile il lavoro creativo anche dal punto di vista commerciale.
-    - Negli eventi servono attenzione ai dettagli, coordinamento rapido e calma sotto pressione.
-    contextTitle: Contesto aziendale ufficiale
+      - "La comunicazione professionale parte spesso da dati puliti, follow-up chiari e preparazione strutturata."
+      - "Gli eventi sembrano leggeri fuori, ma dentro richiedono planning preciso, timing e molti dettagli."
+      - "Questo stage mi ha dato la base per inserirmi professionalmente a Berlino."
+    contextTitle: "Boutique locations & event operations"
     context:
-    - Gebrüder Fritz si presenta come provider di location per eventi a Berlino per conferenze, meeting, ricezioni, dinner,
-      eventi aziendali, occasioni private e shooting.
-    - Le location includono zone centrali come Mitte, Checkpoint Charlie, Hackescher Markt e Charlottenburg e combinano spazi
-      flessibili con interior, catering e consulenza eventi.
-    - Secondo il sito, il team accompagna gli eventi dalla richiesta alla realizzazione in loco, combinando consulenza, setup,
-      cucina interna e operatività.
-    focusTitle: Ambiti pratici
+      - "Gebrüder Fritz combina tre location speciali a Berlino con event organisation professionale."
+      - "Le location sono usate per conference, meeting, workshop, ricevimenti, presentazioni, dinner e produzioni."
+      - "L'azienda lavora con interior, in-house kitchen, event consulting e forte attenzione al service."
+    focusTitle: "Cosa ho imparato"
     focus:
-    - 'Marketing & sito: comunicazione digitale, contenuti, newsletter e presentazione coerente con CI.'
-    - 'Sales & CRM: richieste, follow-up, offerte e presentazioni.'
-    - 'Event operations: preparazione, setup, comunicazione e supporto live.'
+      - "CRM & sales: dati clienti, deal, offerte e follow-up."
+      - "Marketing & communication: newsletter, contatti, LinkedIn research, campagne e content."
+      - "Event operations: pianificazione, setup, esecuzione e follow-up."
 ---
