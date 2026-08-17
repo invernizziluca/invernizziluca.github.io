@@ -17,25 +17,25 @@ const navItems = [
   ['start', ui.nav.start], ['arbeiten', ui.nav.arbeiten], ['erfahrung', ui.nav.erfahrung], ['ausbildung', ui.nav.ausbildung], ['research', ui.nav.research], ['linkedin', ui.nav.linkedin], ['nachweise', ui.nav.nachweise], ['kontakt', ui.nav.kontakt],
 ];
 ---
-<header class="sticky top-0 z-50 border-b border-black/5 bg-paper/82 backdrop-blur-xl">
+<header class="site-header sticky top-0 z-50 border-b border-white/50">
   <div class="container-page section-padding flex h-16 items-center justify-between gap-4">
-    <a href={to(`${lang}/#start`)} class="flex items-center gap-2 text-sm font-extrabold tracking-tight text-ink">
+    <a href={to(`${lang}/#start`)} class="flex items-center gap-2 rounded-full bg-white/50 px-2.5 py-1.5 text-sm font-extrabold tracking-tight text-ink ring-1 ring-white/60 transition hover:bg-white/70">
       <img src={to('images/logos/li-logo-small.png')} alt="" class="h-6 w-6 rounded" />
       <span>Luca Invernizzi</span>
     </a>
-    <nav class="hidden items-center gap-4 xl:flex">
+    <nav class="hidden items-center gap-1 rounded-full border border-white/60 bg-white/40 p-1 xl:flex">
       {navItems.map(([id, label]) => (
-        <a href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)} class="text-sm font-medium text-muted transition hover:text-ink">{label}</a>
+        <a href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)} class="nav-link text-sm font-semibold text-muted transition hover:text-ink hover:bg-white/50">{label}</a>
       ))}
     </nav>
     <div class="flex items-center gap-2">
-      <div class="flex items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 shadow-sm">
+      <div class="flex items-center gap-1 rounded-full border border-white/70 bg-white/60 p-1 shadow-sm backdrop-blur">
         {languages.map((code) => (
           <a href={switchHref(code)} class:list={['rounded-full px-3 py-1.5 text-xs font-bold transition', code === lang ? 'bg-ink text-white' : 'text-muted hover:text-ink']}>{languageLabels[code]}</a>
         ))}
       </div>
       <details class="relative xl:hidden">
-        <summary class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-black/10 bg-white/80 text-lg font-black list-none">☰</summary>
+        <summary class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-black/10 bg-white/100 text-lg font-black list-none">☰</summary>
         <div class="absolute right-0 mt-3 w-64 rounded-3xl border border-black/10 bg-white p-3 shadow-soft">
           {navItems.map(([id, label]) => (
             <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-muted hover:bg-paper hover:text-ink" href={id === 'linkedin' ? to(`${lang}/linkedin/`) : to(`${lang}/#${id}`)}>{label}</a>
