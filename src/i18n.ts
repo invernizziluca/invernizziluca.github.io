@@ -5,26 +5,26 @@ export const languageLabels: Record<Lang, string> = { de: 'DE', en: 'EN', it: 'I
 
 export const UI = {
   de: {
-    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Creative Operations',
-    seoDescription: 'Portfolio von Luca Invernizzi mit Arbeiten in Music Marketing, Artist Management, Social Media, Ausbildung, Research, LinkedIn-Beiträgen, Referenzen und Zertifikaten.',
+    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Public Relations',
+    seoDescription: 'Portfolio von Luca Invernizzi mit Arbeiten in Music Marketing, Artist Management, Presse- und Öffentlichkeitsarbeit, Social Media, Ausbildung, Research, Referenzen und Zertifikaten.',
     nav: { start: 'Start', arbeiten: 'Arbeiten', erfahrung: 'Erfahrung', ausbildung: 'Ausbildung', research: 'Research', linkedin: 'LinkedIn', nachweise: 'Nachweise', kontakt: 'Kontakt' },
     hero: {
-      kicker: 'Portfolio & Erfahrungsarchiv', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Creative Operations',
-      text: 'Aus der italienischen Schweiz nach Berlin: Ich verbinde Musik, Marketing, Business Administration und kreative Umsetzung. Dieses Portfolio zeigt nicht nur Stationen, sondern konkrete Arbeiten, Nachweise und Lernprozesse.',
+      kicker: 'Portfolio & Erfahrungsarchiv', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Public Relations',
+      text: 'Aus der italienischen Schweiz nach Berlin: Ich möchte Künstler:innen dabei unterstützen, ihre Musik mit der Welt zu teilen. Praktische Erfahrungen in PR, Social Media, Labelarbeit und Marketing zeigen meinen nächsten Schritt.',
       primary: 'Arbeiten ansehen', secondary: 'CV herunterladen', tertiary: 'Kontakt aufnehmen'
     },
     stats: [
-      { value: '4', label: 'Sprachen: IT, DE, EN, FR' },
-      { value: 'Praxis', label: 'Musik, Events, Sport & Studium' },
-      { value: 'Umsetzung', label: 'Struktur, Kreativität & Eigeninitiative' },
+      { value: 'Presse & PR', label: 'Initiative Musik · Social Media, Newsletter & Medienmonitoring' },
+      { value: 'Label & Events', label: 'Eintracht Pankow Musik · Gebrüder Fritz · Praxis in Berlin' },
+      { value: 'Motivation', label: 'Musik sichtbar machen · strukturiert arbeiten · gerne dazulernen' },
     ],
     positioning: {
       title: 'Was mich auszeichnet',
-      text: 'Ich arbeite gern an der Schnittstelle zwischen kreativen Ideen und sauberer Umsetzung: Content, Organisation, Artist Management, Social Media, Research und Business-Prozesse.',
+      text: 'Ich bringe Motivation für Musik, klare Kommunikation und digitales Arbeiten zusammen. Wichtig ist mir, kreative Ideen so zu strukturieren, dass sie sichtbar, verständlich und umsetzbar werden.',
       cards: [
-        { title: 'Musik & Artist Management', text: 'Releases, Artists, Plattformen, Kommunikation und koordinierte Abläufe.' },
-        { title: 'Content & Social Media', text: 'Kampagnen, Content-Pläne, Videos, visuelle Assets und datenbasierte Auswertung.' },
-        { title: 'Business & Organisation', text: 'CRM, Angebote, Präsentationen, Follow-ups, Projektkoordination und Administration.' },
+        { title: 'Presse & PR', text: 'Medienmonitoring, kommunikative Begleitung, Recherche und PR-nahe Content-Arbeit.' },
+        { title: 'Content & Social Media', text: 'Text-, Grafik- und Video-Content, neue Formate, Community Management und Reporting.' },
+        { title: 'Organisation & Marketing', text: 'CRM, Newsletter, Angebote, Präsentationen, Follow-ups und strukturierte Umsetzung.' },
       ],
     },
     works: { title: 'Ausgewählte Arbeiten', intro: 'Praktische Arbeiten und Stationen, die zeigen, was ich konkret umgesetzt habe. Die neueren Arbeiten stehen bewusst oben.', cta: 'Arbeit ansehen' },
@@ -40,7 +40,7 @@ export const UI = {
       { title: 'Social Media', items: ['Instagram', 'TikTok', 'YouTube', 'LinkedIn', 'Content Planning'] },
       { title: 'Marketing', items: ['Kampagnen', 'Newsletter', 'Sponsoring', 'Brand Communication'] },
       { title: 'Organisation', items: ['Projektkoordination', 'CRM', 'Administration', 'Präsentationen'] },
-      { title: 'Tools', items: ['Canva', 'CapCut', 'Pipedrive', 'SevDesk', 'WordPress', 'Webflow'] },
+      { title: 'Tools', items: ['Canva', 'CapCut', 'Adobe CC', 'Pipedrive', 'WordPress', 'Mailchimp', 'Fehlt ein Tool? Ich lerne gerne dazu'] },
     ]},
     about: { title: 'Von Technik zu Business, Musik und Marketing', text: 'Mein Weg verbindet technische Grundausbildung, betriebswirtschaftliches Studium und praktische Arbeit in Musik, Events und digitaler Kommunikation. Genau diese Mischung hilft mir, Projekte nicht nur kreativ zu denken, sondern auch strukturiert umzusetzen.' },
     contact: { title: 'Lass uns sprechen', text: 'Für Praktika, Musikprojekte, kreative Zusammenarbeit oder berufliche Möglichkeiten freue ich mich über eine Kontaktaufnahme.', email: 'E-Mail schreiben', linkedin: 'LinkedIn öffnen', cv: 'CV herunterladen' },
@@ -48,12 +48,12 @@ export const UI = {
     footer: { rights: '© Luca Invernizzi.' }
   },
   en: {
-    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Creative Operations',
-    seoDescription: 'Portfolio by Luca Invernizzi with work in music marketing, artist management, social media, education, research, LinkedIn contributions, references and certificates.',
+    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Public Relations',
+    seoDescription: 'Portfolio by Luca Invernizzi with work in music marketing, artist management, public relations, social media, education, research, references and certificates.',
     nav: { start: 'Start', arbeiten: 'Work', erfahrung: 'Experience', ausbildung: 'Education', research: 'Research', linkedin: 'LinkedIn', nachweise: 'Proof', kontakt: 'Contact' },
-    hero: { kicker: 'Portfolio & experience archive', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Creative Operations', text: 'From the Italian-speaking part of Switzerland to Berlin: I connect music, marketing, business administration and creative execution. This portfolio shows concrete work, proof and learning processes.', primary: 'View work', secondary: 'Download CV', tertiary: 'Contact me' },
-    stats: [ { value: '4', label: 'Languages: IT, DE, EN, FR' }, { value: 'Practice', label: 'Music, events, sport & studies' }, { value: 'Execution', label: 'Structure, creativity & initiative' } ],
-    positioning: { title: 'What defines my work', text: 'I like working where creative ideas meet structured execution: content, organisation, artist management, social media, research and business processes.', cards: [ { title: 'Music & Artist Management', text: 'Releases, artists, platforms, communication and structured workflows.' }, { title: 'Content & Social Media', text: 'Campaigns, content plans, video, visual assets and data-based evaluation.' }, { title: 'Business & Organisation', text: 'CRM, offers, presentations, follow-ups, project coordination and administration.' } ] },
+    hero: { kicker: 'Portfolio & experience archive', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Public Relations', text: 'From Italian-speaking Switzerland to Berlin: I want to help artists share their music with the world. Practical experience in PR, social media, label work and marketing marks my next step.', primary: 'View work', secondary: 'Download CV', tertiary: 'Contact me' },
+    stats: [ { value: 'PR & press', label: 'Initiative Musik · social media, newsletter & media monitoring' }, { value: 'Label & events', label: 'Eintracht Pankow Musik · Gebrüder Fritz · Berlin practice' }, { value: 'Motivation', label: 'Make music visible · work with structure · keep learning' } ],
+    positioning: { title: 'What defines my work', text: 'I combine motivation for music with clear communication and digital work. I like turning creative ideas into visible, understandable and executable projects.', cards: [ { title: 'Press & PR', text: 'Media monitoring, communication support, research and PR-related content work.' }, { title: 'Content & Social Media', text: 'Text, graphic and video content, new formats, community management and reporting.' }, { title: 'Organisation & Marketing', text: 'CRM, newsletters, offers, presentations, follow-ups and structured execution.' } ] },
     works: { title: 'Selected work', intro: 'Practical work and stations that show what I concretely contributed to. Newer work appears first.', cta: 'View case' },
     timeline: { title: 'Experience', intro: 'A compact overview of my most relevant work stations. Each card opens a detail page.', open: 'View details' },
     education: { title: 'Education', intro: 'Clickable education cards with concrete topics, projects and proof.', open: 'View education', back: 'Back to overview' },
@@ -69,12 +69,12 @@ export const UI = {
     footer: { rights: '© Luca Invernizzi.' }
   },
   it: {
-    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Creative Operations',
-    seoDescription: 'Portfolio di Luca Invernizzi con lavori in music marketing, artist management, social media, formazione, ricerca, contributi LinkedIn, referenze e certificati.',
+    seoTitle: 'Luca Invernizzi - Music Marketing, Artist Management & Public Relations',
+    seoDescription: 'Portfolio di Luca Invernizzi con lavori in music marketing, artist management, public relations, social media, formazione, ricerca, referenze e certificati.',
     nav: { start: 'Start', arbeiten: 'Lavori', erfahrung: 'Esperienza', ausbildung: 'Formazione', research: 'Research', linkedin: 'LinkedIn', nachweise: 'Prove', kontakt: 'Contatto' },
-    hero: { kicker: 'Portfolio & archivio esperienze', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Creative Operations', text: 'Dalla Svizzera italiana a Berlino: unisco musica, marketing, business administration e realizzazione creativa. Questo portfolio mostra lavori concreti, prove e percorsi di apprendimento.', primary: 'Vedi lavori', secondary: 'Scarica CV', tertiary: 'Contattami' },
-    stats: [ { value: '4', label: 'Lingue: IT, DE, EN, FR' }, { value: 'Pratica', label: 'Musica, eventi, sport & studio' }, { value: 'Esecuzione', label: 'Struttura, creatività & iniziativa' } ],
-    positioning: { title: 'Cosa mi contraddistingue', text: 'Mi piace lavorare dove le idee creative incontrano una realizzazione ordinata: content, organizzazione, artist management, social media, ricerca e processi business.', cards: [ { title: 'Musica & Artist Management', text: 'Release, artisti, piattaforme, comunicazione e processi strutturati.' }, { title: 'Content & Social Media', text: 'Campagne, content plan, video, asset visivi e analisi dati.' }, { title: 'Business & Organizzazione', text: 'CRM, offerte, presentazioni, follow-up, coordinamento e amministrazione.' } ] },
+    hero: { kicker: 'Portfolio & archivio esperienze', title: 'Luca Invernizzi', subtitle: 'Music Marketing, Artist Management & Public Relations', text: 'Dalla Svizzera italiana a Berlino: voglio aiutare artisti e artiste a condividere la loro musica con il mondo. Esperienze pratiche in PR, social media, label work e marketing segnano il mio prossimo passo.', primary: 'Vedi lavori', secondary: 'Scarica CV', tertiary: 'Contattami' },
+    stats: [ { value: 'PR & press', label: 'Initiative Musik · social media, newsletter & media monitoring' }, { value: 'Label & eventi', label: 'Eintracht Pankow Musik · Gebrüder Fritz · pratica a Berlino' }, { value: 'Motivazione', label: 'Rendere visibile la musica · lavorare con struttura · imparare' } ],
+    positioning: { title: 'Cosa mi contraddistingue', text: 'Unisco motivazione per la musica, comunicazione chiara e lavoro digitale. Mi piace trasformare idee creative in progetti visibili, comprensibili e realizzabili.', cards: [ { title: 'Presse & PR', text: 'Media monitoring, accompagnamento comunicativo, ricerca e contenuti vicini alla PR.' }, { title: 'Content & Social Media', text: 'Testi, grafiche, video, nuovi format, community management e reporting.' }, { title: 'Organizzazione & Marketing', text: 'CRM, newsletter, offerte, presentazioni, follow-up e realizzazione strutturata.' } ] },
     works: { title: 'Lavori selezionati', intro: 'Lavori pratici e stazioni che mostrano cosa ho fatto concretamente. I lavori più recenti sono in alto.', cta: 'Vedi lavoro' },
     timeline: { title: 'Esperienza', intro: 'Una panoramica compatta delle mie stazioni principali. Ogni card porta alla pagina dettaglio.', open: 'Vedi dettagli' },
     education: { title: 'Formazione', intro: 'Percorsi formativi cliccabili con contenuti, progetti e prove concrete.', open: 'Vedi formazione', back: 'Torna alla panoramica' },

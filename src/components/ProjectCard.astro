@@ -11,7 +11,7 @@ const href = `${base}${currentLang}/arbeiten/${entry.slug}/`;
 ---
 <a href={href} data-tilt-card class="project-card group reveal overflow-hidden rounded-[2.2rem] transition duration-300 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-caramel/30">
   <div class="project-media relative aspect-[16/10] overflow-hidden bg-white">
-    <img src={asset(data.cover)} alt={t.title} class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.055]" loading="lazy" />
+    <img src={asset(data.cover)} alt={t.title} class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.055]" loading="lazy" decoding="async" />
     {data.logo && <div class="absolute left-4 top-4 z-10 rounded-2xl bg-white/90 p-2 shadow-sm backdrop-blur"><img src={asset(data.logo)} alt="" class="max-h-9 max-w-28 object-contain" /></div>}
     <div class="absolute bottom-4 right-4 z-10 rounded-full bg-white/100 px-3 py-1 text-xs font-extrabold text-ink shadow-sm backdrop-blur">{t.period}</div>
   </div>
@@ -20,17 +20,14 @@ const href = `${base}${currentLang}/arbeiten/${entry.slug}/`;
       <span class="rounded-full bg-caramel/12 px-3 py-1 text-xs font-bold text-caramelDark">{t.category}</span>
       <span class="rounded-full bg-white/70 px-3 py-1 text-xs font-bold text-muted ring-1 ring-black/5">{t.location}</span>
     </div>
-    <div class="flex items-start justify-between gap-4">
-      <div>
-        <h3 class="text-2xl font-extrabold tracking-tight text-ink">{t.title}</h3>
-        <p class="mt-2 text-sm font-semibold text-caramelDark">{t.role}</p>
-      </div>
-      <span class="arrow-bubble shrink-0">→</span>
+    <div>
+      <h3 class="text-2xl font-extrabold tracking-tight text-ink">{t.title}</h3>
+      <p class="mt-2 text-sm font-semibold text-caramelDark">{t.role}</p>
     </div>
     <p class="mt-4 text-base leading-7 text-muted">{t.short}</p>
     <ul class="mt-5 space-y-2">
       {t.tasks.slice(0, 3).map((task: string) => <li class="flex gap-3 text-sm leading-6 text-muted"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-caramel"></span>{task}</li>)}
     </ul>
-    <div class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-ink">{UI[currentLang].works.cta}<span class="transition group-hover:translate-x-1">→</span></div>
+    <div class="mt-6"><span class="case-button">{UI[currentLang].works.cta}<span>→</span></span></div>
   </div>
 </a>

@@ -27,22 +27,22 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h1 class="mt-5 max-w-4xl text-balance text-6xl font-black tracking-[-0.065em] text-ink sm:text-7xl lg:text-8xl">{ui.hero.title}</h1>
           <p class="mt-5 text-balance text-2xl font-semibold tracking-tight text-ink/85 sm:text-3xl">{ui.hero.subtitle}</p>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-muted">{ui.hero.text}</p>
-          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a class="btn-primary" href="#arbeiten">{ui.hero.primary}</a>
             <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.hero.secondary}</a>
             <a class="btn-secondary" href="#kontakt">{ui.hero.tertiary}</a>
           </div>
         </div>
         <div data-tilt-card class="hero-portrait-card reveal glass-card rounded-[2.6rem] p-4">
-          <img src={asset('images/profile/luca-portrait.webp')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover object-top" />
+          <img src={asset('images/profile/luca-portrait.webp')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover object-top" width="640" height="800" decoding="async" fetchpriority="high" />
           <div class="float-pill one"><span>Music</span> Marketing</div>
           <div class="float-pill two"><span>Artist</span> Management</div>
-          <div class="float-pill three"><span>Creative</span> Operations</div>
+          <div class="float-pill three"><span>Public</span> Relations</div>
         </div>
       </div>
       <div class="container-page mt-12 grid gap-4 sm:grid-cols-3">
         {ui.stats.map((stat) => (
-          <div data-tilt-card class="reveal premium-card rounded-[1.6rem] p-6 backdrop-blur">
+          <div data-tilt-card class="reveal hero-metric premium-card rounded-[1.8rem] p-7 backdrop-blur">
             <div class="text-3xl font-black tracking-tight text-ink">{stat.value}</div>
             <div class="mt-1 text-sm font-semibold text-muted">{stat.label}</div>
           </div>
@@ -51,17 +51,17 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
     </section>
 
     <section class="section-y section-padding">
-      <div class="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div class="reveal">
+      <div class="container-page">
+        <div class="reveal max-w-4xl">
           <p class="kicker">01</p>
-          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.positioning.title}</h2>
-          <p class="mt-5 text-lg leading-8 text-muted">{ui.positioning.text}</p>
+          <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.positioning.title}</h2>
+          <p class="mt-6 max-w-3xl text-xl leading-9 text-muted">{ui.positioning.text}</p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-3">
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
           {ui.positioning.cards.map((card) => (
-            <div data-tilt-card class="reveal premium-card rounded-[1.8rem] p-6 backdrop-blur">
-              <h3 class="text-lg font-extrabold tracking-tight">{card.title}</h3>
-              <p class="mt-3 text-sm leading-6 text-muted">{card.text}</p>
+            <div data-tilt-card class="reveal premium-card feature-card rounded-[2rem] p-7 backdrop-blur sm:p-8">
+              <h3 class="text-2xl font-extrabold tracking-tight">{card.title}</h3>
+              <p class="mt-4 text-base leading-7 text-muted">{card.text}</p>
             </div>
           ))}
         </div>
@@ -279,7 +279,7 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
         <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramel">12</p>
         <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
         <p class="mt-5 max-w-2xl text-lg leading-8 text-white/70">{ui.contact.text}</p>
-        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+        <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
           <a class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
           <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
           <a class="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/10" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>

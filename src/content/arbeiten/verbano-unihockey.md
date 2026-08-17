@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 featured: true
 cover: "/images/works/verbano/stand-organisation.webp"
 logo: "/images/logos/verbano-logo.webp"

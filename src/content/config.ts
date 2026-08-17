@@ -13,6 +13,10 @@ const localizedWork = z.object({
   tasks: z.array(z.string()),
   results: z.array(z.string()),
   learnings: z.array(z.string()),
+  contextTitle: z.string().optional(),
+  context: z.array(z.string()).optional(),
+  focusTitle: z.string().optional(),
+  focus: z.array(z.string()).optional(),
 });
 
 const localizedCard = z.object({
@@ -23,6 +27,8 @@ const localizedCard = z.object({
 
 const linkItem = z.object({ label: z.string(), url: z.string() });
 const evidenceItem = z.object({ label: z.string(), pdf: z.string().optional(), url: z.string().optional(), note: z.string().optional() });
+const rosterItem = z.object({ name: z.string(), note: z.string().optional(), url: z.string().optional() });
+const spotifyEmbed = z.object({ title: z.string(), src: z.string(), note: z.string().optional() });
 
 const arbeiten = defineCollection({
   type: 'content',
@@ -36,6 +42,8 @@ const arbeiten = defineCollection({
     tools: z.array(z.string()).default([]),
     links: z.array(linkItem).default([]),
     evidence: z.array(evidenceItem).default([]),
+    spotifyEmbed: spotifyEmbed.optional(),
+    roster: z.array(rosterItem).default([]),
     translations: z.object({
       de: localizedWork,
       en: localizedWork,

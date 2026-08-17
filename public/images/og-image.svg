@@ -13,6 +13,6 @@
   <circle cx="310" cy="830" r="260" fill="#ffffff" opacity="0.58"/>
   <rect x="150" y="170" width="1300" height="660" rx="64" fill="#ffffff" opacity="0.72" filter="url(#shadow)"/>
   <text x="220" y="470" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="900" fill="#111111">Luca Invernizzi</text>
-  <text x="224" y="555" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#6E6E73">Music Marketing · Artist Management · Creative Operations</text>
+  <text x="224" y="555" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#6E6E73">Music Marketing · Artist Management · Public Relations</text>
   <rect x="220" y="620" width="180" height="12" rx="6" fill="#B58B5B"/>
 </svg>

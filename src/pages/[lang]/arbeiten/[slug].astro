@@ -50,6 +50,49 @@ const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
       </div>
     </section>
 
+
+
+    {(t.context?.length || t.focus?.length || data.roster?.length || data.spotifyEmbed) && <section class="section-padding py-12 sm:py-20">
+      <div class="container-page grid gap-6 lg:grid-cols-[1fr_1fr]">
+        {t.context?.length && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10">
+          <p class="kicker">Kontext</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight">{t.contextTitle ?? 'Offizieller Kontext'}</h2>
+          <ul class="mt-6 grid gap-4">
+            {t.context.map((item: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{item}</li>)}
+          </ul>
+        </article>}
+        {t.focus?.length && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10">
+          <p class="kicker">Fokus</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight">{t.focusTitle ?? 'Schwerpunkte'}</h2>
+          <ul class="mt-6 grid gap-4">
+            {t.focus.map((item: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{item}</li>)}
+          </ul>
+        </article>}
+        {data.roster?.length > 0 && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10 lg:col-span-2">
+          <p class="kicker">Roster / Umfeld</p>
+          <h2 class="mt-4 text-3xl font-black tracking-tight">Artists im Label- und Playlist-Kontext</h2>
+          <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {data.roster.map((artist: { name: string; note?: string; url?: string }) => (
+              <div class="rounded-[1.4rem] bg-white/70 p-5 ring-1 ring-black/5">
+                <h3 class="font-extrabold text-ink">{artist.name}</h3>
+                {artist.note && <p class="mt-2 text-sm leading-6 text-muted">{artist.note}</p>}
+              </div>
+            ))}
+          </div>
+        </article>}
+        {data.spotifyEmbed && <article class="reveal rounded-[2rem] bg-[#121212] p-5 text-white shadow-apple lg:col-span-2 sm:p-8">
+          <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="kicker text-caramel">Spotify</p>
+              <h2 class="mt-2 text-3xl font-black tracking-tight">{data.spotifyEmbed.title}</h2>
+              {data.spotifyEmbed.note && <p class="mt-3 max-w-3xl text-sm leading-6 text-white/70">{data.spotifyEmbed.note}</p>}
+            </div>
+          </div>
+          <iframe class="spotify-embed" src={data.spotifyEmbed.src} width="100%" height="380" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </article>}
+      </div>
+    </section>}
+
     <section class="section-padding py-12 sm:py-20">
       <div class="container-page grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <article class="reveal rounded-[2rem] bg-ink p-8 text-white sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2><div class="mt-7 grid gap-4 sm:grid-cols-2">{t.results.map((result: string) => <div class="rounded-[1.4rem] bg-white/10 p-5 ring-1 ring-white/10"><p class="text-base leading-7 text-white/80">{result}</p></div>)}</div></article>
