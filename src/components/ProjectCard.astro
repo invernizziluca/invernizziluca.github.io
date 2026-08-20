@@ -14,7 +14,7 @@ const cardShort = t.cardShort ?? t.short;
   <div class="project-media relative aspect-[16/10] overflow-hidden">
     <img src={to(entry.data.cover)} alt={t.title} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" loading="lazy" />
     <div class="absolute left-4 top-4 rounded-full bg-white/90 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-caramelDark shadow">{cardCategory}</div>
-    <div class="absolute bottom-4 right-4 rounded-full bg-white/92 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-ink shadow">{t.period}</div>
+    <div class="absolute bottom-5 right-5 rounded-full border border-black/10 bg-white/96 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-ink shadow-lg backdrop-blur">{t.period}</div>
   </div>
   <div class="flex flex-1 flex-col gap-4 p-5 sm:p-6">
     <div>

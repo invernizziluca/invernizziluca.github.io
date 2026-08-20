@@ -1,9 +1,9 @@
 ---
 order: 5
 featured: true
-cover: "/images/works/music-project/renis-nissimo.webp"
+cover: "/images/works/music-project/studio-hug-renis.png"
 gallery:
-  - "/images/works/music-project/renis-nissimo.webp"
+  - "/images/works/music-project/studio-hug-renis.png"
   - "/images/works/music-project/renis-doppio.webp"
   - "/images/works/music-project/renis-10-lode.webp"
   - "/images/works/music-project/renis-ignoto.webp"

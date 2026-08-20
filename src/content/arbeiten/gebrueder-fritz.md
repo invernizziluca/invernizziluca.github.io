@@ -1,11 +1,11 @@
 ---
 order: 3
 featured: true
-cover: /images/works/gebrueder-fritz/gebrueder-fritz-cover.svg
+cover: /images/works/gebrueder-fritz/gebrueder-management.webp
 logo: /images/logos/gebrueder-fritz-mark.svg
 companyUrl: https://www.gebruederfritz.com/
 gallery:
-  - /images/works/gebrueder-fritz/gebrueder-fritz-cover.svg
+  - /images/works/gebrueder-fritz/gebrueder-management.webp
   - /images/works/gebrueder-fritz/event-group.webp
   - /images/works/gebrueder-fritz/event-toast.webp
   - /images/works/gebrueder-fritz/event-bag.webp
@@ -36,8 +36,8 @@ translations:
     company: Gebrüder Fritz GmbH
     location: Berlin, Deutschland
     period: 07/2025 - 10/2025
-    category: Marketing / Sales / Event Operations
-    cardCategory: Marketing / Sales / Event Operations
+    category: Marketing / Sales / Administration
+    cardCategory: Marketing / Sales / Administration
     short: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
     cardShort: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
     intro: "Bei Gebrüder Fritz machte ich meinen ersten beruflichen Schritt in Berlin. Die Arbeit verband Marketing, Sales, CRM, Newsletter, Content Creation, Eventorganisation und Administration in einer hochwertigen Eventlocation-Umgebung."
@@ -77,8 +77,8 @@ translations:
     company: Gebrüder Fritz GmbH
     location: Berlin, Germany
     period: 07/2025 - 10/2025
-    category: Marketing / sales / event operations
-    cardCategory: Marketing / sales / event operations
+    category: Marketing / sales / administration
+    cardCategory: Marketing / sales / administration
     short: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
     cardShort: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
     intro: "At Gebrüder Fritz I took my first professional step in Berlin, combining marketing, sales, CRM, newsletter, content creation, event organisation and administration."
@@ -118,8 +118,8 @@ translations:
     company: Gebrüder Fritz GmbH
     location: Berlino, Germania
     period: 07/2025 - 10/2025
-    category: Marketing / sales / event operations
-    cardCategory: Marketing / sales / event operations
+    category: Marketing / sales / administration
+    cardCategory: Marketing / sales / administration
     short: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
     cardShort: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
     intro: "Da Gebrüder Fritz ho fatto il mio primo passo professionale a Berlino, unendo marketing, sales, CRM, newsletter, content creation, event organisation e amministrazione."
