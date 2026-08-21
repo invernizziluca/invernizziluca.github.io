@@ -1,20 +1,17 @@
 ---
 order: 4
 featured: false
-cover: /images/works/verbano/cover.webp
+cover: /images/works/verbano/verbano-main.webp
 companyUrl: https://verbanounihockey.ch/
 links:
-  - { label: 'Offizielle Website', url: 'https://verbanounihockey.ch/' }
-  - { label: 'News-Bereich', url: 'https://verbano-unihockey.webflow.io/news' }
+  - { label: 'Instagram', url: 'https://www.instagram.com/verbanounihockey/' }
 gallery:
-  - /images/works/verbano/cover.webp
+  - /images/works/verbano/verbano-main.webp
+  - /images/works/verbano/verbano-before.gif
   - /images/works/verbano/app-preview.webp
   - /images/works/verbano/club-preview.webp
 tools: ['Webflow', 'Swiss Unihockey Daten', 'CMS-Struktur', 'Sponsoring', 'Content-Organisation']
-evidence:
-  - label: 'Live-Webseite'
-    url: 'https://verbanounihockey.ch/'
-    note: 'Offizielle Vereinsseite mit News, Teams und automatisierten Inhalten.'
+evidence: []
 translations:
   de:
     title: 'Verbano Unihockey'

@@ -16,6 +16,15 @@ links:
   - label: "YouTube / Video-Beispiele"
     url: "https://www.youtube.com/"
 evidence: []
+spotifyEmbeds:
+  - title: "Artist-Projekt 1"
+    src: "https://open.spotify.com/embed/artist/21zPO2MZlfEQrRXceiuqM3?utm_source=generator"
+    note: "Ausgewählter Artist aus dem eigenen Musikprojekt."
+    type: artist
+  - title: "Artist-Projekt 2"
+    src: "https://open.spotify.com/embed/artist/4vrMlRnLvl2hGK3Xjy3shh?utm_source=generator"
+    note: "Ausgewählter Artist aus dem eigenen Musikprojekt."
+    type: artist
 translations:
   de:
     title: "Eigenes Musikprojekt"

@@ -2,11 +2,12 @@
 order: 3
 featured: true
 cover: /images/works/gebrueder-fritz/jubilaeum-team.webp
-coverPosition: center 18%
+coverPosition: center 24%
 logo: /images/logos/gebrueder-fritz-logo.svg
 companyUrl: https://www.gebruederfritz.com/
 gallery:
   - /images/works/gebrueder-fritz/jubilaeum-team.webp
+  - /images/works/eintracht-pankow/networking-believe.webp
   - /images/works/gebrueder-fritz/jubilaeum-toast.webp
   - /images/works/gebrueder-fritz/gebrueder-management.webp
   - /images/works/gebrueder-fritz/gift-bag.webp

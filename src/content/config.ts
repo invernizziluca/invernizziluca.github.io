@@ -30,7 +30,7 @@ const localizedCard = z.object({
 
 const linkItem = z.object({ label: z.string(), url: z.string() });
 const evidenceItem = z.object({ label: z.string(), pdf: z.string().optional(), url: z.string().optional(), note: z.string().optional() });
-const rosterItem = z.object({ name: z.string(), note: z.string().optional(), url: z.string().optional() });
+const rosterItem = z.object({ name: z.string(), note: z.string().optional(), url: z.string().optional(), embedSrc: z.string().optional() });
 const spotifyEmbed = z.object({
   title: z.string(),
   src: z.string(),

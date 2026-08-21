@@ -14,8 +14,8 @@ const coverPosition = entry.data.coverPosition ?? 'center center';
 <a data-tilt-card href={to(`${lang}/arbeiten/${entry.slug}/`)} class="project-card group flex flex-col overflow-hidden rounded-[2rem] shadow-soft transition-transform duration-300 hover:-translate-y-1">
   <div class="project-media relative aspect-[16/10] overflow-hidden">
     <img src={to(entry.data.cover)} alt={t.title} class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" style={`object-position:${coverPosition};`} loading="lazy" />
-    <div class="absolute left-4 top-4 rounded-full bg-white/92 px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-caramelDark shadow">{cardCategory}</div>
-    <div class="absolute bottom-4 right-4 rounded-full border border-caramel/20 bg-paper/95 px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-caramelDark shadow-lg">{t.period}</div>
+    <div class="project-category-pill absolute left-4 top-4 rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] shadow">{cardCategory}</div>
+    <div class="project-period-pill absolute bottom-4 right-4 rounded-full px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.18em] shadow-lg">{t.period}</div>
   </div>
   <div class="flex flex-1 flex-col gap-4 p-5 sm:p-6">
     <div>

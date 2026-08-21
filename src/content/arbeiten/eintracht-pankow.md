@@ -16,7 +16,6 @@ gallery:
   - /images/works/eintracht-pankow/songwriting-group.webp
   - /images/works/eintracht-pankow/music-business-panel.webp
   - /images/works/eintracht-pankow/believe-amplify.webp
-  - /images/works/eintracht-pankow/networking-believe.webp
 tools:
   - Spotify
   - SoundCloud
@@ -31,52 +30,46 @@ tools:
   - Networking
   - Event Support
 links:
-  - label: Spotify Playlist
-    url: https://open.spotify.com/playlist/7eDElBqxXmRuKN80m8WdMP?si=6eca5ddfca5e4079
+  - label: Alles gut! Playlist
+    url: https://open.spotify.com/playlist/5CevRvf8lxaVhbfqST1afR?si=84cd7d271aa0442b
 evidence:
   - label: Praktikumszeugnis - Eintracht Pankow Musik
     pdf: /pdf/praktikumszeugnis-eintracht-pankow.pdf
     note: "Bestätigung meiner Aufgaben in Labelprozessen, Playlistpflege, YouTube-Channel, Musixmatch, Artist-Kommunikation, internen Besprechungen sowie Networking und Branchenevents."
 spotifyEmbeds:
-  - title: "Alles gut! | Deutscher Indie Pop 2026"
-    src: "https://open.spotify.com/embed/playlist/7eDElBqxXmRuKN80m8WdMP?utm_source=generator"
-    note: "Offizielle Eintracht-Pankow-Playlist im Indie-Pop-Kontext."
+  - title: "Alles gut! Playlist"
+    src: "https://open.spotify.com/embed/playlist/5CevRvf8lxaVhbfqST1afR?utm_source=generator"
+    note: "Eintracht-Pankow-Playlist direkt zum Anhören."
     type: playlist
-  - title: "Dolphin Love"
-    src: "https://open.spotify.com/embed/artist/4uT5ywK30prkNZbf4BlQVh?utm_source=generator"
-    note: "Artist im Umfeld der von mir betreuten Label- und Playlistarbeit."
-    type: artist
-  - title: "pixxi"
-    src: "https://open.spotify.com/embed/artist/3Y9fcdMTvsOkdgLXxxwjsE?utm_source=generator"
-    note: "Einblicke in Release-, Content- und Artist-Kommunikation."
-    type: artist
-  - title: "Streichelt"
-    src: "https://open.spotify.com/embed/artist/7pMN4vp0od5iZvA59GNQ1R?utm_source=generator"
-    note: "Artist im Eintracht-Pankow-Roster- und Playlist-Kontext."
-    type: artist
-  - title: "Mamoré"
-    src: "https://open.spotify.com/embed/artist/2a6Sq96x1AYBfPTFr9js17?utm_source=generator"
-    note: "Artist im Umfeld von Labelarbeit, kuratierten Playlists und Release-Kontexten."
-    type: artist
 roster:
   - name: Dolphin Love
-    note: "Spotify-Artist im kuratierten Musik- und Playlistumfeld."
+    note: "Artist im kuratierten Musik- und Playlistumfeld."
     url: https://open.spotify.com/intl-de/artist/4uT5ywK30prkNZbf4BlQVh
+    embedSrc: https://open.spotify.com/embed/artist/4uT5ywK30prkNZbf4BlQVh?utm_source=generator
   - name: pixxi
     note: "Artist im Eintracht-Pankow-Umfeld; Bezug zu Release-, Content- und Plattformarbeit."
     url: https://open.spotify.com/intl-de/artist/3Y9fcdMTvsOkdgLXxxwjsE
+    embedSrc: https://open.spotify.com/embed/artist/3Y9fcdMTvsOkdgLXxxwjsE?utm_source=generator
   - name: Streichelt
     note: "Artist im Roster-/Playlist-Kontext von Eintracht Pankow Musik."
     url: https://open.spotify.com/intl-de/artist/7pMN4vp0od5iZvA59GNQ1R
+    embedSrc: https://open.spotify.com/embed/artist/7pMN4vp0od5iZvA59GNQ1R?utm_source=generator
   - name: Mamoré
     note: "Artist im Label- und Playlistumfeld."
     url: https://open.spotify.com/intl-de/artist/2a6Sq96x1AYBfPTFr9js17
+    embedSrc: https://open.spotify.com/embed/artist/2a6Sq96x1AYBfPTFr9js17?utm_source=generator
   - name: PARA
     note: "Artist im Eintracht-Pankow-Roster-Kontext."
+    url: https://open.spotify.com/intl-de/artist/1bdkWQOsQQ735rLgGBgvpu
+    embedSrc: https://open.spotify.com/embed/artist/1bdkWQOsQQ735rLgGBgvpu?utm_source=generator
   - name: Mollo
     note: "Artist im Eintracht-Pankow-Roster-Kontext."
+    url: https://open.spotify.com/intl-de/artist/0ToEbPHLf9hau2UCmDN3pp
+    embedSrc: https://open.spotify.com/embed/artist/0ToEbPHLf9hau2UCmDN3pp?utm_source=generator
   - name: Julia Grotenburg
     note: "Artist im Eintracht-Pankow-Roster-Kontext."
+    url: https://open.spotify.com/intl-de/artist/0UxzlxXCzce9f28OylOBfU
+    embedSrc: https://open.spotify.com/embed/artist/0UxzlxXCzce9f28OylOBfU?utm_source=generator
 translations:
   de:
     title: Eintracht Pankow Musik

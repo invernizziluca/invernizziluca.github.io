@@ -7,7 +7,6 @@ logo: /images/logos/initiative-musik-logo.svg
 companyUrl: https://www.initiative-musik.de/
 gallery:
   - /images/works/initiative-musik/initiative-cover-violet.webp
-  - /images/logos/initiative-musik-logo.svg
 tools:
   - Public Relations
   - Social Media
