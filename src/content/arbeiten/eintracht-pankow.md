@@ -1,10 +1,12 @@
 ---
 order: 2
 featured: true
-cover: /images/works/eintracht-pankow/pixxi-artwork.webp
+cover: /images/works/eintracht-pankow/foto-copertina-eintracht.webp
+coverPosition: center center
 logo: /images/logos/eintracht-pankow.webp
 companyUrl: https://www.eintracht-pankow.de/
 gallery:
+  - /images/works/eintracht-pankow/foto-copertina-eintracht.webp
   - /images/works/eintracht-pankow/pixxi-artwork.webp
   - /images/works/eintracht-pankow/songwriting-table.webp
   - /images/works/eintracht-pankow/songwriting-studio-blackwhite.webp

@@ -7,7 +7,7 @@ export const linkedinPosts = [
     id: 'songwriting-camp',
     order: 1,
     url: 'https://www.linkedin.com/posts/lucainve_wei%C3%9Ft-du-wie-ein-songwriting-camp-aussieht-activity-7442450315599175680-L-eK/',
-    image: '/images/works/eintracht-pankow/songwriting-table.webp',
+    image: '/images/works/eintracht-pankow/songwriting-camp-cover.webp',
     tag: { de: 'Eintracht Pankow', en: 'Eintracht Pankow', it: 'Eintracht Pankow' },
     title: {
       de: 'Songwriting Camp bei Guesstimate',
@@ -23,7 +23,7 @@ export const linkedinPosts = [
   {
     id: 'music-business-panel',
     order: 2,
-    url: 'https://www.linkedin.com/in/luca-invernizzi/',
+    url: 'https://www.linkedin.com/posts/lucainve_letzte-woche-durfte-ich-erstmals-als-gast-activity-7422930738099941377-tFaH',
     image: '/images/works/eintracht-pankow/music-business-panel.webp',
     tag: { de: 'Panel', en: 'Panel', it: 'Panel' },
     title: {
@@ -40,8 +40,8 @@ export const linkedinPosts = [
   {
     id: 'reeperbahn-festival',
     order: 3,
-    url: 'https://www.linkedin.com/posts/lucainve_rbf25-activity-7376877060411133952-KwfR/',
-    image: '/images/works/eintracht-pankow/networking-believe.webp',
+    url: 'https://www.linkedin.com/posts/peggy-adamu-8b335a65_rbf25-ugcPost-7376898005272186880-Jqf3',
+    image: '/images/works/eintracht-pankow/reeperbahn-panel.webp',
     tag: { de: 'Festival', en: 'Festival', it: 'Festival' },
     title: {
       de: 'Reeperbahn Festival & Networking',

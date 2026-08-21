@@ -355,3 +355,39 @@ details summary::-webkit-details-marker { display: none; }
     font-size: 0.95rem;
   }
 }
+
+
+/* v8 quick fixes requested by Luca */
+.cd-emoji {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 1.05rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,.12));
+}
+.reference-card { overflow:hidden; }
+.reference-card::after { opacity:.28; }
+.reference-quote {
+  position: relative;
+  padding-left: 2.5rem;
+  color: var(--muted);
+}
+.reference-quote::before {
+  content: '“';
+  position: absolute;
+  left: 0;
+  top: -1.05rem;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(158, 115, 63, 0.18);
+  font-weight: 900;
+}
+.project-card .project-media .absolute.bottom-4 {
+  background: rgba(245,234,219,.96);
+  color: #3b2a18;
+}
+@media (max-width: 640px) {
+  .reference-quote { padding-left: 1.9rem; }
+  .reference-quote::before { font-size: 4rem; top: -0.75rem; }
+}
