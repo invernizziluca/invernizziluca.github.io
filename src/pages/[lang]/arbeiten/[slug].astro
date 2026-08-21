@@ -39,7 +39,7 @@ const spotifyEmbeds = [...(data.spotifyEmbed ? [data.spotifyEmbed] : []), ...(da
           <p class="reveal text-lg leading-8 text-muted">{t.intro}</p>
         </div>
         <div class="reveal mt-10 overflow-hidden rounded-[2.5rem] bg-white p-3 shadow-soft">
-          <img src={asset(data.cover)} alt={t.title} class="aspect-[16/8] w-full rounded-[2rem] object-cover" />
+          <img src={asset(data.cover)} alt={t.title} class="aspect-[16/8] w-full rounded-[2rem] object-cover" style={`object-position:${data.coverPosition || "center center"};`} />
         </div>
       </div>
     </section>

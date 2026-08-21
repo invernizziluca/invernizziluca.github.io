@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import LinkedInEmbed from '../../components/LinkedInEmbed.astro';
 import { UI, languages, type Lang } from '../../i18n';
-import { education, linkedinPosts, socialProof, references, certificates } from '../../data/site';
+import { education, linkedinPosts, references, certificates } from '../../data/site';
 
 export function getStaticPaths() { return languages.map((lang) => ({ params: { lang }, props: { lang } })); }
 const lang = Astro.props.lang as Lang;
@@ -21,13 +21,13 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
 <BaseLayout lang={lang} title={ui.seoTitle} description={ui.seoDescription}>
   <main>
     <section id="start" class="hero-shell section-y section-padding pt-14 sm:pt-20 lg:pt-24">
-      <div class="container-page grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+      <div class="container-page grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div class="reveal">
           <p class="kicker">{ui.hero.kicker}</p>
           <h1 class="mt-5 max-w-4xl text-balance text-6xl font-black tracking-[-0.065em] text-ink sm:text-7xl lg:text-8xl">{ui.hero.title}</h1>
           <p class="mt-5 text-balance text-2xl font-semibold tracking-tight text-ink/85 sm:text-3xl">{ui.hero.subtitle}</p>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-muted">{ui.hero.text}</p>
-          <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a class="btn-primary" href="#arbeiten">{ui.hero.primary}</a>
             <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.hero.secondary}</a>
             <a class="btn-secondary" href="#kontakt">{ui.hero.tertiary}</a>
@@ -35,14 +35,14 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
         </div>
         <div data-tilt-card class="hero-portrait-card reveal glass-card rounded-[2.6rem] p-4">
           <img src={asset('images/profile/luca-portrait.webp')} alt="Portrait Luca Invernizzi" class="aspect-[4/5] w-full rounded-[2rem] object-cover object-top" width="640" height="800" decoding="async" fetchpriority="high" />
-          <div class="float-pill one"><span>Music</span> Marketing</div>
-          <div class="float-pill two"><span>Artist</span> Management</div>
-          <div class="float-pill three"><span>Public</span> Relations</div>
+          <div class="float-pill one bullet-pill"><span class="cd-bullet"></span><span>Music Marketing</span></div>
+          <div class="float-pill two bullet-pill"><span class="cd-bullet"></span><span>Artist Management</span></div>
+          <div class="float-pill three bullet-pill"><span class="cd-bullet"></span><span>Public Relations</span></div>
         </div>
       </div>
-      <div class="container-page mt-12 grid gap-4 sm:grid-cols-3">
+      <div class="container-page mt-10 grid gap-4 sm:grid-cols-3">
         {ui.stats.map((stat) => (
-          <div data-tilt-card class="reveal hero-metric premium-card rounded-[1.8rem] p-7 backdrop-blur">
+          <div data-tilt-card class="reveal hero-metric premium-card rounded-[1.65rem] p-6 backdrop-blur">
             <div class="text-3xl font-black tracking-tight text-ink">{stat.value}</div>
             <div class="mt-1 text-sm font-semibold text-muted">{stat.label}</div>
           </div>
@@ -50,18 +50,17 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
       </div>
     </section>
 
-    <section class="section-y section-padding">
+    <section class="section-y section-padding pt-4">
       <div class="container-page">
         <div class="reveal max-w-4xl">
           <p class="kicker">01</p>
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.positioning.title}</h2>
-          <p class="mt-6 max-w-3xl text-xl leading-9 text-muted">{ui.positioning.text}</p>
         </div>
-        <div class="mt-10 grid gap-5 md:grid-cols-3">
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
           {ui.positioning.cards.map((card) => (
-            <div data-tilt-card class="reveal premium-card feature-card rounded-[2rem] p-7 backdrop-blur sm:p-8">
+            <div data-tilt-card class="reveal premium-card feature-card rounded-[1.85rem] p-6 backdrop-blur sm:p-7">
               <h3 class="text-2xl font-extrabold tracking-tight">{card.title}</h3>
-              <p class="mt-4 text-base leading-7 text-muted">{card.text}</p>
+              <p class="mt-3 text-base leading-7 text-muted">{card.text}</p>
             </div>
           ))}
         </div>
@@ -75,24 +74,24 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.works.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.works.intro}</p>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
           {works.filter((work) => work.data.featured).map((work) => <ProjectCard entry={work} lang={lang} />)}
         </div>
       </div>
     </section>
 
     <section id="erfahrung" class="section-y section-padding">
-      <div class="container-page grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="container-page grid gap-7 lg:grid-cols-[0.85fr_1.15fr]">
         <div class="reveal">
           <p class="kicker">03</p>
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.timeline.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.timeline.intro}</p>
         </div>
-        <div class="space-y-4">
+        <div class="space-y-3">
           {timeline.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
-              <a href={to(`${lang}/arbeiten/${entry.slug}/`)} data-tilt-card class="reveal block premium-card rounded-[1.7rem] p-6 transition hover:-translate-y-1">
+              <a href={to(`${lang}/arbeiten/${entry.slug}/`)} data-tilt-card class="reveal block premium-card rounded-[1.6rem] p-5 transition hover:-translate-y-1 sm:p-6">
                 <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{t.period}</div>
                 <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                   <div>
@@ -116,7 +115,7 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.education.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.education.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <div class="mt-8 grid gap-5 lg:grid-cols-3">
           {education.map((item) => (
             <a href={to(`${lang}/ausbildung/${item.id}/`)} data-tilt-card class="reveal group premium-card overflow-hidden rounded-[1.8rem] p-4 transition hover:-translate-y-1">
               <img src={asset(item.cover)} alt={item.title[lang]} class="aspect-[16/10] w-full rounded-[1.35rem] object-cover" loading="lazy" />
@@ -139,18 +138,18 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.research.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.research.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
           {research.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
-              <article data-tilt-card class="reveal premium-card rounded-[1.8rem] p-5">
-                {entry.data.cover && <img src={asset(entry.data.cover)} alt="" class="aspect-[16/9] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />}
-                <div class="p-2 pt-5">
+              <article data-tilt-card class="reveal premium-card rounded-[1.8rem] p-4 sm:p-5">
+                {entry.data.cover && <img src={asset(entry.data.cover)} alt="" class="aspect-[16/8] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />}
+                <div class="p-1 pt-4">
                   <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.year} · {entry.data.category}</div>
-                  <h3 class="mt-4 text-xl font-extrabold tracking-tight">{t.title}</h3>
+                  <h3 class="mt-3 text-xl font-extrabold tracking-tight">{t.title}</h3>
                   {t.subtitle && <p class="mt-2 text-sm font-semibold text-muted">{t.subtitle}</p>}
-                  <p class="mt-4 text-sm leading-6 text-muted">{t.short}</p>
-                  {entry.data.pdf && <a class="mt-6 inline-flex text-sm font-bold text-ink" href={asset(entry.data.pdf)} target="_blank">{ui.research.pdf} →</a>}
+                  <p class="mt-3 text-sm leading-6 text-muted">{t.short}</p>
+                  {entry.data.pdf && <a class="mt-5 inline-flex text-sm font-bold text-ink" href={asset(entry.data.pdf)} target="_blank">{ui.research.pdf} →</a>}
                 </div>
               </article>
             );
@@ -167,9 +166,9 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
             <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.linkedin.title}</h2>
             <p class="mt-5 text-lg leading-8 text-muted">{ui.linkedin.intro}</p>
           </div>
-          <a class="btn-secondary" href="https://www.linkedin.com/in/lucainve/recent-activity/all/" target="_blank">LinkedIn Profil öffnen →</a>
+          <a class="btn-secondary" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">LinkedIn Profil öffnen →</a>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <div class="mt-8 grid gap-5 lg:grid-cols-3">
           {highlightedLinkedin.map((post) => <LinkedInEmbed post={post} lang={lang} />)}
         </div>
       </div>
@@ -182,13 +181,13 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.media.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.media.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+        <div class="mt-8 grid gap-5 lg:grid-cols-2">
           {media.map((entry) => {
             const t = entry.data.translations[lang] ?? entry.data.translations.de;
             return (
               <article data-tilt-card class="reveal premium-card overflow-hidden rounded-[1.8rem]">
-                {entry.data.image && <img src={asset(entry.data.image)} alt={t.title} class="aspect-[16/9] w-full object-cover" loading="lazy" />}
-                <div class="p-7">
+                {entry.data.image && <img src={asset(entry.data.image)} alt={t.title} class="aspect-[16/9] w-full object-cover object-top" loading="lazy" />}
+                <div class="p-6 sm:p-7">
                   <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{entry.data.date} · {entry.data.typeLabel}</div>
                   <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{t.title}</h3>
                   <p class="mt-2 text-sm font-semibold text-muted">{entry.data.source} · {t.subtitle}</p>
@@ -209,18 +208,18 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.references.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.references.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+        <div class="mt-8 grid gap-5">
           {references.map((ref) => (
-            <article data-tilt-card class="reveal premium-card rounded-[2rem] p-7 lg:col-span-2 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:p-9">
-              <div class="flex items-center gap-4 lg:block">
-                <img src={asset(ref.image)} alt={ref.name} class="h-20 w-20 rounded-3xl object-cover lg:h-40 lg:w-40" loading="lazy" />
-                <div>
-                  <h3 class="text-xl font-extrabold">{ref.name}</h3>
-                  <p class="mt-1 text-sm font-semibold text-muted">{ref.role}</p>
-                  <p class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{ref.source}</p>
-                </div>
+            <article data-tilt-card class="reveal premium-card rounded-[2.15rem] p-6 sm:p-8 lg:grid lg:grid-cols-[250px_1fr] lg:gap-9">
+              <div class="rounded-[1.8rem] bg-white/75 p-5 ring-1 ring-black/5">
+                <img src={asset(ref.image)} alt={ref.name} class="h-24 w-24 rounded-[1.4rem] object-cover sm:h-40 sm:w-40" loading="lazy" />
+                <h3 class="mt-5 text-2xl font-extrabold tracking-tight">{ref.name}</h3>
+                <p class="mt-2 text-sm font-semibold leading-6 text-muted">{ref.role}</p>
+                <div class="mt-4 inline-flex rounded-full bg-paper px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{ref.source}</div>
               </div>
-              <blockquote class="mt-6 text-lg leading-8 text-muted lg:mt-0">“{ref.quote[lang]}”</blockquote>
+              <div class="mt-6 lg:mt-0 lg:flex lg:flex-col lg:justify-center">
+                <blockquote class="reference-quote pl-3 text-lg leading-8 text-muted sm:text-[1.22rem] sm:leading-9">{ref.quote[lang]}</blockquote>
+              </div>
             </article>
           ))}
         </div>
@@ -234,21 +233,19 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
           <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.certificates.title}</h2>
           <p class="mt-5 text-lg leading-8 text-muted">{ui.certificates.intro}</p>
         </div>
-        <div class="mt-10 grid gap-5 lg:grid-cols-2">
+        <div class="mt-8 grid max-w-4xl gap-5">
           {certificates.map((cert) => (
-            <article data-tilt-card class="reveal premium-card rounded-[1.8rem] p-5">
-              <img src={asset(cert.cover)} alt={cert.title[lang]} class="aspect-[16/11] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />
-              <div class="p-2 pt-5">
-                <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{cert.date} · {cert.issuer}</div>
-                <h3 class="mt-4 text-2xl font-extrabold tracking-tight">{cert.title[lang]}</h3>
-                <p class="mt-4 text-sm leading-6 text-muted">{cert.summary[lang]}</p>
-                <div class="mt-6 flex flex-wrap gap-3">
-                  <a class="btn-secondary" href={asset(cert.pdf)} target="_blank">{ui.certificates.pdf} →</a>
+            <article data-tilt-card class="reveal premium-card rounded-[1.8rem] p-4 sm:p-5">
+              <div class="grid gap-5 md:grid-cols-[0.95fr_1.05fr] md:items-start">
+                <img src={asset(cert.cover)} alt={cert.title[lang]} class="aspect-[16/10] w-full rounded-[1.25rem] object-cover object-top" loading="lazy" />
+                <div class="p-1 md:pt-1">
+                  <div class="text-xs font-bold uppercase tracking-[0.18em] text-caramelDark">{cert.date} · {cert.issuer}</div>
+                  <h3 class="mt-3 text-2xl font-extrabold tracking-tight">{cert.title[lang]}</h3>
+                  <p class="mt-3 text-sm leading-6 text-muted">{cert.summary[lang]}</p>
+                  <div class="mt-5 flex flex-wrap gap-3">
+                    <a class="btn-secondary" href={asset(cert.pdf)} target="_blank">{ui.certificates.pdf} →</a>
+                  </div>
                 </div>
-                <details class="mt-5 rounded-[1.4rem] border border-black/10 bg-white/70 p-3">
-                  <summary class="cursor-pointer rounded-full px-3 py-2 text-sm font-bold text-ink">{ui.certificates.show}</summary>
-                  <iframe class="pdf-viewer mt-3" src={asset(cert.pdf)} title={cert.title[lang]} loading="lazy"></iframe>
-                </details>
               </div>
             </article>
           ))}
@@ -256,10 +253,10 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
       </div>
     </section>
 
-    <section class="section-y section-padding">
+    <section class="section-y section-padding pt-2">
       <div class="container-page">
         <div class="reveal max-w-3xl"><p class="kicker">10</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.skills.title}</h2></div>
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {ui.skills.groups.map((group) => (
             <div data-tilt-card class="reveal premium-card rounded-[1.8rem] p-6">
               <h3 class="font-extrabold">{group.title}</h3>
@@ -270,22 +267,29 @@ const highlightedLinkedin = linkedinPosts.sort((a, b) => a.order - b.order).slic
       </div>
     </section>
 
-    <section class="section-y section-padding">
-      <div class="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+    <section class="section-y section-padding pt-2">
+      <div class="container-page grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div class="reveal glass-card rounded-[2rem] p-8 sm:p-10"><p class="kicker">11</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{ui.about.title}</h2></div>
         <div data-tilt-card class="reveal flex items-center premium-card rounded-[2rem] p-8 sm:p-10"><p class="text-lg leading-8 text-muted">{ui.about.text}</p></div>
       </div>
     </section>
 
     <section id="kontakt" class="section-y section-padding">
-      <div data-tilt-card class="container-page reveal premium-card rounded-[2.5rem] p-8 text-ink shadow-apple sm:p-12 lg:p-16">
-        <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramelDark">12</p>
-        <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
-        <p class="mt-5 max-w-2xl text-lg leading-8 text-muted">{ui.contact.text}</p>
-        <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a class="btn-primary" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
-          <a class="btn-secondary" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
-          <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>
+      <div data-tilt-card class="container-page reveal premium-card rounded-[2.5rem] p-8 text-ink shadow-apple sm:p-12 lg:grid lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-10 lg:p-14">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.24em] text-caramelDark">12</p>
+          <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] sm:text-6xl">{ui.contact.title}</h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-muted">{ui.contact.text}</p>
+          <div class="hero-actions mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a class="btn-primary" href="mailto:luca.invernizzi@students.ffhs.ch">{ui.contact.email}</a>
+            <a class="btn-secondary" href="https://www.linkedin.com/in/luca-invernizzi/" target="_blank">{ui.contact.linkedin}</a>
+            <a class="btn-secondary" href={asset('pdf/cv-luca-invernizzi.pdf')} target="_blank">{ui.contact.cv}</a>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-[320px] lg:mx-0 lg:justify-self-end">
+          <div class="glass-card rounded-[2rem] p-3">
+            <img src={asset('images/profile/luca-portrait.webp')} alt="Luca Invernizzi smiling portrait" class="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>

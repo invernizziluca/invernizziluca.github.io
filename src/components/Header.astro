@@ -18,9 +18,12 @@ const navItems = [
 ---
 <header class="site-header sticky top-0 z-50 border-b border-white/50">
   <div class="container-page section-padding flex h-16 items-center justify-between gap-4">
-    <a href={to(`${lang}/#start`)} class="brand-mark flex items-center gap-3 rounded-full bg-white/55 py-1.5 pl-1.5 pr-4 text-sm font-extrabold tracking-tight text-ink ring-1 ring-white/70 transition hover:bg-white/80">
-      <img src={to('images/logos/li-logo-gold.png')} alt="" class="brand-logo h-11 w-11 rounded-xl" width="44" height="44" decoding="async" />
-      <span>Luca Invernizzi</span>
+    <a href={to(`${lang}/#start`)} class="brand-mark flex items-center gap-2 rounded-full bg-white/65 py-1.5 pl-2 pr-4 text-sm font-extrabold tracking-tight text-ink ring-1 ring-white/75 transition hover:bg-white/85">
+      <img src={to('images/logos/li-logo-gold.png')} alt="" class="brand-logo h-11 w-11 rounded-xl object-contain" width="44" height="44" decoding="async" />
+      <span class="brand-copy flex flex-col leading-none">
+        <span class="text-[1.04rem] font-black tracking-[-0.03em]">Luca</span>
+        <span class="mt-1 text-[1.04rem] font-black tracking-[-0.03em]">Invernizzi</span>
+      </span>
     </a>
     <nav class="hidden items-center gap-1 rounded-full border border-white/60 bg-white/40 p-1 xl:flex">
       {navItems.map(([id, label]) => (

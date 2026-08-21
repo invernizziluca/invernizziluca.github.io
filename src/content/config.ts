@@ -44,6 +44,7 @@ const arbeiten = defineCollection({
     order: z.number(),
     featured: z.boolean().default(true),
     cover: z.string(),
+    coverPosition: z.string().optional(),
     logo: z.string().optional(),
     companyUrl: z.string().optional(),
     gallery: z.array(z.string()).default([]),

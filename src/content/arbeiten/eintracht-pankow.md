@@ -1,11 +1,11 @@
 ---
 order: 2
 featured: true
-cover: /images/works/eintracht-pankow/team-selfie-reeperbahn.jpg
+cover: /images/works/eintracht-pankow/pixxi-artwork.webp
 logo: /images/logos/eintracht-pankow.webp
 companyUrl: https://www.eintracht-pankow.de/
 gallery:
-  - /images/works/eintracht-pankow/team-selfie-reeperbahn.jpg
+  - /images/works/eintracht-pankow/pixxi-artwork.webp
   - /images/works/eintracht-pankow/songwriting-table.webp
   - /images/works/eintracht-pankow/songwriting-studio-blackwhite.webp
   - /images/works/eintracht-pankow/songwriting-lounge-talk.webp

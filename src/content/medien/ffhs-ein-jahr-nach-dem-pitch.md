@@ -4,7 +4,7 @@ date: "30.06.2026"
 source: "FFHS News"
 typeLabel: "Artikel"
 link: "https://www.ffhs.ch/de/ffhs/news/artikel/2026-06-30-ein-jahr-nach-dem-pitch-was-aus-einer-studienidee-wurde"
-image: "/images/social-proof/ffhs-pitch.webp"
+image: "/images/social-proof/ffhs-pitch-article.webp"
 translations:
   de:
     title: "Ein Jahr nach dem Pitch - was aus einer Studienidee wurde"

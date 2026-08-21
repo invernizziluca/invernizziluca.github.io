@@ -1,9 +1,10 @@
 ---
 order: 5
 featured: true
-cover: "/images/works/music-project/studio-hug-renis.png"
+cover: "/images/works/music-project/foto-con-renis.webp"
+coverPosition: center 22%
 gallery:
-  - "/images/works/music-project/studio-hug-renis.png"
+  - "/images/works/music-project/foto-con-renis.webp"
   - "/images/works/music-project/renis-doppio.webp"
   - "/images/works/music-project/renis-10-lode.webp"
   - "/images/works/music-project/renis-ignoto.webp"

@@ -1,11 +1,12 @@
 ---
 order: 1
 featured: true
-cover: /images/works/initiative-musik/initiative-logo-card.png
+cover: /images/works/initiative-musik/initiative-cover-violet.webp
+coverPosition: center center
 logo: /images/logos/initiative-musik-logo.svg
 companyUrl: https://www.initiative-musik.de/
 gallery:
-  - /images/works/initiative-musik/initiative-logo-card.png
+  - /images/works/initiative-musik/initiative-cover-violet.webp
   - /images/logos/initiative-musik-logo.svg
 tools:
   - Public Relations
@@ -36,10 +37,9 @@ translations:
   de:
     title: Initiative Musik
     role: Presse- & Öffentlichkeitsarbeit
-    cardRole: Praktikum · Presse- & Öffentlichkeitsarbeit
     company: Initiative Musik gGmbH
     location: Berlin, Deutschland
-    period: 09/2026 - Aktuell
+    period: ab 09/2026
     category: Presse / PR / Social Media
     cardCategory: Presse & Öffentlichkeitsarbeit
     short: "Geplanter nächster Schritt in Berlin: externe Kommunikation, Social Media, Website, Newsletter, Medienmonitoring, Events und PR-Aktivitäten."
@@ -75,10 +75,9 @@ translations:
   en:
     title: Initiative Musik
     role: Press & public relations
-    cardRole: Internship · Press & public relations
     company: Initiative Musik gGmbH
     location: Berlin, Germany
-    period: 09/2026 - Present
+    period: from 09/2026
     category: Press / PR / social media
     cardCategory: Press & public relations
     short: "Planned next step in Berlin: external communication, social media, website, newsletter, media monitoring, events and PR activities."
@@ -114,10 +113,9 @@ translations:
   it:
     title: Initiative Musik
     role: Presse & public relations
-    cardRole: Praktikum · Presse & public relations
     company: Initiative Musik gGmbH
     location: Berlino, Germania
-    period: 09/2026 - Attuale
+    period: da 09/2026
     category: Presse / PR / social media
     cardCategory: Presse & public relations
     short: "Prossimo passo previsto a Berlino: comunicazione esterna, social media, sito, newsletter, media monitoring, eventi e PR."

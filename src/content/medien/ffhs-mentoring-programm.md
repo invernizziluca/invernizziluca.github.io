@@ -4,7 +4,7 @@ date: "04.09.2025"
 source: "FFHS News"
 typeLabel: "Erfahrungsbericht"
 link: "https://www.ffhs.ch/de/ffhs/news/artikel/2025-09-04-mentoring-programm-der-perfekte-ort-fuer-ehrliches-feedback"
-image: "/images/social-proof/ffhs-mentoring.webp"
+image: "/images/social-proof/ffhs-mentoring-article.webp"
 translations:
   de:
     title: "Mentoring-Programm: Der perfekte Ort für ehrliches Feedback"
