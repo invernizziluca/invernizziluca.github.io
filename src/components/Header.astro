@@ -1,49 +1,76 @@
 ---
-import { languages, languageLabels, UI, type Lang } from '../i18n';
-const lang = (Astro.props.lang ?? 'de') as Lang;
-const slug = Astro.props.slug ?? '';
-const educationId = Astro.props.educationId ?? '';
-const page = Astro.props.page ?? '';
-const ui = UI[lang];
-const base = import.meta.env.BASE_URL;
-const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
-const switchHref = (target: Lang) => {
-  if (slug) return to(`${target}/arbeiten/${slug}/`);
-  if (educationId) return to(`${target}/ausbildung/${educationId}/`);
-  return to(`${target}/`);
-};
-const navItems = [
-  ['start', ui.nav.start], ['arbeiten', ui.nav.arbeiten], ['erfahrung', ui.nav.erfahrung], ['ausbildung', ui.nav.ausbildung], ['research', ui.nav.research], ['linkedin', ui.nav.linkedin], ['nachweise', ui.nav.nachweise], ['kontakt', ui.nav.kontakt],
+import Disc from './Disc.astro';
+import { languageLabels, languageNames, languages, ui, type Lang } from '../i18n';
+import { asset, homeUrl } from '../lib/url';
+
+interface Props {
+  lang: Lang;
+  alternates: Record<Lang, string>;
+}
+
+const { lang, alternates } = Astro.props;
+const t = ui[lang];
+const home = homeUrl(lang);
+const nav = [
+  { href: `${home}#werdegang`, label: t.nav.werdegang },
+  { href: `${home}#arbeiten`, label: t.nav.arbeiten },
+  { href: `${home}#nachweise`, label: t.nav.nachweise },
+  { href: `${home}#kontakt`, label: t.nav.kontakt },
 ];
 ---
-<header class="site-header sticky top-0 z-50 border-b border-white/50">
-  <div class="container-page section-padding flex h-16 items-center justify-between gap-4">
-    <a href={to(`${lang}/#start`)} class="brand-mark flex items-center gap-2 rounded-full bg-white/65 py-1.5 pl-2 pr-4 text-sm font-extrabold tracking-tight text-ink ring-1 ring-white/75 transition hover:bg-white/85">
-      <img src={to('images/logos/li-logo-gold.png')} alt="" class="brand-logo h-11 w-11 rounded-xl object-contain" width="44" height="44" decoding="async" />
-      <span class="brand-copy flex flex-col leading-none">
-        <span class="text-[1.04rem] font-black tracking-[-0.03em]">Luca</span>
-        <span class="mt-1 text-[1.04rem] font-black tracking-[-0.03em]">Invernizzi</span>
-      </span>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href={home} aria-label="Luca Invernizzi">
+      <img src={asset('/images/brand/li-logo-96.png')} alt="" width="40" height="40" />
+      <span>Luca Invernizzi</span>
     </a>
-    <nav class="hidden items-center gap-1 rounded-full border border-white/60 bg-white/40 p-1 xl:flex">
-      {navItems.map(([id, label]) => (
-        <a href={to(`${lang}/#${id}`)} class="nav-link text-sm font-semibold text-muted transition hover:text-ink hover:bg-white/50">{label}</a>
-      ))}
+
+    <nav class="site-nav" aria-label={t.menu}>
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
     </nav>
-    <div class="flex items-center gap-2">
-      <div class="flex items-center gap-1 rounded-full border border-white/70 bg-white/60 p-1 shadow-sm backdrop-blur">
-        {languages.map((code) => (
-          <a href={switchHref(code)} class:list={['rounded-full px-3 py-1.5 text-xs font-bold transition', code === lang ? 'bg-ink text-white' : 'text-muted hover:text-ink']}>{languageLabels[code]}</a>
-        ))}
-      </div>
-      <details class="relative xl:hidden">
-        <summary class="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-black/10 bg-white/100 text-lg font-black list-none">☰</summary>
-        <div class="absolute right-0 mt-3 w-64 rounded-3xl border border-black/10 bg-white p-3 shadow-soft">
-          {navItems.map(([id, label]) => (
-            <a class="block rounded-2xl px-4 py-3 text-sm font-bold text-muted hover:bg-paper hover:text-ink" href={to(`${lang}/#${id}`)}>{label}</a>
-          ))}
-        </div>
-      </details>
+
+    <div class="lang-switch" role="group" aria-label={t.languageSwitch}>
+      {
+        languages.map((code) => (
+          <a
+            href={alternates[code]}
+            hreflang={code}
+            lang={code}
+            title={languageNames[code]}
+            aria-current={code === lang ? 'true' : undefined}
+          >
+            {languageLabels[code]}
+          </a>
+        ))
+      }
     </div>
+
+    <details class="menu">
+      <summary aria-label={t.menu}><span class="menu__bars" aria-hidden="true"></span></summary>
+      <nav class="menu__panel" aria-label={t.menu}>
+        {
+          nav.map((item) => (
+            <a href={item.href}>
+              <Disc />
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
   </div>
 </header>
+
+<script>
+  // Mobile menu: close after choosing a section, on outside click and on Escape.
+  document.querySelectorAll('details.menu').forEach((menu) => {
+    const close = () => menu.removeAttribute('open');
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+    document.addEventListener('click', (event) => {
+      if (menu.hasAttribute('open') && !menu.contains(event.target)) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+  });
+</script>

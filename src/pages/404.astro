@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Disc from '../components/Disc.astro';
+import { languages, ui, type Lang } from '../i18n';
+import { homeUrl } from '../lib/url';
+
+const lang: Lang = 'de';
+const t = ui[lang];
+const alternates = Object.fromEntries(languages.map((code) => [code, homeUrl(code)])) as Record<Lang, string>;
+---
+<BaseLayout lang={lang} title={`${t.notFound.title} | Luca Invernizzi`} description={t.notFound.text} alternates={alternates} noindex>
+  <section class="wrap not-found">
+    <Disc />
+    <h1 class="display h2">{t.notFound.title}</h1>
+    <p class="lead">{t.notFound.text}</p>
+    <div class="btn-row">
+      <a class="btn btn--primary" href={homeUrl('de')}>{t.notFound.back}</a>
+      <a class="btn btn--ghost" href={homeUrl('en')} lang="en">{ui.en.notFound.back}</a>
+      <a class="btn btn--ghost" href={homeUrl('it')} lang="it">{ui.it.notFound.back}</a>
+    </div>
+  </section>
+</BaseLayout>

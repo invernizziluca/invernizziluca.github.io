@@ -1,0 +1,24 @@
+# VORLAGE / TEMPLATE · nuovo post LinkedIn
+# Copia in  src/content/linkedin/<nome>.yaml
+# In home compaiono i primi 3 post con showOnHome: true (ordinati per "order").
+# Per mostrarlo anche in un lavoro: aggiungi "<nome>" alla lista linkedin: [...] del file in src/content/arbeiten/.
+order: 1
+date: "2026-12-01"
+url: "https://www.linkedin.com/posts/…"
+# author: "Nome"        # solo se il post è di un'altra persona
+image:
+  src: "/images/works/nome-del-lavoro/foto.webp"
+  alt:
+    de: "Bildbeschreibung"
+    en: "Image description"
+    it: "Descrizione dell'immagine"
+showOnHome: true
+de:
+  title: "Titel des Beitrags"
+  excerpt: "Ein bis zwei Sätze Inhalt."
+en:
+  title: "Post title"
+  excerpt: "One or two sentences."
+it:
+  title: "Titolo del post"
+  excerpt: "Una o due frasi."

@@ -1,0 +1,334 @@
+---
+// The home page (same component for /, /de/, /en/, /it/).
+// Texts: src/content/home/home.yaml · Work: src/content/arbeiten · Proof: src/content/nachweise, linkedin, referenzen
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Img from './Img.astro';
+import Disc from './Disc.astro';
+import ChapterHead from './ChapterHead.astro';
+import Timeline from './Timeline.astro';
+import WorkCard from './WorkCard.astro';
+import ReferenceCard from './ReferenceCard.astro';
+import LinkedInCard from './LinkedInCard.astro';
+import ProofCard from './ProofCard.astro';
+import SkillRating from './SkillRating.astro';
+import { languages, ui, type Lang } from '../i18n';
+import {
+  formatPeriod,
+  getEducation,
+  getHome,
+  getPosts,
+  getProofs,
+  getReferences,
+  getWorks,
+  localized,
+  tr,
+} from '../lib/content';
+import { absoluteUrl, asset, educationUrl, homeUrl, localHref, workUrl } from '../lib/url';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const home = await getHome();
+const works = await getWorks();
+const education = await getEducation();
+const featuredWorks = works.filter((entry) => entry.data.featured);
+const moreWorks = works.filter((entry) => !entry.data.featured);
+const posts = (await getPosts()).filter((entry) => entry.data.showOnHome).slice(0, 3);
+const proofs = await getProofs();
+const references = await getReferences();
+const featuredReference = references.find((entry) => entry.data.featured) ?? references[0];
+const otherReferences = references.filter((entry) => entry !== featuredReference);
+
+// Which page a LinkedIn post or a proof document belongs to ("Gehört zu …").
+const relatedPost = new Map<string, { label: string; href: string }>();
+const relatedProof = new Map<string, { label: string; href: string }>();
+for (const entry of works) {
+  const href = workUrl(lang, entry.slug);
+  const post = { label: localized(entry.data, lang).title, href };
+  const proof = { label: t.proofActions.case, href };
+  entry.data.linkedin.forEach((ref) => relatedPost.has(ref.id) || relatedPost.set(ref.id, post));
+  entry.data.nachweise.forEach((ref) => relatedProof.has(ref.id) || relatedProof.set(ref.id, proof));
+}
+for (const entry of education) {
+  const href = educationUrl(lang, entry.slug);
+  const post = { label: tr(entry.data.institution, lang), href };
+  const proof = { label: t.proofActions.education, href };
+  entry.data.linkedin.forEach((ref) => relatedPost.has(ref.id) || relatedPost.set(ref.id, post));
+  entry.data.nachweise.forEach((ref) => relatedProof.has(ref.id) || relatedProof.set(ref.id, proof));
+}
+
+const alternates = Object.fromEntries(languages.map((code) => [code, homeUrl(code)])) as Record<Lang, string>;
+const currentWork = works.find((entry) => !entry.data.end);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Luca Invernizzi',
+  url: absoluteUrl(homeUrl(lang), Astro.site),
+  image: absoluteUrl(home.portrait.src, Astro.site),
+  description: tr(home.seo.description, lang),
+  email: `mailto:${home.contact.email}`,
+  sameAs: [home.contact.linkedin],
+  address: { '@type': 'PostalAddress', addressLocality: tr(home.contact.city, 'de'), addressCountry: 'DE' },
+  knowsLanguage: ['it', 'de', 'en', 'fr'],
+  ...(currentWork
+    ? {
+        jobTitle: localized(currentWork.data, lang).role,
+        worksFor: { '@type': 'Organization', name: tr(currentWork.data.company, lang), url: currentWork.data.website },
+      }
+    : {}),
+  alumniOf: education.map((entry) => ({ '@type': 'EducationalOrganization', name: tr(entry.data.institution, lang) })),
+};
+---
+<BaseLayout
+  lang={lang}
+  title={tr(home.seo.title, lang)}
+  description={tr(home.seo.description, lang)}
+  image={home.ogImage}
+  imageAlt="Luca Invernizzi"
+  alternates={alternates}
+  canonical={homeUrl(lang)}
+  type="profile"
+  jsonLd={jsonLd}
+>
+  {/* Hero: who, where, why credible */}
+  <section class="wrap" id="start" aria-labelledby="hero-title">
+    <div class="hero">
+      <div class="hero__text">
+        <h1 id="hero-title">
+          <span class="hero__name"><Disc size="1.2rem" />{tr(home.hero.intro, lang)}</span>
+          <span class="hero__claim display h1">{tr(home.hero.title, lang)}</span>
+        </h1>
+        <p class="lead">{tr(home.hero.lead, lang)}</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#arbeiten">{tr(home.hero.primary, lang)}</a>
+          <a class="btn btn--ghost" href={asset(home.contact.cv)} target="_blank" rel="noopener">{tr(home.hero.secondary, lang)}</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="sleeve-disc" aria-hidden="true"><span class="disc" data-spin></span></div>
+        <figure class="sleeve">
+          <Img
+            src={home.portrait.src}
+            alt={tr(home.portrait.alt, lang)}
+            position={home.portrait.position}
+            loading="eager"
+            fetchpriority="high"
+            sizes="(min-width: 960px) 24rem, 72vw"
+          />
+        </figure>
+      </div>
+    </div>
+
+    <div class="status">
+      <h2 class="sr-only">{t.status.overview}</h2>
+      {
+        home.status.map((item) => (
+          <article class="status__item">
+            <p class="status__label label">
+              <Disc />
+              {tr(item.label, lang)}
+            </p>
+            <h3 class="display h3">{tr(item.title, lang)}</h3>
+            <p>{tr(item.text, lang)}</p>
+            <a class="text-link" href={localHref(lang, item.href)}>{tr(item.linkLabel, lang)}</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  {/* 01–03: Ursprung, Business, Berlin */}
+  <section class="wrap section" id="werdegang" aria-labelledby="werdegang-title">
+    <ChapterHead
+      id="werdegang-title"
+      name={tr(home.werdegang.name, lang)}
+      title={tr(home.werdegang.title, lang)}
+      intro={tr(home.werdegang.intro, lang)}
+    />
+    <Timeline chapters={home.werdegang.chapters} lang={lang} />
+  </section>
+
+  {/* 04: Praxis */}
+  <section class="wrap section" id="arbeiten" aria-labelledby="arbeiten-title">
+    <ChapterHead
+      id="arbeiten-title"
+      num="04"
+      name={tr(home.praxis.name, lang)}
+      title={tr(home.praxis.title, lang)}
+      intro={tr(home.praxis.intro, lang)}
+    />
+    <div class="work-grid">
+      {featuredWorks.map((entry) => <WorkCard entry={entry} lang={lang} />)}
+    </div>
+    {
+      moreWorks.length > 0 && (
+        <div class="more-projects">
+          <h3 class="display h3">{t.more.title}</h3>
+          <ul class="more-list">
+            {moreWorks.map((entry) => {
+              const text = localized(entry.data, lang);
+              return (
+                <li class="more-item">
+                  <Img src={entry.data.cover.src} alt="" position={entry.data.cover.position} sizes="72px" />
+                  <div>
+                    <a href={workUrl(lang, entry.slug)}>{text.title}</a>
+                    <p>
+                      {text.role}, {formatPeriod(entry.data.start, entry.data.end, lang)}
+                    </p>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+
+  {/* 05: Proof */}
+  <section class="wrap section" id="nachweise" aria-labelledby="nachweise-title">
+    <ChapterHead
+      id="nachweise-title"
+      num="05"
+      name={tr(home.nachweise.name, lang)}
+      title={tr(home.nachweise.title, lang)}
+      intro={tr(home.nachweise.intro, lang)}
+    />
+    <div class="refs">
+      {featuredReference && <ReferenceCard entry={featuredReference} lang={lang} featured />}
+      {otherReferences.map((entry) => <ReferenceCard entry={entry} lang={lang} />)}
+    </div>
+
+    {
+      posts.length > 0 && (
+        <>
+          <div class="subhead">
+            <h3 class="display h3">{tr(home.nachweise.linkedinTitle, lang)}</h3>
+            <p>{tr(home.nachweise.linkedinIntro, lang)}</p>
+          </div>
+          <div class="rail">
+            {posts.map((entry) => (
+              <LinkedInCard entry={entry} lang={lang} related={relatedPost.get(entry.id)} />
+            ))}
+          </div>
+        </>
+      )
+    }
+
+    <div class="subhead">
+      <h3 class="display h3">{tr(home.nachweise.archiveTitle, lang)}</h3>
+      <p>{tr(home.nachweise.archiveIntro, lang)}</p>
+    </div>
+    <ul class="archive">
+      {proofs.map((entry) => <ProofCard entry={entry} lang={lang} related={relatedProof.get(entry.id)} />)}
+    </ul>
+  </section>
+
+  {/* 06: Next step + contact */}
+  <section class="wrap section" id="naechster-schritt" aria-labelledby="next-title">
+    <ChapterHead
+      id="next-title"
+      num="06"
+      name={tr(home.next.name, lang)}
+      title={tr(home.next.title, lang)}
+      intro={tr(home.next.text, lang)}
+    />
+    <ul class="areas">
+      {
+        home.next.areas.map((area) => (
+          <li class="area">
+            <h3 class="display h3">{tr(area.title, lang)}</h3>
+            <p>{tr(area.text, lang)}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="skills" aria-labelledby="skills-title">
+      <h3 class="sr-only" id="skills-title">{tr(home.next.skillsTitle, lang)}</h3>
+      <div>
+        <h4 class="display h3">{t.skills.languages}</h4>
+        <ul class="skill-list">
+          {
+            home.skills.languages.map((item) => (
+              <li class="skill">
+                <span class="skill__name">
+                  {tr(item.name, lang)}
+                  {item.note && <span class="skill__note">{tr(item.note, lang)}</span>}
+                </span>
+                <SkillRating level={item.level} label={`${item.level} ${t.skills.levelOf}`} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h4 class="display h3">{t.skills.tools}</h4>
+        <ul class="skill-list">
+          {
+            home.skills.tools.map((item) => (
+              <li class="skill">
+                <span class="skill__name">{tr(item.name, lang)}</span>
+                <SkillRating level={item.level} label={`${item.level} ${t.skills.levelOf}`} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="skills__more">
+        <h4 class="display h3">{t.skills.more}</h4>
+        <p>{home.skills.more.join(', ')}</p>
+        {home.skills.note && <p>{tr(home.skills.note, lang)}</p>}
+      </div>
+    </div>
+
+    <div class="contact" id="kontakt">
+      <figure class="contact__photo">
+        <Img
+          src={home.contactPortrait.src}
+          alt={tr(home.contactPortrait.alt, lang)}
+          position={home.contactPortrait.position}
+          sizes="15rem"
+        />
+      </figure>
+      <div class="contact__text">
+        <p class="label">{tr(home.kontakt.name, lang)}</p>
+        <h3 class="display h2">{tr(home.kontakt.title, lang)}</h3>
+        <p>{tr(home.kontakt.text, lang)}</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href={`mailto:${home.contact.email}`}>{t.contact.email}</a>
+          <a class="btn btn--ghost" href={home.contact.linkedin} target="_blank" rel="noopener noreferrer">{t.contact.linkedin}</a>
+          <a class="btn btn--ghost" href={asset(home.contact.cv)} target="_blank" rel="noopener">{t.contact.cv}</a>
+        </div>
+        <p class="contact__mail">{home.contact.email}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // The CD behind the portrait turns slowly while scrolling (off with "reduce motion").
+  const disc = document.querySelector('[data-spin]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (disc && !reduce.matches) {
+    let ticking = false;
+    const update = () => {
+      disc.style.setProperty('--spin', String(window.scrollY * 0.12));
+      ticking = false;
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true },
+    );
+  }
+</script>

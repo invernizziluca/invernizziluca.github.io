@@ -1,0 +1,19 @@
+order: 4
+date: "2026-05-30"
+url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7466397292628180994/"
+image:
+  src: "/images/social-proof/ffhs-pitch-article.webp"
+  alt:
+    de: "Whiteboard mit Ideen aus der ersten Phase des Innovationsprojekts"
+    en: "Whiteboard with ideas from the first phase of the innovation project"
+    it: "Lavagna con le idee della prima fase del progetto di innovazione"
+showOnHome: false
+de:
+  title: "Innovationsmanagement & Cross-Industry-Innovation"
+  excerpt: "Über mein Innovationsprojekt an der FFHS und darüber, wie aus einer Studienidee ein greifbarer Prototyp wurde."
+en:
+  title: "Innovation management & cross-industry innovation"
+  excerpt: "About my innovation project at FFHS and how a study idea became a tangible prototype."
+it:
+  title: "Innovation management e cross-industry innovation"
+  excerpt: "Il mio progetto di innovazione alla FFHS e come un'idea di studio è diventata un prototipo concreto."

@@ -1,0 +1,19 @@
+# VORLAGE / TEMPLATE · nuovo riscontro (certificato, articolo, ricerca, Zeugnis)
+# Copia in  src/content/nachweise/<nome>.yaml
+# Il PDF va in public/pdf/... ; l'anteprima (facoltativa) in public/images/proof/...
+order: 8                       # posizione nell'archivio
+type: "zertifikat"             # zeugnis | artikel | zertifikat | forschung | empfehlung
+date: "2026-12-01"             # sempre tra virgolette
+source: "Chi lo ha emesso, es. FFHS"
+pdf: "/pdf/certificates/nome.pdf"          # oppure togli questa riga
+# url: "https://…"                         # per articoli online
+image: "/images/proof/nome.webp"           # facoltativo
+de:
+  title: "Titel"
+  summary: "Ein Satz, was das Dokument belegt."
+en:
+  title: "Title"
+  summary: "One sentence on what it proves."
+it:
+  title: "Titolo"
+  summary: "Una frase su cosa dimostra."

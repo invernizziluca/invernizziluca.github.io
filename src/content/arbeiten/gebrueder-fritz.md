@@ -1,157 +1,141 @@
 ---
+# CASE STUDY · Gebrüder Fritz
+# URL: /de/arbeiten/gebrueder-fritz/ (the file name is the URL – never add a "slug" field)
+
 order: 3
 featured: true
-cover: /images/works/gebrueder-fritz/jubilaeum-team.webp
-coverPosition: center 24%
-logo: /images/logos/gebrueder-fritz-logo.svg
-companyUrl: https://www.gebruederfritz.com/
+company: "Gebrüder Fritz GmbH"
+location:
+  de: "Berlin"
+  en: "Berlin"
+  it: "Berlino"
+start: "2025-07"
+end: "2025-10"
+website: "https://www.gebruederfritz.com/"
+
+cover:
+  src: "/images/works/gebrueder-fritz/jubilaeum-team.webp"
+  position: "center 30%"
+  alt:
+    de: "Team und Gäste beim Jubiläum von Gebrüder Fritz in einer Altbau-Location"
+    en: "Team and guests at the Gebrüder Fritz anniversary in a period building"
+    it: "Team e ospiti all'anniversario di Gebrüder Fritz in una location d'epoca"
+
+tags: ["Marketing", "CRM", "Events"]
+tools: ["Pipedrive", "Sevdesk", "Mailchimp", "CapCut", "Trello", "Excel", "OneDrive", "Google Docs"]
+
 gallery:
-  - /images/works/gebrueder-fritz/jubilaeum-team.webp
-  - /images/works/eintracht-pankow/networking-believe.webp
-  - /images/works/gebrueder-fritz/jubilaeum-toast.webp
-  - /images/works/gebrueder-fritz/gebrueder-management.webp
-  - /images/works/gebrueder-fritz/gift-bag.webp
-tools:
-  - Pipedrive
-  - SevDesk
-  - Mailchimp
-  - Trello
-  - Excel
-  - OneDrive
-  - Google Docs
-  - CapCut
-  - CRM
-  - Newsletter
-  - Event Operations
-  - Content Creation
+  - src: "/images/works/gebrueder-fritz/jubilaeum-team.webp"
+    alt:
+      de: "Gruppenfoto beim Jubiläum von Gebrüder Fritz"
+      en: "Group photo at the Gebrüder Fritz anniversary"
+      it: "Foto di gruppo all'anniversario di Gebrüder Fritz"
+  - src: "/images/works/gebrueder-fritz/jubilaeum-toast.webp"
+    alt:
+      de: "Anstoßen beim Jubiläum"
+      en: "A toast at the anniversary"
+      it: "Un brindisi all'anniversario"
+  - src: "/images/works/gebrueder-fritz/gebrueder-management.webp"
+    position: "center 25%"
+    alt:
+      de: "Luca mit dem Team von Gebrüder Fritz"
+      en: "Luca with the Gebrüder Fritz team"
+      it: "Luca con il team di Gebrüder Fritz"
+  - src: "/images/works/gebrueder-fritz/gift-bag.webp"
+    position: "center 40%"
+    alt:
+      de: "Geschenktüte von Gebrüder Fritz für Gäste"
+      en: "Gebrüder Fritz gift bag for guests"
+      it: "Sacchetto regalo di Gebrüder Fritz per gli ospiti"
+
+spotify: []
+artists: []
+linkedin: []
+nachweise: ["zeugnis-gebrueder-fritz"]
+
 links: []
-evidence:
-  - label: Praktikumszeugnis - Gebrüder Fritz GmbH
-    pdf: /pdf/praktikumszeugnis-gebrueder-fritz.pdf
-    note: "Bestätigung meiner Tätigkeiten in Sales & CRM, Marketing & Kommunikation, Newsletter, Event-Management, Content Creation, Projektmanagement, Administration und strukturierter Tool-Nutzung."
-roster: []
-translations:
-  de:
-    title: Gebrüder Fritz Locations
-    role: Marketing, Sales & Administration
-    cardRole: Marketing, Sales & Administration
-    company: Gebrüder Fritz GmbH
-    location: Berlin, Deutschland
-    period: 07/2025 - 10/2025
-    category: Marketing / Sales / Event Operations
-    cardCategory: Marketing / Sales / Event Operations
-    short: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
-    cardShort: "Marketing, CRM, Newsletter, Sales-Vorbereitung, Content und operative Unterstützung in einer Berliner Location- und Eventumgebung."
-    intro: "Bei Gebrüder Fritz machte ich meinen ersten beruflichen Schritt in Berlin. Die Arbeit verband Marketing, Sales, CRM, Newsletter, Content Creation, Eventorganisation und Administration in einer hochwertigen Eventlocation-Umgebung."
-    situation: "Gebrüder Fritz bietet stilvolle Altbau-Eventlocations in zentralen Berliner Lagen und verbindet Räume, Eventorganisation, Inhouse-Catering, Interior und Service. Für mich war das Praktikum ein praktischer Einstieg in professionelle Kommunikation, Kundenkontakt und strukturierte Arbeitsprozesse."
-    tasks:
-      - "Pflege und Verwaltung von Kundendaten in Pipedrive"
-      - "Anlegen und Nachverfolgen von Deals vom Erstkontakt bis zur Angebotsphase"
-      - "Mitarbeit bei Angeboten und Rechnungen in SevDesk"
-      - "Newsletter-Rückläufer bearbeiten, Kontakte pflegen und Kampagnen mit Mailchimp/Pipedrive vorbereiten"
-      - "LinkedIn-Recherchen und Unterstützung bei Marketingmaßnahmen"
-      - "Unterstützung bei Planung, Aufbau, Organisation und Abbau von Events"
-      - "Foto- und Videomaterial für Marketing und Social Media unter Beachtung der Corporate Identity erstellen und bearbeiten"
-      - "Aufgaben mit Eisenhower-Matrix, Trello, Excel, OneDrive und Google Docs strukturieren"
-    results:
-      - "Schneller Einstieg in CRM, Sales-Prozesse, Newsletter und strukturierte Kundenkommunikation"
-      - "Verständnis dafür, wie Marketing, Sales, Events und Administration im Alltag ineinandergreifen"
-      - "Praxis in der Erstellung von Content und Marketingmaterial in einem CI-geführten Umfeld"
-      - "Stärkung von Organisation, Eigeninitiative, professionellem Auftreten und zuverlässiger Teamarbeit"
-    learnings:
-      - "Professionelle Kommunikation beginnt oft bei sauberer Datenpflege, klaren Follow-ups und strukturierter Vorbereitung."
-      - "Events wirken nach außen leicht, brauchen intern aber präzise Planung, Timing und viele kleine Details."
-      - "Dieses Praktikum gab mir die Grundlage, um in Berlin beruflich anzukommen und Verantwortung zu übernehmen."
-    contextTitle: "Boutique Locations & Event Operations"
-    context:
-      - "Gebrüder Fritz verbindet drei außergewöhnliche Eventlocations in Berlin mit professioneller Eventorganisation."
-      - "Die Locations werden für Konferenzen, Meetings, Workshops, Empfänge, Produktpräsentationen, Dinner, Film- und Fotoproduktionen genutzt."
-      - "Das Unternehmen arbeitet mit Interior, Inhouse-Küche, Eventberatung und einem detailorientierten Serviceanspruch."
-    focusTitle: "Was ich dort gelernt habe"
-    focus:
-      - "CRM & Sales: von Kundendaten über Deals bis zu Angeboten und Follow-ups."
-      - "Marketing & Kommunikation: Newsletter, Kontakte, LinkedIn-Recherche, Kampagnen und Content."
-      - "Event Operations: Planung, Aufbau, Durchführung und Nachbereitung von Veranstaltungen."
-  en:
-    title: Gebrüder Fritz Locations
-    role: Marketing, sales & administration
-    cardRole: Marketing, sales & administration
-    company: Gebrüder Fritz GmbH
-    location: Berlin, Germany
-    period: 07/2025 - 10/2025
-    category: Marketing / sales / event operations
-    cardCategory: Marketing / sales / event operations
-    short: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
-    cardShort: "Marketing, CRM, newsletter, sales preparation, content and operational support in a Berlin location and event environment."
-    intro: "At Gebrüder Fritz I took my first professional step in Berlin, combining marketing, sales, CRM, newsletter, content creation, event organisation and administration."
-    situation: "Gebrüder Fritz offers stylish historical event locations in central Berlin and combines spaces, event organisation, in-house catering, interior and service."
-    tasks:
-      - "Maintaining customer data in Pipedrive"
-      - "Creating and tracking deals from first contact to offer stage"
-      - "Support with offers and invoices in SevDesk"
-      - "Newsletter returns, contact maintenance and Mailchimp/Pipedrive campaigns"
-      - "LinkedIn research and marketing support"
-      - "Support with event planning, setup, organisation and breakdown"
-      - "Photo and video content for marketing and social media"
-      - "Task organisation using Eisenhower matrix, Trello, Excel, OneDrive and Google Docs"
-    results:
-      - "Fast practical introduction to CRM, sales processes, newsletters and customer communication"
-      - "Understanding of how marketing, sales, events and administration interact"
-      - "Practice in content creation and marketing material within a CI-driven environment"
-      - "Strengthening of organisation, initiative, professional appearance and teamwork"
-    learnings:
-      - "Professional communication often starts with clean data, clear follow-ups and structured preparation."
-      - "Events require precise planning, timing and attention to many details."
-      - "This internship gave me the basis to arrive professionally in Berlin."
-    contextTitle: "Boutique locations & event operations"
-    context:
-      - "Gebrüder Fritz combines three special event locations in Berlin with professional event organisation."
-      - "The locations are used for conferences, meetings, workshops, receptions, presentations, dinners and productions."
-      - "The company works with interior, in-house kitchen, event consulting and a strong service focus."
-    focusTitle: "What I learned there"
-    focus:
-      - "CRM & sales: customer data, deals, offers and follow-ups."
-      - "Marketing & communication: newsletters, contacts, LinkedIn research, campaigns and content."
-      - "Event operations: planning, setup, execution and follow-up."
-  it:
-    title: Gebrüder Fritz Locations
-    role: Marketing, sales & administration
-    cardRole: Marketing, sales & administration
-    company: Gebrüder Fritz GmbH
-    location: Berlino, Germania
-    period: 07/2025 - 10/2025
-    category: Marketing / sales / event operations
-    cardCategory: Marketing / sales / event operations
-    short: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
-    cardShort: "Marketing, CRM, newsletter, preparazione sales, content e supporto operativo in un contesto event/location a Berlino."
-    intro: "Da Gebrüder Fritz ho fatto il mio primo passo professionale a Berlino, unendo marketing, sales, CRM, newsletter, content creation, event organisation e amministrazione."
-    situation: "Gebrüder Fritz offre event location eleganti in palazzi storici centrali a Berlino e combina spazi, event organisation, in-house catering, interior e service."
-    tasks:
-      - "Cura dei dati clienti in Pipedrive"
-      - "Creazione e follow-up dei deal dal primo contatto all'offerta"
-      - "Supporto a offerte e fatture in SevDesk"
-      - "Newsletter, cura contatti e campagne Mailchimp/Pipedrive"
-      - "Ricerca LinkedIn e supporto marketing"
-      - "Supporto nella pianificazione, setup, organizzazione e smontaggio eventi"
-      - "Foto e video content per marketing e social media"
-      - "Organizzazione attività con Eisenhower Matrix, Trello, Excel, OneDrive e Google Docs"
-    results:
-      - "Introduzione pratica a CRM, sales, newsletter e customer communication"
-      - "Comprensione di come marketing, sales, eventi e administration lavorano insieme"
-      - "Pratica nella creazione di contenuti e materiali marketing in un ambiente CI"
-      - "Rafforzamento di organizzazione, iniziativa, comportamento professionale e teamwork"
-    learnings:
-      - "La comunicazione professionale parte spesso da dati puliti, follow-up chiari e preparazione strutturata."
-      - "Gli eventi sembrano leggeri fuori, ma dentro richiedono planning preciso, timing e molti dettagli."
-      - "Questo stage mi ha dato la base per inserirmi professionalmente a Berlino."
-    contextTitle: "Boutique locations & event operations"
-    context:
-      - "Gebrüder Fritz combina tre location speciali a Berlino con event organisation professionale."
-      - "Le location sono usate per conference, meeting, workshop, ricevimenti, presentazioni, dinner e produzioni."
-      - "L'azienda lavora con interior, in-house kitchen, event consulting e forte attenzione al service."
-    focusTitle: "Cosa ho imparato"
-    focus:
-      - "CRM & sales: dati clienti, deal, offerte e follow-up."
-      - "Marketing & communication: newsletter, contatti, LinkedIn research, campagne e content."
-      - "Event operations: pianificazione, setup, esecuzione e follow-up."
+
+de:
+  title: "Gebrüder Fritz"
+  role: "Marketing, Sales & Administration (Praktikum)"
+  category: "Marketing & Events"
+  summary: "Mein erster Job in Berlin: Marketing, CRM, Newsletter und Events für außergewöhnliche Altbau-Locations, vom ersten Kundenkontakt bis zum Abbau nach der Veranstaltung."
+  context: "Gebrüder Fritz betreibt außergewöhnliche Altbau-Eventlocations in Berlin. Gebucht werden sie von Unternehmen, Organisationen, PR- und Eventagenturen sowie Film- und Fotoproduktionen, für Workshops, Empfänge, Produktpräsentationen und Private Dinings. Für mich war es der Einstieg ins Berufsleben in Berlin: Kundenkontakt, klare Prozesse und Events, bei denen jedes Detail zählt."
+  contribution: "Im Sales- und Marketingteam pflegte ich das CRM, begleitete Deals vom Erstkontakt bis zum Angebot, erstellte und versendete Newsletter-Kampagnen und produzierte Foto- und Videocontent im Corporate Design. Bei Events packte ich von der Planung bis zum Abbau mit an und unterstützte die Geschäftsführung."
+  tasks:
+    - "Sales & CRM: Kundendaten in Pipedrive pflegen, Deals vom Erstkontakt bis zur Angebotsphase nachverfolgen"
+    - "Angebote und Rechnungen in Sevdesk mit erstellen"
+    - "Newsletter: Rückläufer bearbeiten, Kontakte pflegen, Kampagnen mit Mailchimp und Pipedrive erstellen und versenden"
+    - "LinkedIn-Recherchen und Unterstützung bei Marketingmaßnahmen"
+    - "Events planen, aufbauen, organisieren und abbauen"
+    - "Foto- und Videocontent für Marketing und Social Media im Rahmen der Corporate Identity, zum Beispiel mit CapCut"
+    - "Aufgaben mit der Eisenhower-Matrix priorisieren; Arbeit mit Trello, Excel, OneDrive und Google Docs"
+    - "Administration: Postfach, Abwesenheitsnotizen und Kontaktdaten aktuell halten"
+  outputs:
+    - "Newsletter-Kampagnen erstellt und versendet, Kontakte in Mailchimp und Pipedrive gepflegt"
+    - "Deals im CRM nachvollziehbar dokumentiert, Angebote und Rechnungen vorbereitet"
+    - "Foto- und Videomaterial für Marketing und Social Media im Corporate Design produziert"
+    - "Events von der Planung bis zum Abbau mitgetragen"
+    - "Im Zeugnis hervorgehoben: gute organisatorische Fähigkeiten, Eigeninitiative und ein freundliches, professionelles Auftreten"
+  learnings:
+    - "Professionelle Kommunikation beginnt bei sauberer Datenpflege, klaren Follow-ups und guter Vorbereitung."
+    - "Events wirken nach außen leicht, brauchen intern aber präzise Planung, Timing und viele kleine Details."
+    - "Sales, Marketing und Events greifen ineinander. Wer das versteht, kommuniziert besser."
+  relevance: "Music Marketing ist auch Kundenkommunikation: CRM, Newsletter, Angebote und Events sind Werkzeuge, die ich in jeder Rolle brauche. Bei Gebrüder Fritz habe ich gelernt, sie zuverlässig im Alltag einzusetzen."
+
+en:
+  title: "Gebrüder Fritz"
+  role: "Marketing, sales & administration (internship)"
+  category: "Marketing & events"
+  summary: "My first job in Berlin: marketing, CRM, newsletters and events for exceptional period-building venues, from the first client contact to the breakdown after the event."
+  context: "Gebrüder Fritz runs exceptional event venues in historic Berlin buildings. They are booked by companies, organisations, PR and event agencies, and film and photo productions for workshops, receptions, product launches and private dinners. For me, it was the start of my working life in Berlin: client contact, clear processes and events where every detail counts."
+  contribution: "In the sales and marketing team I maintained the CRM, followed deals from first contact to offer, created and sent newsletter campaigns and produced photo and video content in line with the corporate design. At events I helped from planning to breakdown and supported the management."
+  tasks:
+    - "Sales & CRM: maintaining client data in Pipedrive, tracking deals from first contact to offer"
+    - "Helping prepare offers and invoices in Sevdesk"
+    - "Newsletters: handling bounces, maintaining contacts, creating and sending campaigns with Mailchimp and Pipedrive"
+    - "LinkedIn research and support for marketing activities"
+    - "Planning, setting up, organising and breaking down events"
+    - "Photo and video content for marketing and social media within the corporate identity, for example with CapCut"
+    - "Prioritising tasks with the Eisenhower matrix; working with Trello, Excel, OneDrive and Google Docs"
+    - "Administration: inbox, out-of-office notes and contact data"
+  outputs:
+    - "Created and sent newsletter campaigns, maintained contacts in Mailchimp and Pipedrive"
+    - "Documented and followed up deals in the CRM, prepared offers and invoices"
+    - "Produced photo and video material for marketing and social media in the corporate design"
+    - "Helped carry events from planning to breakdown"
+    - "Highlighted in the reference letter: good organisational skills, initiative and a friendly, professional manner"
+  learnings:
+    - "Professional communication starts with clean data, clear follow-ups and good preparation."
+    - "Events look effortless from the outside, but need precise planning, timing and many small details."
+    - "Sales, marketing and events are connected. Understanding that makes communication better."
+  relevance: "Music marketing is also client communication: CRM, newsletters, offers and events are tools I need in every role. At Gebrüder Fritz I learned to use them reliably every day."
+
+it:
+  title: "Gebrüder Fritz"
+  role: "Marketing, sales e amministrazione (stage)"
+  category: "Marketing ed eventi"
+  summary: "Il mio primo lavoro a Berlino: marketing, CRM, newsletter ed eventi per location d'epoca fuori dal comune, dal primo contatto con il cliente allo smontaggio dopo l'evento."
+  context: "Gebrüder Fritz gestisce location per eventi in palazzi storici di Berlino. Le prenotano aziende, organizzazioni, agenzie PR ed eventi e produzioni foto e video, per workshop, ricevimenti, presentazioni di prodotto e cene private. Per me è stato l'ingresso nel mondo del lavoro a Berlino: contatto con i clienti, processi chiari ed eventi in cui ogni dettaglio conta."
+  contribution: "Nel team sales e marketing ho curato il CRM, seguito le trattative dal primo contatto all'offerta, creato e inviato newsletter e prodotto contenuti foto e video secondo la corporate identity. Agli eventi ho dato una mano dalla pianificazione allo smontaggio e ho supportato la direzione."
+  tasks:
+    - "Sales e CRM: gestione dei dati clienti in Pipedrive e follow-up delle trattative fino all'offerta"
+    - "Collaborazione a offerte e fatture in Sevdesk"
+    - "Newsletter: gestione dei rimbalzi, cura dei contatti, creazione e invio di campagne con Mailchimp e Pipedrive"
+    - "Ricerche su LinkedIn e supporto alle attività di marketing"
+    - "Pianificazione, allestimento, organizzazione e smontaggio di eventi"
+    - "Contenuti foto e video per marketing e social nel rispetto della corporate identity, ad esempio con CapCut"
+    - "Priorità con la matrice di Eisenhower; lavoro con Trello, Excel, OneDrive e Google Docs"
+    - "Amministrazione: casella e-mail, risposte automatiche e dati di contatto"
+  outputs:
+    - "Campagne newsletter create e inviate, contatti curati in Mailchimp e Pipedrive"
+    - "Trattative documentate nel CRM, offerte e fatture preparate"
+    - "Materiale foto e video per marketing e social prodotto secondo la corporate identity"
+    - "Eventi seguiti dalla pianificazione allo smontaggio"
+    - "Sottolineate nel certificato: buone capacità organizzative, spirito d'iniziativa e un modo di fare cordiale e professionale"
+  learnings:
+    - "La comunicazione professionale inizia da dati puliti, follow-up chiari e una buona preparazione."
+    - "Da fuori gli eventi sembrano semplici, ma richiedono pianificazione precisa, tempismo e tanti piccoli dettagli."
+    - "Sales, marketing ed eventi sono collegati. Chi lo capisce comunica meglio."
+  relevance: "Il music marketing è anche comunicazione con i clienti: CRM, newsletter, offerte ed eventi sono strumenti che mi servono in ogni ruolo. Da Gebrüder Fritz ho imparato a usarli con affidabilità ogni giorno."
 ---

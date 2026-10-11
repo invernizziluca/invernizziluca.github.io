@@ -3,3 +3,7 @@ dist/
 .astro/
 .env
 .DS_Store
+
+# generated before every build by scripts/prepare-images.mjs
+public/generated/
+src/data/generated/

@@ -1,17 +1,25 @@
 ---
-import { UI, type Lang } from '../i18n';
-const lang = (Astro.props.lang ?? 'de') as Lang;
-const ui = UI[lang];
-const base = import.meta.env.BASE_URL;
-const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
+import { ui, type Lang } from '../i18n';
+import { getHome, tr } from '../lib/content';
+import { asset } from '../lib/url';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const home = await getHome();
+const year = new Date().getFullYear();
 ---
-<footer class="section-padding border-t border-black/5 py-10">
-  <div class="container-page flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-    <p>{ui.footer.rights}</p>
-    <div class="flex flex-wrap gap-4">
-      <a class="hover:text-ink" href={to(`${lang}/#arbeiten`)}>{ui.nav.arbeiten}</a>
-      <a class="hover:text-ink" href={to(`${lang}/#linkedin`)}>{ui.nav.linkedin}</a>
-      <a class="hover:text-ink" href={to(`${lang}/#kontakt`)}>{ui.nav.kontakt}</a>
-    </div>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© {year} Luca Invernizzi, {tr(home.contact.city, lang)}</p>
+    <nav aria-label="Footer">
+      <a href={`mailto:${home.contact.email}`}>E-Mail</a>
+      <a href={home.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={asset(home.contact.cv)} target="_blank" rel="noopener">{t.contact.cv}</a>
+      <a href="#top">{t.footer.top}</a>
+    </nav>
   </div>
 </footer>

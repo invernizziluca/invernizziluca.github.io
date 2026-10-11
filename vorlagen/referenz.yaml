@@ -1,0 +1,27 @@
+# VORLAGE / TEMPLATE · nuova referenza
+# Copia in  src/content/referenzen/<nome-cognome>.yaml
+# featured: true = citazione grande in home (usane solo una).
+order: 4
+featured: false
+name: "Nome Cognome"
+role:
+  de: "Funktion, Firma"
+  en: "Position, company"
+  it: "Ruolo, azienda"
+source:
+  de: "LinkedIn-Empfehlung"      # oppure "Praktikumszeugnis"
+  en: "LinkedIn recommendation"
+  it: "Raccomandazione su LinkedIn"
+date: "2026-12-01"
+# image: "/images/references/nome.jpg"     # foto (facoltativa); senza foto compaiono le iniziali
+# url: "https://www.linkedin.com/in/…"      # link alla raccomandazione
+# pdf: "/pdf/….pdf"                         # oppure al PDF
+originalLanguage: "de"
+de:
+  quote: "Die wichtigste Passage, wörtlich."
+  # full: |
+  #   Ganzer Text (optional, Absätze mit Leerzeile)
+en:
+  quote: "Translation."
+it:
+  quote: "Traduzione."

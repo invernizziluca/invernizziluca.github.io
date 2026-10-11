@@ -1,0 +1,376 @@
+# =====================================================================
+# HOME PAGE TEXTS (all three languages in one file)
+# Every text has  de: / en: / it:  – change all three when you edit.
+# Put texts in "double quotes". Links:
+#   "#arbeiten"                      -> a section of the home page
+#   "/arbeiten/eintracht-pankow/"    -> a case study
+#   "/ausbildung/ffhs/"              -> an education page
+#   "/pdf/..." or "https://..."      -> files and external pages
+# =====================================================================
+
+contact:
+  email: "luca.invernizzi@students.ffhs.ch"
+  linkedin: "https://www.linkedin.com/in/luca-invernizzi/"
+  cv: "/pdf/cv-luca-invernizzi.pdf"
+  city:
+    de: "Berlin"
+    en: "Berlin"
+    it: "Berlino"
+
+# Portrait in the hero (shown as a square "album cover")
+portrait:
+  src: "/images/profile/luca-portrait.webp"
+  position: "50% 14%"
+  alt:
+    de: "Porträt von Luca Invernizzi im schwarzen Rollkragenpullover vor goldbraunem Hintergrund"
+    en: "Portrait of Luca Invernizzi in a black turtleneck against a golden-brown background"
+    it: "Ritratto di Luca Invernizzi con dolcevita nero su sfondo color oro"
+
+# Smiling photo in the contact box
+contactPortrait:
+  src: "/images/profile/luca-portrait.webp"
+  position: "50% 17%"
+  alt:
+    de: "Luca Invernizzi lächelt in die Kamera"
+    en: "Luca Invernizzi smiling at the camera"
+    it: "Luca Invernizzi sorride all'obiettivo"
+
+# Preview image for LinkedIn, WhatsApp & co. (1200 × 630 px)
+ogImage: "/images/og/home.jpg"
+
+seo:
+  title:
+    de: "Luca Invernizzi – Music Marketing, PR & Artist Management in Berlin"
+    en: "Luca Invernizzi – Music Marketing, PR & Artist Management in Berlin"
+    it: "Luca Invernizzi – Music marketing, PR e artist management a Berlino"
+  description:
+    de: "Portfolio von Luca Invernizzi: Presse & PR bei der Initiative Musik, Labelpraxis bei Eintracht Pankow, Business Administration an der FFHS. Case Studies, Belege, Kontakt."
+    en: "Portfolio of Luca Invernizzi: press & PR at Initiative Musik, label work at Eintracht Pankow, business administration at FFHS. Case studies, proof, contact."
+    it: "Portfolio di Luca Invernizzi: ufficio stampa e PR da Initiative Musik, label da Eintracht Pankow, economia aziendale alla FFHS. Case study, riscontri, contatti."
+
+hero:
+  intro:
+    de: "Luca Invernizzi, Berlin"
+    en: "Luca Invernizzi, Berlin"
+    it: "Luca Invernizzi, Berlino"
+  title:
+    de: "Struktur für Musik, die gehört werden will."
+    en: "Structure for music that wants to be heard."
+    it: "Struttura per la musica che vuole farsi sentire."
+  lead:
+    de: "Gelernter Automatiker, Betriebsökonomie-Student, seit 2025 in der Berliner Musikbranche. Heute im Presseteam der Initiative Musik, davor Labelpraxis bei Eintracht Pankow. Mein Ziel: Music Marketing, PR und Artist Management."
+    en: "Trained automation technician, business administration student, in Berlin's music industry since 2025. Now in the press team at Initiative Musik, before that label work at Eintracht Pankow. Where I'm heading: music marketing, PR and artist management."
+    it: "Automatico AFC di formazione, studente di economia aziendale, dal 2025 nella music industry di Berlino. Oggi nell'ufficio stampa di Initiative Musik, prima in label da Eintracht Pankow. Il mio obiettivo: music marketing, PR e artist management."
+  primary:
+    de: "Arbeiten ansehen"
+    en: "View my work"
+    it: "Guarda i lavori"
+  secondary:
+    de: "Lebenslauf (PDF)"
+    en: "CV (PDF)"
+    it: "Curriculum (PDF)"
+
+# The three short blocks under the hero: now / before / why Berlin
+status:
+  - label:
+      de: "Jetzt"
+      en: "Now"
+      it: "Oggi"
+    title:
+      de: "Presse & PR bei der Initiative Musik"
+      en: "Press & PR at Initiative Musik"
+      it: "Ufficio stampa e PR da Initiative Musik"
+    text:
+      de: "Social-Media-Content, Medienmonitoring, Newsletter und die kommunikative Begleitung von Branchenveranstaltungen, seit September 2026."
+      en: "Social media content, media monitoring, newsletters and communication around industry events, since September 2026."
+      it: "Contenuti social, media monitoring, newsletter e comunicazione degli eventi di settore, da settembre 2026."
+    href: "/arbeiten/initiative-musik/"
+    linkLabel:
+      de: "Zur Case Study"
+      en: "Read the case study"
+      it: "Leggi il case study"
+  - label:
+      de: "Davor"
+      en: "Before"
+      it: "Prima"
+    title:
+      de: "Labelpraxis bei Eintracht Pankow"
+      en: "Label work at Eintracht Pankow"
+      it: "In label da Eintracht Pankow"
+    text:
+      de: "Sechs Monate Playlists, YouTube- und SoundCloud-Kanäle, Artist-Kommunikation und Erstkontakte mit neuen Künstler:innen, eng an der Seite von Geschäftsführer Jens Herrndorff."
+      en: "Six months of playlists, YouTube and SoundCloud channels, artist communication and first contact with new signings, working closely with managing director Jens Herrndorff."
+      it: "Sei mesi tra playlist, canali YouTube e SoundCloud, comunicazione con gli artisti e primi contatti per nuovi signing, a stretto contatto con l'amministratore delegato Jens Herrndorff."
+    href: "/arbeiten/eintracht-pankow/"
+    linkLabel:
+      de: "Zur Case Study"
+      en: "Read the case study"
+      it: "Leggi il case study"
+  - label:
+      de: "Warum Berlin"
+      en: "Why Berlin"
+      it: "Perché Berlino"
+    title:
+      de: "Aus dem Tessin in die Musikstadt"
+      en: "From Ticino to a music city"
+      it: "Dal Ticino alla città della musica"
+    text:
+      de: "Als Musikbegeisterter aus der italienischen Schweiz bin ich nach Berlin gezogen, um Künstler:innen dabei zu unterstützen, ihre Musik mit der Welt zu teilen."
+      en: "A music lover from Italian-speaking Switzerland, I moved to Berlin to help artists share their music with the world."
+      it: "Appassionato di musica dalla Svizzera italiana, mi sono trasferito a Berlino per aiutare artiste e artisti a condividere la loro musica con il mondo."
+    href: "#werdegang"
+    linkLabel:
+      de: "Meinen Weg lesen"
+      en: "Read my path"
+      it: "Leggi il mio percorso"
+
+# Chapters 01–03 of the story (the numbers are added automatically)
+werdegang:
+  name:
+    de: "Werdegang"
+    en: "My path"
+    it: "Percorso"
+  title:
+    de: "Von der Technik über Business in die Musik."
+    en: "From engineering via business into music."
+    it: "Dalla tecnica al business, fino alla musica."
+  intro:
+    de: "Kein gerader Weg, aber einer, der zusammenpasst: Die Technik hat mir Präzision beigebracht, das Studium den Blick fürs Ganze, Berlin die Praxis."
+    en: "Not a straight line, but one that fits together: engineering taught me precision, my studies the bigger picture, Berlin the practice."
+    it: "Non una linea retta, ma un percorso coerente: la tecnica mi ha insegnato la precisione, lo studio la visione d'insieme, Berlino la pratica."
+  chapters:
+    - id: "ursprung"
+      years: "2018–2023"
+      name:
+        de: "Ursprung"
+        en: "Origin"
+        it: "Origini"
+      title:
+        de: "Präzision aus der Technik"
+        en: "Precision from engineering"
+        it: "La precisione della tecnica"
+      text:
+        de: "Lehre als Automatiker EFZ mit Berufsmaturität in Bellinzona. Mein Abschlussprojekt: ein selbst entwickelter Prototyp, der die Leistung von Barcodelesern prüft, von der Mechanik bis zur Bedienoberfläche. Danach folgte die gymnasiale Maturität. Was bleibt: Systeme verstehen, sauber arbeiten, Dinge zu Ende bringen."
+        en: "Apprenticeship as an automation technician (EFZ) with a vocational baccalaureate in Bellinzona. My final project: a self-developed prototype that tests the performance of barcode readers, from the mechanics to the user interface. Then came the academic baccalaureate. What stayed with me: understanding systems, working carefully, finishing what I start."
+        it: "Apprendistato come automatico AFC con maturità professionale a Bellinzona. Il progetto finale: un prototipo sviluppato da me per testare le prestazioni dei lettori di codici a barre, dalla meccanica all'interfaccia. Poi la maturità liceale. Cosa mi è rimasto: capire i sistemi, lavorare con precisione, portare a termine le cose."
+      image:
+        src: "/images/education/samb-prototype-hmi.webp"
+        position: "center 45%"
+        alt:
+          de: "Prototyp zur Prüfung von Barcodelesern mit Motor, Steuerung und Touch-Bedienfeld"
+          en: "Prototype for testing barcode readers with motor, controller and touch panel"
+          it: "Prototipo per testare lettori di codici a barre con motore, controllo e pannello touch"
+      link:
+        label:
+          de: "Ausbildung ansehen"
+          en: "View training"
+          it: "Vedi la formazione"
+        href: "/ausbildung/samb/"
+    - id: "business"
+      years:
+        de: "seit 2024"
+        en: "since 2024"
+        it: "dal 2024"
+      name:
+        de: "Business"
+        en: "Business"
+        it: "Business"
+      title:
+        de: "Wirtschaft verstehen"
+        en: "Understanding business"
+        it: "Capire l'economia"
+      text:
+        de: "Bachelor of Science in Business Administration an der FFHS, Vertiefung Digital Business. In meinen Forschungsarbeiten untersuche ich, was mich beruflich antreibt: wie Fans die Authentizität von Musikacts auf Social Media wahrnehmen und wie Social-Media-Marketing den Markenwert beeinflusst."
+        en: "Bachelor of Science in Business Administration at FFHS, majoring in Digital Business. My research looks at what drives me professionally: how fans perceive the authenticity of music acts on social media, and how social media marketing affects brand equity."
+        it: "Bachelor of Science in Business Administration alla FFHS, indirizzo Digital Business. Nei miei lavori di ricerca studio ciò che mi motiva: come i fan percepiscono l'autenticità dei music act sui social e come il social media marketing influenza il valore del brand."
+      image:
+        src: "/images/education/ffhs-campus.webp"
+        alt:
+          de: "Blick über Zürich, wo die FFHS einen ihrer Standorte hat"
+          en: "View over Zurich, one of the FFHS locations"
+          it: "Vista su Zurigo, una delle sedi della FFHS"
+      link:
+        label:
+          de: "Studium ansehen"
+          en: "View studies"
+          it: "Vedi gli studi"
+        href: "/ausbildung/ffhs/"
+    - id: "berlin"
+      years: "2024–2025"
+      name:
+        de: "Berlin"
+        en: "Berlin"
+        it: "Berlino"
+      title:
+        de: "Der Schritt in die Musikszene"
+        en: "Stepping into the music scene"
+        it: "Il passo nella scena musicale"
+      text:
+        de: "In Mailand habe ich Artists im Management begleitet und Social-Media- und Content-Strategien mit über 30.000 Views pro Beitrag umgesetzt. 2025 folgte der bewusste Schritt nach Berlin: dorthin, wo Musik gemacht, vermarktet und gefördert wird."
+        en: "In Milan I managed artists and ran social media and content strategies with more than 30,000 views per post. In 2025 I made the deliberate move to Berlin, where music is made, marketed and supported."
+        it: "A Milano ho seguito artisti nel management e realizzato strategie social e di contenuto con oltre 30.000 visualizzazioni per post. Nel 2025 il passo deciso: il trasferimento a Berlino, dove la musica si crea, si promuove e si sostiene."
+      image:
+        src: "/images/works/music-project/foto-con-renis.webp"
+        position: "center 22%"
+        alt:
+          de: "Luca Invernizzi und der Artist Renis im Tonstudio"
+          en: "Luca Invernizzi and the artist Renis in the recording studio"
+          it: "Luca Invernizzi e l'artista Renis in studio di registrazione"
+      link:
+        label:
+          de: "Musikprojekt ansehen"
+          en: "View the music project"
+          it: "Vedi il progetto musicale"
+        href: "/arbeiten/eigenes-musikprojekt/"
+
+# Chapter 04 – the case studies come from src/content/arbeiten/
+praxis:
+  name:
+    de: "Praxis"
+    en: "Practice"
+    it: "Pratica"
+  title:
+    de: "Was ich gemacht habe."
+    en: "What I have done."
+    it: "Cosa ho fatto."
+  intro:
+    de: "Drei Stationen in Berlin und davor ein eigenes Musikprojekt. Jede Case Study zeigt Kontext, meine Rolle, Ergebnisse und Belege."
+    en: "Three roles in Berlin and, before that, my own music project. Each case study shows the context, my role, results and proof."
+    it: "Tre esperienze a Berlino e, prima, un mio progetto musicale. Ogni case study mostra contesto, ruolo, risultati e riscontri."
+
+# Chapter 05 – references, LinkedIn posts and documents
+nachweise:
+  name:
+    de: "Nachweise"
+    en: "Proof"
+    it: "Riscontri"
+  title:
+    de: "Was andere über meine Arbeit sagen."
+    en: "What others say about my work."
+    it: "Cosa dicono gli altri del mio lavoro."
+  intro:
+    de: "Zeugnisse, eine Empfehlung, Beiträge der FFHS, Forschungsarbeiten und ein Zertifikat, alles im Original verlinkt."
+    en: "Reference letters, a recommendation, FFHS articles, research papers and a certificate, all linked in the original."
+    it: "Certificati di stage, una raccomandazione, articoli della FFHS, lavori di ricerca e un certificato, tutti linkati in originale."
+  linkedinTitle:
+    de: "Öffentlich dokumentiert"
+    en: "Documented in public"
+    it: "Documentato pubblicamente"
+  linkedinIntro:
+    de: "Auf LinkedIn teile ich, was ich erlebe und lerne: vom Reeperbahn Festival bis zum Songwriting Camp."
+    en: "On LinkedIn I share what I experience and learn, from Reeperbahn Festival to a songwriting camp."
+    it: "Su LinkedIn condivido ciò che vivo e imparo: dal Reeperbahn Festival a un songwriting camp."
+  archiveTitle:
+    de: "Archiv"
+    en: "Archive"
+    it: "Archivio"
+  archiveIntro:
+    de: "Alle Dokumente zum Nachlesen."
+    en: "Every document, ready to read."
+    it: "Tutti i documenti, da leggere."
+
+# Chapter 06 – where I want to go
+next:
+  name:
+    de: "Nächster Schritt"
+    en: "Next step"
+    it: "Prossimo passo"
+  title:
+    de: "Wohin ich will."
+    en: "Where I'm heading."
+    it: "Dove voglio arrivare."
+  text:
+    de: "Ich will dort wachsen, wo Strategie und Artists zusammenkommen: in Music Marketing, PR, Artist Management und Creative Operations."
+    en: "I want to grow where strategy and artists meet: in music marketing, PR, artist management and creative operations."
+    it: "Voglio crescere dove strategia e artisti si incontrano: nel music marketing, nelle PR, nell'artist management e nelle creative operations."
+  areas:
+    - title:
+        de: "Music Marketing"
+        en: "Music marketing"
+        it: "Music marketing"
+      text:
+        de: "Release- und Content-Planung, Playlists und Social Media, mit Blick auf Daten und Community."
+        en: "Release and content planning, playlists and social media, with an eye on data and community."
+        it: "Pianificazione di release e contenuti, playlist e social media, con attenzione a dati e community."
+    - title:
+        de: "PR & Kommunikation"
+        en: "PR & communication"
+        it: "PR e comunicazione"
+      text:
+        de: "Pressearbeit, Medienmonitoring, Newsletter und klare Texte für Artists und Institutionen."
+        en: "Press work, media monitoring, newsletters and clear copy for artists and institutions."
+        it: "Ufficio stampa, media monitoring, newsletter e testi chiari per artisti e istituzioni."
+    - title:
+        de: "Artist Management"
+        en: "Artist management"
+        it: "Artist management"
+      text:
+        de: "Artists organisatorisch und kommunikativ begleiten, von der ersten Idee bis zum Release."
+        en: "Supporting artists in organisation and communication, from the first idea to the release."
+        it: "Accompagnare gli artisti nell'organizzazione e nella comunicazione, dalla prima idea alla release."
+    - title:
+        de: "Creative Operations"
+        en: "Creative operations"
+        it: "Creative operations"
+      text:
+        de: "Abläufe, Tools und Zeitpläne so strukturieren, dass kreative Arbeit Raum bekommt."
+        en: "Structuring processes, tools and timelines so that creative work has room to happen."
+        it: "Strutturare processi, strumenti e tempistiche perché il lavoro creativo abbia spazio."
+  skillsTitle:
+    de: "Sprachen und Tools"
+    en: "Languages and tools"
+    it: "Lingue e strumenti"
+
+# Levels 0–5 are shown as discs, like in the CV
+skills:
+  languages:
+    - name:
+        de: "Italienisch"
+        en: "Italian"
+        it: "Italiano"
+      level: 5
+    - name:
+        de: "Deutsch"
+        en: "German"
+        it: "Tedesco"
+      level: 4
+    - name:
+        de: "Englisch"
+        en: "English"
+        it: "Inglese"
+      level: 4
+    - name:
+        de: "Französisch"
+        en: "French"
+        it: "Francese"
+      level: 2
+  tools:
+    - name: "Canva / CapCut"
+      level: 5
+    - name: "Adobe Creative Cloud"
+      level: 4
+    - name: "Pipedrive"
+      level: 4
+    - name: "WordPress"
+      level: 4
+    - name: "Mailchimp"
+      level: 3
+  more: ["Asana", "Microsoft 365", "Musixmatch", "Spotify for Artists", "YouTube", "SoundCloud", "Trello", "Sevdesk", "Webflow", "FL Studio"]
+  note:
+    de: "Fehlt ein Tool? Ich lerne gerne dazu."
+    en: "Missing a tool? I'm happy to learn it."
+    it: "Manca uno strumento? Lo imparo volentieri."
+
+kontakt:
+  name:
+    de: "Kontakt"
+    en: "Contact"
+    it: "Contatto"
+  title:
+    de: "Lass uns sprechen."
+    en: "Let's talk."
+    it: "Parliamone."
+  text:
+    de: "Für Praktika, Musikprojekte, kreative Zusammenarbeit oder den nächsten beruflichen Schritt freue ich mich über deine Nachricht."
+    en: "Internships, music projects, creative collaborations or the next career step: I look forward to hearing from you."
+    it: "Stage, progetti musicali, collaborazioni creative o il prossimo passo professionale: sarò felice di ricevere un tuo messaggio."

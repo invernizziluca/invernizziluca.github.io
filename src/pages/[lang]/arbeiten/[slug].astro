@@ -1,130 +1,247 @@
 ---
-import { getCollection } from 'astro:content';
+// Case study page. Content: src/content/arbeiten/<file-name>.md (the file name is the URL).
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { UI, languages, type Lang } from '../../../i18n';
+import CaseStudyHero from '../../../components/CaseStudyHero.astro';
+import CaseSection from '../../../components/CaseSection.astro';
+import Disc from '../../../components/Disc.astro';
+import Icon from '../../../components/Icon.astro';
+import GalleryGrid from '../../../components/GalleryGrid.astro';
+import SpotifyEmbed from '../../../components/SpotifyEmbed.astro';
+import LinkedInCard from '../../../components/LinkedInCard.astro';
+import ProofCard from '../../../components/ProofCard.astro';
+import { languages, ui, type Lang } from '../../../i18n';
+import { getPosts, getProofs, getWorks, localized, pick, tr, type Work } from '../../../lib/content';
+import { generatedOgImage } from '../../../lib/images';
+import { workUrl } from '../../../lib/url';
 
 export async function getStaticPaths() {
-  const works = await getCollection('arbeiten');
-  return works.flatMap((entry) => languages.map((lang) => ({ params: { lang, slug: entry.slug }, props: { entry, lang } })));
+  const works = await getWorks();
+  return languages.flatMap((lang) => works.map((entry) => ({ params: { lang, slug: entry.slug }, props: { entry, lang } })));
 }
-const entry = Astro.props.entry;
-const lang = Astro.props.lang as Lang;
-const ui = UI[lang];
+
+interface Props {
+  entry: Work;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const t = ui[lang];
 const data = entry.data;
-const t = data.translations[lang] ?? data.translations.de;
-const base = import.meta.env.BASE_URL;
-const asset = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
-const to = (path: string) => `${base}${path.replace(/^\/+/, '')}`;
-const allWorks = (await getCollection('arbeiten')).sort((a, b) => a.data.order - b.data.order);
-const currentIndex = allWorks.findIndex((work) => work.slug === entry.slug);
-const nextWork = allWorks[(currentIndex + 1) % allWorks.length];
-const nextT = nextWork.data.translations[lang] ?? nextWork.data.translations.de;
-const spotifyEmbeds = [...(data.spotifyEmbed ? [data.spotifyEmbed] : []), ...(data.spotifyEmbeds ?? [])];
+const text = localized(data, lang);
+const current = !data.end;
+
+const works = await getWorks();
+const index = works.findIndex((work) => work.slug === entry.slug);
+const previous = works[(index - 1 + works.length) % works.length];
+const next = works[(index + 1) % works.length];
+
+const posts = pick(data.linkedin, await getPosts());
+const proofs = pick(data.nachweise, await getProofs());
+const spotify = data.spotify;
+const artists = data.artists;
+const gallery = data.gallery;
+const hasProof =
+  gallery.length > 0 || spotify.length > 0 || artists.length > 0 || posts.length > 0 || proofs.length > 0 || data.links.length > 0;
+
+const alternates = Object.fromEntries(languages.map((code) => [code, workUrl(code, entry.slug)])) as Record<Lang, string>;
+const ogImage = data.ogImage ?? generatedOgImage(`arbeiten/${entry.slug}`) ?? data.cover.src;
+const title = text.seoTitle ?? `${text.title}: ${text.role} | Luca Invernizzi`;
+const description = text.seoDescription ?? text.summary;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: text.title,
+  headline: `${text.title}: ${text.role}`,
+  description,
+  inLanguage: lang,
+  author: { '@type': 'Person', name: 'Luca Invernizzi' },
+  about: { '@type': 'Organization', name: tr(data.company, lang), url: data.website },
+  keywords: data.tags.join(', '),
+};
 ---
-<BaseLayout lang={lang} title={`${t.title} - Luca Invernizzi`} description={t.short} slug={entry.slug}>
-  <main>
-    <section class="section-padding py-10 sm:py-16">
-      <div class="container-page">
-        <a href={to(`${lang}/#arbeiten`)} class="inline-flex items-center gap-2 text-sm font-bold text-muted transition hover:text-ink">← {ui.detail.back}</a>
-        <div class="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div class="reveal">
-            <p class="kicker">{t.category}</p>
-            <h1 class="mt-5 text-balance text-5xl font-black tracking-[-0.05em] sm:text-7xl">{t.title}</h1>
-            <p class="mt-5 text-xl font-semibold text-caramelDark">{t.role}</p>
-            <div class="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-muted">
-              <span class="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">{t.period}</span>
-              <span class="rounded-full bg-white px-4 py-2 ring-1 ring-black/5">{t.location}</span>
-            </div>
-          </div>
-          <p class="reveal text-lg leading-8 text-muted">{t.intro}</p>
-        </div>
-        <div class="reveal mt-10 overflow-hidden rounded-[2.5rem] bg-white p-3 shadow-soft">
-          <img src={asset(data.cover)} alt={t.title} class="aspect-[16/8] w-full rounded-[2rem] object-cover" style={`object-position:${data.coverPosition || "center center"};`} />
-        </div>
-      </div>
-    </section>
+<BaseLayout
+  lang={lang}
+  title={title}
+  description={description}
+  image={ogImage}
+  imageAlt={tr(data.cover.alt, lang) || text.title}
+  alternates={alternates}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <CaseStudyHero entry={entry} lang={lang} />
 
-    <section class="section-padding py-12 sm:py-20">
-      <div class="container-page grid gap-6 lg:grid-cols-3">
-        <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8"><h2 class="text-2xl font-black tracking-tight">{ui.detail.situation}</h2><p class="mt-5 text-base leading-7 text-muted">{t.situation}</p></article>
-        <article class="reveal rounded-[2rem] bg-white/100 p-8 ring-1 ring-black/5 lg:col-span-2"><h2 class="text-2xl font-black tracking-tight">{ui.detail.tasks}</h2><ul class="mt-5 grid gap-3 sm:grid-cols-2">{t.tasks.map((task: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-caramel"></span>{task}</li>)}</ul></article>
-      </div>
-    </section>
+  <div class="wrap case-body">
+    <CaseSection title={t.caseStudy.context} id="kontext">
+      <p>{text.context}</p>
+    </CaseSection>
 
+    <CaseSection title={t.caseStudy.contribution} id="rolle">
+      <p>{text.contribution}</p>
+    </CaseSection>
 
-
-    {data.evidence.length > 0 && <section class="section-padding py-8 sm:py-12"><div class="container-page reveal rounded-[2rem] bg-white/100 p-8 ring-1 ring-black/5 sm:p-10"><p class="kicker">{ui.detail.evidence}</p><div class="mt-6 grid gap-4 sm:grid-cols-2">{data.evidence.map((ev: {label:string; pdf?:string; url?:string; note?:string}) => <div class="rounded-3xl border border-black/10 bg-white/75 p-5"><h3 class="font-extrabold">{ev.label}</h3>{ev.note && <p class="mt-2 text-sm leading-6 text-muted">{ev.note}</p>}<div class="mt-4 flex flex-wrap gap-2">{ev.pdf && <a class="btn-secondary" href={asset(ev.pdf)} target="_blank" rel="noreferrer">PDF öffnen ↗</a>}{ev.url && <a class="btn-secondary" href={ev.url} target="_blank" rel="noreferrer">Link öffnen ↗</a>}</div></div>)}</div></div></section>}
-
-    {(t.context?.length || t.focus?.length || data.roster?.length || spotifyEmbeds.length) && <section class="section-padding py-12 sm:py-20">
-      <div class="container-page grid gap-6 lg:grid-cols-[1fr_1fr]">
-        {t.context?.length && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10">
-          <p class="kicker">Kontext</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight">{t.contextTitle ?? 'Offizieller Kontext'}</h2>
-          <ul class="mt-6 grid gap-4">
-            {t.context.map((item: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{item}</li>)}
+    {
+      text.tasks.length > 0 && (
+        <CaseSection title={t.caseStudy.tasks} id="aufgaben">
+          <ul class="disc-list disc-list--cols">
+            {text.tasks.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
-        </article>}
-        {t.focus?.length && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10">
-          <p class="kicker">Fokus</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight">{t.focusTitle ?? 'Schwerpunkte'}</h2>
-          <ul class="mt-6 grid gap-4">
-            {t.focus.map((item: string) => <li class="flex gap-3 text-base leading-7 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{item}</li>)}
-          </ul>
-        </article>}
-        {data.roster?.length > 0 && <article data-tilt-card class="reveal premium-card rounded-[2rem] p-6 sm:p-10 lg:col-span-2">
-          <p class="kicker">Roster / Umfeld</p>
-          <h2 class="mt-4 text-3xl font-black tracking-tight">Artists im Label- und Playlist-Kontext</h2>
-          <p class="mt-3 max-w-3xl text-sm leading-6 text-muted">Direkte Spotify-Player statt reiner Namensliste. Öffentliche Spotify-Embeds zeigen keine Streamingzahlen an, deshalb sind hier die Artists direkt zum Anhören eingebunden.</p>
-          <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {data.roster.map((artist: { name: string; note?: string; url?: string; embedSrc?: string }) => (
-              <div class="rounded-[1.4rem] bg-white/78 p-4 ring-1 ring-black/5">
-                <div class="mb-3 flex items-center justify-between gap-3">
-                  <h3 class="font-extrabold text-ink">{artist.name}</h3>
-                  {artist.url && <a href={artist.url} target="_blank" rel="noreferrer" class="text-xs font-black text-caramelDark">Spotify ↗</a>}
-                </div>
-                {artist.note && <p class="mb-3 text-xs leading-5 text-muted">{artist.note}</p>}
-                {artist.embedSrc && <iframe class="spotify-embed-compact" src={artist.embedSrc} width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>}
-              </div>
+        </CaseSection>
+      )
+    }
+
+    <CaseSection title={t.caseStudy.outputs} id="ergebnisse">
+      {
+        text.highlights.length > 0 && (
+          <div class="highlights">
+            {text.highlights.map((item) => (
+              <p class="highlight">
+                <span class="highlight__value">{item.value}</span>
+                <span class="highlight__label">{item.label}</span>
+              </p>
             ))}
           </div>
-        </article>}
-        {spotifyEmbeds.length > 0 && <article class="reveal premium-card rounded-[2rem] p-5 shadow-soft lg:col-span-2 sm:p-8">
-          <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p class="kicker">Spotify</p>
-              <h2 class="mt-2 text-3xl font-black tracking-tight">Direkt reinhören</h2>
-              <p class="mt-3 max-w-3xl text-sm leading-6 text-muted">Playlist und ausgewählte Artists direkt im Portfolio anhören.</p>
-            </div>
-          </div>
-          <div class="grid gap-5 lg:grid-cols-2">
-            {spotifyEmbeds.map((embed: { title: string; src: string; note?: string }) => (
-              <div class="rounded-[1.6rem] bg-white/75 p-4 ring-1 ring-black/5">
-                <h3 class="text-lg font-extrabold text-ink">{embed.title}</h3>
-                {embed.note && <p class="mt-2 text-sm leading-6 text-muted">{embed.note}</p>}
-                <iframe class="spotify-embed mt-4" src={embed.src} width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-              </div>
+        )
+      }
+      {
+        text.outputs.length > 0 ? (
+          <ul class="disc-list">
+            {text.outputs.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
-        </article>}
-      </div>
-    </section>}
+          </ul>
+        ) : (
+          current && <p class="pending">{t.caseStudy.outputsPending}</p>
+        )
+      }
+    </CaseSection>
 
-    <section class="section-padding py-12 sm:py-20">
-      <div class="container-page grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <article class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.results}</h2><div class="mt-7 grid gap-4 sm:grid-cols-2">{t.results.map((result: string) => <div class="rounded-[1.4rem] bg-white/75 p-5 ring-1 ring-black/5"><p class="text-base leading-7 text-muted">{result}</p></div>)}</div></article>
-        <article data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.tools}</h2><div class="mt-6 flex flex-wrap gap-2">{data.tools.map((tool: string) => <span class="rounded-full bg-paper px-4 py-2 text-sm font-semibold text-muted">{tool}</span>)}</div></article>
-      </div>
+    {
+      hasProof && (
+        <CaseSection title={t.caseStudy.proof} id="belege">
+          {gallery.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.gallery}</h3>
+              <GalleryGrid images={gallery} lang={lang} fallbackAlt={text.title} />
+            </div>
+          )}
+          {spotify.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.listen}</h3>
+              <div class:list={['players', { 'players--2': spotify.length > 1 }]}>
+                {spotify.map((item) => (
+                  <SpotifyEmbed url={item.url} title={item.title} note={tr(item.note, lang)} lang={lang} />
+                ))}
+              </div>
+            </div>
+          )}
+          {artists.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.artists}</h3>
+              <div class="artist-grid">
+                {artists.map((artist) => (
+                  <SpotifyEmbed url={artist.spotify} title={artist.name} lang={lang} compact consent={false} />
+                ))}
+              </div>
+              <p class="spotify__consent">{t.spotify.consent}</p>
+            </div>
+          )}
+          {posts.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.linkedin}</h3>
+              <div class="rail">
+                {posts.map((post) => (
+                  <LinkedInCard entry={post} lang={lang} />
+                ))}
+              </div>
+            </div>
+          )}
+          {proofs.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.documents}</h3>
+              <div class="proof-cards">
+                {proofs.map((proof) => (
+                  <ProofCard entry={proof} lang={lang} variant="card" />
+                ))}
+              </div>
+            </div>
+          )}
+          {data.links.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.links}</h3>
+              <ul class="link-list">
+                {data.links.map((link) => (
+                  <li>
+                    <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                      {tr(link.label, lang)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </CaseSection>
+      )
+    }
+
+    {
+      data.tools.length > 0 && (
+        <CaseSection title={t.caseStudy.tools} id="werkzeuge">
+          <ul class="chips">
+            {data.tools.map((tool) => (
+              <li>{tool}</li>
+            ))}
+          </ul>
+        </CaseSection>
+      )
+    }
+
+    {
+      text.learnings.length > 0 && (
+        <CaseSection title={t.caseStudy.learnings} id="learnings">
+          <ul class="disc-list">
+            {text.learnings.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+      )
+    }
+
+    <section class="relevance" aria-labelledby="relevanz-titel">
+      <h2 class="label" id="relevanz-titel">{t.caseStudy.relevance}</h2>
+      <p>{text.relevance}</p>
+      <Disc />
     </section>
 
-    <section class="section-padding py-12 sm:py-20">
-      <div class="container-page"><div class="reveal max-w-3xl"><p class="kicker">{ui.detail.gallery}</p><h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.title}</h2></div><div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{data.gallery.map((image: string, index: number) => <div data-tilt-card class="reveal premium-card overflow-hidden rounded-[1.8rem] p-2 shadow-sm"><img src={asset(image)} alt={`${t.title} ${index + 1}`} class="detail-gallery-image aspect-[4/3] w-full rounded-[1.4rem] object-cover" loading="lazy" /></div>)}</div></div>
-    </section>
-
-    {(data.links.length > 0 || data.companyUrl) && <section class="section-padding py-8 sm:py-12"><div class="container-page reveal rounded-[2rem] bg-white/100 p-8 ring-1 ring-black/5 sm:p-10"><p class="kicker">{ui.detail.links}</p><div class="mt-6 flex flex-wrap gap-3">{data.companyUrl && <a class="btn-secondary" href={data.companyUrl} target="_blank" rel="noreferrer">Website ↗</a>}{data.links.map((link: { label: string; url: string }) => <a class="btn-secondary" href={link.url} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</div></div></section>}
-
-
-    <section class="section-padding py-12 sm:py-20"><div class="container-page grid gap-6 lg:grid-cols-[0.85fr_1.15fr]"><div data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><h2 class="text-3xl font-black tracking-tight">{ui.detail.learnings}</h2></div><div data-tilt-card class="reveal premium-card rounded-[2rem] p-8 sm:p-10"><ul class="grid gap-4">{t.learnings.map((learning: string) => <li class="flex gap-3 text-lg leading-8 text-muted"><span class="mt-3 h-2 w-2 shrink-0 rounded-full bg-caramel"></span>{learning}</li>)}</ul></div></div></section>
-
-    <section class="section-padding py-12 sm:py-20"><div data-tilt-card class="container-page premium-card flex flex-col gap-4 rounded-[2rem] p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10"><a class="btn-secondary" href={to(`${lang}/#arbeiten`)}>← {ui.detail.back}</a><a class="btn-primary" href={to(`${lang}/arbeiten/${nextWork.slug}/`)}>{ui.detail.next}: {nextT.title} →</a></div></section>
-  </main>
+    {
+      works.length > 1 && (
+        <nav class="pager" aria-label={t.caseStudy.back}>
+          <a href={workUrl(lang, previous.slug)}>
+            <span class="pager__dir">
+              <Icon name="arrow-left" /> {t.caseStudy.previous}
+            </span>
+            <span class="pager__title">{localized(previous.data, lang).title}</span>
+          </a>
+          <a class="pager__next" href={workUrl(lang, next.slug)}>
+            <span class="pager__dir">
+              {t.caseStudy.next} <Icon name="arrow-right" />
+            </span>
+            <span class="pager__title">{localized(next.data, lang).title}</span>
+          </a>
+        </nav>
+      )
+    }
+  </div>
 </BaseLayout>

@@ -1,0 +1,16 @@
+# PROOF · research paper
+order: 7
+type: "forschung"
+date: "2026-04-19"
+source: "FFHS, Quantitative Forschungsmethoden (WF3)"
+pdf: "/pdf/research/quantitative-smma-brand-equity.pdf"
+image: "/images/research/quantitative-smma.webp"
+de:
+  title: "Der Einfluss von Social-Media-Marketing-Aktivitäten auf Markenwert und Kundenreaktion"
+  summary: "2×2-Vignettenexperiment für die fiktive Hautpflegemarke Avela: wie Interaktion und Personalisierung auf Brand Equity und Customer Response wirken."
+en:
+  title: "How social media marketing activities affect brand equity and customer response"
+  summary: "A 2×2 vignette experiment for the fictional skincare brand Avela: how interaction and personalisation affect brand equity and customer response (in German)."
+it:
+  title: "L'influenza delle attività di social media marketing su brand equity e risposta dei clienti"
+  summary: "Esperimento 2×2 con vignette per il brand fittizio di skincare Avela: l'effetto di interazione e personalizzazione su brand equity e customer response (in tedesco)."

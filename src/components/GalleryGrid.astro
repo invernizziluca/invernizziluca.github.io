@@ -1,0 +1,83 @@
+---
+// Uniform image grid (4:3 tiles). Click opens the full, uncropped image in a lightbox.
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import { ui, type Lang } from '../i18n';
+import { tr, type Img as ImageData } from '../lib/content';
+import { asset } from '../lib/url';
+
+interface Props {
+  images: ImageData[];
+  lang: Lang;
+  fallbackAlt: string;
+}
+
+const { images, lang, fallbackAlt } = Astro.props;
+const t = ui[lang];
+const items = images.map((image, index) => {
+  const alt = tr(image.alt, lang) || `${fallbackAlt} (${index + 1})`;
+  const caption = tr(image.caption, lang);
+  return { ...image, alt, caption, full: asset(image.src) };
+});
+---
+<div class="gallery-wrap" data-gallery>
+  <ul class="gallery">
+    {
+      items.map((item) => (
+        <li class="gallery__item">
+          <figure>
+            <button type="button" data-full={item.full} data-caption={item.caption || item.alt} aria-label={`${t.gallery.open}: ${item.alt}`}>
+              <Img src={item.src} alt={item.alt} position={item.position} sizes="(min-width: 760px) 18rem, 46vw" />
+            </button>
+            {item.caption && <figcaption>{item.caption}</figcaption>}
+          </figure>
+        </li>
+      ))
+    }
+  </ul>
+  <dialog class="lightbox" aria-label={t.gallery.open}>
+    <div class="lightbox__stage">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" data-lightbox-img />
+    </div>
+    <div class="lightbox__bar">
+      <button type="button" class="icon-btn" data-prev aria-label={t.gallery.previous}><Icon name="arrow-left" /></button>
+      <p class="lightbox__caption" data-lightbox-caption></p>
+      <button type="button" class="icon-btn" data-next aria-label={t.gallery.next}><Icon name="arrow-right" /></button>
+      <button type="button" class="icon-btn" data-close aria-label={t.gallery.close}><Icon name="close" /></button>
+    </div>
+  </dialog>
+</div>
+
+<script>
+  document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+    const dialog = gallery.querySelector('dialog');
+    const image = gallery.querySelector('[data-lightbox-img]');
+    const caption = gallery.querySelector('[data-lightbox-caption]');
+    const buttons = Array.from(gallery.querySelectorAll('button[data-full]'));
+    if (!dialog || !image || !caption || buttons.length === 0) return;
+    let current = 0;
+    const show = (index) => {
+      current = (index + buttons.length) % buttons.length;
+      const button = buttons[current];
+      image.setAttribute('src', button.getAttribute('data-full') || '');
+      image.setAttribute('alt', button.getAttribute('data-caption') || '');
+      caption.textContent = button.getAttribute('data-caption') || '';
+    };
+    buttons.forEach((button, index) =>
+      button.addEventListener('click', () => {
+        show(index);
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+      }),
+    );
+    gallery.querySelector('[data-prev]')?.addEventListener('click', () => show(current - 1));
+    gallery.querySelector('[data-next]')?.addEventListener('click', () => show(current + 1));
+    gallery.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') show(current - 1);
+      if (event.key === 'ArrowRight') show(current + 1);
+    });
+  });
+</script>
