@@ -41,7 +41,6 @@ de:
     - "Grundlagen in Elektrotechnik, Elektronik, Automation, Informatik und technischem Englisch"
     - "Abschlussprojekt: eigenständig entwickelter Prototyp zur Prüfung der Leistung von Barcodelesern"
     - "Vom Konzept bis zur Umsetzung: Mechanik, Motor, Steuerung und HMI als kleine Produktionssimulation"
-  relevance: "Die Technik hat mir beigebracht, in Systemen zu denken und sauber zu dokumentieren. Das hilft mir heute bei Release-Plänen, Workflows und Tools genauso wie früher an der Steuerung."
 
 en:
   title: "Automation technician (EFZ) with vocational baccalaureate"
@@ -50,7 +49,6 @@ en:
     - "Foundations in electrical engineering, electronics, automation, IT and technical English"
     - "Final project: a self-developed prototype to test the performance of barcode readers"
     - "From concept to implementation: mechanics, motor, control and HMI as a small production simulation"
-  relevance: "Engineering taught me to think in systems and to document cleanly. Today that helps me with release plans, workflows and tools just as it once did at the control panel."
 
 it:
   title: "Automatico AFC con maturità professionale"
@@ -59,5 +57,4 @@ it:
     - "Basi di elettrotecnica, elettronica, automazione, informatica e inglese tecnico"
     - "Progetto finale: prototipo sviluppato in autonomia per testare le prestazioni dei lettori di codici a barre"
     - "Dal concetto alla realizzazione: meccanica, motore, controllo e HMI come piccola simulazione di produzione"
-  relevance: "La tecnica mi ha insegnato a ragionare per sistemi e a documentare con ordine. Oggi mi aiuta con piani di release, flussi di lavoro e strumenti, proprio come un tempo davanti al quadro di comando."
 ---

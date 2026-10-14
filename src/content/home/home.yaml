@@ -17,19 +17,20 @@ contact:
     en: "Berlin"
     it: "Berlino"
 
-# Portrait in the hero (shown as a square "album cover")
+# Portrait in the hero (shown upright in 3:4, like a record sleeve with a CD behind it).
+# "position" moves the crop: "50% 0%" = top of the photo, "50% 50%" = middle.
 portrait:
   src: "/images/profile/luca-portrait.webp"
-  position: "50% 14%"
+  position: "50% 2%"
   alt:
     de: "Porträt von Luca Invernizzi im schwarzen Rollkragenpullover vor goldbraunem Hintergrund"
     en: "Portrait of Luca Invernizzi in a black turtleneck against a golden-brown background"
     it: "Ritratto di Luca Invernizzi con dolcevita nero su sfondo color oro"
 
-# Smiling photo in the contact box
+# Photo in the contact box (also 3:4)
 contactPortrait:
   src: "/images/profile/luca-portrait.webp"
-  position: "50% 17%"
+  position: "50% 2%"
   alt:
     de: "Luca Invernizzi lächelt in die Kamera"
     en: "Luca Invernizzi smiling at the camera"
@@ -58,9 +59,9 @@ hero:
     en: "Structure for music that wants to be heard."
     it: "Struttura per la musica che vuole farsi sentire."
   lead:
-    de: "Gelernter Automatiker, Betriebsökonomie-Student, seit 2025 in der Berliner Musikbranche. Heute im Presseteam der Initiative Musik, davor Labelpraxis bei Eintracht Pankow. Mein Ziel: Music Marketing, PR und Artist Management."
-    en: "Trained automation technician, business administration student, in Berlin's music industry since 2025. Now in the press team at Initiative Musik, before that label work at Eintracht Pankow. Where I'm heading: music marketing, PR and artist management."
-    it: "Automatico AFC di formazione, studente di economia aziendale, dal 2025 nella music industry di Berlino. Oggi nell'ufficio stampa di Initiative Musik, prima in label da Eintracht Pankow. Il mio obiettivo: music marketing, PR e artist management."
+    de: "Seit 2025 in der Berliner Musikbranche, daneben Betriebsökonomie-Studium an der FFHS. Heute im Presseteam der Initiative Musik, davor Labelpraxis bei Eintracht Pankow. Mein Ziel: Music Marketing, PR und Artist Management."
+    en: "In Berlin's music industry since 2025, while studying business administration at FFHS. Now in the press team at Initiative Musik, before that label work at Eintracht Pankow. Where I'm heading: music marketing, PR and artist management."
+    it: "Dal 2025 nella music industry di Berlino, in parallelo studio economia aziendale alla FFHS. Oggi nell'ufficio stampa di Initiative Musik, prima in label da Eintracht Pankow. Il mio obiettivo: music marketing, PR e artist management."
   primary:
     de: "Arbeiten ansehen"
     en: "View my work"
@@ -131,13 +132,13 @@ werdegang:
     en: "My path"
     it: "Percorso"
   title:
-    de: "Von der Technik über Business in die Musik."
-    en: "From engineering via business into music."
-    it: "Dalla tecnica al business, fino alla musica."
+    de: "Mein Weg in die Musikbranche."
+    en: "My way into the music industry."
+    it: "Il mio percorso verso la musica."
   intro:
-    de: "Kein gerader Weg, aber einer, der zusammenpasst: Die Technik hat mir Präzision beigebracht, das Studium den Blick fürs Ganze, Berlin die Praxis."
-    en: "Not a straight line, but one that fits together: engineering taught me precision, my studies the bigger picture, Berlin the practice."
-    it: "Non una linea retta, ma un percorso coerente: la tecnica mi ha insegnato la precisione, lo studio la visione d'insieme, Berlino la pratica."
+    de: "Kein gerader Weg, aber ein klares Ziel: die Musik. Das Studium gibt mir den Blick fürs Ganze, Mailand und Berlin die Praxis."
+    en: "Not a straight line, but a clear goal: music. My studies give me the bigger picture, Milan and Berlin the practice."
+    it: "Non una linea retta, ma un obiettivo chiaro: la musica. Lo studio mi dà la visione d'insieme, Milano e Berlino la pratica."
   chapters:
     - id: "ursprung"
       years: "2018–2023"
@@ -146,26 +147,26 @@ werdegang:
         en: "Origin"
         it: "Origini"
       title:
-        de: "Präzision aus der Technik"
-        en: "Precision from engineering"
-        it: "La precisione della tecnica"
+        de: "Lehre und Matura im Tessin"
+        en: "Apprenticeship and baccalaureate in Ticino"
+        it: "Apprendistato e maturità in Ticino"
       text:
-        de: "Lehre als Automatiker EFZ mit Berufsmaturität in Bellinzona. Mein Abschlussprojekt: ein selbst entwickelter Prototyp, der die Leistung von Barcodelesern prüft, von der Mechanik bis zur Bedienoberfläche. Danach folgte die gymnasiale Maturität. Was bleibt: Systeme verstehen, sauber arbeiten, Dinge zu Ende bringen."
-        en: "Apprenticeship as an automation technician (EFZ) with a vocational baccalaureate in Bellinzona. My final project: a self-developed prototype that tests the performance of barcode readers, from the mechanics to the user interface. Then came the academic baccalaureate. What stayed with me: understanding systems, working carefully, finishing what I start."
-        it: "Apprendistato come automatico AFC con maturità professionale a Bellinzona. Il progetto finale: un prototipo sviluppato da me per testare le prestazioni dei lettori di codici a barre, dalla meccanica all'interfaccia. Poi la maturità liceale. Cosa mi è rimasto: capire i sistemi, lavorare con precisione, portare a termine le cose."
+        de: "Meine Ausbildung habe ich in Bellinzona gemacht: zuerst die Lehre als Automatiker EFZ mit Berufsmaturität, danach die gymnasiale Maturität (Passerelle). Damit stand mir der Weg an die Hochschule offen."
+        en: "I did my schooling in Bellinzona: first an apprenticeship as an automation technician (EFZ) with a vocational baccalaureate, then the academic baccalaureate (Passerelle). That opened the way to university."
+        it: "Mi sono formato a Bellinzona: prima l'apprendistato come automatico AFC con maturità professionale, poi la maturità liceale (passerella). Così si è aperta la strada verso l'università."
       image:
-        src: "/images/education/samb-prototype-hmi.webp"
-        position: "center 45%"
+        src: "/images/education/kantonsschule-graduation.webp"
+        position: "center 35%"
         alt:
-          de: "Prototyp zur Prüfung von Barcodelesern mit Motor, Steuerung und Touch-Bedienfeld"
-          en: "Prototype for testing barcode readers with motor, controller and touch panel"
-          it: "Prototipo per testare lettori di codici a barre con motore, controllo e pannello touch"
+          de: "Klassenfoto bei der Maturfeier in Bellinzona"
+          en: "Class photo at the graduation ceremony in Bellinzona"
+          it: "Foto di classe alla cerimonia di maturità a Bellinzona"
       link:
         label:
           de: "Ausbildung ansehen"
-          en: "View training"
+          en: "View my education"
           it: "Vedi la formazione"
-        href: "/ausbildung/samb/"
+        href: "/ausbildung/kantonsschule/"
     - id: "business"
       years:
         de: "seit 2024"
@@ -265,9 +266,9 @@ nachweise:
     en: "Archive"
     it: "Archivio"
   archiveIntro:
-    de: "Alle Dokumente zum Nachlesen."
-    en: "Every document, ready to read."
-    it: "Tutti i documenti, da leggere."
+    de: "Alle Dokumente im Original, sortiert nach Art: Zeugnisse, Zertifikate, Erwähnungen und Forschung."
+    en: "Every document in the original, sorted by type: reference letters, certificates, mentions and research."
+    it: "Tutti i documenti in originale, ordinati per tipo: certificati di stage, attestati, menzioni e ricerca."
 
 # Chapter 06 – where I want to go
 next:
@@ -334,11 +335,13 @@ skills:
         en: "German"
         it: "Tedesco"
       level: 4
+      note: "C1"
     - name:
         de: "Englisch"
         en: "English"
         it: "Inglese"
       level: 4
+      note: "C1"
     - name:
         de: "Französisch"
         en: "French"

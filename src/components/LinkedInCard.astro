@@ -1,12 +1,15 @@
 ---
 // Preview card of a LinkedIn post (no LinkedIn iframe: faster and privacy-friendly).
+// The whole card is one link to the post on LinkedIn (opens in a new tab).
 import Img from './Img.astro';
+import Icon from './Icon.astro';
 import { ui, type Lang } from '../i18n';
 import { formatDate, localized, tr, type Post } from '../lib/content';
 
 interface Props {
   entry: Post;
   lang: Lang;
+  /** Case study / education the post belongs to – shown as plain text, not as a second link. */
   related?: { label: string; href: string };
 }
 
@@ -23,22 +26,20 @@ const t = ui[lang];
     <p class="post__meta">
       <span class="post__brand" aria-hidden="true">in</span>
       <time datetime={data.date}>{formatDate(data.date, lang)}</time>
-      {data.author && <span>{t.linkedin.by} {data.author}</span>}
+      {data.author && <span>{`${t.linkedin.by} ${data.author}`}</span>}
     </p>
     <h4 class="display h3 post__title">
-      <a href={data.url} target="_blank" rel="noopener noreferrer">{text.title}</a>
+      <a href={data.url} target="_blank" rel="noopener noreferrer">
+        {text.title}<span class="sr-only">{` – ${t.linkedin.read}`}</span>
+      </a>
     </h4>
     <p class="post__excerpt">{text.excerpt}</p>
-    <p class="post__foot">
-      {
-        related ? (
-          <>
-            {t.linkedin.from} <a class="post__related text-link" href={related.href}>{related.label}</a>
-          </>
-        ) : (
-          <span class="post__cta">{t.linkedin.read}</span>
-        )
-      }
-    </p>
+    <div class="post__foot">
+      {related && <p class="post__related">{`${t.linkedin.from} ${related.label}`}</p>}
+      <p class="post__cta" aria-hidden="true">
+        {t.linkedin.read}
+        <Icon name="external" />
+      </p>
+    </div>
   </div>
 </article>

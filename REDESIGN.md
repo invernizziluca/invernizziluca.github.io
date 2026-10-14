@@ -1,10 +1,20 @@
 # Redesign 2026 · strategia, struttura, modifiche tecniche
 
+## Aggiornamento ottobre 2026 (v2)
+- **Posizionamento**: la tecnica non è più l’argomento di vendita. Via “Von der Technik über Business in die Musik.” e “Gelernter Automatiker” dalla hero; il Werdegang ora si chiama “Mein Weg in die Musikbranche.” e il capitolo 01 “Lehre und Matura im Tessin” racconta la formazione come fatto (Automatiker EFZ + Passerelle), con la foto della maturità. Sulla pagina SAMB è stato tolto il paragrafo “Warum das für meinen nächsten Schritt zählt”.
+- **Ritratto**: in verticale 3:4 (hero e contatto), si vedono testa e braccia incrociate senza tagli; su smartphone sta subito sotto il titolo.
+- **Archivio** diviso per tipo, ognuno nella sua card con titolo, descrizione e numero di documenti: Zeugnisse → Zertifikate → Erwähnungen → Forschung (+ Empfehlungen se un giorno ne aggiungi). Sopra, dei bottoni per saltare al gruppo. Il gruppo lo decide il campo `type` del documento.
+- **Post LinkedIn**: tutta la card apre il post su LinkedIn (nuova scheda). “Gehört zu …” è solo testo, non più un secondo link che portava al case study.
+- **Referenze**: foto di Jens Herrndorff e Kathrin Margarethe Limburg (`public/images/references/`).
+- **Mobile**: header più basso con bottoni lingua più grandi (touch), bottoni della hero affiancati, blocchi Jetzt/Davor/Warum Berlin scorrevoli in orizzontale, capitoli 01–03 con copertina piccola come in una tracklist, immagini delle card più basse (16:9), miniature dei documenti più piccole, nessuna sillabazione automatica nei titoli piccoli (“Song-writing”).
+- **Verbano Unihockey**: indicato come attività di volontariato, con piani editoriali, campagne e pianificazione basata sui dati; nuovo risultato +1.932 % di account raggiunti (screenshot Insights, 4.775 account).
+- **Lingue**: Deutsch e Englisch con livello C1.
+
 ## 1. Strategia di redesign
 
 **Obiettivo.** In 30 secondi chi apre il sito (label, agenzie di music marketing e PR, management, istituzioni musicali) deve capire tre cose: *chi sono*, *dove sto andando*, *perché sono credibile*. Poi deve poter approfondire ogni esperienza con prove concrete.
 
-**Messaggio.** «Struktur für Musik, die gehört werden will.» Il tratto distintivo non è “amo la musica” (lo dicono tutti), ma la combinazione rara di **tecnica** (Automatiker), **business** (FFHS) e **pratica nella musica a Berlino** (label, PR). La struttura è ciò che porto agli artisti.
+**Messaggio.** «Struktur für Musik, die gehört werden will.» Il tratto distintivo non è “amo la musica” (lo dicono tutti), ma la combinazione di **pratica nella musica** (label e PR a Berlino, artist management a Milano) e **business** (FFHS). La formazione tecnica (Automatiker) resta nel percorso come fatto, non come argomento di vendita.
 
 **Concetto visivo: “liner notes”.** Il portfolio è costruito come il libretto di un disco e come un archivio:
 - fondo carta calda con grana leggera (CSS, nessuna immagine pesante), card grandi e arrotondate con ombre calde, nessuna sezione nera;
@@ -12,7 +22,7 @@
 - tipografia **Archivo** a larghezza variabile: titoli “Expanded” molto forti (eco del nome sul CV), testi a larghezza normale, leggeri e leggibili;
 - numeri solo dove c’è una sequenza vera: i sei capitoli della storia (01–06), come una tracklist.
 
-**Narrazione.** La home segue l’arco richiesto: **01 Ursprung** (tecnica, precisione) → **02 Business** (FFHS) → **03 Berlin** (il passo nella scena) → **04 Praxis** (Initiative Musik, Eintracht Pankow, Gebrüder Fritz, progetto musicale) → **05 Nachweise** (referenze, LinkedIn, FFHS, certificati) → **06 Nächster Schritt** (Music Marketing, PR, Artist Management, Creative Operations) + contatto.
+**Narrazione.** La home segue l’arco richiesto: **01 Ursprung** (formazione in Ticino) → **02 Business** (FFHS) → **03 Berlin** (il passo nella scena) → **04 Praxis** (Initiative Musik, Eintracht Pankow, Gebrüder Fritz, progetto musicale) → **05 Nachweise** (referenze, LinkedIn, FFHS, certificati) → **06 Nächster Schritt** (Music Marketing, PR, Artist Management, Creative Operations) + contatto.
 
 **Come sono state usate le ispirazioni**
 - *Apple Newsroom*: case study editoriali con immagine grande, colonna delle etichette fissa a sinistra, molto spazio ma senza vuoti inutili.
@@ -23,19 +33,19 @@
 
 **Principi**
 1. Una prova accanto a ogni affermazione (Zeugnis, post, player, foto, PDF).
-2. Card e immagini uniformi: 3:2 per i lavori, 4:3 per la galleria, 16:10 per i post.
+2. Card e immagini uniformi: 3:2 per i lavori (16:9 su smartphone), 4:3 per la galleria, 16:10 per i post, 3:4 per il ritratto.
 3. Mobile first: ogni sezione è pensata prima a 390 px.
 4. Movimento solo dove serve: un’unica sequenza in apertura (il CD), transizioni di pagina, hover sulle card cliccabili.
 
 ## 2. Nuova struttura del sito
 
 **Home** (`/`, `/de/`, `/en/`, `/it/`)
-1. **Hero**: nome, claim, chi sono in tre frasi, CTA “Arbeiten ansehen” e CV; ritratto come copertina con CD.
+1. **Hero**: nome, claim, chi sono in tre frasi, CTA “Arbeiten ansehen” e CV; ritratto verticale (3:4) con il CD che esce da dietro. Su smartphone: titolo → foto → testo → bottoni.
 2. **Jetzt / Davor / Warum Berlin**: i vecchi blocchi “Presse & PR”, “Labelpraxis”, “Berlin” diventano una mini-storia con link ai case study.
-3. **Werdegang 01–03**: tracklist con anno, testo, immagine e link alla formazione o al progetto.
+3. **Werdegang 01–03**: tracklist con anno, testo, immagine e link alla formazione o al progetto (su smartphone l’immagine diventa una piccola copertina accanto al numero).
 4. **04 Praxis**: quattro card uniformi (periodo chiaro, ruolo, sintesi, badge “Aktuell”) + “Weitere Projekte”.
-5. **05 Nachweise**: citazione grande (Dr. Philipp Meyer) + estratti dei due Zeugnisse; post LinkedIn con “Gehört zu …” (collegati ai lavori); archivio unico di tutti i documenti.
-6. **06 Nächster Schritt**: quattro aree di crescita, lingue e tool (dischi come nel CV), contatto compatto con foto sorridente e CTA e-mail.
+5. **05 Nachweise**: citazione grande (Dr. Philipp Meyer) + estratti dei due Zeugnisse con foto; post LinkedIn (tutta la card apre il post); archivio diviso per tipo: Zeugnisse, Zertifikate, Erwähnungen, Forschung.
+6. **06 Nächster Schritt**: quattro aree di crescita, lingue e tool (dischi come nel CV), contatto compatto con foto e CTA e-mail.
 
 **Case study** (`/<lingua>/arbeiten/<nome>/`)
 Hero visivo → Eckdaten (organizzazione, ruolo, periodo, luogo, sito) → **Kontext** → **Meine Rolle** → **Aufgaben** → **Ergebnisse** (con numeri in evidenza) → **Belege** (galleria con lightbox, player Spotify, artisti, post LinkedIn, PDF/Zeugnisse, link) → Werkzeuge → **Learnings** → **Warum das für meinen nächsten Schritt zählt** → lavoro precedente/successivo.
@@ -69,7 +79,7 @@ Gli URL esistenti restano validi (`/de/arbeiten/eintracht-pankow/`, `/de/ausbild
 
 **Animazioni**: View Transitions native tra le pagine (la copertina della card “si trasforma” nella hero del case study nei browser che lo supportano), CD che entra e ruota piano con lo scroll, hover leggeri. Nessun fade-in a ogni sezione.
 
-**Responsive**: layout testato a 390 px e 1440 px, nessuno scroll orizzontale, titoli lunghi (es. “Fernfachhochschule”) ridimensionati automaticamente, spazi verticali ridotti.
+**Responsive**: layout testato a 320, 360, 390, 768, 1024 e 1440 px, nessuno scroll orizzontale, titoli lunghi (es. “Fernfachhochschule”) ridimensionati automaticamente, spazi verticali ridotti.
 
 **Build**: `package.json` aggiunge `sharp` e `js-yaml` (per lo script immagini); `npm run dev`/`build` eseguono prima lo script. Integrazione Tailwind con `applyBaseStyles: false` (gli stili base erano caricati due volte).
 
@@ -82,7 +92,7 @@ Gli URL esistenti restano validi (`/de/arbeiten/eintracht-pankow/`, `/de/ausbild
 - Artisti Spotify del progetto musicale con il loro nome (Renis, NAEMI) invece di “Artist-Projekt 1/2”; rimosso il link segnaposto a youtube.com.
 
 ## 5. Da controllare
-- **Verbano**: i numeri (83.767 visualizzazioni in 14 giorni, 59,8 % da non follower) vengono dallo screenshot `reach-performance` (5–18 agosto). Confermare che sia l’account del Verbano e il periodo giusto.
+- **Foto delle referenze**: la foto con il cappellino è abbinata a Jens Herrndorff, quella con i capelli biondi a Kathrin Margarethe Limburg. Se fosse al contrario, scambia i nomi dei due file in `public/images/references/`.
 - **Songwriting Camp** (marzo 2026) è sotto Eintracht Pankow come nel sito precedente, anche se lo stage è finito a gennaio 2026.
 - Didascalie delle foto (chi compare, quale evento), ad esempio la foto di copertina di Eintracht Pankow.
 - URL del profilo LinkedIn: il sito usa `/in/luca-invernizzi/`, i post usano `lucainve`.

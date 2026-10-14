@@ -1,8 +1,16 @@
 # VORLAGE / TEMPLATE · nuovo riscontro (certificato, articolo, ricerca, Zeugnis)
 # Copia in  src/content/nachweise/<nome>.yaml
 # Il PDF va in public/pdf/... ; l'anteprima (facoltativa) in public/images/proof/...
-order: 8                       # posizione nell'archivio
-type: "zertifikat"             # zeugnis | artikel | zertifikat | forschung | empfehlung
+#
+# "type" decide in quale gruppo dell'Archivio compare (in home):
+#   zeugnis    -> Zeugnisse     (Praktikums- und Arbeitszeugnisse)
+#   zertifikat -> Zertifikate   (corsi, programmi, planspiele)
+#   artikel    -> Erwähnungen   (articoli in cui sei citato o raccontato)
+#   forschung  -> Forschung     (lavori di ricerca)
+#   empfehlung -> Empfehlungen  (lettere di raccomandazione)
+# Un gruppo compare solo se contiene almeno un documento.
+order: 8                       # posizione dentro il suo gruppo (numero più basso = più in alto)
+type: "zertifikat"             # zeugnis | zertifikat | artikel | forschung | empfehlung
 date: "2026-12-01"             # sempre tra virgolette
 source: "Chi lo ha emesso, es. FFHS"
 pdf: "/pdf/certificates/nome.pdf"          # oppure togli questa riga

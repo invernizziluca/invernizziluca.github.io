@@ -13,7 +13,7 @@ source:
   en: "LinkedIn recommendation"
   it: "Raccomandazione su LinkedIn"
 date: "2026-12-01"
-# image: "/images/references/nome.jpg"     # foto (facoltativa); senza foto compaiono le iniziali
+# image: "/images/references/nome-cognome.webp"   # foto quadrata (circa 240 × 240 px); senza foto compaiono le iniziali
 # url: "https://www.linkedin.com/in/…"      # link alla raccomandazione
 # pdf: "/pdf/….pdf"                         # oppure al PDF
 originalLanguage: "de"

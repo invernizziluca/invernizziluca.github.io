@@ -37,11 +37,13 @@ Compito: <scrivi qui cosa vuoi cambiare>
 | Cosa vuoi cambiare | File |
 |---|---|
 | Testi della home (titolo, blocchi Jetzt/Davor/Berlin, capitoli 01–03, intro sezioni, prossimo passo, lingue e tool, contatto, SEO) | `src/content/home/home.yaml` |
+| La tua foto (hero e contatto) e il suo ritaglio | `src/content/home/home.yaml` → `portrait` / `contactPortrait` |
 | Un lavoro / case study (testi, foto, galleria, Spotify, LinkedIn, PDF, link) | `src/content/arbeiten/<nome>.md` |
 | Una formazione (FFHS, Kantonsschule, SAMB) | `src/content/ausbildung/<nome>.md` |
 | Post LinkedIn | `src/content/linkedin/<nome>.yaml` |
-| Referenze / citazioni | `src/content/referenzen/<nome>.yaml` |
-| Certificati, Zeugnisse, articoli, lavori di ricerca (archivio "Nachweise") | `src/content/nachweise/<nome>.yaml` |
+| Referenze / citazioni (foto in `public/images/references/`) | `src/content/referenzen/<nome>.yaml` |
+| Certificati, Zeugnisse, articoli, lavori di ricerca (archivio "Nachweise", diviso per tipo) | `src/content/nachweise/<nome>.yaml` |
+| Nomi e descrizioni dei gruppi dell'archivio (Zeugnisse, Zertifikate …) | `src/i18n.ts` → `proofGroups` |
 | Etichette di menu e bottoni ("Case Study lesen", "Kontakt" …) | `src/i18n.ts` |
 | Colori, font, spaziature, look delle card | `src/styles/site.css` |
 | Immagini | `public/images/…` |
@@ -80,8 +82,9 @@ Compito: <scrivi qui cosa vuoi cambiare>
 
 **4 · «Aggiungi un post LinkedIn»**
 - Copia `vorlagen/linkedin.yaml` in `src/content/linkedin/<nome>.yaml`, incolla l’URL del post, data, immagine e testi.
+- `url` deve essere il **link diretto al post** (su LinkedIn: “…” → “Copia link al post”): cliccando in qualsiasi punto della card si apre quel post in una nuova scheda.
 - In home appaiono i primi **3** post con `showOnHome: true`, ordinati per `order`.
-- Per mostrarlo anche dentro un lavoro: in `src/content/arbeiten/<lavoro>.md` aggiungi il nome del file alla lista, es. `linkedin: ["songwriting-camp", "<nome>"]`. In home comparirà “Gehört zu …” con il link al lavoro.
+- Per mostrarlo anche dentro un lavoro: in `src/content/arbeiten/<lavoro>.md` aggiungi il nome del file alla lista, es. `linkedin: ["songwriting-camp", "<nome>"]`. In home la card mostrerà “Gehört zu <lavoro>” (solo testo).
 
 **5 · «Modifica testo home»**
 - File: `src/content/home/home.yaml`. Ogni testo ha `de:`, `en:`, `it:` → cambia tutte e tre.
@@ -91,10 +94,12 @@ Compito: <scrivi qui cosa vuoi cambiare>
 **6 · «Aggiungi una nuova referenza»**
 - Copia `vorlagen/referenz.yaml` in `src/content/referenzen/<nome-cognome>.yaml`.
 - Cita il testo **originale**, traduci in `en`/`it` (il sito indica “Übersetzt aus dem Deutschen”).
-- `featured: true` = citazione grande in home (una sola). Senza foto compaiono le iniziali.
+- `featured: true` = citazione grande in home (una sola).
+- **Foto**: quadrata (circa 240 × 240 px), in `public/images/references/<nome-cognome>.webp`, poi nel file `image: "/images/references/<nome-cognome>.webp"`. Senza foto compaiono le iniziali.
 
 **Altri casi frequenti**
-- **Nuovo certificato o PDF**: PDF in `public/pdf/…`, poi copia `vorlagen/nachweis.yaml` in `src/content/nachweise/<nome>.yaml`. Per collegarlo a un lavoro: `nachweise: ["<nome>"]` nel file del lavoro.
+- **Nuovo certificato o PDF**: PDF in `public/pdf/…`, poi copia `vorlagen/nachweis.yaml` in `src/content/nachweise/<nome>.yaml`. Il campo `type` decide il gruppo dell’archivio: `zeugnis` → Zeugnisse, `zertifikat` → Zertifikate, `artikel` → Erwähnungen, `forschung` → Forschung, `empfehlung` → Empfehlungen. Per collegarlo a un lavoro: `nachweise: ["<nome>"]` nel file del lavoro.
+- **La tua foto è tagliata male**: in `src/content/home/home.yaml` cambia `portrait.position` (hero) o `contactPortrait.position` (contatto): `"50% 0%"` = parte alta della foto, `"50% 30%"` = più in basso.
 - **Nuovo CV**: sostituisci `public/pdf/cv-luca-invernizzi.pdf` (stesso nome file).
 - **Fine dello stage alla Initiative Musik**: in `src/content/arbeiten/initiative-musik.md` aggiungi `end: "2027-02"` e compila `outputs:`; aggiorna `status` in `src/content/home/home.yaml`.
 - **Ordine dei lavori**: campo `order` nei file di `src/content/arbeiten/`.
@@ -151,6 +156,7 @@ vorlagen/                  ← modelli per nuovi contenuti
 - **Font**: Archivo variabile in `src/assets/fonts/` (nessuna richiesta a Google Fonts).
 - **Privacy e velocità**: Spotify si carica solo al clic, LinkedIn è mostrato come anteprima senza iframe.
 - **Animazioni**: transizioni di pagina native (View Transitions via CSS) e un solo movimento in home (il CD dietro il ritratto). Con “riduci movimento” attivo sul dispositivo, tutto resta fermo.
+- **Mobile**: su smartphone la foto sta sotto il titolo, i blocchi Jetzt/Davor/Warum Berlin e i post LinkedIn scorrono in orizzontale, i capitoli 01–03 hanno una piccola copertina; le regole sono in `src/styles/site.css` (cerca `@media (max-width`).
 - **Accessibilità**: link “Zum Inhalt springen”, focus visibile, testo alternativo per ogni immagine, contrasto AA.
 
 ## Pubblicazione su GitHub Pages
@@ -159,4 +165,4 @@ Ogni push su `main` avvia `.github/workflows/deploy.yml` (install → build → 
 
 **Come caricare questa cartella nel repository**
 - Con **GitHub Desktop** (consigliato): nella cartella locale del repository cancella tutto tranne la cartella nascosta `.git`, copia dentro il contenuto di questa cartella, poi *Commit to main* → *Push origin*. I file eliminati risultano correttamente come “deleted”.
-- Dal **sito di GitHub** (“Add file → Upload files”) i file vecchi non vengono cancellati: elimina prima almeno `src/content/medien/`, `src/content/studienarbeiten/`, `src/data/site.ts`, `src/components/ProjectCard.astro` e `src/components/LinkedInEmbed.astro`.
+- Dal **sito di GitHub** (“Add file → Upload files”) i file caricati sostituiscono quelli con lo stesso nome, ma i file eliminati o rinominati non vengono cancellati: in quel caso cancellali anche su GitHub.

@@ -11,13 +11,18 @@ interface Props {
   lang: Lang;
   related?: { label: string; href: string };
   variant?: 'row' | 'card';
+  /** false inside the grouped archive, where the group heading already names the type */
+  showType?: boolean;
+  /** heading level of the document title (4 by default, 5 inside the grouped archive) */
+  headingLevel?: 4 | 5;
 }
 
-const { entry, lang, related, variant = 'row' } = Astro.props;
+const { entry, lang, related, variant = 'row', showType = true, headingLevel = 4 } = Astro.props;
 const data = entry.data;
 const text = localized(data, lang);
 const t = ui[lang];
 const Tag = variant === 'row' ? 'li' : 'article';
+const Title = headingLevel === 5 ? 'h5' : 'h4';
 ---
 <Tag class={variant === 'row' ? 'proof' : 'proof-card'}>
   <div class="proof__thumb">
@@ -25,11 +30,11 @@ const Tag = variant === 'row' ? 'li' : 'article';
   </div>
   <div class="proof__text">
     <p class="proof__meta">
-      <span class="proof__type">{t.proofTypes[data.type]}</span>
+      {showType && <span class="proof__type">{t.proofTypes[data.type]}</span>}
       <time datetime={data.date}>{formatDate(data.date, lang)}</time>
       <span>{data.source}</span>
     </p>
-    <h4 class="proof__title">{text.title}</h4>
+    <Title class="proof__title">{text.title}</Title>
     <p class="proof__summary">{text.summary}</p>
   </div>
   <p class="proof__actions">

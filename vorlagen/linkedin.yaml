@@ -4,7 +4,7 @@
 # Per mostrarlo anche in un lavoro: aggiungi "<nome>" alla lista linkedin: [...] del file in src/content/arbeiten/.
 order: 1
 date: "2026-12-01"
-url: "https://www.linkedin.com/posts/…"
+url: "https://www.linkedin.com/posts/…"   # link diretto al post: su LinkedIn "…" -> "Copia link al post". Tutta la card porta qui.
 # author: "Nome"        # solo se il post è di un'altra persona
 image:
   src: "/images/works/nome-del-lavoro/foto.webp"

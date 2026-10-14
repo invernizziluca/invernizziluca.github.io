@@ -193,7 +193,13 @@ ul {
   line-height: 1;
   text-wrap: balance;
   overflow-wrap: break-word;
+  hyphens: manual;
+}
+/* Only the big titles may hyphenate, and only long words (12+ letters), so they never overflow a phone screen. */
+.h1,
+.h2 {
   hyphens: auto;
+  hyphenate-limit-chars: 12 5 5;
 }
 /* Titles with very long words (e.g. "Fernfachhochschule") get a smaller size on phones. */
 .h1.h1--long {
@@ -495,13 +501,35 @@ ul {
     display: none;
   }
 }
+@media (max-width: 899px) {
+  :root {
+    --header-h: 3.75rem;
+  }
+  .site-header__inner {
+    gap: 0.6rem;
+  }
+  .lang-switch a {
+    display: grid;
+    place-items: center;
+    min-width: 2.6rem;
+    min-height: 2.35rem;
+    padding: 0 0.5rem;
+  }
+}
 @media (max-width: 420px) {
   .brand span {
     display: none;
   }
   .btn {
-    padding-inline: 1rem;
+    padding-inline: 0.9rem;
     font-size: 0.95rem;
+  }
+  .hero .btn-row {
+    gap: 0.6rem;
+  }
+  .hero .btn-row .btn {
+    padding-inline: 0.75rem;
+    font-size: 0.93rem;
   }
 }
 
@@ -537,9 +565,17 @@ ul {
 /* ---------- Hero ---------- */
 .hero {
   display: grid;
-  gap: clamp(2.25rem, 6vw, 3.5rem);
-  padding-top: clamp(2.25rem, 7vw, 5rem);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'title' 'visual' 'lead' 'cta';
+  padding-top: clamp(1.75rem, 6vw, 5rem);
   align-items: center;
+}
+/* On phones and tablets the text block is split so the photo sits right under the title. */
+.hero__text {
+  display: contents;
+}
+.hero h1 {
+  grid-area: title;
 }
 .hero__name {
   display: flex;
@@ -556,34 +592,57 @@ ul {
   display: block;
 }
 .hero .lead {
-  margin-top: 1.4rem;
+  grid-area: lead;
+  margin-top: clamp(1.6rem, 5vw, 2.25rem);
 }
 .hero .btn-row {
-  margin-top: 1.9rem;
+  grid-area: cta;
+  max-width: 27rem;
+  margin-top: 1.4rem;
+}
+/* Phones: both buttons share the row and grow to equal width; they stack only if they don't fit. */
+.hero .btn-row .btn {
+  flex: 1 1 auto;
 }
 .hero__visual {
-  --peek: 24%;
+  grid-area: visual;
   position: relative;
-  width: min(100%, 30rem);
-  padding-right: var(--peek);
+  width: min(94%, 26rem);
+  margin-top: clamp(1.6rem, 5vw, 2.25rem);
 }
 @media (min-width: 960px) {
   .hero {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    gap: 3rem;
+    grid-template-areas: 'text visual';
+    column-gap: 3rem;
+  }
+  .hero__text {
+    display: block;
+    grid-area: text;
+  }
+  .hero .lead {
+    margin-top: 1.4rem;
+  }
+  .hero .btn-row {
+    max-width: none;
+    margin-top: 1.9rem;
+  }
+  .hero .btn-row .btn {
+    flex: 0 0 auto;
   }
   .hero__visual {
-    --peek: 22%;
     justify-self: end;
-    width: 100%;
+    width: min(100%, 28rem);
+    margin-top: 0;
   }
 }
 
-/* The sleeve: portrait as an album cover, a CD sliding out behind it. */
+/* The sleeve: the portrait upright (3:4) like a record sleeve, a CD sliding out behind it. */
 .sleeve {
   position: relative;
   z-index: 2;
-  aspect-ratio: 1;
+  width: 74%;
+  aspect-ratio: 3 / 4;
   border-radius: 14px;
   overflow: hidden;
   background: var(--sleeve);
@@ -593,7 +652,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 12%;
+  object-position: 50% 2%;
 }
 .sleeve::after {
   content: '';
@@ -608,9 +667,9 @@ ul {
 .sleeve-disc {
   position: absolute;
   z-index: 1;
-  top: 5%;
+  top: 15.5%;
   right: 0;
-  width: calc((100% - var(--peek)) * 0.9);
+  width: 68%;
   aspect-ratio: 1;
   transform: translateX(0);
   filter: drop-shadow(0 18px 26px rgba(58, 38, 18, 0.28));
@@ -649,7 +708,7 @@ ul {
 
 /* Status strip: now / before / why Berlin */
 .status {
-  margin-top: clamp(2.75rem, 7vw, 4.5rem);
+  margin-top: clamp(2.25rem, 7vw, 4.5rem);
   display: grid;
   border-radius: var(--radius-lg);
   background: var(--card);
@@ -680,6 +739,41 @@ ul {
   margin-top: 0.35rem;
   justify-self: start;
   font-size: 0.95rem;
+}
+@media (max-width: 859px) {
+  .status {
+    grid-auto-flow: column;
+    grid-auto-columns: min(82%, 21rem);
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    margin-inline: calc(-1 * var(--gutter));
+    padding: 0.25rem var(--gutter) 1.25rem;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    scrollbar-width: none;
+  }
+  .status::-webkit-scrollbar {
+    display: none;
+  }
+  .status__item,
+  .status__item + .status__item {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(58, 38, 18, 0.07);
+  }
+  .status__item .text-link {
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
 }
 @media (min-width: 860px) {
   .status {
@@ -752,6 +846,26 @@ ul {
   height: 100%;
   object-fit: cover;
 }
+@media (max-width: 859px) {
+  .track {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: 'head media' 'body body';
+    align-items: center;
+    gap: 0.9rem 1rem;
+  }
+  .track__head {
+    grid-area: head;
+  }
+  .track__body {
+    grid-area: body;
+  }
+  .track__media {
+    grid-area: media;
+    width: clamp(4.5rem, 20vw, 6.5rem);
+    aspect-ratio: 1;
+    border-radius: var(--radius-sm);
+  }
+}
 @media (min-width: 860px) {
   .track {
     grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 20rem);
@@ -790,9 +904,14 @@ ul {
 }
 .work-card__media {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--paper-deep);
+}
+@media (min-width: 760px) {
+  .work-card__media {
+    aspect-ratio: 3 / 2;
+  }
 }
 .work-card__media img {
   width: 100%;
@@ -1160,25 +1279,40 @@ ul {
   overflow: hidden;
 }
 .post__foot {
+  display: grid;
+  gap: 0.4rem;
   margin-top: auto;
-  padding-top: 0.6rem;
-  font-size: 0.875rem;
-  color: var(--muted);
+  padding-top: 0.75rem;
 }
 .post__related {
-  position: relative;
-  z-index: 3;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--muted);
 }
 .post__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-self: start;
+  font-size: 0.93rem;
   font-weight: 650;
   color: var(--ink);
   text-decoration: underline;
+  text-decoration-thickness: 1.5px;
   text-decoration-color: var(--caramel);
   text-underline-offset: 0.24em;
+}
+.post__cta .icon {
+  width: 0.95em;
+  height: 0.95em;
+  color: var(--caramel);
 }
 .post:hover {
   box-shadow: var(--shadow-raise);
   transform: translateY(-2px);
+}
+.post:hover .post__cta {
+  text-decoration-color: currentColor;
 }
 .post:has(a:focus-visible) {
   outline: 2.5px solid var(--caramel);
@@ -1188,15 +1322,94 @@ ul {
   outline: none;
 }
 
-/* ---------- Proof archive ---------- */
-.archive {
-  list-style: none;
-  margin: 0;
-  padding: 0.25rem clamp(1rem, 2.6vw, 1.75rem);
+/* ---------- Proof archive (grouped by type) ---------- */
+.archive-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.archive-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.6rem;
+  padding: 0.35rem 0.5rem 0.35rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 251, 243, 0.75);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  font-size: 0.93rem;
+  font-weight: 650;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.archive-nav a:hover {
+  background: var(--card);
+}
+.archive-nav__count,
+.archive-group__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  padding-inline: 0.4rem;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  color: var(--caramel);
+  font-size: 0.8rem;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.archive-groups {
+  display: grid;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+.archive-group {
+  padding: clamp(1.1rem, 2.6vw, 1.6rem) clamp(1rem, 2.6vw, 1.75rem) 0.25rem;
   border-radius: var(--radius-lg);
   background: var(--card);
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(58, 38, 18, 0.07);
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+}
+.archive-group__head {
+  display: grid;
+  gap: 0.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.archive-group__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  font-weight: 750;
+  font-stretch: 112%;
+  line-height: 1.25;
+}
+.archive-group__head p {
+  font-size: 0.93rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.archive {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 900px) {
+  .archive-group {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 2.25rem;
+    padding-block: 0.25rem;
+  }
+  .archive-group__head {
+    align-self: start;
+    padding-block: 1.4rem;
+    border-bottom: 0;
+  }
 }
 .proof {
   display: grid;
@@ -1254,6 +1467,17 @@ ul {
   gap: 0.5rem 1.25rem;
   align-items: center;
   font-size: 0.93rem;
+}
+@media (max-width: 599px) {
+  .proof,
+  .proof-card {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.75rem 0.9rem;
+  }
+  .proof__thumb {
+    width: 3.25rem;
+    height: 4.25rem;
+  }
 }
 @media (min-width: 860px) {
   .proof {
@@ -1392,8 +1616,8 @@ ul {
   border: 1px solid rgba(58, 38, 18, 0.07);
 }
 .contact__photo {
-  width: min(100%, 15rem);
-  aspect-ratio: 1;
+  width: min(100%, 11rem);
+  aspect-ratio: 3 / 4;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--sleeve);
@@ -1402,7 +1626,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: 50% 2%;
 }
 .contact__text p {
   margin-top: 0.9rem;
@@ -1421,6 +1645,9 @@ ul {
 @media (min-width: 760px) {
   .contact {
     grid-template-columns: 15rem minmax(0, 1fr);
+  }
+  .contact__photo {
+    width: 100%;
   }
 }
 
@@ -1990,6 +2217,30 @@ ul {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.28s;
+}
+
+/* ---------- Touch screens: no "stuck" hover after a tap, a small press effect instead ---------- */
+@media (hover: none) {
+  .btn:hover,
+  .work-card:hover,
+  .post:hover,
+  .pager a:hover {
+    transform: none;
+  }
+  .work-card:hover,
+  .post:hover,
+  .pager a:hover {
+    box-shadow: var(--shadow-card);
+  }
+  .work-card:hover .work-card__media img,
+  .gallery__item button:hover img {
+    transform: none;
+  }
+  .work-card:active,
+  .post:active,
+  .pager a:active {
+    transform: scale(0.985);
+  }
 }
 
 /* ---------- Reduced motion ---------- */

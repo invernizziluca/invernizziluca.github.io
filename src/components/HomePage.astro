@@ -38,6 +38,12 @@ const featuredWorks = works.filter((entry) => entry.data.featured);
 const moreWorks = works.filter((entry) => !entry.data.featured);
 const posts = (await getPosts()).filter((entry) => entry.data.showOnHome).slice(0, 3);
 const proofs = await getProofs();
+// Archive: one group per document type (Zeugnisse, Zertifikate, Erwähnungen, Forschung …), empty groups are skipped.
+const proofGroupOrder = ['zeugnis', 'zertifikat', 'artikel', 'forschung', 'empfehlung'] as const;
+const proofGroups = proofGroupOrder
+  .map((type) => ({ type, entries: proofs.filter((entry) => entry.data.type === type) }))
+  .filter((group) => group.entries.length > 0);
+const documentCount = (count: number) => `${count} ${count === 1 ? t.proofGroups.one : t.proofGroups.many}`;
 const references = await getReferences();
 const featuredReference = references.find((entry) => entry.data.featured) ?? references[0];
 const otherReferences = references.filter((entry) => entry !== featuredReference);
@@ -117,7 +123,7 @@ const jsonLd = {
             position={home.portrait.position}
             loading="eager"
             fetchpriority="high"
-            sizes="(min-width: 960px) 24rem, 72vw"
+            sizes="(min-width: 960px) 22rem, 68vw"
           />
         </figure>
       </div>
@@ -223,9 +229,49 @@ const jsonLd = {
       <h3 class="display h3">{tr(home.nachweise.archiveTitle, lang)}</h3>
       <p>{tr(home.nachweise.archiveIntro, lang)}</p>
     </div>
-    <ul class="archive">
-      {proofs.map((entry) => <ProofCard entry={entry} lang={lang} related={relatedProof.get(entry.id)} />)}
-    </ul>
+    {
+      proofGroups.length > 1 && (
+        <nav class="archive-nav" aria-label={t.proofGroups.nav}>
+          {proofGroups.map((group) => (
+            <a href={`#archiv-${group.type}`}>
+              {t.proofGroups[group.type].title}
+              {' '}
+              <span class="archive-nav__count" aria-hidden="true">{group.entries.length}</span>
+              <span class="sr-only">{`(${documentCount(group.entries.length)})`}</span>
+            </a>
+          ))}
+        </nav>
+      )
+    }
+    <div class="archive-groups">
+      {
+        proofGroups.map((group) => (
+          <section class="archive-group" id={`archiv-${group.type}`} aria-labelledby={`archiv-${group.type}-titel`}>
+            <div class="archive-group__head">
+              <h4 class="archive-group__title" id={`archiv-${group.type}-titel`}>
+                <Disc />
+                {t.proofGroups[group.type].title}
+                {' '}
+                <span class="archive-group__count" aria-hidden="true">{group.entries.length}</span>
+                <span class="sr-only">{`(${documentCount(group.entries.length)})`}</span>
+              </h4>
+              <p>{t.proofGroups[group.type].text}</p>
+            </div>
+            <ul class="archive">
+              {group.entries.map((entry) => (
+                <ProofCard
+                  entry={entry}
+                  lang={lang}
+                  related={relatedProof.get(entry.id)}
+                  showType={false}
+                  headingLevel={5}
+                />
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
   </section>
 
   {/* 06: Next step + contact */}
@@ -292,7 +338,7 @@ const jsonLd = {
           src={home.contactPortrait.src}
           alt={tr(home.contactPortrait.alt, lang)}
           position={home.contactPortrait.position}
-          sizes="15rem"
+          sizes="(min-width: 760px) 15rem, 11rem"
         />
       </figure>
       <div class="contact__text">
