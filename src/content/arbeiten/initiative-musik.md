@@ -25,7 +25,43 @@ cover:
 tags: ["Presse", "Social Media", "Newsletter"]
 tools: ["Social Media", "Content Creation", "Newsletter", "Website", "Media Monitoring", "Reporting", "Research", "Adobe Creative Cloud", "Canva", "Microsoft 365", "Asana"]
 
-gallery: []
+gallery:
+  - src: "/images/works/initiative-musik/applaus-2026/kapa-tult.jpg"
+    alt:
+      de: "APPLAUS-Visual zum Live-Act Kapa Tult"
+      en: "APPLAUS visual for the live act Kapa Tult"
+      it: "Visual APPLAUS per il live act Kapa Tult"
+    caption:
+      de: "Kapa Tult. Visual: Initiative Musik"
+      en: "Kapa Tult. Visual: Initiative Musik"
+      it: "Kapa Tult. Visual: Initiative Musik"
+  - src: "/images/works/initiative-musik/applaus-2026/so-sorry.jpg"
+    alt:
+      de: "APPLAUS-Visual zum Live-Act SO SORRY"
+      en: "APPLAUS visual for the live act SO SORRY"
+      it: "Visual APPLAUS per il live act SO SORRY"
+    caption:
+      de: "SO SORRY. Visual: Initiative Musik"
+      en: "SO SORRY. Visual: Initiative Musik"
+      it: "SO SORRY. Visual: Initiative Musik"
+  - src: "/images/works/initiative-musik/applaus-2026/kama-orchestra.jpg"
+    alt:
+      de: "APPLAUS-Visual zum Live-Act KAMA Orchestra"
+      en: "APPLAUS visual for the live act KAMA Orchestra"
+      it: "Visual APPLAUS per il live act KAMA Orchestra"
+    caption:
+      de: "KAMA Orchestra. Visual: Initiative Musik"
+      en: "KAMA Orchestra. Visual: Initiative Musik"
+      it: "KAMA Orchestra. Visual: Initiative Musik"
+  - src: "/images/works/initiative-musik/applaus-2026/live-acts-programme.jpg"
+    alt:
+      de: "News-Visual: APPLAUS-Award 2026, das Musikprogramm steht fest"
+      en: "News visual: APPLAUS Award 2026, the music programme is set"
+      it: "Visual news: APPLAUS Award 2026, il programma musicale è definito"
+    caption:
+      de: "Das Musikprogramm steht fest. Visual: Initiative Musik"
+      en: "The music programme is set. Visual: Initiative Musik"
+      it: "Il programma musicale è definito. Visual: Initiative Musik"
 
 spotify:
   - url: "https://open.spotify.com/playlist/7eDElBqxXmRuKN80m8WdMP"

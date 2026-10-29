@@ -74,7 +74,7 @@ gallery:
       de: "Believe Amplify"
       en: "Believe Amplify"
       it: "Believe Amplify"
-  - src: "/images/works/eintracht-pankow/music-business-panel.webp"
+  - src: "/images/works/eintracht-pankow/music-business-panel-questions.webp"
     position: "center top"
     alt:
       de: "Fragen der Studierenden im Music Business Management Panel"
