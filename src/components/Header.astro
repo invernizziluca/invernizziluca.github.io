@@ -1,6 +1,8 @@
 ---
-import Disc from './Disc.astro';
+// Sticky header: logo, sections of the home page, language switch, CV.
+// Below 1024 px the sections move into a <details> menu (works without JavaScript).
 import { languageLabels, languageNames, languages, ui, type Lang } from '../i18n';
+import { getHome } from '../lib/content';
 import { asset, homeUrl } from '../lib/url';
 
 interface Props {
@@ -11,53 +13,59 @@ interface Props {
 const { lang, alternates } = Astro.props;
 const t = ui[lang];
 const home = homeUrl(lang);
+const { contact } = await getHome();
 const nav = [
-  { href: `${home}#werdegang`, label: t.nav.werdegang },
   { href: `${home}#arbeiten`, label: t.nav.arbeiten },
+  { href: `${home}#stationen`, label: t.nav.stationen },
   { href: `${home}#nachweise`, label: t.nav.nachweise },
+  { href: `${home}#ausbildung`, label: t.nav.ausbildung },
   { href: `${home}#kontakt`, label: t.nav.kontakt },
 ];
 ---
 <header class="site-header">
-  <div class="wrap site-header__inner">
-    <a class="brand" href={home} aria-label="Luca Invernizzi">
-      <img src={asset('/images/brand/li-logo-96.png')} alt="" width="40" height="40" />
-      <span>Luca Invernizzi</span>
+  <div class="container site-header__inner">
+    <a class="brand" href={home}>
+      <img class="brand__mark" src={asset('/images/brand/li-mark-96.png')} alt="" width="36" height="36" />
+      <span class="brand__name">Luca Invernizzi</span>
     </a>
 
-    <nav class="site-nav" aria-label={t.menu}>
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    <nav class="site-nav" aria-label={t.mainNav}>
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
     </nav>
 
-    <div class="lang-switch" role="group" aria-label={t.languageSwitch}>
-      {
-        languages.map((code) => (
-          <a
-            href={alternates[code]}
-            hreflang={code}
-            lang={code}
-            title={languageNames[code]}
-            aria-current={code === lang ? 'true' : undefined}
-          >
-            {languageLabels[code]}
-          </a>
-        ))
-      }
-    </div>
-
-    <details class="menu">
-      <summary aria-label={t.menu}><span class="menu__bars" aria-hidden="true"></span></summary>
-      <nav class="menu__panel" aria-label={t.menu}>
-        {
-          nav.map((item) => (
-            <a href={item.href}>
-              <Disc />
-              {item.label}
-            </a>
-          ))
-        }
+    <div class="site-header__tools">
+      <nav class="lang-switch" aria-label={t.languageSwitch}>
+        <ul>
+          {
+            languages.map((code) => (
+              <li>
+                <a href={alternates[code]} hreflang={code} lang={code} aria-current={code === lang ? 'page' : undefined}>
+                  <span aria-hidden="true">{languageLabels[code]}</span>
+                  <span class="sr-only">{languageNames[code]}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </nav>
-    </details>
+      <a class="btn btn--secondary btn--small site-header__cv" href={asset(contact.cv)} target="_blank" rel="noopener">{t.cvShort}</a>
+
+      <details class="menu">
+        <summary class="menu__button" aria-label={t.menu}>
+          <span class="menu__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="menu__panel">
+          <nav aria-label={t.mainNav}>
+            <ul>
+              {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+            </ul>
+          </nav>
+          <a class="btn btn--primary menu__cv" href={asset(contact.cv)} target="_blank" rel="noopener">{t.contact.cv}</a>
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 
@@ -67,10 +75,13 @@ const nav = [
     const close = () => menu.removeAttribute('open');
     menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
     document.addEventListener('click', (event) => {
-      if (menu.hasAttribute('open') && !menu.contains(event.target)) close();
+      if (menu.hasAttribute('open') && event.target instanceof Node && !menu.contains(event.target)) close();
     });
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') close();
+      if (event.key === 'Escape' && menu.hasAttribute('open')) {
+        close();
+        menu.querySelector('summary')?.focus();
+      }
     });
   });
 </script>

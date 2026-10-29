@@ -1,0 +1,13 @@
+---
+// Heading of a home page section: title + optional intro. Left aligned, max. 46rem wide.
+interface Props {
+  id: string;
+  title: string;
+  intro?: string;
+}
+const { id, title, intro } = Astro.props;
+---
+<header class="section-head">
+  <h2 class="section-head__title" id={id}>{title}</h2>
+  {intro && <p class="section-head__intro">{intro}</p>}
+</header>

@@ -1,7 +1,5 @@
 ---
-// One block of a case study page: label column (sticky on desktop) + content.
-import Disc from './Disc.astro';
-
+// One block of a case study page: title column (sticky on desktop) + content.
 interface Props {
   title: string;
   id: string;
@@ -9,7 +7,7 @@ interface Props {
 const { title, id } = Astro.props;
 ---
 <section class="case-section" id={id} aria-labelledby={`${id}-titel`}>
-  <h2 class="case-section__title" id={`${id}-titel`}><Disc />{title}</h2>
+  <h2 class="case-section__title" id={`${id}-titel`}>{title}</h2>
   <div class="case-section__content">
     <slot />
   </div>

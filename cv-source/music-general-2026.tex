@@ -1,0 +1,133 @@
+% =====================================================================
+% Luca Invernizzi · Lebenslauf (allgemein, Musikbranche) · Oktober 2026
+% ---------------------------------------------------------------------
+% Compile with XeLaTeX (or LuaLaTeX) twice:  xelatex music-general-2026.tex
+% Fonts: Archivo (SIL OFL) in ./fonts/ – the same family as the website.
+% Overleaf: upload this file and the fonts/ folder, Menu -> Compiler: XeLaTeX.
+% After compiling, copy the PDF to  public/pdf/cv-luca-invernizzi.pdf
+%
+% Facts: reference letters, Master Profile, LinkedIn posts and Luca's statements (Oct 2026).
+% APPLAUS: Luca wrote most of the copy of the published posts – no design/photo/campaign lead claimed.
+% domicil article: editorial support only (text: Thomas Venker).
+% Portfolio link for music applications: https://invernizziluca.github.io (never /work/ here).
+% =====================================================================
+\documentclass[10pt,a4paper]{article}
+
+% Phone number: hidden in the PDF that is published on the website.
+% For a CV you send directly, change \showphonefalse to \showphonetrue.
+\newif\ifshowphone
+\showphonefalse
+\newcommand{\phone}{+41 78 945 80 35}
+% Citizenship line (e.g. for applications outside the EU/EFTA): change to \showcitizenshiptrue.
+\newif\ifshowcitizenship
+\showcitizenshipfalse
+
+\usepackage{fontspec}
+\setmainfont{Archivo}[
+  Path = fonts/, Extension = .ttf,
+  UprightFont = *-Regular, BoldFont = *-Bold,
+  ItalicFont = *-Italic, BoldItalicFont = *-BoldItalic,
+  FontFace = {sb}{n}{*-SemiBold},
+]
+\newfontfamily\displayfont{Archivo-ExpandedBold}[Path = fonts/, Extension = .ttf]
+\newcommand{\semibold}{\fontseries{sb}\selectfont}
+
+\usepackage[margin=16mm,top=14mm,bottom=13mm]{geometry}
+\usepackage{xcolor,enumitem,titlesec}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+
+\definecolor{ink}{HTML}{1C1C20}
+\definecolor{ink2}{HTML}{4A4B52}
+\definecolor{accent}{HTML}{7A4F22}
+\definecolor{rule}{HTML}{E4D8C5}
+
+\hypersetup{
+  pdftitle={Luca Invernizzi – Lebenslauf (Musikbranche)},
+  pdfauthor={Luca Invernizzi},
+  pdfsubject={Lebenslauf: Presse und PR, Label, Music Marketing},
+  pdfkeywords={Luca Invernizzi, Lebenslauf, Music Marketing, Presse, PR, Label, Berlin},
+  pdflang={de-DE},
+}
+
+\color{ink}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.08}
+\frenchspacing
+
+\setlist[itemize]{leftmargin=11pt,itemsep=1.6pt,topsep=2.5pt,parsep=0pt,partopsep=0pt,
+  label={\raisebox{0.28ex}{\textcolor{accent}{\scalebox{0.55}{$\bullet$}}}}}
+\usepackage{graphicx}
+
+\titleformat{\section}{\semibold\fontsize{9.5}{11}\selectfont\color{accent}\addfontfeatures{LetterSpace=6}}{}{0pt}{\MakeUppercase}[\vspace{1.2pt}\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{4.5pt}
+
+% \job{Organisation, Ort}{Zeitraum}{Rolle}
+\newcommand{\job}[3]{%
+  \par\noindent{\semibold #1}\hfill{\small\color{ink2}#2}\\[-0.5pt]
+  {\small\color{ink2}#3}\par\vspace{0.5pt}}
+% \edu{Schule}{Zeitraum}{Abschluss}
+\newcommand{\edu}[3]{%
+  \par\noindent{\semibold #1}\hfill{\small\color{ink2}#2}\\[-0.5pt]
+  {\small #3}\par\vspace{4pt}}
+
+\begin{document}
+\small\raggedright
+
+{\displayfont\fontsize{23}{26}\selectfont LUCA INVERNIZZI}\par\vspace{4pt}
+{\semibold\fontsize{10}{12}\selectfont\color{accent} Music Marketing · Presse \& PR · Label Operations}\par\vspace{5pt}
+{\footnotesize\color{ink2}
+Berlin\ifshowcitizenship\ \textbar\ Schweizer Staatsbürger\fi
+\ \textbar\ \href{mailto:luca.invernizzi@students.ffhs.ch}{luca.invernizzi@students.ffhs.ch}
+\ifshowphone\ \textbar\ \phone\fi
+\ \textbar\ \href{https://www.linkedin.com/in/lucainve/}{linkedin.com/in/lucainve}
+\ \textbar\ \href{https://invernizziluca.github.io}{invernizziluca.github.io}}
+
+\section*{Motivation}
+Im Juli 2025 bin ich aus der italienischen Schweiz nach Berlin gezogen, um Artists dabei zu unterstützen, ihre Musik mit der Welt zu teilen.
+In der Presse- und Öffentlichkeitsarbeit der Initiative Musik, im Labelalltag bei Eintracht Pankow und in eigenen Musikprojekten habe ich gelernt, Inhalte zu planen, präzise zu schreiben und Abläufe zu strukturieren.
+Diese Erfahrung möchte ich in Music Marketing, PR und in der Arbeit mit Artists weiter vertiefen.
+
+\section*{Berufserfahrung}
+\job{Initiative Musik gGmbH, Berlin}{09/2026 – heute}{Praktikum Presse- und Öffentlichkeitsarbeit}
+\begin{itemize}
+  \item Texte für einen Großteil der veröffentlichten Instagram-Beiträge zum \textbf{APPLAUS-Award 2026}; Live-Stories bei Veranstaltungen geplant und geschrieben.
+  \item Medien- und Social-Media-Monitoring, Recherchen und Reportings zu den Social-Media-Kennzahlen; Mitarbeit an Newsletter, Website und Community Management.
+  \item Redaktionelle Unterstützung für ein Porträt des Dortmunder Clubs \emph{domicil} (Text: Thomas Venker); Mithilfe beim Branding vor Ort beim Herbstfest im Tresor.
+\end{itemize}
+\vspace{3pt}
+\job{Eintracht Pankow Musik GmbH, Berlin}{08/2025 – 01/2026}{Praktikum Produktmanagement (Label), in enger Zusammenarbeit mit der Geschäftsführung}
+\begin{itemize}
+  \item Erstkontakte zu potenziellen neuen Artists, Pflege der Label-Playlists, Betreuung von YouTube und SoundCloud, Songtexte über Musixmatch.
+  \item Regelmäßiges Mailout zu Social-Media- und Marketingtrends für die Artists; interne Schulung zu Produktanlage und Anlieferung im Backstage-System von Believe.
+  \item Songwriting Camp mitorganisiert; Teilnahme an Branchentreffen wie dem Reeperbahn Festival 2025.
+\end{itemize}
+\vspace{3pt}
+\job{Gebrüder Fritz GmbH, Berlin}{07/2025 – 10/2025}{Praktikum Sales, Marketing \& Administration}
+\begin{itemize}
+  \item CRM in \textbf{Pipedrive}: Kundendaten und Deals vom Erstkontakt bis zur Angebotsphase; Mitarbeit an Angeboten und Rechnungen in Sevdesk.
+  \item Newsletter-Kampagnen mit Mailchimp, Foto- und Videocontent im Corporate Design, Unterstützung bei Events von der Planung bis zum Abbau.
+\end{itemize}
+\vspace{3pt}
+\job{Eigenes Musikprojekt, Mailand / remote}{06/2024 – 07/2025}{Artist-Koordination \& Content-Marketing}
+\begin{itemize}
+  \item Content- und Social-Media-Planung für Independent Artists der Urban-Szene; Koordination von Fotos, Videos und Covern; einzelne Beiträge mit über 30.000 Aufrufen.
+  \item Kommunikation mit den Artists, Begleitung von Recordings und Releases; Vorbereitung einer möglichen Zusammenarbeit mit Jake La Furia begleitet.
+\end{itemize}
+\vspace{3pt}
+\job{Verbano Unihockey, Tessin}{08/2024 – 09/2025}{Marketing \& Social Media (ehrenamtlich)}
+\begin{itemize}
+  \item Redaktionsplanung, Überarbeitung der Vereinswebsite und Sponsoring-Kommunikation; Instagram Insights des Vereinskontos: \textbf{83.767 Aufrufe in 14 Tagen}, 59,8\,\% von Nicht-Followern.
+\end{itemize}
+
+\section*{Ausbildung}
+\edu{Fernfachhochschule Schweiz (FFHS)}{02/2024 – vorauss. 07/2028}{Bachelor of Science in Business Administration, Vertiefung Digital Business}
+\edu{Kantonsschule Bellinzona}{08/2022 – 07/2023}{Passerelle Berufsmaturität – universitäre Hochschulen}
+\edu{Scuola d'arti e mestieri Bellinzona (SAMB)}{08/2018 – 07/2022}{Automatiker EFZ mit Berufsmaturität}
+
+\section*{Sprachen und Tools}
+{\semibold Sprachen:} Italienisch (Muttersprache), Deutsch (C1), Englisch (C1), Französisch (A1)\par\vspace{2.5pt}
+{\semibold Tools:} Canva, CapCut, Adobe Creative Cloud, Mailchimp, WordPress, Pipedrive, Sevdesk, Trello, Asana, Microsoft 365, Spotify for Artists, Musixmatch, YouTube, SoundCloud\par
+
+\end{document}

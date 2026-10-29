@@ -66,8 +66,10 @@ const isPreviewSize = /\/(generated\/og|images\/og)\/[^/]+\.jpe?g$/i.test(image)
     {languages.filter((code) => code !== lang).map((code) => <meta property="og:locale:alternate" content={ogLocales[code]} />)}
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="theme-color" content="#f1e9da" />
-    <link rel="icon" type="image/png" href={asset('/favicon.png')} />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f3ece0" />
+    <link rel="icon" type="image/png" sizes="32x32" href={asset('/favicon.png')} />
+    <link rel="icon" type="image/png" sizes="192x192" href={asset('/images/brand/li-mark-192.png')} />
     <link rel="apple-touch-icon" href={asset('/apple-touch-icon.png')} />
     <link rel="preload" href={fontLatin} as="font" type="font/woff2" crossorigin />
     <link rel="sitemap" href={asset('/sitemap.xml')} />

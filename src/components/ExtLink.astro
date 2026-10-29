@@ -1,0 +1,19 @@
+---
+// External link: opens in a new tab, says so to screen readers, and keeps the arrow
+// on the same line as the last word (no lonely arrow at the start of a line).
+import Icon from './Icon.astro';
+interface Props {
+  href: string;
+  label: string;
+  /** "opens in a new tab" in the page language */
+  external: string;
+  class?: string;
+  /** replaces the default " (opens in a new tab)" for screen readers */
+  srText?: string;
+}
+const { href, label, external, class: className = 'link', srText } = Astro.props;
+const words = String(label).trim().split(/\s+/);
+const last = words.pop() ?? '';
+const head = words.join(' ');
+---
+<a class={className} href={href} target="_blank" rel="noopener noreferrer">{head && `${head} `}<span class="nowrap">{last}<Icon name="external" /></span><span class="sr-only">{srText ?? ` (${external})`}</span></a>

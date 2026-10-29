@@ -2,14 +2,16 @@
 # Copia in  src/content/nachweise/<nome>.yaml
 # Il PDF va in public/pdf/... ; l'anteprima (facoltativa) in public/images/proof/...
 #
-# "type" decide in quale gruppo dell'Archivio compare (in home):
-#   zeugnis    -> Zeugnisse     (Praktikums- und Arbeitszeugnisse)
-#   zertifikat -> Zertifikate   (corsi, programmi, planspiele)
-#   artikel    -> Erwähnungen   (articoli in cui sei citato o raccontato)
-#   forschung  -> Forschung     (lavori di ricerca)
-#   empfehlung -> Empfehlungen  (lettere di raccomandazione)
-# Un gruppo compare solo se contiene almeno un documento.
-order: 8                       # posizione dentro il suo gruppo (numero più basso = più in alto)
+# PRIVACY: prima di caricare un PDF annerisci data di nascita, indirizzo, telefono, luogo di origine
+# (stampa in PDF come immagine o usa una redazione vera, non un rettangolo nero sopra il testo).
+#
+# "type" decide l'etichetta del documento in "Nachweise":
+#   zeugnis    -> Zeugnis          (Praktikums- und Arbeitszeugnisse)
+#   zertifikat -> Zertifikat       (corsi, programmi, planspiele)
+#   artikel    -> Artikel          (articoli in cui sei citato o raccontato)
+#   forschung  -> Forschungsarbeit (lavori di ricerca, progetti universitari)
+#   empfehlung -> Empfehlung       (lettere di raccomandazione)
+order: 8                       # posizione nella lista "Dokumente" (numero più basso = più in alto)
 type: "zertifikat"             # zeugnis | zertifikat | artikel | forschung | empfehlung
 date: "2026-12-01"             # sempre tra virgolette
 source: "Chi lo ha emesso, es. FFHS"

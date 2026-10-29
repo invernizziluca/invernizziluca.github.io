@@ -1,14 +1,17 @@
 ---
+// Small line icons (24 × 24 grid, stroke = currentColor). Decorative: always aria-hidden.
 interface Props {
-  name: 'arrow-left' | 'arrow-right' | 'close' | 'external';
+  name: 'arrow-left' | 'arrow-right' | 'external' | 'close' | 'file' | 'mail';
   class?: string;
 }
 const { name, class: className } = Astro.props;
 const paths: Record<Props['name'], string> = {
   'arrow-left': 'M19 12H5m6-6-6 6 6 6',
   'arrow-right': 'M5 12h14m-6-6 6 6-6 6',
+  external: 'M8 16 16 8m-7 0h7v7',
   close: 'M6 6l12 12M18 6 6 18',
-  external: 'M14 5h5v5m0-5-8 8m7 1v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4',
+  file: 'M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zm0 0v5h5M9 13h6m-6 4h4',
+  mail: 'M4 6h16v12H4zm0 0 8 7 8-7',
 };
 ---
-<svg class:list={['icon', className]} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d={paths[name]}></path></svg>
+<svg class:list={['icon', className]} viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d={paths[name]}></path></svg>

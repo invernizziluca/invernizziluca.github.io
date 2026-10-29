@@ -1,10 +1,9 @@
 ---
 // Education page. Content: src/content/ausbildung/<file-name>.md (the file name is the URL).
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CaseStudyHero from '../../../components/CaseStudyHero.astro';
 import CaseSection from '../../../components/CaseSection.astro';
-import Disc from '../../../components/Disc.astro';
 import Icon from '../../../components/Icon.astro';
-import Img from '../../../components/Img.astro';
 import GalleryGrid from '../../../components/GalleryGrid.astro';
 import ProofCard from '../../../components/ProofCard.astro';
 import LinkedInCard from '../../../components/LinkedInCard.astro';
@@ -28,7 +27,6 @@ const t = ui[lang];
 const data = entry.data;
 const text = localized(data, lang);
 const institution = tr(data.institution, lang);
-const longTitle = Math.max(...institution.split(/\s+/).map((word) => word.length)) > 13;
 const proofs = pick(data.nachweise, await getProofs());
 const posts = pick(data.linkedin, await getPosts());
 const entries = await getEducation();
@@ -37,10 +35,10 @@ const previous = entries[(index - 1 + entries.length) % entries.length];
 const next = entries[(index + 1) % entries.length];
 const alternates = Object.fromEntries(languages.map((code) => [code, educationUrl(code, entry.slug)])) as Record<Lang, string>;
 const host = data.website ? new URL(data.website).hostname.replace(/^www\./, '') : undefined;
-const credits = [
+const facts = [
   { label: t.education.institution, value: institution },
   { label: t.education.degree, value: text.title },
-  { label: t.caseStudy.period, value: formatPeriod(data.start, data.end, lang) },
+  { label: t.caseStudy.period, value: formatPeriod(data.start, data.end, lang, data.expectedEnd) },
   { label: t.caseStudy.location, value: tr(data.location, lang) },
   ...(data.website && host ? [{ label: t.caseStudy.website, value: host, href: data.website }] : []),
 ];
@@ -48,132 +46,95 @@ const ogImage = generatedOgImage(`ausbildung/${entry.slug}`) ?? data.cover.src;
 ---
 <BaseLayout
   lang={lang}
-  title={`${institution}: ${text.title} | Luca Invernizzi`}
+  title={`${text.title} | Luca Invernizzi`}
   description={text.summary}
   image={ogImage}
   imageAlt={tr(data.cover.alt, lang) || institution}
   alternates={alternates}
   type="article"
 >
-  <header class="wrap case-hero">
-    <a class="back-link" href={`${homeUrl(lang)}#werdegang`}><Icon name="arrow-left" />{t.education.back}</a>
-    <div class="case-hero__head">
-      <p class="case-hero__label">
-        <span class="label">{formatPeriod(data.start, data.end, lang)}</span>
-        {!data.end && <span class="case-hero__status"><Disc />{t.status.current}</span>}
-      </p>
-      <h1 class:list={['display h1', { 'h1--long': longTitle }]}>{institution}</h1>
-      <p class="case-hero__role">{text.title}</p>
-      <p class="lead">{text.summary}</p>
-    </div>
-    <figure class="case-hero__media">
-      <Img
-        src={data.cover.src}
-        alt={tr(data.cover.alt, lang)}
-        position={data.cover.position}
-        loading="eager"
-        fetchpriority="high"
-        sizes="(min-width: 1260px) 75rem, 96vw"
-      />
-    </figure>
-    <dl class="credits" style={`--credit-cols: ${credits.length}`}>
+  <article>
+    <CaseStudyHero
+      lang={lang}
+      back={{ href: `${homeUrl(lang)}#ausbildung`, label: t.education.back }}
+      label={formatPeriod(data.start, data.end, lang, data.expectedEnd)}
+      current={!data.end ? { label: t.status.current } : undefined}
+      title={text.title}
+      role={institution}
+      summary={text.summary}
+      cover={data.cover}
+      facts={facts}
+      externalLabel={t.external}
+    />
+
+    <div class="container case-body">
       {
-        credits.map((item) => (
-          <div>
-            <dt>{item.label}</dt>
-            <dd>
-              {'href' in item && item.href ? (
-                <a class="text-link" href={item.href} target="_blank" rel="noopener noreferrer">
-                  {item.value}
-                </a>
-              ) : (
-                item.value
-              )}
-            </dd>
-          </div>
-        ))
+        text.points.length > 0 && (
+          <CaseSection title={t.education.points} id="inhalte">
+            <ul class="list">
+              {text.points.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </CaseSection>
+        )
       }
-    </dl>
-  </header>
 
-  <div class="wrap case-body">
-    {
-      text.points.length > 0 && (
-        <CaseSection title={t.education.points} id="inhalte">
-          <ul class="disc-list">
-            {text.points.map((item) => (
-              <li>
-                <Disc />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </CaseSection>
-      )
-    }
-
-    {
-      (proofs.length > 0 || posts.length > 0) && (
-        <CaseSection title={t.education.proof} id="belege">
-          {proofs.length > 0 && (
-            <div class="proof-block">
-              <h3>{t.caseStudy.documents}</h3>
-              <div class="proof-cards">
-                {proofs.map((proof) => (
-                  <ProofCard entry={proof} lang={lang} variant="card" />
-                ))}
+      {
+        (proofs.length > 0 || posts.length > 0) && (
+          <CaseSection title={t.education.proof} id="belege">
+            {proofs.length > 0 && (
+              <div class="proof-block">
+                <h3 class="case-subhead">{t.caseStudy.documents}</h3>
+                <ul class="docs docs--single" role="list">
+                  {proofs.map((proof) => (
+                    <ProofCard entry={proof} lang={lang} />
+                  ))}
+                </ul>
               </div>
-            </div>
-          )}
-          {posts.length > 0 && (
-            <div class="proof-block">
-              <h3>{t.caseStudy.linkedin}</h3>
-              <div class="rail">
-                {posts.map((post) => (
-                  <LinkedInCard entry={post} lang={lang} />
-                ))}
+            )}
+            {posts.length > 0 && (
+              <div class="proof-block">
+                <h3 class="case-subhead">{t.caseStudy.linkedin}</h3>
+                <div class="posts posts--compact">
+                  {posts.map((post) => (
+                    <LinkedInCard entry={post} lang={lang} />
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </CaseSection>
-      )
-    }
+            )}
+          </CaseSection>
+        )
+      }
 
-    {
-      data.gallery.length > 0 && (
-        <CaseSection title={t.education.gallery} id="bilder">
-          <GalleryGrid images={data.gallery} lang={lang} fallbackAlt={institution} />
-        </CaseSection>
-      )
-    }
+      {
+        data.gallery.length > 0 && (
+          <CaseSection title={t.education.gallery} id="bilder">
+            <GalleryGrid images={data.gallery} lang={lang} fallbackAlt={institution} />
+          </CaseSection>
+        )
+      }
 
-    {
-      text.relevance && (
-        <section class="relevance" aria-labelledby="relevanz-titel">
-          <h2 class="label" id="relevanz-titel">{t.caseStudy.relevance}</h2>
-          <p>{text.relevance}</p>
-          <Disc />
-        </section>
-      )
-    }
-
-    {
-      entries.length > 1 && (
-        <nav class="pager" aria-label={t.education.back}>
-          <a href={educationUrl(lang, previous.slug)}>
-            <span class="pager__dir">
-              <Icon name="arrow-left" /> {tr(previous.data.institution, lang)}
-            </span>
-            <span class="pager__title">{localized(previous.data, lang).title}</span>
-          </a>
-          <a class="pager__next" href={educationUrl(lang, next.slug)}>
-            <span class="pager__dir">
-              {tr(next.data.institution, lang)} <Icon name="arrow-right" />
-            </span>
-            <span class="pager__title">{localized(next.data, lang).title}</span>
-          </a>
-        </nav>
-      )
-    }
-  </div>
+      {
+        entries.length > 1 && (
+          <nav class="pager" aria-label={t.education.pager}>
+            <a class="pager__link" href={educationUrl(lang, previous.slug)}>
+              <span class="pager__dir">
+                <Icon name="arrow-left" />
+                {tr(previous.data.institution, lang)}
+              </span>
+              <span class="pager__title">{localized(previous.data, lang).title}</span>
+            </a>
+            <a class="pager__link pager__link--next" href={educationUrl(lang, next.slug)}>
+              <span class="pager__dir">
+                {tr(next.data.institution, lang)}
+                <Icon name="arrow-right" />
+              </span>
+              <span class="pager__title">{localized(next.data, lang).title}</span>
+            </a>
+          </nav>
+        )
+      }
+    </div>
+  </article>
 </BaseLayout>

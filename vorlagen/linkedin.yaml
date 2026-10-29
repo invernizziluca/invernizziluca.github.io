@@ -2,6 +2,7 @@
 # Copia in  src/content/linkedin/<nome>.yaml
 # In home compaiono i primi 3 post con showOnHome: true (ordinati per "order").
 # Per mostrarlo anche in un lavoro: aggiungi "<nome>" alla lista linkedin: [...] del file in src/content/arbeiten/.
+# Distingui i tuoi post da quelli di account ufficiali o di altre persone (campo author).
 order: 1
 date: "2026-12-01"
 url: "https://www.linkedin.com/posts/…"   # link diretto al post: su LinkedIn "…" -> "Copia link al post". Tutta la card porta qui.

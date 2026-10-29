@@ -1,0 +1,160 @@
+---
+// "Ausgewählte Arbeiten": one large feature (APPLAUS) + smaller work samples.
+// Content: home.yaml -> selectedWork. Every item shows "Mein Anteil" (mine) and "Team und Rechte" (credit).
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import ExtLink from './ExtLink.astro';
+import SectionHead from './SectionHead.astro';
+import { ui, type Lang } from '../i18n';
+import { refKey, tr, type HomeData } from '../lib/content';
+import { workUrl } from '../lib/url';
+
+type Item = HomeData['selectedWork']['feature'];
+
+interface Props {
+  lang: Lang;
+  data: HomeData['selectedWork'];
+}
+
+const { lang, data } = Astro.props;
+const t = ui[lang];
+const caseHref = (item: Item) => {
+  const slug = refKey(item.case);
+  return slug ? workUrl(lang, slug) : undefined;
+};
+const feature = data.feature;
+const featureHref = caseHref(feature);
+---
+<section class="section section--tint" id="arbeiten" aria-labelledby="arbeiten-title">
+  <div class="container">
+    <SectionHead id="arbeiten-title" title={tr(data.title, lang)} intro={tr(data.intro, lang)} />
+
+    <article class="feature" aria-labelledby={`work-${feature.id}`}>
+      <ul class="feature__images" role="list">
+        {
+          feature.images.map((image) => (
+            <li>
+              <figure class="feature__figure">
+                <div class="feature__frame">
+                  <Img
+                    src={image.src}
+                    alt={tr(image.alt, lang)}
+                    position={image.position}
+                    sizes="(min-width: 1240px) 17.5rem, (min-width: 760px) 23vw, 72vw"
+                  />
+                </div>
+                {image.caption && <figcaption>{tr(image.caption, lang)}</figcaption>}
+              </figure>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="feature__body">
+        <div class="feature__text">
+          <p class="kicker">{tr(feature.org, lang)}, {feature.year}</p>
+          <h3 class="feature__title" id={`work-${feature.id}`}>{tr(feature.title, lang)}</h3>
+          <p>{tr(feature.text, lang)}</p>
+        </div>
+        <div class="feature__meta">
+          <dl class="attribution">
+            <div>
+              <dt>{t.selected.mine}</dt>
+              <dd>{tr(feature.mine, lang)}</dd>
+            </div>
+            {
+              feature.credit && (
+                <div>
+                  <dt>{t.selected.credit}</dt>
+                  <dd>{tr(feature.credit, lang)}</dd>
+                </div>
+              )
+            }
+          </dl>
+          {
+            feature.links.length > 0 && (
+              <ul class="link-list" role="list">
+                {feature.links.map((link) => (
+                  <li>
+                    <ExtLink href={link.url} label={tr(link.label, lang)} external={t.external} />
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+          {
+            featureHref && (
+              <a class="btn btn--primary" href={featureHref}>
+                {t.selected.case}
+                <Icon name="arrow-right" />
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </article>
+
+    <div class="work-grid">
+      {
+        data.items.map((item) => {
+          const href = caseHref(item);
+          const image = item.images[0];
+          return (
+            <article class="work-card" aria-labelledby={`work-${item.id}`}>
+              <div class="work-card__media">
+                <Img
+                  src={image.src}
+                  alt={tr(image.alt, lang)}
+                  position={image.position}
+                  sizes="(min-width: 1240px) 36rem, (min-width: 760px) 46vw, 92vw"
+                />
+              </div>
+              <div class="work-card__body">
+                <p class="kicker">
+                  {tr(item.org, lang)}, {item.year}
+                </p>
+                <h3 class="work-card__title" id={`work-${item.id}`}>
+                  {href ? <a href={href}>{tr(item.title, lang)}</a> : tr(item.title, lang)}
+                </h3>
+                {item.metric && (
+                  <p class="metric">
+                    <span class="metric__value">{item.metric.value}</span>
+                    <span class="metric__label">{tr(item.metric.label, lang)}</span>
+                    <span class="metric__source">{tr(item.metric.source, lang)}</span>
+                  </p>
+                )}
+                <p class="work-card__text">{tr(item.text, lang)}</p>
+                <dl class="attribution attribution--compact">
+                  <div>
+                    <dt>{t.selected.mine}</dt>
+                    <dd>{tr(item.mine, lang)}</dd>
+                  </div>
+                  {item.credit && (
+                    <div>
+                      <dt>{t.selected.credit}</dt>
+                      <dd>{tr(item.credit, lang)}</dd>
+                    </div>
+                  )}
+                </dl>
+                <ul class="work-card__links" role="list">
+                  {href && (
+                    <li>
+                      <a class="link link--strong" href={href}>
+                        {t.selected.case}
+                        <Icon name="arrow-right" />
+                      </a>
+                    </li>
+                  )}
+                  {item.links.map((link) => (
+                    <li>
+                      <ExtLink href={link.url} label={tr(link.label, lang)} external={t.external} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

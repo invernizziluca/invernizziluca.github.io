@@ -1,6 +1,6 @@
 ---
-// Preview card of a LinkedIn post (no LinkedIn iframe: faster and privacy-friendly).
-// The whole card is one link to the post on LinkedIn (opens in a new tab).
+// Preview of a LinkedIn post (no LinkedIn iframe: faster and privacy-friendly).
+// The title links to the post on LinkedIn (new tab); the whole card is clickable.
 import Img from './Img.astro';
 import Icon from './Icon.astro';
 import { ui, type Lang } from '../i18n';
@@ -11,35 +11,35 @@ interface Props {
   lang: Lang;
   /** Case study / education the post belongs to – shown as plain text, not as a second link. */
   related?: { label: string; href: string };
+  headingLevel?: 3 | 4;
 }
 
-const { entry, lang, related } = Astro.props;
+const { entry, lang, related, headingLevel = 4 } = Astro.props;
 const data = entry.data;
 const text = localized(data, lang);
 const t = ui[lang];
+const Title = headingLevel === 3 ? 'h3' : 'h4';
 ---
 <article class="post">
   <div class="post__media">
-    <Img src={data.image.src} alt={tr(data.image.alt, lang)} position={data.image.position} sizes="(min-width: 960px) 23rem, 84vw" />
+    <Img src={data.image.src} alt={tr(data.image.alt, lang)} position={data.image.position} sizes="(min-width: 960px) 24rem, 88vw" />
   </div>
   <div class="post__body">
     <p class="post__meta">
-      <span class="post__brand" aria-hidden="true">in</span>
       <time datetime={data.date}>{formatDate(data.date, lang)}</time>
       {data.author && <span>{`${t.linkedin.by} ${data.author}`}</span>}
     </p>
-    <h4 class="display h3 post__title">
+    <Title class="post__title">
       <a href={data.url} target="_blank" rel="noopener noreferrer">
-        {text.title}<span class="sr-only">{` – ${t.linkedin.read}`}</span>
+        {text.title}
+        <span class="sr-only">{` – ${t.linkedin.read} (${t.external})`}</span>
       </a>
-    </h4>
+    </Title>
     <p class="post__excerpt">{text.excerpt}</p>
-    <div class="post__foot">
-      {related && <p class="post__related">{`${t.linkedin.from} ${related.label}`}</p>}
-      <p class="post__cta" aria-hidden="true">
-        {t.linkedin.read}
-        <Icon name="external" />
-      </p>
-    </div>
+    {related && <p class="post__related">{`${t.linkedin.from}: ${related.label}`}</p>}
+    <p class="post__cta" aria-hidden="true">
+      {t.linkedin.read}
+      <Icon name="external" />
+    </p>
   </div>
 </article>
