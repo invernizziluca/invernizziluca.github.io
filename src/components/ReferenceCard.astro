@@ -1,7 +1,6 @@
 ---
-// Quote from a recommendation or reference letter. Content: src/content/referenzen/*.yaml
+// Quote from a recommendation or reference letter.
 import { ui, type Lang } from '../i18n';
-import ExtLink from './ExtLink.astro';
 import { formatDate, localized, tr, type Reference } from '../lib/content';
 import { asset } from '../lib/url';
 
@@ -29,46 +28,48 @@ const initials = data.name
   .filter(Boolean);
 const monogram = `${initials[0] ?? ''}${initials.length > 1 ? initials[initials.length - 1] : ''}`;
 ---
-<figure class:list={['quote', { 'quote--featured': featured }]}>
-  <blockquote class="quote__text" lang={quoteLang}>
+<figure class:list={['ref', { 'ref--featured': featured }]}>
+  <blockquote class="ref__quote" lang={quoteLang}>
     {paragraphs(text.quote).map((part) => <p>{part}</p>)}
   </blockquote>
-  {ownTranslation && <p class="quote__note">{t.references.translated}</p>}
-  <figcaption class="quote__person">
+  {ownTranslation && <p class="ref__translated">{t.references.translated}</p>}
+  <figcaption class="ref__person">
     {
       data.image ? (
-        <img class="quote__avatar" src={asset(data.image.src)} alt="" width="48" height="48" loading="lazy" decoding="async" />
+        <img class="ref__avatar" src={asset(data.image.src)} alt="" width="56" height="56" loading="lazy" decoding="async" />
       ) : (
-        <span class="quote__avatar quote__avatar--initials" aria-hidden="true">{monogram}</span>
+        <span class="ref__monogram" aria-hidden="true">{monogram}</span>
       )
     }
-    <span class="quote__who">
-      <span class="quote__name">{data.name}</span>
-      <span class="quote__role">{tr(data.role, lang)}</span>
-      <span class="quote__source">
+    <div>
+      <p class="ref__name">{data.name}</p>
+      <p class="ref__role">{tr(data.role, lang)}</p>
+      <p class="ref__source">
         {tr(data.source, lang)}, <time datetime={data.date}>{formatDate(data.date, lang)}</time>
-      </span>
-    </span>
+      </p>
+    </div>
   </figcaption>
   {
     (data.pdf || data.url) && (
-      <p class="quote__links">
+      <p class="ref__links">
         {data.pdf && (
-          <a class="link" href={asset(data.pdf)} target="_blank" rel="noopener">
+          <a class="text-link" href={asset(data.pdf)} target="_blank" rel="noopener">
             {t.references.pdf}
           </a>
         )}
         {data.url && (
-          <ExtLink href={data.url} label={t.references.linkedin} external={t.external} />
+          <a class="text-link" href={data.url} target="_blank" rel="noopener noreferrer">
+            {t.references.linkedin}
+          </a>
         )}
       </p>
     )
   }
   {
     text.full && (
-      <details class="quote__more">
+      <details>
         <summary>{t.references.full}</summary>
-        <div class="quote__full" lang={quoteLang}>
+        <div class="ref__full" lang={quoteLang}>
           {paragraphs(text.full).map((part) => <p>{part}</p>)}
         </div>
       </details>

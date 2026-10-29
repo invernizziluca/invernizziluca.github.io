@@ -2,11 +2,12 @@ order: 2
 date: "2026-01-30"
 url: "https://www.linkedin.com/posts/lucainve_letzte-woche-durfte-ich-erstmals-als-gast-activity-7422930738099941377-tFaH"
 image:
-  src: "/images/works/eintracht-pankow/music-business-panel-questions.webp"
+  src: "/images/works/eintracht-pankow/music-business-panel.webp"
+  position: "center top"
   alt:
-    de: "Fragen der Studierenden an das Panel, gesammelt mit Mentimeter"
-    en: "Students' questions to the panel, collected with Mentimeter"
-    it: "Le domande degli studenti al panel, raccolte con Mentimeter"
+    de: "Fragen der Studierenden im Music Business Management Panel"
+    en: "Students' questions in the Music Business Management panel"
+    it: "Le domande degli studenti nel panel di Music Business Management"
 showOnHome: true
 de:
   title: "Erstmals als Gast in einem Music Business Panel"

@@ -9,8 +9,7 @@ location:
   en: "Online / Zurich, Switzerland"
   it: "Online / Zurigo, Svizzera"
 start: "2024-02"
-expectedEnd: "2028-07"   # planned graduation (shown as "voraussichtlich 07/2028")
-# end: "2028-07"   <- add when you graduate (then remove expectedEnd)
+# end: "2027-01"   <- add when you graduate
 website: "https://www.ffhs.ch/de/"
 
 cover:
@@ -26,7 +25,7 @@ nachweise: ["forschung-authentizitaet", "forschung-smma-brand-equity", "topsim-g
 
 de:
   title: "Bachelor of Science in Business Administration"
-  summary: "Fernstudium der Betriebsökonomie mit Vertiefung Digital Business, auf Deutsch und parallel zu meinen Stationen in Berlin. Abschluss voraussichtlich im Juli 2028."
+  summary: "Fernstudium der Betriebsökonomie mit Vertiefung Digital Business, parallel zu meinen Stationen in Berlin."
   points:
     - "Betriebswirtschaft, Marketing, Management und wissenschaftliches Arbeiten"
     - "Qualitative Forschung: wie Fans die Authentizität unabhängiger Musikacts auf Social Media wahrnehmen"
@@ -34,10 +33,11 @@ de:
     - "TOPSIM General Management: Unternehmensplanspiel im Team, Juni 2026"
     - "Innovationsmanagement: Unsere Gruppenidee «PlasticBank 2.0» führte zu einem Prototyp, der aus PET-Flaschen 3D-Druck-Filament herstellt"
     - "Mentoring-Programm der FFHS: ehrliches Feedback zu Lebenslauf und Bewerbungen"
+  relevance: "Das Studium gibt mir die Werkzeuge hinter der Kreativität: Märkte verstehen, Daten lesen, Entscheidungen begründen. Und es erlaubt mir, genau die Fragen zu erforschen, die mich in der Musikbranche beschäftigen."
 
 en:
   title: "Bachelor of Science in Business Administration"
-  summary: "Distance-learning degree in business administration, majoring in Digital Business, taught in German alongside my roles in Berlin. Expected graduation: July 2028."
+  summary: "Distance-learning degree in business administration, majoring in Digital Business, alongside my roles in Berlin."
   points:
     - "Business administration, marketing, management and academic writing"
     - "Qualitative research: how fans perceive the authenticity of independent music acts on social media"
@@ -45,10 +45,11 @@ en:
     - "TOPSIM General Management: business simulation in a team, June 2026"
     - "Innovation management: our group idea «PlasticBank 2.0» led to a prototype that turns PET bottles into 3D-printing filament"
     - "FFHS mentoring programme: honest feedback on my CV and applications"
+  relevance: "My studies give me the tools behind creativity: understanding markets, reading data, justifying decisions. They also let me research the very questions that drive me in the music industry."
 
 it:
   title: "Bachelor of Science in Business Administration"
-  summary: "Studio a distanza in economia aziendale con indirizzo Digital Business, in tedesco e in parallelo alle mie esperienze a Berlino. Laurea prevista a luglio 2028."
+  summary: "Studio a distanza in economia aziendale con indirizzo Digital Business, in parallelo alle mie esperienze a Berlino."
   points:
     - "Economia aziendale, marketing, management e lavoro scientifico"
     - "Ricerca qualitativa: come i fan percepiscono l'autenticità dei music act indipendenti sui social"
@@ -56,4 +57,5 @@ it:
     - "TOPSIM General Management: simulazione aziendale in team, giugno 2026"
     - "Innovation management: la nostra idea di gruppo «PlasticBank 2.0» ha portato a un prototipo che trasforma bottiglie in PET in filamento per la stampa 3D"
     - "Programma di mentoring della FFHS: feedback sincero su curriculum e candidature"
+  relevance: "Lo studio mi dà gli strumenti dietro la creatività: capire i mercati, leggere i dati, motivare le decisioni. E mi permette di studiare proprio le domande che mi appassionano nella music industry."
 ---

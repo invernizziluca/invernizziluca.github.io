@@ -37,26 +37,10 @@ export function formatMonth(value: string): string {
   return month ? `${pad(month)}/${year}` : year;
 }
 
-/** Period like "08/2025 – 01/2026", "seit 09/2026" or "02/2024 – voraussichtlich 07/2028". */
-export function formatPeriod(start: string, end: string | undefined, lang: Lang, expectedEnd?: string): string {
-  if (end) return `${formatMonth(start)} – ${formatMonth(end)}`;
-  if (expectedEnd) return `${formatMonth(start)} – ${ui[lang].status.expected} ${formatMonth(expectedEnd)}`;
-  return `${ui[lang].status.since} ${formatMonth(start)}`;
-}
-
-/** Years only: "2025", "2024–2025", "seit 2026". */
-export function formatYears(start: string, end: string | undefined, lang: Lang, expectedEnd?: string): string {
-  const from = start.slice(0, 4);
-  const to = (end ?? expectedEnd)?.slice(0, 4);
-  if (!to) return `${ui[lang].status.since} ${from}`;
-  return from === to ? from : `${from}–${to}`;
-}
-
-/** Slug/id of a reference: Astro returns { collection, slug } for content and { collection, id } for data collections. */
-export function refKey(ref: unknown): string | undefined {
-  if (!ref || typeof ref !== 'object') return undefined;
-  const value = ref as { slug?: string; id?: string };
-  return value.slug ?? value.id;
+/** Period like "08/2025 – 01/2026" or "seit 09/2026". */
+export function formatPeriod(start: string, end: string | undefined, lang: Lang): string {
+  if (!end) return `${ui[lang].status.since} ${formatMonth(start)}`;
+  return `${formatMonth(start)} – ${formatMonth(end)}`;
 }
 
 /** "2026-06-30" -> "30. Juni 2026", "2026-06" -> "Juni 2026", "2026" -> "2026". */

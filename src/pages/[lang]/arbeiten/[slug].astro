@@ -1,19 +1,18 @@
 ---
 // Case study page. Content: src/content/arbeiten/<file-name>.md (the file name is the URL).
-// Fixed order: Kontext -> Ziel -> Mein Beitrag (+ Abgrenzung) -> Ergebnisse -> Belege -> Werkzeuge -> Learnings.
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CaseStudyHero from '../../../components/CaseStudyHero.astro';
 import CaseSection from '../../../components/CaseSection.astro';
+import Disc from '../../../components/Disc.astro';
 import Icon from '../../../components/Icon.astro';
-import ExtLink from '../../../components/ExtLink.astro';
 import GalleryGrid from '../../../components/GalleryGrid.astro';
 import SpotifyEmbed from '../../../components/SpotifyEmbed.astro';
 import LinkedInCard from '../../../components/LinkedInCard.astro';
 import ProofCard from '../../../components/ProofCard.astro';
 import { languages, ui, type Lang } from '../../../i18n';
-import { formatPeriod, getPosts, getProofs, getWorks, localized, pick, tr, type Work } from '../../../lib/content';
+import { getPosts, getProofs, getWorks, localized, pick, tr, type Work } from '../../../lib/content';
 import { generatedOgImage } from '../../../lib/images';
-import { absoluteUrl, homeUrl, workUrl } from '../../../lib/url';
+import { workUrl } from '../../../lib/url';
 
 export async function getStaticPaths() {
   const works = await getWorks();
@@ -38,22 +37,15 @@ const next = works[(index + 1) % works.length];
 
 const posts = pick(data.linkedin, await getPosts());
 const proofs = pick(data.nachweise, await getProofs());
-const { spotify, artists, gallery } = data;
+const spotify = data.spotify;
+const artists = data.artists;
+const gallery = data.gallery;
 const hasProof =
   gallery.length > 0 || spotify.length > 0 || artists.length > 0 || posts.length > 0 || proofs.length > 0 || data.links.length > 0;
 
-const host = data.website ? new URL(data.website).hostname.replace(/^www\./, '') : undefined;
-const facts = [
-  { label: t.caseStudy.company, value: tr(data.company, lang) },
-  { label: t.caseStudy.role, value: text.role },
-  { label: t.caseStudy.period, value: formatPeriod(data.start, data.end, lang) },
-  { label: t.caseStudy.location, value: tr(data.location, lang) },
-  ...(data.website && host ? [{ label: t.caseStudy.website, value: host, href: data.website }] : []),
-];
-
 const alternates = Object.fromEntries(languages.map((code) => [code, workUrl(code, entry.slug)])) as Record<Lang, string>;
 const ogImage = data.ogImage ?? generatedOgImage(`arbeiten/${entry.slug}`) ?? data.cover.src;
-const title = text.seoTitle ?? `${text.title}: ${text.category ?? text.role} | Luca Invernizzi`;
+const title = text.seoTitle ?? `${text.title}: ${text.role} | Luca Invernizzi`;
 const description = text.seoDescription ?? text.summary;
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -62,8 +54,7 @@ const jsonLd = {
   headline: `${text.title}: ${text.role}`,
   description,
   inLanguage: lang,
-  url: absoluteUrl(workUrl(lang, entry.slug), Astro.site),
-  author: { '@type': 'Person', name: 'Luca Invernizzi', url: absoluteUrl(homeUrl(lang), Astro.site) },
+  author: { '@type': 'Person', name: 'Luca Invernizzi' },
   about: { '@type': 'Organization', name: tr(data.company, lang), url: data.website },
   keywords: data.tags.join(', '),
 };
@@ -78,196 +69,179 @@ const jsonLd = {
   type="article"
   jsonLd={jsonLd}
 >
-  <article>
-    <CaseStudyHero
-      lang={lang}
-      back={{ href: `${homeUrl(lang)}#stationen`, label: t.caseStudy.back }}
-      label={text.category}
-      current={current ? { label: t.status.current } : undefined}
-      title={text.title}
-      role={text.role}
-      summary={text.summary}
-      cover={data.cover}
-      facts={facts}
-      externalLabel={t.external}
-    />
+  <CaseStudyHero entry={entry} lang={lang} />
 
-    <div class="container case-body">
-      <CaseSection title={t.caseStudy.context} id="kontext">
-        <p>{text.context}</p>
-      </CaseSection>
+  <div class="wrap case-body">
+    <CaseSection title={t.caseStudy.context} id="kontext">
+      <p>{text.context}</p>
+    </CaseSection>
 
+    <CaseSection title={t.caseStudy.contribution} id="rolle">
+      <p>{text.contribution}</p>
+    </CaseSection>
+
+    {
+      text.tasks.length > 0 && (
+        <CaseSection title={t.caseStudy.tasks} id="aufgaben">
+          <ul class="disc-list disc-list--cols">
+            {text.tasks.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+      )
+    }
+
+    <CaseSection title={t.caseStudy.outputs} id="ergebnisse">
       {
-        text.goal && (
-          <CaseSection title={t.caseStudy.goal} id="ziel">
-            <p>{text.goal}</p>
-          </CaseSection>
+        text.highlights.length > 0 && (
+          <div class="highlights">
+            {text.highlights.map((item) => (
+              <p class="highlight">
+                <span class="highlight__value">{item.value}</span>
+                <span class="highlight__label">{item.label}</span>
+              </p>
+            ))}
+          </div>
         )
       }
+      {
+        text.outputs.length > 0 ? (
+          <ul class="disc-list">
+            {text.outputs.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          current && <p class="pending">{t.caseStudy.outputsPending}</p>
+        )
+      }
+    </CaseSection>
 
-      <CaseSection title={t.caseStudy.contribution} id="beitrag">
-        <p>{text.contribution}</p>
-        {
-          text.tasks.length > 0 && (
-            <>
-              <h3 class="case-subhead">{t.caseStudy.tasks}</h3>
-              <ul class="list list--cols">
-                {text.tasks.map((item) => (
-                  <li>{item}</li>
+    {
+      hasProof && (
+        <CaseSection title={t.caseStudy.proof} id="belege">
+          {gallery.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.gallery}</h3>
+              <GalleryGrid images={gallery} lang={lang} fallbackAlt={text.title} />
+            </div>
+          )}
+          {spotify.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.listen}</h3>
+              <div class:list={['players', { 'players--2': spotify.length > 1 }]}>
+                {spotify.map((item) => (
+                  <SpotifyEmbed url={item.url} title={item.title} note={tr(item.note, lang)} lang={lang} />
+                ))}
+              </div>
+            </div>
+          )}
+          {artists.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.artists}</h3>
+              <div class="artist-grid">
+                {artists.map((artist) => (
+                  <SpotifyEmbed url={artist.spotify} title={artist.name} lang={lang} compact consent={false} />
+                ))}
+              </div>
+              <p class="spotify__consent">{t.spotify.consent}</p>
+            </div>
+          )}
+          {posts.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.linkedin}</h3>
+              <div class="rail">
+                {posts.map((post) => (
+                  <LinkedInCard entry={post} lang={lang} />
+                ))}
+              </div>
+            </div>
+          )}
+          {proofs.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.documents}</h3>
+              <div class="proof-cards">
+                {proofs.map((proof) => (
+                  <ProofCard entry={proof} lang={lang} variant="card" />
+                ))}
+              </div>
+            </div>
+          )}
+          {data.links.length > 0 && (
+            <div class="proof-block">
+              <h3>{t.caseStudy.links}</h3>
+              <ul class="link-list">
+                {data.links.map((link) => (
+                  <li>
+                    <a class="text-link" href={link.url} target="_blank" rel="noopener noreferrer">
+                      {tr(link.label, lang)}
+                    </a>
+                  </li>
                 ))}
               </ul>
-            </>
-          )
-        }
-        {
-          text.scope && (
-            <div class="note" role="note">
-              <p class="note__title">{t.caseStudy.scope}</p>
-              <p>{text.scope}</p>
             </div>
-          )
-        }
-      </CaseSection>
+          )}
+        </CaseSection>
+      )
+    }
 
-      <CaseSection title={t.caseStudy.outputs} id="ergebnisse">
-        {
-          text.highlights.length > 0 && (
-            <>
-              <dl class="metrics">
-                {text.highlights.map((item) => (
-                  <div>
-                    <dt>{item.label}</dt>
-                    <dd>{item.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              {text.highlightsSource && <p class="metrics__source">{text.highlightsSource}</p>}
-            </>
-          )
-        }
-        {
-          text.outputs.length > 0 ? (
-            <ul class="list">
-              {text.outputs.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          ) : (
-            current && <p class="pending">{t.caseStudy.outputsPending}</p>
-          )
-        }
-      </CaseSection>
+    {
+      data.tools.length > 0 && (
+        <CaseSection title={t.caseStudy.tools} id="werkzeuge">
+          <ul class="chips">
+            {data.tools.map((tool) => (
+              <li>{tool}</li>
+            ))}
+          </ul>
+        </CaseSection>
+      )
+    }
 
-      {
-        hasProof && (
-          <CaseSection title={t.caseStudy.proof} id="belege">
-            {gallery.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.gallery}</h3>
-                <GalleryGrid images={gallery} lang={lang} fallbackAlt={text.title} />
-              </div>
-            )}
-            {data.links.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.links}</h3>
-                <ul class="link-list" role="list">
-                  {data.links.map((link) => (
-                    <li>
-                      <ExtLink href={link.url} label={tr(link.label, lang)} external={t.external} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {proofs.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.documents}</h3>
-                <ul class="docs docs--single" role="list">
-                  {proofs.map((proof) => (
-                    <ProofCard entry={proof} lang={lang} />
-                  ))}
-                </ul>
-              </div>
-            )}
-            {posts.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.linkedin}</h3>
-                <div class="posts posts--compact">
-                  {posts.map((post) => (
-                    <LinkedInCard entry={post} lang={lang} />
-                  ))}
-                </div>
-              </div>
-            )}
-            {spotify.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.listen}</h3>
-                <div class:list={['players', { 'players--2': spotify.length > 1 }]}>
-                  {spotify.map((item) => (
-                    <SpotifyEmbed url={item.url} title={item.title} note={tr(item.note, lang)} lang={lang} />
-                  ))}
-                </div>
-              </div>
-            )}
-            {artists.length > 0 && (
-              <div class="proof-block">
-                <h3 class="case-subhead">{t.caseStudy.artists}</h3>
-                <div class="artist-grid">
-                  {artists.map((artist) => (
-                    <SpotifyEmbed url={artist.spotify} title={artist.name} lang={lang} compact consent={false} />
-                  ))}
-                </div>
-                <p class="consent">{t.spotify.consent}</p>
-              </div>
-            )}
-          </CaseSection>
-        )
-      }
+    {
+      text.learnings.length > 0 && (
+        <CaseSection title={t.caseStudy.learnings} id="learnings">
+          <ul class="disc-list">
+            {text.learnings.map((item) => (
+              <li>
+                <Disc />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+      )
+    }
 
-      {
-        data.tools.length > 0 && (
-          <CaseSection title={t.caseStudy.tools} id="werkzeuge">
-            <ul class="chips" role="list">
-              {data.tools.map((tool) => (
-                <li>{tool}</li>
-              ))}
-            </ul>
-          </CaseSection>
-        )
-      }
+    <section class="relevance" aria-labelledby="relevanz-titel">
+      <h2 class="label" id="relevanz-titel">{t.caseStudy.relevance}</h2>
+      <p>{text.relevance}</p>
+      <Disc />
+    </section>
 
-      {
-        text.learnings.length > 0 && (
-          <CaseSection title={t.caseStudy.learnings} id="learnings">
-            <ul class="list">
-              {text.learnings.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-          </CaseSection>
-        )
-      }
-
-      {
-        works.length > 1 && (
-          <nav class="pager" aria-label={t.caseStudy.pager}>
-            <a class="pager__link" href={workUrl(lang, previous.slug)} rel="prev">
-              <span class="pager__dir">
-                <Icon name="arrow-left" />
-                {t.caseStudy.previous}
-              </span>
-              <span class="pager__title">{localized(previous.data, lang).title}</span>
-            </a>
-            <a class="pager__link pager__link--next" href={workUrl(lang, next.slug)} rel="next">
-              <span class="pager__dir">
-                {t.caseStudy.next}
-                <Icon name="arrow-right" />
-              </span>
-              <span class="pager__title">{localized(next.data, lang).title}</span>
-            </a>
-          </nav>
-        )
-      }
-    </div>
-  </article>
+    {
+      works.length > 1 && (
+        <nav class="pager" aria-label={t.caseStudy.back}>
+          <a href={workUrl(lang, previous.slug)}>
+            <span class="pager__dir">
+              <Icon name="arrow-left" /> {t.caseStudy.previous}
+            </span>
+            <span class="pager__title">{localized(previous.data, lang).title}</span>
+          </a>
+          <a class="pager__next" href={workUrl(lang, next.slug)}>
+            <span class="pager__dir">
+              {t.caseStudy.next} <Icon name="arrow-right" />
+            </span>
+            <span class="pager__title">{localized(next.data, lang).title}</span>
+          </a>
+        </nav>
+      )
+    }
+  </div>
 </BaseLayout>

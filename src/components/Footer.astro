@@ -13,15 +13,13 @@ const home = await getHome();
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
-  <div class="container site-footer__inner">
+  <div class="wrap site-footer__inner">
     <p>© {year} Luca Invernizzi, {tr(home.contact.city, lang)}</p>
-    <nav aria-label={t.footer.nav}>
-      <ul>
-        <li><a href={`mailto:${home.contact.email}`}>E-Mail</a></li>
-        <li><a href={home.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href={asset(home.contact.cv)} target="_blank" rel="noopener">{t.contact.cv}</a></li>
-        <li><a href="#top">{t.footer.top}</a></li>
-      </ul>
+    <nav aria-label="Footer">
+      <a href={`mailto:${home.contact.email}`}>E-Mail</a>
+      <a href={home.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href={asset(home.contact.cv)} target="_blank" rel="noopener">{t.contact.cv}</a>
+      <a href="#top">{t.footer.top}</a>
     </nav>
   </div>
 </footer>

@@ -19,14 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
-      # Node 22 LTS. The action versions below run on Node 24, the runtime GitHub requires since September 2026.
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
+          node-version: 20
 
       - name: Configure GitHub Pages base path
         run: |
@@ -40,19 +38,17 @@ jobs:
             echo "SITE=https://$OWNER.github.io/$REPO_NAME" >> $GITHUB_ENV
           fi
 
-      # npm ci installs exactly the versions in package-lock.json (reproducible builds).
-      # If you add or update a dependency, run "npm install" locally and commit package-lock.json too.
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
@@ -65,4 +61,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4

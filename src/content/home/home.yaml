@@ -1,57 +1,67 @@
 # =====================================================================
 # HOME PAGE TEXTS (all three languages in one file)
 # Every text has  de: / en: / it:  – change all three when you edit.
-# Put texts in "double quotes".
-# Links in "links:" must be full URLs (https://…). Case studies are referenced by
-# their file name in src/content/arbeiten/ (e.g. case: "initiative-musik").
-# Rule for every work sample: "mine" = what I did myself, "credit" = what others did.
+# Put texts in "double quotes". Links:
+#   "#arbeiten"                      -> a section of the home page
+#   "/arbeiten/eintracht-pankow/"    -> a case study
+#   "/ausbildung/ffhs/"              -> an education page
+#   "/pdf/..." or "https://..."      -> files and external pages
 # =====================================================================
 
 contact:
   email: "luca.invernizzi@students.ffhs.ch"
-  linkedin: "https://www.linkedin.com/in/lucainve/"
+  linkedin: "https://www.linkedin.com/in/luca-invernizzi/"
   cv: "/pdf/cv-luca-invernizzi.pdf"
   city:
     de: "Berlin"
     en: "Berlin"
     it: "Berlino"
 
-# Portrait in the hero. "position" moves the crop: "50% 0%" = top of the photo.
+# Portrait in the hero (shown upright in 3:4, like a record sleeve with a CD behind it).
+# "position" moves the crop: "50% 0%" = top of the photo, "50% 50%" = middle.
 portrait:
   src: "/images/profile/luca-portrait.webp"
-  position: "50% 8%"
+  position: "50% 2%"
   alt:
-    de: "Porträt von Luca Invernizzi im schwarzen Rollkragenpullover"
-    en: "Portrait of Luca Invernizzi in a black turtleneck"
-    it: "Ritratto di Luca Invernizzi con dolcevita nero"
+    de: "Porträt von Luca Invernizzi im schwarzen Rollkragenpullover vor goldbraunem Hintergrund"
+    en: "Portrait of Luca Invernizzi in a black turtleneck against a golden-brown background"
+    it: "Ritratto di Luca Invernizzi con dolcevita nero su sfondo color oro"
 
-# Preview image for LinkedIn, WhatsApp & co. (1200 × 630 px, made by scripts/make-brand-assets.py)
+# Photo in the contact box (also 3:4)
+contactPortrait:
+  src: "/images/profile/luca-portrait.webp"
+  position: "50% 2%"
+  alt:
+    de: "Luca Invernizzi lächelt in die Kamera"
+    en: "Luca Invernizzi smiling at the camera"
+    it: "Luca Invernizzi sorride all'obiettivo"
+
+# Preview image for LinkedIn, WhatsApp & co. (1200 × 630 px)
 ogImage: "/images/og/home.jpg"
 
 seo:
   title:
-    de: "Luca Invernizzi – Portfolio: Musik-PR, Label und Marketing in Berlin"
-    en: "Luca Invernizzi – Portfolio: music PR, label work and marketing in Berlin"
-    it: "Luca Invernizzi – Portfolio: PR musicali, label e marketing a Berlino"
+    de: "Luca Invernizzi – Music Marketing, PR & Artist Management in Berlin"
+    en: "Luca Invernizzi – Music Marketing, PR & Artist Management in Berlin"
+    it: "Luca Invernizzi – Music marketing, PR e artist management a Berlino"
   description:
-    de: "Luca Invernizzi, Berlin: Pressearbeit bei der Initiative Musik, Labelpraxis bei Eintracht Pankow, Studium an der FFHS. Arbeitsproben, Zeugnisse, Lebenslauf."
-    en: "Luca Invernizzi, Berlin: press and PR at Initiative Musik, label work at Eintracht Pankow, BSc Business Administration at FFHS. Work samples, references, CV."
-    it: "Luca Invernizzi, Berlino: ufficio stampa e PR da Initiative Musik, label da Eintracht Pankow, BSc Business Administration alla FFHS. Lavori, referenze, CV."
+    de: "Portfolio von Luca Invernizzi: Presse & PR bei der Initiative Musik, Labelpraxis bei Eintracht Pankow, Business Administration an der FFHS. Case Studies, Belege, Kontakt."
+    en: "Portfolio of Luca Invernizzi: press & PR at Initiative Musik, label work at Eintracht Pankow, business administration at FFHS. Case studies, proof, contact."
+    it: "Portfolio di Luca Invernizzi: ufficio stampa e PR da Initiative Musik, label da Eintracht Pankow, economia aziendale alla FFHS. Case study, riscontri, contatti."
 
 hero:
-  kicker:
-    de: "Portfolio aus Berlin"
-    en: "Portfolio from Berlin"
-    it: "Portfolio da Berlino"
-  title: "Luca Invernizzi"
-  claim:
-    de: "Kommunikation, Labelpraxis und Marketing für Musik."
-    en: "Communication, label work and marketing for music."
-    it: "Comunicazione, lavoro in label e marketing per la musica."
+  intro:
+    de: "Luca Invernizzi, Berlin"
+    en: "Luca Invernizzi, Berlin"
+    it: "Luca Invernizzi, Berlino"
+  title:
+    de: "Struktur für Musik, die gehört werden will."
+    en: "Structure for music that wants to be heard."
+    it: "Struttura per la musica che vuole farsi sentire."
   lead:
-    de: "2025 bin ich aus der italienischen Schweiz nach Berlin gezogen, um Artists dabei zu unterstützen, ihre Musik mit der Welt zu teilen. Heute mache ich ein Praktikum in der Presse- und Öffentlichkeitsarbeit der Initiative Musik und studiere Business Administration an der FFHS."
-    en: "In 2025 I moved from Italian-speaking Switzerland to Berlin to help artists share their music with the world. Today I am an intern in the press and PR team at Initiative Musik and study business administration at FFHS."
-    it: "Nel 2025 mi sono trasferito dalla Svizzera italiana a Berlino per aiutare artiste e artisti a condividere la loro musica con il mondo. Oggi faccio uno stage nell'ufficio stampa di Initiative Musik e studio Business Administration alla FFHS."
+    de: "Seit 2025 in der Berliner Musikbranche, daneben Betriebsökonomie-Studium an der FFHS. Heute im Presseteam der Initiative Musik, davor Labelpraxis bei Eintracht Pankow. Mein Ziel: Music Marketing, PR und Artist Management."
+    en: "In Berlin's music industry since 2025, while studying business administration at FFHS. Now in the press team at Initiative Musik, before that label work at Eintracht Pankow. Where I'm heading: music marketing, PR and artist management."
+    it: "Dal 2025 nella music industry di Berlino, in parallelo studio economia aziendale alla FFHS. Oggi nell'ufficio stampa di Initiative Musik, prima in label da Eintracht Pankow. Il mio obiettivo: music marketing, PR e artist management."
   primary:
     de: "Arbeiten ansehen"
     en: "View my work"
@@ -60,359 +70,310 @@ hero:
     de: "Lebenslauf (PDF)"
     en: "CV (PDF)"
     it: "Curriculum (PDF)"
-  facts:
-    - label:
-        de: "Aktuell"
-        en: "Now"
-        it: "Oggi"
-      value:
-        de: "Presse & PR, Initiative Musik"
-        en: "Press & PR, Initiative Musik"
-        it: "Ufficio stampa, Initiative Musik"
-    - label:
-        de: "Davor"
-        en: "Before"
-        it: "Prima"
-      value:
-        de: "Produktmanagement, Eintracht Pankow"
-        en: "Product management, Eintracht Pankow"
-        it: "Product management, Eintracht Pankow"
-    - label:
-        de: "Studium"
-        en: "Studies"
-        it: "Studi"
-      value:
-        de: "BSc Business Administration, FFHS, bis 2028"
-        en: "BSc Business Administration, FFHS, until 2028"
-        it: "BSc Business Administration, FFHS, fino al 2028"
-    - label:
-        de: "Sprachen"
-        en: "Languages"
-        it: "Lingue"
-      value:
-        de: "Italienisch, Deutsch, Englisch"
-        en: "Italian, German, English"
-        it: "Italiano, tedesco, inglese"
 
-# ---------------------------------------------------------------------
-# AUSGEWÄHLTE ARBEITEN: 1 large feature + up to 5 smaller items.
-# Images of APPLAUS: published visuals of Initiative Musik, shown as context
-# for my copywriting. Photos/graphics are NOT mine (see "credit").
-# Reuse permission for these visuals: please confirm with Initiative Musik
-# before publishing (see CONTENT_REVIEW.md).
-# ---------------------------------------------------------------------
-selectedWork:
-  title:
-    de: "Ausgewählte Arbeiten"
-    en: "Selected work"
-    it: "Lavori selezionati"
-  intro:
-    de: "Veröffentlichte Arbeiten und belegte Ergebnisse. Bei jeder Arbeit steht, was mein Anteil war und was vom Team oder von anderen stammt."
-    en: "Published work and documented results. Each item says what my part was and what came from the team or from others."
-    it: "Lavori pubblicati e risultati documentati. Per ogni lavoro indico qual è stata la mia parte e cosa viene dal team o da altri."
-
-  feature:
-    id: "applaus-2026"
-    org: "Initiative Musik"
-    year: "2026"
+# The three short blocks under the hero: now / before / why Berlin
+status:
+  - label:
+      de: "Jetzt"
+      en: "Now"
+      it: "Oggi"
     title:
-      de: "APPLAUS 2026: Texte für Social Media"
-      en: "APPLAUS 2026: social media copy"
-      it: "APPLAUS 2026: testi per i social"
+      de: "Presse & PR bei der Initiative Musik"
+      en: "Press & PR at Initiative Musik"
+      it: "Ufficio stampa e PR da Initiative Musik"
     text:
-      de: "Der APPLAUS-Award zeichnet Livemusikspielstätten und Konzertreihen für ihre Musikprogramme aus. Die Preisverleihung 2026 findet am 24. November im Waschhaus Potsdam statt. Für die Beiträge rund um die Live-Acts und das Musikprogramm habe ich auf Instagram einen Großteil der Texte geschrieben."
-      en: "The APPLAUS award honours live music venues and concert series for their programmes. The 2026 ceremony takes place on 24 November at Waschhaus Potsdam. For the posts about the live acts and the music programme I wrote most of the Instagram copy."
-      it: "Il premio APPLAUS riconosce locali di musica dal vivo e rassegne di concerti per la loro programmazione. La premiazione 2026 si terrà il 24 novembre al Waschhaus di Potsdam. Per i post sui live act e sul programma musicale ho scritto gran parte dei testi su Instagram."
-    mine:
-      de: "Texte für einen Großteil der veröffentlichten APPLAUS-Beiträge."
-      en: "Copy for most of the published APPLAUS posts."
-      it: "I testi di gran parte dei post APPLAUS pubblicati."
-    credit:
-      de: "Fotos, Grafiken und Leitung der Kampagne: Initiative Musik und Rechteinhaber:innen. Die Bilder zeigen veröffentlichte Beiträge, nicht meine Gestaltung."
-      en: "Photos, graphics and campaign lead: Initiative Musik and the rights holders. The images show published posts, not my design."
-      it: "Foto, grafiche e guida della campagna: Initiative Musik e titolari dei diritti. Le immagini mostrano post pubblicati, non una mia grafica."
-    images:
-      - src: "/images/works/initiative-musik/applaus-2026/kapa-tult.jpg"
-        alt:
-          de: "APPLAUS-Visual zum Live-Act Kapa Tult, APPLAUS-Award 2026 Potsdam"
-          en: "APPLAUS visual for the live act Kapa Tult, APPLAUS Award 2026 Potsdam"
-          it: "Visual APPLAUS per il live act Kapa Tult, APPLAUS Award 2026 Potsdam"
-      - src: "/images/works/initiative-musik/applaus-2026/so-sorry.jpg"
-        alt:
-          de: "APPLAUS-Visual zum Live-Act SO SORRY"
-          en: "APPLAUS visual for the live act SO SORRY"
-          it: "Visual APPLAUS per il live act SO SORRY"
-      - src: "/images/works/initiative-musik/applaus-2026/kama-orchestra.jpg"
-        alt:
-          de: "APPLAUS-Visual zum Live-Act KAMA Orchestra"
-          en: "APPLAUS visual for the live act KAMA Orchestra"
-          it: "Visual APPLAUS per il live act KAMA Orchestra"
-      - src: "/images/works/initiative-musik/applaus-2026/live-acts-programme.jpg"
-        alt:
-          de: "News-Visual: APPLAUS-Award 2026, das Musikprogramm steht fest"
-          en: "News visual: APPLAUS Award 2026, the music programme is set"
-          it: "Visual news: APPLAUS Award 2026, il programma musicale è definito"
-    case: "initiative-musik"
-    links:
-      - label:
-          de: "Instagram-Beitrag 1"
-          en: "Instagram post 1"
-          it: "Post Instagram 1"
-        url: "https://www.instagram.com/p/DePTpGejdrF/"
-      - label:
-          de: "Instagram-Beitrag 2"
-          en: "Instagram post 2"
-          it: "Post Instagram 2"
-        url: "https://www.instagram.com/p/DeMXOABF79w/"
-      - label:
-          de: "Instagram-Beitrag 3"
-          en: "Instagram post 3"
-          it: "Post Instagram 3"
-        url: "https://www.instagram.com/p/De_s2VuF9MW/"
-      - label:
-          de: "Artikel über das domicil Dortmund (redaktionelle Unterstützung, Text: Thomas Venker)"
-          en: "Article on domicil Dortmund (editorial support, text: Thomas Venker)"
-          it: "Articolo sul domicil di Dortmund (supporto redazionale, testo: Thomas Venker)"
-        url: "https://applaus-award.de/waldo-riedl-domicil-dortmund-man-moechte-eigentlich-nur-bands-auf-die-buehne-bringen/"
+      de: "Social-Media-Content, Medienmonitoring, Newsletter und die kommunikative Begleitung von Branchenveranstaltungen, seit September 2026."
+      en: "Social media content, media monitoring, newsletters and communication around industry events, since September 2026."
+      it: "Contenuti social, media monitoring, newsletter e comunicazione degli eventi di settore, da settembre 2026."
+    href: "/arbeiten/initiative-musik/"
+    linkLabel:
+      de: "Zur Case Study"
+      en: "Read the case study"
+      it: "Leggi il case study"
+  - label:
+      de: "Davor"
+      en: "Before"
+      it: "Prima"
+    title:
+      de: "Labelpraxis bei Eintracht Pankow"
+      en: "Label work at Eintracht Pankow"
+      it: "In label da Eintracht Pankow"
+    text:
+      de: "Sechs Monate Playlists, YouTube- und SoundCloud-Kanäle, Artist-Kommunikation und Erstkontakte mit neuen Künstler:innen, eng an der Seite von Geschäftsführer Jens Herrndorff."
+      en: "Six months of playlists, YouTube and SoundCloud channels, artist communication and first contact with new signings, working closely with managing director Jens Herrndorff."
+      it: "Sei mesi tra playlist, canali YouTube e SoundCloud, comunicazione con gli artisti e primi contatti per nuovi signing, a stretto contatto con l'amministratore delegato Jens Herrndorff."
+    href: "/arbeiten/eintracht-pankow/"
+    linkLabel:
+      de: "Zur Case Study"
+      en: "Read the case study"
+      it: "Leggi il case study"
+  - label:
+      de: "Warum Berlin"
+      en: "Why Berlin"
+      it: "Perché Berlino"
+    title:
+      de: "Aus dem Tessin in die Musikstadt"
+      en: "From Ticino to a music city"
+      it: "Dal Ticino alla città della musica"
+    text:
+      de: "Als Musikbegeisterter aus der italienischen Schweiz bin ich nach Berlin gezogen, um Künstler:innen dabei zu unterstützen, ihre Musik mit der Welt zu teilen."
+      en: "A music lover from Italian-speaking Switzerland, I moved to Berlin to help artists share their music with the world."
+      it: "Appassionato di musica dalla Svizzera italiana, mi sono trasferito a Berlino per aiutare artiste e artisti a condividere la loro musica con il mondo."
+    href: "#werdegang"
+    linkLabel:
+      de: "Meinen Weg lesen"
+      en: "Read my path"
+      it: "Leggi il mio percorso"
 
-  items:
-    - id: "eintracht-pankow"
-      org: "Eintracht Pankow Musik"
-      year: "2025–2026"
-      title:
-        de: "Songwriting Camp und Label-Kanäle"
-        en: "Songwriting camp and label channels"
-        it: "Songwriting camp e canali della label"
-      text:
-        de: "Im Praktikum habe ich ein Songwriting Camp bei Guesstimate / Loftyard Studios mitorganisiert und die Label-Playlist, YouTube und SoundCloud betreut."
-        en: "During the internship I co-organised a songwriting camp at Guesstimate / Loftyard Studios and looked after the label playlist, YouTube and SoundCloud."
-        it: "Durante lo stage ho co-organizzato un songwriting camp da Guesstimate / Loftyard Studios e curato playlist, YouTube e SoundCloud della label."
-      mine:
-        de: "Organisation und Begleitung der Artists im Camp, Pflege der Kanäle, Kommunikation mit den Artists."
-        en: "Organising the camp and supporting the artists, maintaining the channels, communicating with the artists."
-        it: "Organizzazione del camp e supporto agli artisti, cura dei canali, comunicazione con gli artisti."
-      credit:
-        de: "Das Camp war eine Teamarbeit des Labels; die Songs gehören den Artists."
-        en: "The camp was a label team effort; the songs belong to the artists."
-        it: "Il camp è stato un lavoro di squadra della label; le canzoni sono degli artisti."
-      images:
-        - src: "/images/works/eintracht-pankow/songwriting-camp-cover.webp"
-          position: "center 40%"
-          alt:
-            de: "Gruppenfoto der Teilnehmenden beim Songwriting Camp"
-            en: "Group photo of the songwriting camp participants"
-            it: "Foto di gruppo dei partecipanti al songwriting camp"
-      case: "eintracht-pankow"
-      links:
-        - label:
-            de: "LinkedIn-Beitrag zum Camp"
-            en: "LinkedIn post about the camp"
-            it: "Post LinkedIn sul camp"
-          url: "https://www.linkedin.com/posts/lucainve_wei%C3%9Ft-du-wie-ein-songwriting-camp-aussieht-activity-7442450315599175680-L-eK/"
-        - label:
-            de: "Label-Playlist auf Spotify"
-            en: "Label playlist on Spotify"
-            it: "Playlist della label su Spotify"
-          url: "https://open.spotify.com/playlist/5CevRvf8lxaVhbfqST1afR"
-
-    - id: "verbano"
-      org: "Verbano Unihockey"
-      year: "2024–2025"
-      title:
-        de: "Social Media und Website für einen Sportverein"
-        en: "Social media and website for a sports club"
-        it: "Social media e sito per una società sportiva"
-      text:
-        de: "Ehrenamtlich habe ich Redaktionsplanung, Beiträge und die Website des Tessiner Unihockeyvereins betreut und mit den Instagram-Insights geplant."
-        en: "As a volunteer I handled editorial planning, posts and the website of the Ticino floorball club, using Instagram insights to plan."
-        it: "Come volontario ho curato piano editoriale, post e sito della società ticinese di unihockey, pianificando con gli insights di Instagram."
-      mine:
-        de: "Planung und Umsetzung der Inhalte, Überarbeitung der Website, Kommunikation mit Sponsoren."
-        en: "Planning and producing content, reworking the website, communicating with sponsors."
-        it: "Pianificazione e realizzazione dei contenuti, revisione del sito, comunicazione con gli sponsor."
-      credit:
-        de: "Die Zahlen gelten für das ganze Vereinskonto im Zeitraum, nicht nur für meine Beiträge."
-        en: "The numbers cover the club's whole account in that period, not only my posts."
-        it: "I numeri riguardano l'intero account del club nel periodo, non solo i miei post."
-      metric:
-        value: "83.767"
-        label:
-          de: "Aufrufe in 14 Tagen, 59,8\u00A0% von Nicht-Followern"
-          en: "views in 14 days, 59.8% from non-followers"
-          it: "visualizzazioni in 14 giorni, 59,8\u00A0% da non follower"
-        source:
-          de: "Instagram Insights, 5.–18. August"
-          en: "Instagram insights, 5–18 August"
-          it: "Insights di Instagram, 5–18 agosto"
-      images:
-        - src: "/images/works/verbano/instagram-insights.webp"
-          position: "50% 12%"
-          alt:
-            de: "Instagram-Insights: 83.767 Aufrufe in 14 Tagen, 59,8 Prozent von Nicht-Followern, 4.775 erreichte Konten"
-            en: "Instagram insights: 83,767 views in 14 days, 59.8 percent from non-followers, 4,775 accounts reached"
-            it: "Insights di Instagram: 83.767 visualizzazioni in 14 giorni, 59,8 per cento da non follower, 4.775 account raggiunti"
-      case: "verbano-unihockey"
-      links: []
-
-    - id: "gebrueder-fritz"
-      org: "Gebrüder Fritz"
-      year: "2025"
-      title:
-        de: "CRM, Newsletter und Events"
-        en: "CRM, newsletters and events"
-        it: "CRM, newsletter ed eventi"
-      text:
-        de: "Für Berliner Eventlocations habe ich Kundendaten und Deals in Pipedrive gepflegt, Newsletter mit Mailchimp versendet und Events mit vorbereitet."
-        en: "For Berlin event venues I maintained client data and deals in Pipedrive, sent newsletters with Mailchimp and helped prepare events."
-        it: "Per location di eventi a Berlino ho curato dati clienti e trattative in Pipedrive, inviato newsletter con Mailchimp e aiutato a preparare gli eventi."
-      mine:
-        de: "CRM-Pflege und Follow-ups, Newsletter-Kampagnen, Mitarbeit an Angeboten, Rechnungen und Events."
-        en: "CRM upkeep and follow-ups, newsletter campaigns, help with offers, invoices and events."
-        it: "Gestione del CRM e follow-up, campagne newsletter, supporto per offerte, fatture ed eventi."
-      credit:
-        de: "Angebote, Preise und Kundenentscheidungen lagen bei Geschäftsführung und Sales-Team."
-        en: "Offers, prices and client decisions were made by the management and the sales team."
-        it: "Offerte, prezzi e decisioni con i clienti spettavano alla direzione e al team sales."
-      images:
-        - src: "/images/works/gebrueder-fritz/gebrueder-management.webp"
-          position: "center 30%"
-          alt:
-            de: "Luca Invernizzi mit dem Team von Gebrüder Fritz bei einem Event"
-            en: "Luca Invernizzi with the Gebrüder Fritz team at an event"
-            it: "Luca Invernizzi con il team di Gebrüder Fritz durante un evento"
-      case: "gebrueder-fritz"
-      links: []
-
-    - id: "musikprojekt"
-      org:
-        de: "Eigenes Musikprojekt"
-        en: "Own music project"
-        it: "Progetto musicale"
-      year: "2024–2025"
-      title:
-        de: "Artist-Koordination und Content in Mailand"
-        en: "Artist coordination and content in Milan"
-        it: "Coordinamento artisti e contenuti a Milano"
-      text:
-        de: "In der Mailänder Urban-Szene habe ich Independent Artists organisatorisch begleitet und ihre Inhalte für Social Media geplant."
-        en: "In Milan's urban scene I supported independent artists with organisation and planned their social media content."
-        it: "Nella scena urban di Milano ho seguito artisti indipendenti nell'organizzazione e pianificato i loro contenuti social."
-      mine:
-        de: "Content-Planung, Koordination von Fotos, Videos und Covern, Kommunikation mit den Artists."
-        en: "Content planning, coordinating photos, videos and covers, communicating with the artists."
-        it: "Pianificazione dei contenuti, coordinamento di foto, video e copertine, comunicazione con gli artisti."
-      credit:
-        de: "Musik und Artworks gehören den Artists."
-        en: "The music and artwork belong to the artists."
-        it: "Musica e artwork appartengono agli artisti."
-      images:
-        - src: "/images/works/music-project/foto-con-renis.webp"
-          position: "center 22%"
-          alt:
-            de: "Luca Invernizzi und der Artist Renis im Tonstudio"
-            en: "Luca Invernizzi and the artist Renis in the recording studio"
-            it: "Luca Invernizzi e l'artista Renis in studio di registrazione"
-      case: "eigenes-musikprojekt"
-      links:
-        - label: "Renis auf Spotify"
-          url: "https://open.spotify.com/artist/21zPO2MZlfEQrRXceiuqM3"
-
-stationen:
+# Chapters 01–03 of the story (the numbers are added automatically)
+werdegang:
+  name:
+    de: "Werdegang"
+    en: "My path"
+    it: "Percorso"
   title:
-    de: "Stationen"
-    en: "Experience"
-    it: "Esperienze"
+    de: "Mein Weg in die Musikbranche."
+    en: "My way into the music industry."
+    it: "Il mio percorso verso la musica."
   intro:
-    de: "Jede Station hat eine eigene Seite mit Kontext, Ziel, meinem Beitrag, Ergebnissen und Belegen."
-    en: "Each role has its own page with context, goal, my contribution, results and proof."
-    it: "Ogni esperienza ha una pagina dedicata con contesto, obiettivo, il mio contributo, risultati e riscontri."
+    de: "Kein gerader Weg, aber ein klares Ziel: die Musik. Das Studium gibt mir den Blick fürs Ganze, Mailand und Berlin die Praxis."
+    en: "Not a straight line, but a clear goal: music. My studies give me the bigger picture, Milan and Berlin the practice."
+    it: "Non una linea retta, ma un obiettivo chiaro: la musica. Lo studio mi dà la visione d'insieme, Milano e Berlino la pratica."
+  chapters:
+    - id: "ursprung"
+      years: "2018–2023"
+      name:
+        de: "Ursprung"
+        en: "Origin"
+        it: "Origini"
+      title:
+        de: "Lehre und Matura im Tessin"
+        en: "Apprenticeship and baccalaureate in Ticino"
+        it: "Apprendistato e maturità in Ticino"
+      text:
+        de: "Meine Ausbildung habe ich in Bellinzona gemacht: zuerst die Lehre als Automatiker EFZ mit Berufsmaturität, danach die gymnasiale Maturität (Passerelle). Damit stand mir der Weg an die Hochschule offen."
+        en: "I did my schooling in Bellinzona: first an apprenticeship as an automation technician (EFZ) with a vocational baccalaureate, then the academic baccalaureate (Passerelle). That opened the way to university."
+        it: "Mi sono formato a Bellinzona: prima l'apprendistato come automatico AFC con maturità professionale, poi la maturità liceale (passerella). Così si è aperta la strada verso l'università."
+      image:
+        src: "/images/education/kantonsschule-graduation.webp"
+        position: "center 35%"
+        alt:
+          de: "Klassenfoto bei der Maturfeier in Bellinzona"
+          en: "Class photo at the graduation ceremony in Bellinzona"
+          it: "Foto di classe alla cerimonia di maturità a Bellinzona"
+      link:
+        label:
+          de: "Ausbildung ansehen"
+          en: "View my education"
+          it: "Vedi la formazione"
+        href: "/ausbildung/kantonsschule/"
+    - id: "business"
+      years:
+        de: "seit 2024"
+        en: "since 2024"
+        it: "dal 2024"
+      name:
+        de: "Business"
+        en: "Business"
+        it: "Business"
+      title:
+        de: "Wirtschaft verstehen"
+        en: "Understanding business"
+        it: "Capire l'economia"
+      text:
+        de: "Bachelor of Science in Business Administration an der FFHS, Vertiefung Digital Business. In meinen Forschungsarbeiten untersuche ich, was mich beruflich antreibt: wie Fans die Authentizität von Musikacts auf Social Media wahrnehmen und wie Social-Media-Marketing den Markenwert beeinflusst."
+        en: "Bachelor of Science in Business Administration at FFHS, majoring in Digital Business. My research looks at what drives me professionally: how fans perceive the authenticity of music acts on social media, and how social media marketing affects brand equity."
+        it: "Bachelor of Science in Business Administration alla FFHS, indirizzo Digital Business. Nei miei lavori di ricerca studio ciò che mi motiva: come i fan percepiscono l'autenticità dei music act sui social e come il social media marketing influenza il valore del brand."
+      image:
+        src: "/images/education/ffhs-campus.webp"
+        alt:
+          de: "Blick über Zürich, wo die FFHS einen ihrer Standorte hat"
+          en: "View over Zurich, one of the FFHS locations"
+          it: "Vista su Zurigo, una delle sedi della FFHS"
+      link:
+        label:
+          de: "Studium ansehen"
+          en: "View studies"
+          it: "Vedi gli studi"
+        href: "/ausbildung/ffhs/"
+    - id: "berlin"
+      years: "2024–2025"
+      name:
+        de: "Berlin"
+        en: "Berlin"
+        it: "Berlino"
+      title:
+        de: "Der Schritt in die Musikszene"
+        en: "Stepping into the music scene"
+        it: "Il passo nella scena musicale"
+      text:
+        de: "In Mailand habe ich Artists im Management begleitet und Social-Media- und Content-Strategien mit über 30.000 Views pro Beitrag umgesetzt. 2025 folgte der bewusste Schritt nach Berlin: dorthin, wo Musik gemacht, vermarktet und gefördert wird."
+        en: "In Milan I managed artists and ran social media and content strategies with more than 30,000 views per post. In 2025 I made the deliberate move to Berlin, where music is made, marketed and supported."
+        it: "A Milano ho seguito artisti nel management e realizzato strategie social e di contenuto con oltre 30.000 visualizzazioni per post. Nel 2025 il passo deciso: il trasferimento a Berlino, dove la musica si crea, si promuove e si sostiene."
+      image:
+        src: "/images/works/music-project/foto-con-renis.webp"
+        position: "center 22%"
+        alt:
+          de: "Luca Invernizzi und der Artist Renis im Tonstudio"
+          en: "Luca Invernizzi and the artist Renis in the recording studio"
+          it: "Luca Invernizzi e l'artista Renis in studio di registrazione"
+      link:
+        label:
+          de: "Musikprojekt ansehen"
+          en: "View the music project"
+          it: "Vedi il progetto musicale"
+        href: "/arbeiten/eigenes-musikprojekt/"
 
-nachweise:
+# Chapter 04 – the case studies come from src/content/arbeiten/
+praxis:
+  name:
+    de: "Praxis"
+    en: "Practice"
+    it: "Pratica"
   title:
+    de: "Was ich gemacht habe."
+    en: "What I have done."
+    it: "Cosa ho fatto."
+  intro:
+    de: "Drei Stationen in Berlin und davor ein eigenes Musikprojekt. Jede Case Study zeigt Kontext, meine Rolle, Ergebnisse und Belege."
+    en: "Three roles in Berlin and, before that, my own music project. Each case study shows the context, my role, results and proof."
+    it: "Tre esperienze a Berlino e, prima, un mio progetto musicale. Ogni case study mostra contesto, ruolo, risultati e riscontri."
+
+# Chapter 05 – references, LinkedIn posts and documents
+nachweise:
+  name:
     de: "Nachweise"
     en: "Proof"
     it: "Riscontri"
+  title:
+    de: "Was andere über meine Arbeit sagen."
+    en: "What others say about my work."
+    it: "Cosa dicono gli altri del mio lavoro."
   intro:
-    de: "Zeugnisse, eine Empfehlung, Forschungsarbeiten und Beiträge, im Original verlinkt. Private Angaben in den Dokumenten sind geschwärzt."
-    en: "Reference letters, a recommendation, research papers and articles, linked in the original. Private details in the documents are redacted."
-    it: "Certificati, una raccomandazione, lavori di ricerca e articoli, linkati in originale. I dati privati nei documenti sono oscurati."
-  documentsTitle:
-    de: "Dokumente"
-    en: "Documents"
-    it: "Documenti"
-  postsTitle:
-    de: "Auf LinkedIn"
-    en: "On LinkedIn"
-    it: "Su LinkedIn"
-  postsIntro:
-    de: "Beiträge zu Songwriting Camp, Panel und Reeperbahn Festival."
-    en: "Posts about the songwriting camp, a panel and Reeperbahn Festival."
-    it: "Post sul songwriting camp, su un panel e sul Reeperbahn Festival."
+    de: "Zeugnisse, eine Empfehlung, Beiträge der FFHS, Forschungsarbeiten und ein Zertifikat, alles im Original verlinkt."
+    en: "Reference letters, a recommendation, FFHS articles, research papers and a certificate, all linked in the original."
+    it: "Certificati di stage, una raccomandazione, articoli della FFHS, lavori di ricerca e un certificato, tutti linkati in originale."
+  linkedinTitle:
+    de: "Öffentlich dokumentiert"
+    en: "Documented in public"
+    it: "Documentato pubblicamente"
+  linkedinIntro:
+    de: "Auf LinkedIn teile ich, was ich erlebe und lerne: vom Reeperbahn Festival bis zum Songwriting Camp."
+    en: "On LinkedIn I share what I experience and learn, from Reeperbahn Festival to a songwriting camp."
+    it: "Su LinkedIn condivido ciò che vivo e imparo: dal Reeperbahn Festival a un songwriting camp."
+  archiveTitle:
+    de: "Archiv"
+    en: "Archive"
+    it: "Archivio"
+  archiveIntro:
+    de: "Alle Dokumente im Original, sortiert nach Art: Zeugnisse, Zertifikate, Erwähnungen und Forschung."
+    en: "Every document in the original, sorted by type: reference letters, certificates, mentions and research."
+    it: "Tutti i documenti in originale, ordinati per tipo: certificati di stage, attestati, menzioni e ricerca."
 
-ausbildung:
+# Chapter 06 – where I want to go
+next:
+  name:
+    de: "Nächster Schritt"
+    en: "Next step"
+    it: "Prossimo passo"
   title:
-    de: "Ausbildung"
-    en: "Education"
-    it: "Formazione"
-
-skills:
-  title:
+    de: "Wohin ich will."
+    en: "Where I'm heading."
+    it: "Dove voglio arrivare."
+  text:
+    de: "Ich will dort wachsen, wo Strategie und Artists zusammenkommen: in Music Marketing, PR, Artist Management und Creative Operations."
+    en: "I want to grow where strategy and artists meet: in music marketing, PR, artist management and creative operations."
+    it: "Voglio crescere dove strategia e artisti si incontrano: nel music marketing, nelle PR, nell'artist management e nelle creative operations."
+  areas:
+    - title:
+        de: "Music Marketing"
+        en: "Music marketing"
+        it: "Music marketing"
+      text:
+        de: "Release- und Content-Planung, Playlists und Social Media, mit Blick auf Daten und Community."
+        en: "Release and content planning, playlists and social media, with an eye on data and community."
+        it: "Pianificazione di release e contenuti, playlist e social media, con attenzione a dati e community."
+    - title:
+        de: "PR & Kommunikation"
+        en: "PR & communication"
+        it: "PR e comunicazione"
+      text:
+        de: "Pressearbeit, Medienmonitoring, Newsletter und klare Texte für Artists und Institutionen."
+        en: "Press work, media monitoring, newsletters and clear copy for artists and institutions."
+        it: "Ufficio stampa, media monitoring, newsletter e testi chiari per artisti e istituzioni."
+    - title:
+        de: "Artist Management"
+        en: "Artist management"
+        it: "Artist management"
+      text:
+        de: "Artists organisatorisch und kommunikativ begleiten, von der ersten Idee bis zum Release."
+        en: "Supporting artists in organisation and communication, from the first idea to the release."
+        it: "Accompagnare gli artisti nell'organizzazione e nella comunicazione, dalla prima idea alla release."
+    - title:
+        de: "Creative Operations"
+        en: "Creative operations"
+        it: "Creative operations"
+      text:
+        de: "Abläufe, Tools und Zeitpläne so strukturieren, dass kreative Arbeit Raum bekommt."
+        en: "Structuring processes, tools and timelines so that creative work has room to happen."
+        it: "Strutturare processi, strumenti e tempistiche perché il lavoro creativo abbia spazio."
+  skillsTitle:
     de: "Sprachen und Tools"
     en: "Languages and tools"
     it: "Lingue e strumenti"
+
+# Levels 0–5 are shown as discs, like in the CV
+skills:
   languages:
     - name:
         de: "Italienisch"
         en: "Italian"
         it: "Italiano"
-      level:
-        de: "Muttersprache"
-        en: "Native"
-        it: "Madrelingua"
+      level: 5
     - name:
         de: "Deutsch"
         en: "German"
         it: "Tedesco"
-      level: "C1"
+      level: 4
+      note: "C1"
     - name:
         de: "Englisch"
         en: "English"
         it: "Inglese"
-      level: "C1"
+      level: 4
+      note: "C1"
     - name:
         de: "Französisch"
         en: "French"
         it: "Francese"
-      level: "A1"
-  # Only tools I have used in a role, a reference letter or a project shown on this site.
-  groups:
-    - title:
-        de: "Content und Design"
-        en: "Content and design"
-        it: "Contenuti e design"
-      items: ["Canva", "CapCut", "Adobe Creative Cloud"]
-    - title:
-        de: "Musik und Plattformen"
-        en: "Music and platforms"
-        it: "Musica e piattaforme"
-      items: ["Spotify for Artists", "Musixmatch", "Believe Backstage", "YouTube", "SoundCloud", "FL Studio"]
-    - title:
-        de: "Newsletter und Web"
-        en: "Newsletters and web"
-        it: "Newsletter e web"
-      items: ["Mailchimp", "WordPress", "Webflow"]
-    - title:
-        de: "CRM und Organisation"
-        en: "CRM and organisation"
-        it: "CRM e organizzazione"
-      items: ["Pipedrive", "Sevdesk", "Asana", "Trello", "Microsoft 365"]
+      level: 2
+  tools:
+    - name: "Canva / CapCut"
+      level: 5
+    - name: "Adobe Creative Cloud"
+      level: 4
+    - name: "Pipedrive"
+      level: 4
+    - name: "WordPress"
+      level: 4
+    - name: "Mailchimp"
+      level: 3
+  more: ["Asana", "Microsoft 365", "Musixmatch", "Spotify for Artists", "YouTube", "SoundCloud", "Trello", "Sevdesk", "Webflow", "FL Studio"]
+  note:
+    de: "Fehlt ein Tool? Ich lerne gerne dazu."
+    en: "Missing a tool? I'm happy to learn it."
+    it: "Manca uno strumento? Lo imparo volentieri."
 
 kontakt:
+  name:
+    de: "Kontakt"
+    en: "Contact"
+    it: "Contatto"
   title:
     de: "Lass uns sprechen."
     en: "Let's talk."
     it: "Parliamone."
   text:
-    de: "Für Praktika, Jobs und Projekte in der Musikbranche freue ich mich über deine Nachricht."
-    en: "For internships, jobs and projects in the music industry, I look forward to hearing from you."
-    it: "Per stage, lavori e progetti nella music industry sarò felice di ricevere un tuo messaggio."
+    de: "Für Praktika, Musikprojekte, kreative Zusammenarbeit oder den nächsten beruflichen Schritt freue ich mich über deine Nachricht."
+    en: "Internships, music projects, creative collaborations or the next career step: I look forward to hearing from you."
+    it: "Stage, progetti musicali, collaborazioni creative o il prossimo passo professionale: sarò felice di ricevere un tuo messaggio."

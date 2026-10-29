@@ -49,24 +49,19 @@ const image = z
 const link = z.object({ label: text, url: z.string().url() });
 
 // ---------- case studies (Arbeiten) ----------
-// Every case study answers the same questions, in this order:
-// context -> goal -> my contribution (+ tasks) -> scope (what was NOT mine) -> outputs / measurable results -> proof.
 
 const workText = z.object({
-  title: z.string(), // name shown in lists and as page title
-  role: z.string(), // my role / position, exactly as in the reference letter or contract
+  title: z.string(), // name shown on cards and as page title
+  role: z.string(), // my role / position
   category: z.string(), // short field label, e.g. "Presse & PR"
-  summary: z.string(), // 1–2 sentences: list text + SEO description
-  context: z.string(), // Kontext: the organisation / situation
-  goal: z.string().optional(), // Ziel: what the work was for
-  contribution: z.string(), // Mein Beitrag: what I did myself
+  summary: z.string(), // 1–2 sentences: card text + SEO description
+  context: z.string(), // Kontext: where I was and why it mattered
+  contribution: z.string(), // Meine Rolle: what I did concretely
   tasks: z.array(z.string()).default([]),
-  scope: z.string().optional(), // Abgrenzung: what the team / others did, what is not claimed
   outputs: z.array(z.string()).default([]),
-  // Only numbers that are documented (screenshot, reference letter, public source) and attributable.
   highlights: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
-  highlightsSource: z.string().optional(), // where the numbers come from and what they do NOT mean
   learnings: z.array(z.string()).default([]),
+  relevance: z.string(), // why it matters for the next step
   seoTitle: z.string().optional(),
   seoDescription: z.string().optional(),
 });
@@ -75,6 +70,7 @@ const arbeiten = defineCollection({
   type: 'content',
   schema: z.object({
     order: z.number(),
+    featured: z.boolean().default(true),
     company: text,
     location: text,
     start: month,
@@ -101,9 +97,10 @@ const arbeiten = defineCollection({
 // ---------- education (Ausbildung) ----------
 
 const educationText = z.object({
-  title: z.string(), // degree, exactly as on the diploma (e.g. "Passerelle", not "Matura")
+  title: z.string(), // degree
   summary: z.string(),
   points: z.array(z.string()).default([]),
+  relevance: z.string().optional(),
 });
 
 const ausbildung = defineCollection({
@@ -113,8 +110,7 @@ const ausbildung = defineCollection({
     institution: text,
     location: text,
     start: month,
-    end: month.optional(), // leave out while studying
-    expectedEnd: month.optional(), // planned graduation, shown as "voraussichtlich 07/2028"
+    end: month.optional(),
     website: z.string().url().optional(),
     cover: image,
     gallery: z.array(image).default([]),
@@ -190,20 +186,14 @@ const referenzen = defineCollection({
 
 // ---------- home page copy ----------
 
-// One item of "Ausgewählte Arbeiten" on the home page.
-// `mine` = what I did myself, `credit` = what the team / others did (always fill both).
-const selectedItem = z.object({
+const chapter = z.object({
   id: z.string(),
-  org: text,
-  year: z.string(),
+  years: text,
+  name: text,
   title: text,
   text: text,
-  mine: text,
-  credit: text.optional(),
-  images: z.array(image).min(1),
-  metric: z.object({ value: z.string(), label: text, source: text }).optional(),
-  case: reference('arbeiten').optional(), // file name of the case study, e.g. "initiative-musik"
-  links: z.array(link).default([]),
+  image: image,
+  link: z.object({ label: text, href: z.string() }).optional(),
 });
 
 const home = defineCollection({
@@ -216,39 +206,44 @@ const home = defineCollection({
       city: text,
     }),
     portrait: image,
+    contactPortrait: image,
     ogImage: z.string(),
     seo: z.object({ title: text, description: text }),
     hero: z.object({
-      kicker: text,
-      title: z.string(),
-      claim: text,
+      intro: text,
+      title: text,
       lead: text,
       primary: text,
       secondary: text,
-      facts: z.array(z.object({ label: text, value: text })).max(4),
     }),
-    selectedWork: z.object({
-      title: text,
-      intro: text,
-      feature: selectedItem,
-      items: z.array(selectedItem).max(5),
-    }),
-    stationen: z.object({ title: text, intro: text }),
+    status: z.array(
+      z.object({ label: text, title: text, text: text, href: z.string(), linkLabel: text }),
+    ),
+    werdegang: z.object({ name: text, title: text, intro: text, chapters: z.array(chapter) }),
+    praxis: z.object({ name: text, title: text, intro: text }),
     nachweise: z.object({
+      name: text,
       title: text,
       intro: text,
-      documentsTitle: text,
-      postsTitle: text,
-      postsIntro: text,
+      linkedinTitle: text,
+      linkedinIntro: text,
+      archiveTitle: text,
+      archiveIntro: text,
     }),
-    ausbildung: z.object({ title: text }),
-    skills: z.object({
+    next: z.object({
+      name: text,
       title: text,
-      languages: z.array(z.object({ name: text, level: text })),
-      groups: z.array(z.object({ title: text, items: z.array(z.string()) })),
+      text: text,
+      areas: z.array(z.object({ title: text, text: text })),
+      skillsTitle: text,
+    }),
+    skills: z.object({
+      languages: z.array(z.object({ name: text, level: z.number().min(0).max(5), note: text.optional() })),
+      tools: z.array(z.object({ name: text, level: z.number().min(0).max(5) })),
+      more: z.array(z.string()).default([]),
       note: text.optional(),
     }),
-    kontakt: z.object({ title: text, text: text }),
+    kontakt: z.object({ name: text, title: text, text: text }),
   }),
 });
 

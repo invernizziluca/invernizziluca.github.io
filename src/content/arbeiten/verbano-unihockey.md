@@ -1,17 +1,16 @@
 ---
-# CASE STUDY · Verbano Unihockey (volunteer work)
+# CASE STUDY · Verbano Unihockey  (featured: false -> listed under "Weitere Projekte")
 # URL: /de/arbeiten/verbano-unihockey/ (the file name is the URL – never add a "slug" field)
-# Period 08/2024 – 09/2025 as in the Master Profile and the CV (an older site version said 09/2025 – 08/2026).
-# Numbers: Instagram Insights screenshot of the club account, 5–18 August (year not shown in the screenshot).
 
 order: 5
+featured: false
 company: "Verbano Unihockey"
 location:
   de: "Tessin, Schweiz"
   en: "Ticino, Switzerland"
   it: "Ticino, Svizzera"
-start: "2024-08"
-end: "2025-09"
+start: "2025-09"
+end: "2026-08"
 website: "https://verbanounihockey.ch/"
 
 cover:
@@ -22,35 +21,36 @@ cover:
     en: "Verbano Unihockey bench during a match"
     it: "La panchina del Verbano Unihockey durante una partita"
 
-tags: ["Social Media", "Website", "Ehrenamt"]
-tools: ["Instagram", "Instagram Insights", "Webflow"]
+tags: ["Social Media", "Kampagnen", "Ehrenamt"]
+tools: ["Instagram", "Instagram Insights", "Webflow", "CMS", "Swiss Unihockey Data", "Sponsor Communication"]
 
 gallery:
+  - src: "/images/works/verbano/verbano-main.webp"
+    alt:
+      de: "Spielerbank von Verbano Unihockey"
+      en: "Verbano Unihockey bench"
+      it: "La panchina del Verbano Unihockey"
   - src: "/images/works/verbano/instagram-insights.webp"
     position: "center top"
     alt:
-      de: "Instagram-Insights des Vereinskontos: 83.767 Aufrufe in 14 Tagen, 59,8 Prozent von Nicht-Followern, 4.775 erreichte Konten, plus 1.931,9 Prozent"
-      en: "Instagram insights of the club account: 83,767 views in 14 days, 59.8 percent from non-followers, 4,775 accounts reached, up 1,931.9 percent"
-      it: "Insights di Instagram dell'account del club: 83.767 visualizzazioni in 14 giorni, 59,8 per cento da non follower, 4.775 account raggiunti, più 1.931,9 per cento"
+      de: "Instagram-Insights: 83.767 Aufrufe in 14 Tagen, 59,8 Prozent von Nicht-Followern"
+      en: "Instagram insights: 83,767 views in 14 days, 59.8 percent from non-followers"
+      it: "Insights di Instagram: 83.767 visualizzazioni in 14 giorni, 59,8 per cento da non follower"
     caption:
-      de: "Instagram Insights des Vereinskontos, 5.–18. August"
-      en: "Instagram insights of the club account, 5–18 August"
-      it: "Insights di Instagram dell'account del club, 5–18 agosto"
+      de: "Instagram-Insights, 5. bis 18. August"
+      en: "Instagram insights, 5 to 18 August"
+      it: "Insights di Instagram, 5–18 agosto"
+  - src: "/images/works/verbano/stand-organisation.webp"
+    alt:
+      de: "Vereinsstand mit Verpflegung und Verbano-Banner"
+      en: "Club stand with food and a Verbano banner"
+      it: "Stand del club con ristoro e banner del Verbano"
   - src: "/images/works/verbano/verbano-website.webp"
     position: "left top"
     alt:
       de: "Website von Verbano Unihockey mit Spielplan und Sponsoren"
       en: "Verbano Unihockey website with fixtures and sponsors"
       it: "Il sito del Verbano Unihockey con calendario e sponsor"
-    caption:
-      de: "Überarbeitete Vereinswebsite"
-      en: "Reworked club website"
-      it: "Il sito del club rivisto"
-  - src: "/images/works/verbano/stand-organisation.webp"
-    alt:
-      de: "Vereinsstand mit Verpflegung und Verbano-Banner"
-      en: "Club stand with food and a Verbano banner"
-      it: "Stand del club con ristoro e banner del Verbano"
 
 spotify: []
 artists: []
@@ -58,99 +58,105 @@ linkedin: []
 nachweise: []
 
 links:
-  - label: {de: "Verbano Unihockey auf Instagram", en: "Verbano Unihockey on Instagram", it: "Verbano Unihockey su Instagram"}
+  - label: "Instagram"
     url: "https://www.instagram.com/verbanounihockey/"
 
 de:
   title: "Verbano Unihockey"
-  role: "Marketing & Social Media (ehrenamtlich)"
+  role: "Marketing & Social Media Manager (ehrenamtlich)"
   category: "Sport & Social Media"
-  summary: "Ehrenamtlich für einen Tessiner Unihockeyverein: Redaktionsplanung, Beiträge, Website und Sponsoring-Kommunikation, geplant mit den Instagram-Insights."
-  context: "Verbano Unihockey ist ein Unihockeyverein im Tessin. Der Verein brauchte einen aktuellen Onlineauftritt mit News, Teams und Sponsoren und eine Kommunikation, die Mitglieder, Fans und Partner erreicht."
-  goal: "Verein, Teams und Sponsoren sichtbarer machen, mit Inhalten, die auch Menschen außerhalb der eigenen Community erreichen."
-  contribution: "Ich habe Inhalte in Redaktionsplänen geplant und umgesetzt, die Website überarbeitet und gepflegt und die Kommunikation mit Sponsoren koordiniert. Für die Planung habe ich die Instagram-Insights des Vereinskontos ausgewertet."
+  summary: "Ehrenamtlich für einen Tessiner Unihockeyverein: Redaktionspläne, Kampagnen, Website und Sponsoring-Kommunikation, datenbasiert geplant und parallel zu Studium und Praktika."
+  context: "Unihockey ist meine zweite Leidenschaft, ich spiele selbst Floorball in der Bundesliga. Verbano Unihockey brauchte einen zeitgemäßen Onlineauftritt mit News, Teams und Sponsoren und eine Kommunikation, die Verein, Fans und Partner:innen gleichermaßen erreicht."
+  contribution: "Ehrenamtlich habe ich Marketing und Social Media betreut: Inhalte in Redaktionsplänen geplant, Kampagnen umgesetzt, die Website neu strukturiert und gepflegt und die Kommunikation mit Sponsor:innen koordiniert. Geplant habe ich datenbasiert, mit den Instagram-Insights als Grundlage."
   tasks:
-    - "Redaktionspläne und Beiträge für Instagram planen und umsetzen"
-    - "Instagram-Insights auswerten und die Inhalte daran ausrichten"
-    - "Website-Struktur überarbeiten und laufend pflegen"
-    - "News und Social-Media-Inhalte aufbereiten und veröffentlichen"
-    - "Kommunikation mit Sponsoren und ihre Präsenz auf den Kanälen koordinieren"
-  scope: "Ehrenamtliche Arbeit für den Verein. Die Zahlen unten gelten für das gesamte Vereinskonto im Zeitraum und nicht nur für meine Beiträge. Sie zeigen Aufrufe und erreichte Konten, kein Follower-Wachstum und keine bezahlte Reichweite."
+    - "Redaktionspläne und Kampagnen für Instagram planen und umsetzen"
+    - "Datenbasiert planen: Insights auswerten und Inhalte daran ausrichten"
+    - "Neuaufbau und laufende Pflege der Website-Struktur"
+    - "Aufbereitung und Veröffentlichung von News und Social-Media-Inhalten"
+    - "Koordination der Sponsoring-Kommunikation und der visuellen Präsenz"
+    - "Pflege digitaler Inhalte für einen einheitlichen Vereinsauftritt"
   highlights:
     - value: "83.767"
-      label: "Aufrufe auf Instagram in 14 Tagen (5.–18. August)"
-    - value: "59,8\u00A0%"
+      label: "Instagram-Aufrufe in 14 Tagen (5. bis 18. August)"
+    - value: "59,8 %"
       label: "dieser Aufrufe von Nicht-Followern"
-    - value: "4.775"
-      label: "erreichte Konten, +1.931,9\u00A0% gegenüber dem Vorzeitraum"
-  highlightsSource: "Quelle: Instagram Insights des Vereinskontos (Screenshot unten). Das Jahr ist im Screenshot nicht angegeben."
+    - value: "+1.932 %"
+      label: "erreichte Konten im Vergleich zum Vorzeitraum (4.775 Konten)"
   outputs:
-    - "Überarbeitete Vereinswebsite mit Spielplan, Teams und Sponsoren"
-    - "Redaktionspläne und Beiträge für Instagram"
-    - "Ein strukturierter Ablauf für wiederkehrende Inhalte"
+    - "Kampagnen, die weit über die eigene Community hinaus gesehen wurden"
+    - "Aktuelle, funktionale Website als zentrale Plattform für Verein, Fans und Sponsor:innen"
+    - "Mehr digitale Sichtbarkeit für Club, Teams und Sponsor:innen"
+    - "Ein strukturierter Content-Workflow für wiederkehrende Inhalte"
   learnings:
     - "Mit Daten planen: Die Insights zeigen, welche Inhalte neue Menschen erreichen."
-    - "Fans, Mitglieder und Sponsoren wollen unterschiedliche Dinge hören. Das gilt auch für die Kommunikation rund um Artists."
+    - "Wie digitale Kommunikation im Vereinskontext aufgebaut und gepflegt wird."
+    - "Wie man Informationen für unterschiedliche Zielgruppen klar strukturiert."
+    - "Wie Content, Sponsoring und Webpflege zusammenwirken."
+  relevance: "Vereinskommunikation ist Community-Arbeit im Kleinen: Fans, Mitglieder und Sponsor:innen wollen unterschiedliche Dinge hören. Genau das braucht auch die Kommunikation rund um Artists."
 
 en:
   title: "Verbano Unihockey"
-  role: "Marketing & social media (volunteer)"
+  role: "Marketing & social media manager (volunteer)"
   category: "Sport & social media"
-  summary: "Volunteer work for a floorball club in Ticino: editorial planning, posts, the website and sponsor communication, planned with Instagram insights."
-  context: "Verbano Unihockey is a floorball club in Ticino. The club needed an up-to-date online presence with news, teams and sponsors, and communication that reaches members, fans and partners."
-  goal: "Make the club, its teams and sponsors more visible, with content that also reaches people outside the club's own community."
-  contribution: "I planned and produced content in editorial calendars, reworked and maintained the website and coordinated communication with sponsors. To plan, I analysed the Instagram insights of the club account."
+  summary: "Volunteer work for a floorball club in Ticino: editorial plans, campaigns, website and sponsor communication, planned with data and alongside my studies and internships."
+  context: "Floorball is my second passion, and I play in the Bundesliga myself. Verbano Unihockey needed an up-to-date online presence with news, teams and sponsors, and communication that reaches the club, fans and partners alike."
+  contribution: "As a volunteer I looked after marketing and social media: I planned content in editorial calendars, ran campaigns, restructured and maintained the website and coordinated the communication with sponsors. My planning was based on data, with Instagram insights as the starting point."
   tasks:
-    - "Planning and producing editorial calendars and posts for Instagram"
-    - "Analysing Instagram insights and adapting content to them"
-    - "Reworking and maintaining the website structure"
+    - "Planning and running editorial calendars and campaigns on Instagram"
+    - "Planning with data: analysing insights and adapting content to them"
+    - "Rebuilding and maintaining the website structure"
     - "Preparing and publishing news and social media content"
-    - "Coordinating communication with sponsors and their presence on the channels"
-  scope: "Volunteer work for the club. The numbers below cover the club's whole account in that period, not only my posts. They show views and accounts reached, not follower growth and not paid reach."
+    - "Coordinating sponsor communication and visual presence"
+    - "Maintaining digital content for a consistent club identity"
   highlights:
     - value: "83,767"
-      label: "Instagram views in 14 days (5–18 August)"
+      label: "Instagram views in 14 days (5 to 18 August)"
     - value: "59.8%"
       label: "of those views from non-followers"
-    - value: "4,775"
-      label: "accounts reached, +1,931.9% compared with the previous period"
-  highlightsSource: "Source: Instagram insights of the club account (screenshot below). The year is not shown in the screenshot."
+    - value: "+1,932%"
+      label: "accounts reached compared with the previous period (4,775 accounts)"
   outputs:
-    - "A reworked club website with fixtures, teams and sponsors"
-    - "Editorial calendars and posts for Instagram"
-    - "A structured process for recurring content"
+    - "Campaigns that were seen far beyond the club's own community"
+    - "An up-to-date, functional website as the central platform for club, fans and sponsors"
+    - "More digital visibility for the club, its teams and sponsors"
+    - "A structured content workflow for recurring updates"
   learnings:
     - "Planning with data: the insights show which content reaches new people."
-    - "Fans, members and sponsors want to hear different things. The same is true for communication around artists."
+    - "How digital communication is built and maintained in a sports club."
+    - "How to structure information clearly for different audiences."
+    - "How content, sponsorship and web maintenance work together."
+  relevance: "Club communication is community work on a small scale: fans, members and sponsors want to hear different things. Communication around artists needs exactly that."
 
 it:
   title: "Verbano Unihockey"
-  role: "Marketing e social media (volontariato)"
+  role: "Marketing & social media manager (volontariato)"
   category: "Sport e social media"
-  summary: "Volontariato per una società ticinese di unihockey: piano editoriale, post, sito web e comunicazione con gli sponsor, pianificati con gli insights di Instagram."
-  context: "Il Verbano Unihockey è una società di unihockey in Ticino. Il club aveva bisogno di una presenza online aggiornata, con news, squadre e sponsor, e di una comunicazione capace di raggiungere soci, tifosi e partner."
-  goal: "Rendere più visibili club, squadre e sponsor, con contenuti che raggiungano anche persone fuori dalla community del club."
-  contribution: "Ho pianificato e realizzato i contenuti nei piani editoriali, rivisto e curato il sito e coordinato la comunicazione con gli sponsor. Per pianificare ho analizzato gli insights di Instagram dell'account del club."
+  summary: "Volontariato per una società ticinese di unihockey: piani editoriali, campagne, sito web e comunicazione con gli sponsor, pianificati sui dati e in parallelo a studio e stage."
+  context: "L'unihockey è la mia seconda passione: gioco io stesso a floorball in Bundesliga. Il Verbano Unihockey aveva bisogno di una presenza online aggiornata, con news, squadre e sponsor, e di una comunicazione capace di raggiungere club, tifosi e partner."
+  contribution: "Come volontario ho seguito marketing e social media: ho pianificato i contenuti in piani editoriali, realizzato campagne, ristrutturato e curato il sito e coordinato la comunicazione con gli sponsor. Ho pianificato sulla base dei dati, partendo dagli insights di Instagram."
   tasks:
-    - "Pianificare e realizzare piani editoriali e post per Instagram"
-    - "Analizzare gli insights di Instagram e adattare i contenuti"
-    - "Rivedere e curare la struttura del sito"
-    - "Preparare e pubblicare news e contenuti social"
-    - "Coordinare la comunicazione con gli sponsor e la loro presenza sui canali"
-  scope: "Volontariato per il club. I numeri qui sotto riguardano l'intero account del club nel periodo, non solo i miei post. Mostrano visualizzazioni e account raggiunti, non crescita di follower né copertura a pagamento."
+    - "Pianificare e realizzare piani editoriali e campagne su Instagram"
+    - "Pianificare sui dati: analizzare gli insights e adattare i contenuti"
+    - "Riorganizzazione e gestione della struttura del sito"
+    - "Preparazione e pubblicazione di news e contenuti social"
+    - "Coordinamento della comunicazione con gli sponsor e della presenza visiva"
+    - "Cura dei contenuti digitali per un'immagine coerente del club"
   highlights:
     - value: "83.767"
       label: "visualizzazioni su Instagram in 14 giorni (5–18 agosto)"
-    - value: "59,8\u00A0%"
+    - value: "59,8 %"
       label: "di queste da non follower"
-    - value: "4.775"
-      label: "account raggiunti, +1.931,9\u00A0% rispetto al periodo precedente"
-  highlightsSource: "Fonte: insights di Instagram dell'account del club (screenshot qui sotto). L'anno non è indicato nello screenshot."
+    - value: "+1.932 %"
+      label: "account raggiunti rispetto al periodo precedente (4.775 account)"
   outputs:
-    - "Il sito del club rivisto, con calendario, squadre e sponsor"
-    - "Piani editoriali e post per Instagram"
-    - "Un flusso strutturato per i contenuti ricorrenti"
+    - "Campagne viste ben oltre la community del club"
+    - "Un sito aggiornato e funzionale come piattaforma centrale per club, tifosi e sponsor"
+    - "Più visibilità digitale per il club, le squadre e gli sponsor"
+    - "Un flusso di lavoro strutturato per i contenuti ricorrenti"
   learnings:
-    - "Pianificare con i dati: gli insights mostrano quali contenuti raggiungono persone nuove."
-    - "Tifosi, soci e sponsor vogliono sentire cose diverse. Vale anche per la comunicazione degli artisti."
+    - "Pianificare sui dati: gli insights mostrano quali contenuti raggiungono persone nuove."
+    - "Come si costruisce e si mantiene la comunicazione digitale in una società sportiva."
+    - "Come strutturare le informazioni in modo chiaro per pubblici diversi."
+    - "Come contenuti, sponsor e gestione del sito si influenzano a vicenda."
+  relevance: "La comunicazione di un club è lavoro di community in piccolo: tifosi, soci e sponsor vogliono sentire cose diverse. È esattamente ciò che serve anche nella comunicazione degli artisti."
 ---

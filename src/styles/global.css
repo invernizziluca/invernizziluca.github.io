@@ -1,3 +1,4 @@
-/* Tailwind is used only for its CSS reset ("preflight").
-   All components, colours and spacing live in site.css (design tokens), so no utility classes are generated. */
+/* Tailwind layers. The design system (colours, type, components) lives in site.css. */
 @tailwind base;
+@tailwind components;
+@tailwind utilities;

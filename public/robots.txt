@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Music portfolio (this repository) and the general/business portfolio at /work/ (separate repository)
 Sitemap: https://invernizziluca.github.io/sitemap.xml
-Sitemap: https://invernizziluca.github.io/work/sitemap.xml

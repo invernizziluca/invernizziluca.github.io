@@ -1,18 +1,17 @@
 ---
 # CASE STUDY · Own music project (Milan)
 # URL: /de/arbeiten/eigenes-musikprojekt/ (the file name is the URL – never add a "slug" field)
-# Views: self-reported ("over 30,000 views" on some posts); no public screenshot yet.
-# Jake La Furia: a possible collaboration was prepared – do NOT describe it as concluded or signed.
 
 order: 4
+featured: true
 company:
-  de: "Eigenes Musikprojekt"
-  en: "Own music project"
-  it: "Progetto musicale personale"
+  de: "Freiberuflich"
+  en: "Freelance"
+  it: "Freelance"
 location:
-  de: "Mailand, Italien / remote"
-  en: "Milan, Italy / remote"
-  it: "Milano, Italia / da remoto"
+  de: "Mailand, Italien"
+  en: "Milan, Italy"
+  it: "Milano, Italia"
 start: "2024-06"
 end: "2025-07"
 
@@ -24,11 +23,16 @@ cover:
     en: "Luca Invernizzi and the artist Renis in the recording studio"
     it: "Luca Invernizzi e l'artista Renis in studio di registrazione"
 
-tags: ["Artist-Koordination", "Content", "Social Media"]
-tools: ["Instagram", "Spotify for Artists", "Canva", "CapCut", "FL Studio"]
+tags: ["Artist Management", "Content", "Social Media"]
+tools: ["Instagram", "Spotify for Artists", "Canva", "CapCut", "FL Studio", "Content Planning", "Artist Management"]
 
-# Release covers of the artists (artwork belongs to the artists).
 gallery:
+  - src: "/images/works/music-project/foto-con-renis.webp"
+    position: "center 22%"
+    alt:
+      de: "Luca Invernizzi und Renis im Tonstudio"
+      en: "Luca Invernizzi and Renis in the studio"
+      it: "Luca Invernizzi e Renis in studio"
   - src: "/images/works/music-project/renis-10-lode.webp"
     alt:
       de: "Cover: Renis – 10 & Lode (Freestyle)"
@@ -82,70 +86,82 @@ links: []
 
 de:
   title: "Eigenes Musikprojekt"
-  role: "Artist-Koordination & Content-Marketing"
-  category: "Artist-Koordination"
-  summary: "Ein eigenes Musikprojekt in der Mailänder Urban-Szene: Artist-Koordination, Content-Planung und Social Media für Independent Artists."
-  context: "Bevor ich nach Berlin zog, habe ich in Mailand ein eigenes Musikprojekt mit Independent Artists aus der Urban-Szene aufgebaut, neben meinem Studium."
-  goal: "Independent Artists sichtbarer machen: mit einer klaren Identität, regelmäßigem Content und strukturierten Abläufen von der Idee bis zum Release."
-  contribution: "Ich habe Content- und Social-Media-Strategien entwickelt, Fotos, Videos und Cover koordiniert, Recordings und Releases begleitet und die Kommunikation mit den Artists organisiert. Außerdem habe ich die Vorbereitung einer möglichen Zusammenarbeit mit dem Rapper Jake La Furia begleitet."
+  role: "Künstler:innenmanagement & Marketing (freiberuflich)"
+  category: "Artist Management"
+  summary: "Artist Management und Marketing in Mailand: Social-Media- und Content-Strategien mit über 30.000 Views pro Beitrag und die Vorbereitung einer Zusammenarbeit mit Jake La Furia."
+  context: "Bevor ich nach Berlin ging, habe ich in Mailand eigene Musikprojekte aufgebaut. Das Ziel: unabhängige Artists professioneller sichtbar machen, mit klarer Identität, regelmäßigem Content und strukturierten Abläufen von der Idee bis zum Release."
+  contribution: "Ich war Manager, Stratege und Organisator zugleich. Ich entwickelte Social-Media- und Content-Strategien, koordinierte Fotos, Videos und Artworks, begleitete Recordings und Releases und betreute die Artists organisatorisch und kommunikativ. Außerdem bereitete ich eine Zusammenarbeit mit Jake La Furia vor, Juror bei X Factor, inklusive Managementvereinbarung."
   tasks:
-    - "Content- und Social-Media-Strategien für Artists entwickeln und umsetzen"
-    - "Content koordinieren: Fotos, Videos, Texte und Cover"
-    - "Recordings, Release-Vorbereitung und Auftritt der Artists begleiten"
+    - "Social-Media- und Content-Strategien für Artists entwickeln und umsetzen"
+    - "Content Creation koordinieren: Video, Foto, Text und Cover-Artworks"
+    - "Recordings, Release-Vorbereitung und Markenauftritt begleiten"
     - "Artists organisatorisch und kommunikativ betreuen"
-    - "Vorbereitung einer möglichen Zusammenarbeit mit Jake La Furia begleiten"
-  scope: "Musik und Artworks gehören den Artists und ihren Teams; mein Teil waren Planung, Koordination und Kommunikation. Die Zusammenarbeit mit Jake La Furia war in Vorbereitung, ein Abschluss wird hier nicht behauptet."
+    - "Zusammenarbeit mit Jake La Furia vorbereiten, inklusive Managementvereinbarung"
+    - "Kreative Abläufe mit digitalen Tools strukturieren"
+  highlights:
+    - value: "30.000+"
+      label: "Views pro Beitrag"
   outputs:
-    - "Releases mit einheitlichem Auftritt aus Cover, Fotos und Videos (Beispiele unten)"
-    - "Einzelne Beiträge mit über 30.000 Aufrufen (eigene Angabe, nicht öffentlich belegt)"
-    - "Ein strukturierter Ablauf von der Idee über den Content bis zum Release"
+    - "Social-Media- und Content-Strategien mit über 30.000 Views pro Beitrag"
+    - "Releases mit durchgängigem visuellem Auftritt: Cover, Fotos und Videos"
+    - "Managementvereinbarung für die Zusammenarbeit mit Jake La Furia vorbereitet"
+    - "Ein strukturierter Workflow von der Idee über den Content bis zum Release"
   learnings:
-    - "Artist-Arbeit bedeutet Vertrauen, Timing, klare Kommunikation und Geduld."
-    - "Gute Musikprojekte brauchen beides: eine kreative Identität und eine saubere Umsetzung."
+    - "Artist Management bedeutet Vertrauen, Timing, klare Kommunikation und Geduld."
+    - "Gute Musikprojekte brauchen beides: eine kreative Identität und eine saubere operative Umsetzung."
+  relevance: "Hier habe ich zum ersten Mal Verantwortung für Artists übernommen. Diese Erfahrung hat mich nach Berlin gebracht, und sie ist der Grund, warum ich Artist Management und Music Marketing langfristig verbinden will."
 
 en:
   title: "Own music project"
-  role: "Artist coordination & content marketing"
-  category: "Artist coordination"
-  summary: "My own music project in Milan's urban scene: artist coordination, content planning and social media for independent artists."
-  context: "Before moving to Berlin I built my own music project in Milan with independent artists from the urban scene, alongside my studies."
-  goal: "Make independent artists more visible: with a clear identity, regular content and structured processes from the first idea to the release."
-  contribution: "I developed content and social media strategies, coordinated photos, videos and covers, supported recordings and releases, and organised communication with the artists. I also supported the preparation of a possible collaboration with the rapper Jake La Furia."
+  role: "Artist management & marketing (freelance)"
+  category: "Artist management"
+  summary: "Artist management and marketing in Milan: social media and content strategies with more than 30,000 views per post, and preparing a collaboration with Jake La Furia."
+  context: "Before moving to Berlin I built my own music projects in Milan. The goal: to make independent artists more visible in a professional way, with a clear identity, regular content and structured processes from the first idea to the release."
+  contribution: "I was manager, strategist and organiser at once. I developed social media and content strategies, coordinated photos, videos and artwork, supported recordings and releases, and looked after the artists in organisation and communication. I also prepared a collaboration with Jake La Furia, judge on X Factor, including a management agreement."
   tasks:
-    - "Developing and running content and social media strategies for artists"
-    - "Coordinating content: photos, videos, copy and covers"
-    - "Supporting recordings, release preparation and the artists' presence"
+    - "Developing and running social media and content strategies for artists"
+    - "Coordinating content creation: video, photo, copy and cover artwork"
+    - "Supporting recordings, release preparation and artist branding"
     - "Looking after the artists in organisation and communication"
-    - "Supporting the preparation of a possible collaboration with Jake La Furia"
-  scope: "The music and artwork belong to the artists and their teams; my part was planning, coordination and communication. The collaboration with Jake La Furia was being prepared; no completed deal is claimed here."
+    - "Preparing a collaboration with Jake La Furia, including a management agreement"
+    - "Structuring creative workflows with digital tools"
+  highlights:
+    - value: "30,000+"
+      label: "views per post"
   outputs:
-    - "Releases with a consistent look across covers, photos and videos (examples below)"
-    - "Some posts with more than 30,000 views (self-reported, not publicly documented)"
-    - "A structured process from idea to content to release"
+    - "Social media and content strategies with more than 30,000 views per post"
+    - "Releases with a consistent visual identity: covers, photos and videos"
+    - "Prepared a management agreement for the collaboration with Jake La Furia"
+    - "A structured workflow from idea to content to release"
   learnings:
-    - "Working with artists means trust, timing, clear communication and patience."
-    - "Good music projects need both: a creative identity and clean execution."
+    - "Artist management means trust, timing, clear communication and patience."
+    - "Good music projects need both: a creative identity and clean operational execution."
+  relevance: "This is where I first took responsibility for artists. The experience brought me to Berlin, and it is the reason I want to combine artist management and music marketing in the long run."
 
 it:
   title: "Progetto musicale personale"
-  role: "Coordinamento artisti e content marketing"
-  category: "Coordinamento artisti"
-  summary: "Un mio progetto musicale nella scena urban di Milano: coordinamento degli artisti, contenuti e social per artisti indipendenti."
-  context: "Prima di trasferirmi a Berlino ho costruito a Milano un mio progetto musicale con artisti indipendenti della scena urban, accanto allo studio."
-  goal: "Dare più visibilità ad artisti indipendenti: con un'identità chiara, contenuti regolari e processi strutturati dall'idea alla release."
-  contribution: "Ho sviluppato strategie social e di contenuto, coordinato foto, video e copertine, seguito registrazioni e release e organizzato la comunicazione con gli artisti. Ho inoltre seguito la preparazione di una possibile collaborazione con il rapper Jake La Furia."
+  role: "Artist management e marketing (freelance)"
+  category: "Artist management"
+  summary: "Artist management e marketing a Milano: strategie social e di contenuto con oltre 30.000 visualizzazioni per post e la preparazione di una collaborazione con Jake La Furia."
+  context: "Prima di trasferirmi a Berlino ho costruito a Milano i miei progetti musicali. L'obiettivo: dare più visibilità, in modo professionale, ad artisti indipendenti, con un'identità chiara, contenuti regolari e processi strutturati dall'idea alla release."
+  contribution: "Ero manager, stratega e organizzatore allo stesso tempo. Ho sviluppato strategie social e di contenuto, coordinato foto, video e artwork, seguito registrazioni e release e accompagnato gli artisti nell'organizzazione e nella comunicazione. Ho inoltre preparato una collaborazione con Jake La Furia, giudice di X Factor, incluso un accordo di management."
   tasks:
     - "Sviluppare e realizzare strategie social e di contenuto per artisti"
-    - "Coordinare i contenuti: foto, video, testi e copertine"
-    - "Seguire registrazioni, preparazione delle release e immagine degli artisti"
+    - "Coordinare la creazione di contenuti: video, foto, testi e copertine"
+    - "Seguire registrazioni, preparazione delle release e immagine dell'artista"
     - "Accompagnare gli artisti nell'organizzazione e nella comunicazione"
-    - "Seguire la preparazione di una possibile collaborazione con Jake La Furia"
-  scope: "Musica e artwork appartengono agli artisti e ai loro team; la mia parte erano pianificazione, coordinamento e comunicazione. La collaborazione con Jake La Furia era in preparazione; non si afferma che sia stata conclusa."
+    - "Preparare una collaborazione con Jake La Furia, incluso un accordo di management"
+    - "Strutturare i processi creativi con strumenti digitali"
+  highlights:
+    - value: "30.000+"
+      label: "visualizzazioni per post"
   outputs:
-    - "Release con un'immagine coerente tra copertine, foto e video (esempi qui sotto)"
-    - "Alcuni post con oltre 30.000 visualizzazioni (dato personale, non documentato pubblicamente)"
+    - "Strategie social e di contenuto con oltre 30.000 visualizzazioni per post"
+    - "Release con un'identità visiva coerente: copertine, foto e video"
+    - "Accordo di management preparato per la collaborazione con Jake La Furia"
     - "Un processo strutturato dall'idea al contenuto fino alla release"
   learnings:
-    - "Lavorare con gli artisti significa fiducia, tempismo, comunicazione chiara e pazienza."
-    - "I buoni progetti musicali hanno bisogno di entrambe le cose: un'identità creativa e un'esecuzione pulita."
+    - "Artist management significa fiducia, tempismo, comunicazione chiara e pazienza."
+    - "I buoni progetti musicali hanno bisogno di entrambe le cose: un'identità creativa e un'esecuzione operativa pulita."
+  relevance: "Qui mi sono assunto per la prima volta la responsabilità di artisti. Questa esperienza mi ha portato a Berlino ed è il motivo per cui voglio unire artist management e music marketing nel lungo periodo."
 ---

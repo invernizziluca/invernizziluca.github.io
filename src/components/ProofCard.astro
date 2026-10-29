@@ -1,8 +1,7 @@
 ---
-// A proof document: reference letter, article, certificate or research paper. Content: src/content/nachweise/*.yaml
+// A proof document: reference letter, article, certificate or research paper.
 import Img from './Img.astro';
-import Icon from './Icon.astro';
-import ExtLink from './ExtLink.astro';
+import Disc from './Disc.astro';
 import { ui, type Lang } from '../i18n';
 import { formatDate, localized, type Proof } from '../lib/content';
 import { asset } from '../lib/url';
@@ -11,43 +10,48 @@ interface Props {
   entry: Proof;
   lang: Lang;
   related?: { label: string; href: string };
-  /** heading level of the document title (4 on the home page, 3 on case study pages) */
-  headingLevel?: 3 | 4;
+  variant?: 'row' | 'card';
+  /** false inside the grouped archive, where the group heading already names the type */
+  showType?: boolean;
+  /** heading level of the document title (4 by default, 5 inside the grouped archive) */
+  headingLevel?: 4 | 5;
 }
 
-const { entry, lang, related, headingLevel = 4 } = Astro.props;
+const { entry, lang, related, variant = 'row', showType = true, headingLevel = 4 } = Astro.props;
 const data = entry.data;
 const text = localized(data, lang);
 const t = ui[lang];
-const Title = headingLevel === 3 ? 'h3' : 'h4';
+const Tag = variant === 'row' ? 'li' : 'article';
+const Title = headingLevel === 5 ? 'h5' : 'h4';
 ---
-<li class="doc">
-  <div class="doc__thumb">
-    {data.image ? <Img src={data.image.src} alt="" position={data.image.position} sizes="88px" /> : <Icon name="file" />}
+<Tag class={variant === 'row' ? 'proof' : 'proof-card'}>
+  <div class="proof__thumb">
+    {data.image ? <Img src={data.image.src} alt="" position={data.image.position} sizes="68px" /> : <Disc size="2.5rem" />}
   </div>
-  <div class="doc__text">
-    <p class="doc__meta">
-      <span>{t.proofTypes[data.type]}</span>
+  <div class="proof__text">
+    <p class="proof__meta">
+      {showType && <span class="proof__type">{t.proofTypes[data.type]}</span>}
       <time datetime={data.date}>{formatDate(data.date, lang)}</time>
+      <span>{data.source}</span>
     </p>
-    <Title class="doc__title">{text.title}</Title>
-    <p class="doc__source">{data.source}</p>
-    <p class="doc__summary">{text.summary}</p>
-    <p class="doc__actions">
-      {
-        data.pdf && (
-          <a class="link link--strong" href={asset(data.pdf)} target="_blank" rel="noopener">
-            {t.proofActions.pdf}
-            <span class="sr-only">{`: ${text.title}`}</span>
-          </a>
-        )
-      }
-      {
-        data.url && (
-          <ExtLink class="link link--strong" href={data.url} label={t.proofActions.link} external={t.external} srText={`: ${text.title} (${t.external})`} />
-        )
-      }
-      {related && <a class="link" href={related.href}>{related.label}</a>}
-    </p>
+    <Title class="proof__title">{text.title}</Title>
+    <p class="proof__summary">{text.summary}</p>
   </div>
-</li>
+  <p class="proof__actions">
+    {
+      data.pdf && (
+        <a class="text-link" href={asset(data.pdf)} target="_blank" rel="noopener">
+          {t.proofActions.pdf}
+        </a>
+      )
+    }
+    {
+      data.url && (
+        <a class="text-link" href={data.url} target="_blank" rel="noopener noreferrer">
+          {t.proofActions.link}
+        </a>
+      )
+    }
+    {related && <a class="text-link" href={related.href}>{related.label}</a>}
+  </p>
+</Tag>

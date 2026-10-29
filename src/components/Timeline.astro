@@ -1,0 +1,58 @@
+---
+// "Tracklist" of the story chapters on the home page (Ursprung, Business, Berlin …).
+import Img from './Img.astro';
+import { tr, type Img as ImageData, type Text } from '../lib/content';
+import { localHref } from '../lib/url';
+import type { Lang } from '../i18n';
+
+interface Chapter {
+  id: string;
+  years: Text;
+  name: Text;
+  title: Text;
+  text: Text;
+  image: ImageData;
+  link?: { label: Text; href: string };
+}
+
+interface Props {
+  chapters: Chapter[];
+  lang: Lang;
+  startAt?: number;
+}
+
+const { chapters, lang, startAt = 1 } = Astro.props;
+const number = (index: number) => String(index + startAt).padStart(2, '0');
+---
+<ol class="tracklist">
+  {
+    chapters.map((chapter, index) => (
+      <li class="track" id={`kapitel-${chapter.id}`}>
+        <div class="track__head">
+          <span class="track__num" aria-hidden="true">{number(index)}</span>
+          <p class="track__meta">
+            <span class="track__name">{tr(chapter.name, lang)}</span>
+            <span class="track__years">{tr(chapter.years, lang)}</span>
+          </p>
+        </div>
+        <div class="track__body">
+          <h3 class="display h3">{tr(chapter.title, lang)}</h3>
+          <p>{tr(chapter.text, lang)}</p>
+          {chapter.link && (
+            <a class="text-link" href={localHref(lang, chapter.link.href)}>
+              {tr(chapter.link.label, lang)}
+            </a>
+          )}
+        </div>
+        <figure class="track__media">
+          <Img
+            src={chapter.image.src}
+            alt={tr(chapter.image.alt, lang)}
+            position={chapter.image.position}
+            sizes="(min-width: 860px) 20rem, 5rem"
+          />
+        </figure>
+      </li>
+    ))
+  }
+</ol>
